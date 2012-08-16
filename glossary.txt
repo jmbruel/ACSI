@@ -1,0 +1,27 @@
+[glossary]
+= Glossaire
+
+[NOTE]
+.Ressources
+=====================================================================
+Les définitions ci-dessous sont regroupées à titre indicatif. Les sources utilisées sont :
+
+- Glossaire du http://www.sei.cmu.edu/architecture/start/glossary[Software Engineering Institute]
+- http://www.computer-dictionary-online.org/[IEEE Computer Dictionary Online]
+- http://fr.wikipedia.org/[Wikipedia] –- Version française￼￼
+=====================================================================
+
+[glossary]
+[[DRY]]DRY::
+	_**D**on't **R**epeat **Y**ourself_ : 
+PPN::
+	**P**rogramme **P**édagogique **N**ational
+OMG::
+	_**O**bject **M**anagement **G**roup_ : L'organisme international chargé des principales normes liés à l'objet (CORBA, UML, etc.).
+[[SysML]]SysML::
+		_**Sys**tem **M**odeling **L**anguage_ (TM) : le langage de modélisation de systèmes maintenu par l'{omg}.
+TRL::
+	_**T**echnology **R**eadiness **L**evel_ : système de mesure employé par des agences gouvernementales américaines et par de nombreuses compagnies (et agences) mondiales afin d'évaluer le niveau de maturité d'une technologie (cf. http://fr.wikipedia.org/wiki/Technology_Readiness_Level[Wikipedia]).
+
+URL::
+	_**U**niversal **R**essource **L**ocator_ : xxx

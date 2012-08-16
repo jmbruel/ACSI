@@ -1,0 +1,106 @@
+== Avant-propos
+
+///////
+[quote, Bertrand Russell, The World of Mathematics (1956)]
+____________________________________________________________________
+A good notation has subtlety and suggestiveness which at times makes
+it almost seem like a live teacher.
+____________________________________________________________________
+//////
+
+[[Architecte]]
+.Analyser et Concevoir
+image::./images/architecte-d-interieur-id518.jpg["Architecte", width="40%", link="http://www.blog-espritdesign.com/actus/blog/nouvelle-rubrique-les-metiers-deco-design-architecture-4582"]
+
+Nous allons vous apprendre dans ce cours des techniques pour **A**nalyser et **C**oncevoir des **S**ystèmes d'**I**nformation...
+
+Nous nous servirons du parallèle avec la réalisation d'une oeuvre d'architecte (comme une maison, cf. <<Architecte>>). 
+
+ifdef::backend-slidy2[<<<] 
+
+//----------------------------------------------------- hors slide -------------------------
+ifndef::backend-slidy2[] 
+
+=== A qui est destiné ce document?
+//My students, my colleagues, and myself!
+
+Les étudiants du DUT informatique, mes collègues enseignants qui cherchent un document de référence accessible, et ... moi-même (pour organiser mes notes diverses)!
+
+=== A qui il n'est pas destiné?
+
+Si vous appartenez à une de ces catégories, ce document n'est pas pour vous :
+
+- vous cherchez un livre de référence
+- vous voulez vous perfectionner
+- vous souhaitez préparer une certification
+
+=== Historique
+
+Ce document est la compilation de plusieurs années d'enseignement ...
+
+Vous trouverez en référence (cf. <<refs, Bibiliographie>>) les ouvrages et autres documents utilisés.
+
+Je tiens à remercier mes collègues qui m'ont aidé dans mon entreprise : 
+
+- {nico} de l'{uppa}, {nonne} de l'{iut}; 
+- le maître d'{asciidoc} : {jmi}.
+
+=== Sur l'auteur
+- Professeur à l'{univ-tlse}
+- Co-foundateur de l'association {sysmlfrance}
+- Membre du comité éditorial de la revue _{sosym}_
+- Membre du _Steering Committee_ de la conférence ACM/IEEE {models}
+- Chef du département informatique de l'{iut} 2009 à 2012
+- Marié, une (merveilleuse) fille
+
+[[comment-lire]]
+=== Comment lire ce document?
+
+Ce document a été réalisé de manière à être lu de préférence
+dans sa version électronique (au format PDF), ce qui permet de
+naviguer entre les références et les renvois interactivement, de consulter
+directement les documents référencés par une URL, etc.
+// Par exemple, les sigles comme {omg} apparaissent avec une astérisque qui permet un renvoie direct à leur définition dans le document PDF (lien clickable menant à la section <<Glossaire>>).
+
+WARNING: Si vous lisez la version papier de ce document, ces liens clickables ne
+vous servent à rien, et c'est votre punition pour avoir utilisé du papier
+au lieu du support électronique!
+
+==== Conventions typographiques
+
+J'ai utilisé un certain nombre de conventions personnelles
+pour rendre ce document le plus agréable à lire et le plus
+utile possible, grâce notamment à la puissance d'{asciidoc} :
+
+- Des mises en formes particulières concernent les noms de
+personnalités (e.g., {jmi}), etc.
+- Les références bibliographiques présentées en fin de document
+(cf. <<refs, Bibliographie>>).
+- Tous les _flottants_ (figures, tableaux, définitions, etc.) sont
+listés à la suite de la table des matière.
+- Les termes anglais (souvent incontournables) sont repérés
+en _italique_, non pas pour indiquer qu'il s'agit d'un
+mot anglais, mais pour indiquer au lecteur que nous employons
+volontairement ces termes (e.g., _{Requirements}_).
+
+=== Pourquoi parler de "document"?
+
+Parce que j'ignore la version que vous êtes en train de lire. A partir de l'link:main.txt[original], plusieurs versions ont été générées grâce à {asciidoc} :
+
+* Une version pour le web (Moodle) au format link:main.html[html]
+* Une version pour présentation en amphi au format link:main.slidy.html[présentation]
+* Une version pour impression au format link:main.pdf[pdf]
+
+TIP: Si vous êtes curieux sur la production de document "par programmation", je vous invite à lire la <<Prog, section dédiée>>.
+
+=== Utilisation et autres mentions légales
+
+Les images qui ne sont pas libres de droit contiennent un lien vers les sites où je les ai "empruntées".
+
+include::about.txt[]
+
+N'hésitez pas à m'envoyer vos remarques en tout genre en m'écrivant mailto:{email}[ici].
+
+endif::backend-slidy2[] 
+
+//----------------------------------------------------- fin hors slide -------------------------

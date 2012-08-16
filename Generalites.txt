@@ -1,0 +1,292 @@
+== Place dans la formation
+
+- Ce module est *central*
+ 	* (presque) tous les autres tournent autour (cf. <<Central>>)
+ 	* Fil conducteur
+- Le contenu est « flou »
+ 	* Le PPN ne décrit que les compétences
+ 	* Très variable en contenu
+ 	* Soyez critiques!
+
+== Organisation
+
+* 2 intervenants permanents
+** {nonne}
+** {jmb}
+** "interchangeables"
+* 2 intervenants supplémentaires en TD/TP
+** Cyril Charon
+** Olivier Teste
+* Découpage Cours / TD / TP
+* 3 semestres + 1
+* Pour ce semestre (S1) :
+** 16 semaines (devoir en 8ème semaine environ)
+** 1H30 de Cours toutes les 2 semaines
+** 1H30 de TD chaque semaine
+
+== Généralités
+
+* Supports
+** disponibles sur Moodle
+** Après ou avant les cours
+*** Après (pdf) pour ce genre de supports
+*** Avant (distribués en cours) pour les supports « techniques »
+
+WARNING: uniquement une aide à vos notes personnelles
+
+ifdef::backend-slidy2[<<<]
+
+* Outils
+** UML
+** WinDesign
+
+== Objectifs
+
+Comme tout le reste du programme enseigné au DUT, ce cours est une adaptation du PPN :
+
+* Les organisations et leurs Systèmes d'Information
+* Le Génie Logiciel et la façon de concevoir un système de qualité
+* Les démarches/méthodes (Merise), notations ({UML}) et outils nécessaires aux futurs métiers qui vous attendent
+
+Le module ACSI se décompose en deux parties principales (**U**nités de **F**ormation) :
+
+* Modélisation des Systèmes d'Information
+* Techniques Complémentaires de Production Logicielles
+
+=== Modélisation des Systèmes d'Information
+
+* Objectifs :
+** Connaître les outils de modélisation des systèmes d'information
+** Connaître un atelier de génie logiciel
+* Compétences visées :
+** Produire une spécification opérationnelle
+* Pré-requis :
+** Algorithmique
+** Théorie des ensembles, relations, logique
+** Calcul des propositions et des prédicats
+* Programme :
+** Organisations et systèmes d'information
+** Langages de modélisation
+** Méthodes d'analyse et de conception orientée objet
+** Initiation à l'utilisation d'un Atelier de Génie Logiciel
+** Etude de cas
+
+NOTE: Ces éléments sont tirés du PPN.
+
+=== Techniques Complémentaires de Production Logicielles
+
+* Objectifs :
+** Connaître les principes de conception de l'Interface Homme-Machine
+** Connaître les principes de mise en œuvre de la qualité logicielle
+* Compétences visées :
+** Mettre en œuvre les principes de conception de l'I.H.M.
+** Mettre en œuvre une approche qualité dans le processus de production du
+logiciel
+* Pré-requis :
+** Expérience en programmation et en modélisation des systèmes d'information
+* Programme :
+** Qualité du logiciel : objectif du génie logiciel ; assurance qualité, normes,
+gestion des
+** projets logiciels et documentation, cycle de vie du logiciel, architecture logicielle
+** Principes et techniques de base des tests : familles et niveaux de tests, outil de
+tests
+** Interaction homme-machine : prise en compte de l'utilisateur, conception de
+l'I.H.M.,
+** composants graphiques, choix et recommandations ergonomiques, I.D.E.
+
+NOTE: Ces éléments sont tirés du PPN.
+
+=== Interactions avec les autres cours
+
+* Programmation
+* Bases de données
+* Gestion de projet
+* ...
+
+[NOTE]
+=====================================================================
+Voici un exemple :
+
+- en S1/S2 : tests sur requêtes SQL
+- en S3 : dvpt site Web dynamique
+=====================================================================
+
+[[Central]]
+.Place centrale du module d'ACSI
+ifndef::backend-slidy2[]
+image::./images/fig-placeCentrale.png["Place Centrale"]
+endif::backend-slidy2[]
+ifdef::backend-slidy2[]
+:incremental:
+<<<
+images::{images}/fig-placeCentrale.png[{images}/fig-placeCentrale-1.png,{images}/fig-placeCentrale-2.png,{images}/fig-placeCentrale-3.png,{images}/fig-placeCentrale-4.png]
+:incremental!:
+endif::backend-slidy2[]
+
+=== Concrètement
+
+* Plusieurs matières
+* Plusieurs intervenants
+* Plusieurs supports de cours
+** Organisation
+** Merise
+** UML
+** Systèmes d'Information
+** Génie Logiciel
+* Nombreux exercices
+** sujets
+** corrections
+* Très nombreux supports Internet
+
+[WARNING]
+=====================================================================
+Rien ne vaut la pratique elle-même!
+=====================================================================
+
+//----------------------------------------------------- hors slide -------------------------
+ifndef::backend-slidy2[] 
+
+== Fondements
+
+Pour mener à bien le développement d'un système informatique industriel
+ou commercial, on ne peut pas improviser. Il s'agit d'un travail impliquant
+un grand nombre de personnes, des enjeux financiers souvent énormes.
+Le but de ce cours est de vous faire prendre conscience de cet état de fait
+autant que de vous donner les différentes techniques liées à cette activité.
+Au nom de quoi pouvez-vous avoir confiance dans les conseils présentés dans ce cours?
+Il ne faut pas justement! Il vous faut sans arrêt questionner, remettre en cause
+les idées reçues. Néanmoins, les éléments de ce cours ne sortent pas de l'imagination
+fertile de son auteur. Je m'inspire principalement de ceux qui ont l'expérience
+en la matière. C'est pourquoi vous trouverez un grand nombre de références et d'informations
+pour aller plus loin (généralement des URLs).
+
+L'objectif de ce cours est d'aborder la problématique du développement
+raisonné (de qualité, sûr, rapide, pas cher, etc.) de systèmes d'information.
+La méthode choisie est celle des études de cas et des applications concrètes.
+
+Les concepts abordés peuvent se classer en différents niveaux  <<gram86>> :
+
+stratégies::
+	règles de comportement général guidant les choix du développeur (par exemple, 
+	obtenir le plus rapidement possible un énoncé exécutable relève de la stratégie "prototyper").
+tactiques::
+	décrivent des étapes logiques de développement conduisant à un énoncé possédant 
+	certaines propriétés (par exemple, passer d'un énoncé imprécis à un énoncé totalement défini 
+	relève de la tactique "spécifier").
+paradigmes::
+	sont des étapes élémentaires de la construction d'un programme (par exemple, 
+	expliciter une entité par un nom et une définition informelle revient à appliquer le paradigme "désigner").
+
+=== Stratégies
+
+On vous parlera ici de méthodes, de cycle de vie, de gestion de projet. Mais nous aborderons cela bien plus tard
+car dans un premier temps cela va être à la fois rébarbatif et très loin de vos préoccupations.
+
+Pour l'instant retenons des principes simples :
+
+- Comprendre
+- S'organiser
+- Modéliser
+- S'adapter
+
+==== Comprendre
+
+[quote, Auguste Detoeuf, découvert dans Le Lexique d'Habrias]
+____________________________________________________________________
+Théoricien : individu qui n'est pas de votre avis.
+____________________________________________________________________
+
+Le problème, l'environnement, les outils à maîtriser, la solution attendue, le domaine métier, etc.
+
+==== S'organiser
+
+[quote, N. Boileau]
+____________________________________________________________________
+Vingt fois sur le métier remettez votre ouvrage :
+Polissez-le sans cesse et le repolissez ;
+Ajoutez quelquefois, et souvent effacez.
+____________________________________________________________________
+
+Descartes : diviser pour mieux s'atteler à chaque tâche.
+
+==== Modéliser
+
+[quote, N. Boileau]
+____________________________________________________________________
+Ce que l'on conçoit bien s'énonce clairement,
+Et les mots pour le dire arrivent aisément.
+____________________________________________________________________
+
+Pour s'abstraire.
+
+==== S'adapter
+
+Se mettre à jour des techniques. Adapter sa façon de procéder au contexte (au poste que l'on occupe
+par exemple). Voir <<feedback>>.
+
+=== Tactiques
+
+Liste de tactiques :
+
+-  spécifier
+-  décomposition (d'un problème en sous-problème)
+-  itération
+-  induction (construire un énoncé récursif)
+-  approximation (organiser la résolution d'un problème en étudiant d'abord un nouveau problème, considéré comme plus simple)
+-  généralisation (formuler et résoudre le problème à un niveau d'abstraction plus général pour permettre ensuite 
+	un plus grand nombre d'identifications)
+-  réutilisation (exploiter au mieux tout travail déjà fait, cf. aussi <<DRY>>)
+
+=== Paradigmes
+
+Liste de paradigmes :
+
+-  désigner
+-  typer (décrire les proriétés pertinentes d'une entité)
+-  affaiblir (transformer un énoncé pour en réduire la complexité)
+-  renforcer (compléter un énoncé par des contraintes supplémentaires)
+-  décomposer par cas (lorsqu'on distingue plusieurs traitements suivant 
+	les données du problème à un endroit donné)
+-  sérialiser (pour définir un résultat, utiliser un résultat intermédiaire +x+ à 
+	partir des données, puis exprimer le résultat à partir de +x+)
+-  répartir (définir séparément un certain nombre de sous-résultats, qu'il s'agit ensuite de 
+	composer entre eux pour obtenir le résultat attendu)
+-  identifier (identifier deux problèmes consiste à reconnaître leur identité au-delà 
+	des différences de forme de leurs énoncés)
+-  paramétrer (faire abstraction des valeurs particulières de certaines entités, 
+	parce qu'elles ne sont pas pertinentes pour l'élaboration de la solution visée)
+-  représenter (choisir, pour certaines entités, les types, les relations et le moyen d'expression adéquats)
+
+Les tactiques sont des compositions de paradigmes.
+Ainsi, la mise en oeuvre de la tactique d'approximation consiste à appliquer le paradigme 
+*affaiblir*, et le cas échéant le paradigme *renforcer* pour revenir au problème posé.
+
+=== Le Manifeste Agile
+
+Le *Manifeste Agile* (_Agile Manifesto_ <<HighsmithFowler2001>>) 
+	est un ensemble de principes (voir aussi <<1030005>> pour une analyse plus récente). 
+
+[[Satisfaction]]
+.Satisfaction
+[caption="Principe : "]
+==========================
+Notre plus haute priorité est de satisfaire le client 
+en lui livrant rapidement, et ce, de façon continue 
+un logiciel de qualité.
+==========================
+	
+[[feedback]]
+.Améliorations
+[caption="Principe : "]
+==========================
+À intervalles réguliers, l'équipe réfléchit sur une façon 
+de devenir plus efficace, puis adapte et ajuste son comportement en conséquence.
+==========================
+
+
+endif::backend-slidy2[] 
+
+//----------------------------------------------------- fin hors slide -------------------------
+
+
+

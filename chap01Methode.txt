@@ -1,0 +1,32 @@
+== Méthode pour cet ouvrage
+
+[quote, Albert Einstein]
+____________________________________________________________________
+Everything should be made as simple as possible, but no simpler.
+____________________________________________________________________
+
+[[fig:eggs]]
+.\{eggstitle} (taken from https://plus.google.com/100035762233109552669/posts/a8Hafq2hZ74[here])
+[caption="Illustration: "]
+image::./images/ProgrammerHumor.jpg["Joke"] 
+
+Exemple de note à propos de {sysml} footnote:[An example footnote.].
+
+An example link to a bibliography entry <<taoup>>.
+indexterm:[Second example index entry]
+
+// Generate chart image file.
+sys2::[python "dessins/chart.py" --format=png --output="{images}/chart.png" --scale=2]
+
+// Display chart image file.
+image::{images}/chart.png["Chart"]
+
+ifdef::backend-slidy2[<<<]
+
+:incremental:
+
+ifdef::backend-slidy2[]
+images::{images}/fig-enchainement.png[{images}/fig-enchainement-1.png,{images}/fig-enchainement-2.png,{images}/fig-enchainement-3.png,{images}/fig-enchainement-4.png]
+endif::backend-slidy2[]
+
+:incremental!:

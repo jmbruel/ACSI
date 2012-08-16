@@ -1,0 +1,8 @@
+**********************************************************************
+Document généré par mailto:{email}[{author}] via {asciidoc} (version +8.6.8+) de 'Stuart Rackham'.
+La version présentation a été générée en utilisant {slidy2} (C) de 'Dave Raggett', amélioré par mailto:{jmimail}[{jmi}].
+Pour l'instant ce document est libre d'utilisation et géré par la 'Licence Creative Commons'. 
+image:../images/icons/88x31.png["Licence Creative 
+Commons",style="border-width:0",link="http://creativecommons.org/licenses/by-sa/3.0/"]
+http://creativecommons.org/licenses/by-sa/3.0/[licence Creative Commons Paternité - Partage à l&#39;Identique 3.0 non transposé].
+**********************************************************************

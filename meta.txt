@@ -1,0 +1,101 @@
+= RadioClock/meta.txt
+
+:Revision: $Id: meta.txt 13 2011-09-04 19:41:42Z jmi $
+:lang: en
+
+// edit accordingly to your paths
+ifdef::win[]
+:asciidocdir: D:\JMI\tools\asciidoc842\
+:asciidocbin: {asciidocdir}asciidoc.py
+:scriptsdir: {asciidocdir}javascripts
+:stylesdir: {asciidocdir}stylesheets
+:slideconffile: {asciidocdir}sliders\xhtml11-slide.conf
+endif::win[]
+
+ifdef::unix[]
+:asciidocdir: /etc/asciidoc/
+:asciidocdir: /usr/local/etc/asciidoc/
+:asciidocbin: /usr/local/bin/asciidoc
+:scriptsdir: {asciidocdir}javascripts
+:stylesdir: {asciidocdir}stylesheets
+:slideconffile: ./sliders/xhtml11-slide.conf
+endif::unix[]
+
+// output files relative paths
+:iconsdir: ../../tools/asciidoc842/images/icons
+:slidersdir: ../../tools/asciidoc842/sliders/
+:iconsdir: ../images/icons
+:slidersdir: ../sliders/
+:slidydir: {slidersdir}Slidy
+:s5dir: {slidersdir}s5
+:presentaculardir: {slidersdir}presentacular
+
+// remove exclamation mark (!) to select output
+:html:
+:pdf!:
+:slidy!:
+:s5!:
+:presentacular!:
+
+:doc: tp1
+
+== {doc}
+
+//    /////////////////////////////////////////////////////
+ifdef::html[]
+- html version
+
+:sem: S1
+:cmd: {asciidocbin} -a {sem} -a badges -a icons -a iconsdir={iconsdir} -a toc  -a numbered -a toclevels=4 -a unsafe -o {doc}{sem}.html {doc}.txt
+
++{cmd}+
++++<pre>+++{sys2:{cmd}}+++</pre>+++ 'OK' link:{doc}{sem}.html[]
+
+:sem: S3
+:cmd: {asciidocbin} -a {sem} -a badges -a icons -a iconsdir={iconsdir} -a toc  -a numbered -a toclevels=4 -a unsafe -o {doc}{sem}.html {doc}.txt
+
++{cmd}+
++++<pre>+++{sys2:{cmd}}+++</pre>+++ 'OK' link:{doc}{sem}.html[]
+endif::html[]
+
+//    /////////////////////////////////////////////////////
+ifdef::pdf[]
+- pdf version
+ifdef::unix[]
+
+:sem: S1
+:cmd: a2x --icons --fop -f pdf {doc}{sem}.txt
+
++{cmd}+
++++<pre>+++{sys2:{cmd}}+++</pre>+++ 'OK' link:{doc}{sem}.pdf[]
+
+:sem: S3
+:cmd: a2x --icons --fop -f pdf {doc}{sem}.txt
+
++{cmd}+
++++<pre>+++{sys2:{cmd}}+++</pre>+++ 'OK' link:{doc}{sem}.pdf[]
+
+endif::unix[]
+endif::pdf[]
+
+//    /////////////////////////////////////////////////////
+ifdef::slidy[]
+- slidy version
+
+:cmd: {asciidocbin} -f {slideconffile} -a icons {iconsdir? -a iconsdir={iconsdir}} {scriptsdir? -a scriptsdir={scriptsdir}} {stylesdir? -a stylesdir={stylesdir}} -a slide -a slidetheme=slidy {slidydir? -a slidydir={slidydir}} --unsafe -o {doc}.slidy.html {doc}.txt
+
++{cmd}+
++++<pre>+++{sys2:{cmd}}+++</pre>+++ 'OK' link:{doc}.slidy.html[]
+endif::slidy[]
+
+//    /////////////////////////////////////////////////////
+ifdef::svn[]
+- svn update
+
+:cmd: svn update
+
++{cmd}+
++++<pre>+++{sys2:{cmd}}+++</pre>+++
+endif::svn[]
+
+//    /////////////////////////////////////////////////////

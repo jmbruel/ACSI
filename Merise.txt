@@ -1,0 +1,553 @@
+:incremental:
+Plan de cette partie :
+
+* Pourquoi une méthode ?
+* Pourquoi MERISE ?
+* Concepts clés et principes de bases
+* Les flux
+* Les traitements
+* Les données
+
+== Pourquoi une méthode ?
+
+* On peut faire ce qu'on veut :
+** si on est seul
+** si on a le temps
+** si on n'a pas de comptes à rendre
+** si les erreurs n'ont pas de conséquences
+
+* Pour tout le reste
+** besoin de communiquer
+** besoin de s'abstraire de la complexité
+** besoin de rendre des comptes
+
+== Pourquoi MERISE ?
+
+* méthode très utilisée *en France*
+* des générations de programmeurs l'ont apprise
+* elle permet donc de servir de *référence* pour les autres approches
+
+== Concepts clés et principes de bases
+
+* Approche systémique
+* Différents niveaux d'abstraction
+* Différentes considérations ("vues")
+* Démarche globale
+
+=== Approche systémique
+
+On complète Descartes :
+
+* *logique ternaire* ou conjonctive (qui relie) plutôt que logique binaire ou disjonctive (qui sépare)
+* centrée sur le *but à atteindre* (finalité) plutôt que sur la recherche des causes (causalité)
+* relationnelle et *globale* plutôt qu'analytique
+* orientée par le *présent/futur* (prospective) plutôt que par le passé/présent (déterminisme)
+* ouverte sur la *diversité* des réalités et la pluralité des solutions plutôt que sur la quête de certitudes et de réponses "universelles"
+* propice à l'émergence de la *nouveauté* et à l'invention (moins réductrice)
+
+
+=== Différents niveaux d'abstraction
+
+Conceptuel::
+	- quoi?
+Organisationnel::
+	- d'où? 
+	- qui?
+	- quand?
+Logique::
+	- quand? où? comment?
+	- indépendamment de l'"implémentation"
+Technique::
+	- comment?
+	- le concret
+
+=== Différentes considérations ("vues")
+Flux::
+* ce qui circule
+* architecture
+Traitements::
+* dynamique
+* comment le système se comporte
+Données::
+* statique
+* ce qui est manipulé
+
+=== Démarche globale
+:incremental!:
+
+Intersection entre vues et niveaux
+
+[[Matrice]]
+.La carte de base
+[align="center",cols="h,3*",options="header",width="50%"]
+|======================
+|					| {flux} 	| {traitements}	| {donnees}
+| {conceptuel}		|			|  				|
+| {organisationel}	|			|        		|				
+| {logique} 		|			|        		|				
+| {technique}		|			|        		|				
+|======================
+
+ifdef::backend-slidy2[<<<]
+
+Démarche par étape
+
+* Le schéma directeur
+* L'étude préalable
+* L'étude détaillée
+* La réalisation
+* La mise en œuvre
+* La maintenance
+
+NOTE: On verra ça plus tard
+
+== Les flux
+
+=== Notation
+* cerner le domaine qui nous intéresse
+image:{dessins}/domaine.png["Domaine"]
++
+[ditaa]
+---------------------------------------------------------------------
+	+-----------+  
+	|  Domaine  | 
+	+-----------+  
+---------------------------------------------------------------------
++
+* identifier les échanges
+** flux
+** acteurs image:{dessins}/acteur.png["Acteur"]
++
+[ditaa]
+---------------------------------------------------------------------
++---------+ +----=----+  
+|         | |         |    Nom du flux
+| Interne | | Externe | ----------------->
+|    {o}  | |    {o}  | 
++---------+ +---------+
+---------------------------------------------------------------------
+
+=== Exemples
+
+[ditaa]
+---------------------------------------------------------------------
++----=---+                  +-------+
+|        |     commande     |       |
+| Client +----------------->+ Vente |
+|   {o}  |                  |       |
++--------+                  +-------+
+---------------------------------------------------------------------
+
+=== Exercice
+
+* Une agence de location de voitures veut informatiser la gestion des locations.
+* Lorsqu’un client se présente à l’accueil, il précise le type de voiture désiré ainsi que la durée de location.
+* L’accueil vérifie si la location est possible et donne la réponse au client.
+* Si c’est le cas, la facture est éditée et donnée au client.
+* Celui-ci doit payer immédiatement.
+* Le paiement et la facture sont transmis au service comptable.
+* L’accueil transmet alors la demande au garage.
+* Ce dernier va préparer le véhicule demandé et le mettre à disposition du client.
+
+=== Règles de conception
+
+image:{dessins}/noSelfFlux.png["Pas de flux sur soi-même"]
+
+.Pas de flux qui boucle sur un même acteur
+****
+* Les flux ne sont qu’entre 2 acteurs distincts.
+* Si l’on désire représenter des flux à l’intérieur d’un acteur, 
+c’est que l’acteur doit être décomposé en plusieurs.
+****
+
+ifdef::backend-slidy2[<<<]
+
+image:{dessins}/noFluxExternes.png["Pas de flux sur soi-même"]
+
+.Pas de flux entre acteurs externes
+****
+Ces flux ne nous intéressent pas car ils ne concernent pas le domaine à informatiser.
+****
+
+NOTE: Dans de rares cas, on représentera tout de même les flux entre certains acteurs externes pour une meilleure compréhension du système.
+
+ifdef::backend-slidy2[<<<]
+
+image:{dessins}/noBiFlux.png["Pas de flux sur soi-même"]
+
+.Pas de flux bidirectionnels
+****
+La représentation doit donner lieu à 2 flux distincts.
+****
+
+=== Erreurs classiques
+
+* un acteur n'est pas un objet image:{dessins}/noObjectActor.png["Acteur n'est pas Objet", align="center"]
+* un flux n'est pas un mouvement d'acteur image:{dessins}/noMove.png["Flux n'est pas déplacement", align="center"]
+
+=== Modèle Conceptuel des Flux
+
+[[MCF]]
+.MCF
+[align="center",cols="h,^2,^2,^2",options="header",width="50%"]
+|======================
+|					| {flux} 	| {traitements}	| {donnees}
+| {conceptuel}		|	[red yellow-background]*MCF*		|  				|
+| {organisationel}	|			|        		|				
+| {logique} 		|			|        		|				
+| {technique}		|			|        		|				
+|======================
+
+* Pas de représentation des acteurs internes 
+* Juste le domaine et ses échanges avec les acteurs externes
+* Vue "boîte noire"
+
+=== Modèle Organisationnel des Flux
+
+[[MOF]]
+.MOF
+[align="center",cols="h,^2,^2,^2",options="header",width="50%"]
+|======================
+|					| {flux} 	| {traitements}	| {donnees}
+| {conceptuel}		|	MCF		|  				|
+| {organisationel}	|	[red  yellow-background]*MOF*			|        		|				
+| {logique} 		|			|        		|				
+| {technique}		|			|        		|				
+|======================
+
+* Représentation des acteurs internes 
+* De leurs échanges avec les acteurs externes
+* Vue "boîte blanche"
+* Doit être cohérent avec le MCF correspondant
+
+=== Exercice : gestion de Carte Bleue
+
+* Le demandeur désirant obtenir une carte bleue doit en faire la demande auprès d’un employé de son agence.  La carte bleue n’est accordée que si le demandeur est un client de l’agence. 
+* Chaque jour, un employé de l’agence transmet au centre de gestion des cartes bleues les demandes des clients. Dès que le chef d’agence reçoit la carte bleue en provenance du centre (en général 4 jours après la demande), il adresse au client un avis de mise à disposition et un avis de prélèvement de la cotisation annuelle.
+* Le client vient alors retirer sa carte auprès du chef d’agence. Si au bout de 2 mois la carte n’a pas été retirée, elle est détruite.
+
+=== Correction : gestion de Carte Bleue
+
+. Détermination des acteurs externes
+. Réalisation du MCF
+. Détermination des acteurs internes
+. Réalisation du MOF
+
+== Les traitements
+
+=== Objectifs
+* Déterminer des *processus*
+* A partir des *acteurs* et des *flux* d'information
+* Notion de *rôles de gestion*
+* Concepts
+** les événements
+** les opérations
+** les résultats
+** la synchronisation
+
+=== Diagrammes
+Modèle Conceptuel de Traitement::
+	Répondre au *QUOI?*
+
+Modèle Organisationnel de Traitement::
+	Répondre au *QUI* fait *QUOI* et *QUAND?*
+
+[[MCT]]
+.MCT et MOT
+[align="center",cols="h,^2,^2,^2",options="header",width="50%"]
+|======================
+|					| {flux} 	| {traitements}	| {donnees}
+| {conceptuel}		|			|  	[red  yellow-background]*MCT*			|
+| {organisationel}	|			|   [red  yellow-background]*MOT*     		|				
+| {logique} 		|			|        		|				
+| {technique}		|			|        		|				
+|======================
+
+=== Notation
+* événements
+* synchronisation
+* opération
+* Règles d’émission
+* Résultats
+
+==== Modèle Conceptuel de Traitement
+
+===== Eléments importants
+
+- Fiches de poste
+* Tâches
+** Evénements déclencheur
+** Actions
+** Résultats
+- Opération
+- Événements déclencheurs
+- Synchronisation éventuelle (règles logiques)
+- Résultats
+- Règles d’émission
+
+[align="center",cols="h,^2,^2,^2",options="header",width="20%"]
+|======================
+|					| {flux} 	| {traitements}	| {donnees}
+| {conceptuel}		|			|  	[red  yellow-background]*MCT*			|
+| {organisationel}	|			|   MOT     		|				
+| {logique} 		|			|        		|				
+| {technique}		|			|        		|				
+|======================
+
+===== Exemples
+
+===== Récapitulatif de la démarche (MCT)
+* Identifier les postes
+* Définir les tâches
+* Déterminer les opérations
+* Associer les événements déclencheurs
+* Déterminer les résultats
+* Décrire les règles d’émission
+
+===== Règles de bonne conception (MCT)
+* Regroupement de tous les traitements effectués dès l’arrivée d’un événement
+* Ne pas tenir compte de l’organisation interne du domaine étudié (répartition du travail entre acteurs internes)
+* Seule l’attente d’événements externes (=flux externes) justifie le découpage en plusieurs opérations
+* 2 opérations consécutives liées exclusivement par des flux internes doivent être fusionnées.
+* Réutiliser les acteurs externes, les autres domaines et les flux externes trouvés dans le MCF
+
+===== Evénements déclencheurs
+Evénement externe::
+	Arrivée d’une cde, dde du client...
+Evénement temporel::
+	18h, tous les lundis matin…
+Evénement interne::
+	résultat d'une opération précédente
+
+===== Synchronisation
+Opérateurs :
+
+* ET
+* OU
+* NON
+* ( )
+* combinaisons multiples
+
+[NOTE]
+=====================================================================
+- Pour 1 événement déclencheur, pas de synchronisation.
+- Pour 2 événements déclencheurs, souvent un seul opérateur.
+- A partir de 3, les événements peuvent être renommés (lettres).
+=====================================================================
+
+===== Exercice
+===== Actions
+* Types d'actions :
+action sur un objet::
+	création, lecture, modification, suppression
+action résultat::
+	impression, …
+* Conditions
+** une action peut être soumise à condition
+
+===== Exercice
+
+===== Règles d'émission
+Règle d'émission::
+	résultat de l'action
+Nombre::
+	1 ou plusieurs
+
+[NOTE]
+=====================================================================
+- S'il n'y a qu'une règle d'émission, elle est souvent omise, ou son nom est TOUJOURS.
+- Une règle d'émission peut utiliser une condition.
+=====================================================================
+
+
+===== Résultats
+* Evénement résultat externe
+** impression, mail, coup de téléphone…
+
+* Evénement résultat interne
+** déclencheur d'une opération
+** changement d'état d'un objet
+
+NOTE: Une opération possède au moins un événement résultat par règle d'émission. Un résultat externe est toujours dirigé vers un acteur externe ou un autre domaine.
+
+===== Exercice
+* Lorsqu'un client envoie un bon de commande, il faut vérifier, pour chacun des articles, si le stock est suffisant pour la quantité commandée :
+** si c'est le cas, on enregistre la date de livraison, on met à jour le stock et on imprime un bon de livraison pour le service Livraison;
+** sinon le stock à réapprovisionner est incrémenté de la quantité commandée.
+
+==== Modèle Organisationnel de Traitement
+
+===== Eléments importants
+* Prise en compte de l’organisation interne
+* Cerne l'activité de 
+** chaque poste de travail (informatique ou non), 
+** chaque service
+* Prise en compte
+** Du « planning »
+** du type de ressources (manuel, automatisé), 
+** du type de support (document écrit, magnétique etc.)
+
+[align="center",cols="h,^2,^2,^2",options="header",width="20%"]
+|======================
+|					| {flux} 	| {traitements}	| {donnees}
+| {conceptuel}		|			|  	MCT			|
+| {organisationel}	|			|   [red  yellow-background]*MOT*     		|				
+| {logique} 		|			|        		|				
+| {technique}		|			|        		|				
+|======================
+
+===== Exemples de MOT
+
+===== Règles de bonne conception d’un MOT
+
+* Examiner les traitements effectués par chaque acteur interne lorsqu’il reçoit un flux
+* Une tâche = un ensemble ininterrompu d’actions effectuées par un même acteur interne
+* Un MOT représente un processus c’est à dire un ensemble de tâches consécutives concourant à un même but
+* Les événements initiaux déclenchant un processus sont, soit des flux externes, soit des événements temporels
+
+===== Exercice 1
+* Lorsqu’un agent d’une compagnie d’assurances automobiles reçoit une déclaration d’accident de la part d’un assuré, il vérifie tout d’abord la situation de ce dernier. 
+* Si l’assuré n’est pas couvert pour ce type d’accident alors l’agent lui envoie un avis de rejet. 
+* Tous les soirs à 18h, un traitement automatique édite les avis de sinistre de la journée (ces avis correspondent aux déclarations d’accident du jour pour les assurés couverts). Ces avis sont expédiés par l’agent au siège social de la compagnie d’assurance. 
+* Le siège social désigne alors un expert pour chaque sinistre et envoie les coordonnées des experts désignés à l’agent d’assurance. Ce dernier envoie alors une convocation manuscrite à chaque expert. 
+* Lorsque l’agent d’assurance a reçu le rapport de l’expert et la facture de l’assuré (cette facture a été produite par le garage qui a effectué les réparations sur le véhicule accidenté et a été ensuite donné à l’assuré propriétaire du véhicule), il peut régler le sinistre en envoyant un chèque de remboursement à l’assuré.
+
+===== Exercice 2
+* A partir des demandes d’approvisionnement établies par le service commercial, le service des achats envoie des demandes de prix aux fournisseurs possibles.  
+* Les fournisseurs envoient des offres de prix au service achat. 
+Ce dernier choisit alors un fournisseur particulier (au plus tard 10 jours après l’envoi des offres) et lui envoie un bon de commande. Une copie est conservée en vue de la réception. 
+* Quand la livraison arrive (généralement 2 jours après le choix du fournisseur), le service achat contrôle quantitativement et qualitativement la marchandise. La livraison est renvoyée en bloc si l’un des contrôles est négatif. 
+* Les contrôles satisfaisants aboutissent à l’entrée en stock des articles. Dans ce cas, le service achat établit alors le bon à payer aux services financiers. Quand les services financiers reçoivent la facture du fournisseur (généralement 3 jours après la livraison), ils vérifient la correspondance avec le bon à payer et émettent le chèque de paiement. 
+
+ifdef::backend-slidy2[]
+
+<<<
+
+* A partir des [blue]*demandes d’approvisionnement* établies par le service commercial, le service des achats envoie des [blue]*demandes de prix* aux fournisseurs possibles.  
+* Les fournisseurs envoient des offres de prix au service achat. 
+Ce dernier choisit alors un fournisseur particulier (au plus tard 10 jours après l’envoi des offres) et lui envoie un [blue]*bon de commande*. Une [blue]*copie* est conservée en vue de la réception. 
+* Quand la [blue]*livraison* arrive (généralement 2 jours après le choix du fournisseur), le service achat contrôle quantitativement et qualitativement la marchandise. La livraison est renvoyée en bloc si l’un des contrôles est négatif. 
+* Les contrôles satisfaisants aboutissent à l’entrée en stock des [blue]*articles*. Dans ce cas, le service achat établit alors le [blue]*bon à payer* aux services financiers. Quand les services financiers reçoivent la [blue]*facture* du fournisseur (généralement 3 jours après la livraison), ils vérifient la correspondance avec le bon à payer et émettent le [blue]*chèque de paiement*. 
+
+<<<
+
+* A partir des [blue]*demandes d’approvisionnement* établies par le service commercial, le service des achats envoie des [blue]*demandes de prix* aux [green]*fournisseurs possibles*.  
+* Les fournisseurs envoient des offres de prix au service achat. 
+Ce dernier [green]*choisit alors un fournisseur* particulier (au plus tard 10 jours après l’envoi des offres) et lui envoie un [blue]*bon de commande*. Une [blue]*copie* est conservée en vue de la réception. 
+* Quand la [blue]*livraison* arrive (généralement 2 jours après le choix du fournisseur), le service achat [green]*contrôle* quantitativement et qualitativement la marchandise. La livraison est renvoyée en bloc si l’un des contrôles est négatif. 
+* Les contrôles satisfaisants aboutissent à l’entrée en stock des [blue]*articles*. Dans ce cas, le service achat établit alors le [blue]*bon à payer* aux services financiers. Quand les services financiers reçoivent la [blue]*facture* du fournisseur (généralement 3 jours après la livraison), ils [green]*vérifient* la correspondance avec le bon à payer et [green]*émettent* le [blue]*chèque de paiement*. 
+
+<<<
+endif::backend-slidy2[]
+
+* A partir des [blue]*demandes d’approvisionnement* établies par le [yellow]*service commercial*, le [yellow]*service des achats* envoie des [blue]*demandes de prix* aux [green]*fournisseurs possibles*.  
+* Les [yellow]*fournisseurs* envoient des offres de prix au service achat. 
+Ce dernier [green]*choisit alors un fournisseur* particulier (au plus tard 10 jours après l’envoi des offres) et lui envoie un [blue]*bon de commande*. Une [blue]*copie* est conservée en vue de la réception. 
+* Quand la [blue]*livraison* arrive (généralement 2 jours après le choix du fournisseur), le service achat [green]*contrôle* quantitativement et qualitativement la marchandise. La livraison est renvoyée en bloc si l’un des contrôles est négatif. 
+* Les contrôles satisfaisants aboutissent à l’entrée en stock des [blue]*articles*. Dans ce cas, le service achat établit alors le [blue]*bon à payer* aux [yellow]*services financiers*. Quand les services financiers reçoivent la [blue]*facture* du fournisseur (généralement 3 jours après la livraison), ils [green]*vérifient* la correspondance avec le bon à payer et [green]*émettent* le [blue]*chèque de paiement*. 
+
+==== Modélisation du futur Système
+
+image:{dessins}/MCTfutur.png["Enchainements"]
+
+===== MOT/MOF Futurs
+:incremental:
+* Degré d’automatisation
+** **A**utomatisée : aucune intervention humaine
+** **C**onversationnelle (ou Interactive) : utilisation de l’informatique par l’humain
+** **M**anuelle : aucune intervention informatique
+* Délai de réponse
+** **I**mmédiat : dès l’arrivée de l’événement déclencheur
+** **D**ifféré : après l’arrivée (délai sur décision ou chrono)
+* Mode de fonctionnement
+** **U**nitaire : la tâche s’effectue à chaque flux entrant
+** Par **L**ot : plusieurs flux d’entrée avant lancement 
+
+[TIP]
+.Certaines combinaisons plus fréquentes
+===============================
+- CIU (dialogue)
+- ADL (batch)
+===============================
+
+[TIP]
+.Certaines implications
+===============================
+* L->D
+* I->U
+* IL rare
+===============================
+
+[TIP]
+.Possibilité de compléter les informations
+===============================
+* Durée/Volume des tâches
+* Exemple : 20 enr./semaine, 6 mn/tâche, …
+===============================
+
+===== Exemple de tâche de MCT futur
+
+image:{dessins}/tache.png["Exemple de tâche"]
+
+=== Définitions (récapitulatif)
+
+.Flux
+[caption="Définition : "]
+==========================
+Représentation d’un échange d’informations entre deux acteurs du domaine étudié
+ex: livraison, paiement
+==========================
+
+.Acteurs
+[caption="Définition : "]
+==========================
+* Composants du système étudié (acteurs internes) ou ayant une relation avec le système étudié (acteurs externes)
+* ex: étudiant, client, comptable 
+==========================
+
+.Evénement
+[caption="Définition : "]
+==========================
+* Fait susceptible de déclencher une opération
+* ex: commande, échéance (date)
+==========================
+
+.Opération
+[caption="Définition : "]
+==========================
+* Ensemble d’actions (non interruptibles) conditionnées par aucun agent extérieur autre que l’événement déclencheur
+* ex: prise en charge d’une demande
+==========================
+
+.Poste de travail
+[caption="Définition : "]
+==========================
+* Centre d’activités élémentaires regroupant zéro, une ou plusieurs personnes, utilisant du matériel ou pas, faisant l’objet d’une ou plusieurs occurrences sur le terrain.
+==========================
+
+.Tâche
+[caption="Définition : "]
+==========================
+* Ensemble homogène d’activités élémentaires résultant de la décomposition d’une opération conceptuelle.
+* Est associée à un poste de travail ; 
+* A un niveau d’automatisation : 
+** Manuelle (M),
+** Interactive ou Conversationnelle (C),
+** Automatique (A) ;
+* A un délai de réponse : 
+** Immédiat (I), 
+** Différé (D) ;
+* A un fonctionnement :
+** Unitaire (U) ou 
+** par Lot (L) ;
+==========================
+
+== Les niveaux logiques et techniques?
+
+Pourquoi a-t'on décidé de "zapper" ces niveaux...
+
+== Les données
+
+== Références utiles pour cette partie
+* http://www.compucycles.com/nouveausite/articles/Merise/Article_07.htm
+* http://www.wikituto.org/index.php/Catégorie:Cours_Merise

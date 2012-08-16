@@ -1,0 +1,1655 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+<?asciidoc-toc?>
+<?asciidoc-numbered?>
+
+<book lang="en">
+<bookinfo>
+    <title>Analyse et Conception des Systèmes d'Information</title>
+    <date>07/08/2012</date>
+    <author>
+        <firstname>Jean-Michel</firstname>
+        <surname>Bruel</surname>
+        <email>jean-michel.bruel@univ-tlse2.fr</email>
+    </author>
+    <authorinitials>JMB</authorinitials>
+<revhistory><revision><revnumber>1.0</revnumber><date>07/08/2012</date><authorinitials>JMB</authorinitials></revision></revhistory>
+</bookinfo>
+<chapter id="_avant_propos">
+<title>Avant-propos</title>
+<figure id="Architecte"><title>Analyser et Concevoir</title>
+<mediaobject>
+  <imageobject>
+  <imagedata fileref="./images/architecte-d-interieur-id518.jpg" contentwidth="60%"/>
+  </imageobject>
+  <textobject><phrase>Architecte</phrase></textobject>
+</mediaobject>
+</figure>
+<simpara>Nous allons vous apprendre dans ce cours des techniques pour <emphasis role="strong">A</emphasis>nalyser et <emphasis role="strong">C</emphasis>oncevoir des <emphasis role="strong">S</emphasis>ystèmes d'<emphasis role="strong">I</emphasis>nformation&#8230;</simpara>
+<simpara>Nous nous servirons du parallèle avec la réalisation d&#8217;une oeuvre d&#8217;architecte (comme une maison, cf. <xref linkend="Architecte"/>).</simpara>
+<section id="_a_qui_est_destiné_ce_document">
+<title>A qui est destiné ce document?</title>
+<simpara>Les étudiants du DUT informatique, mes collègues enseignants qui cherchent un document de référence accessible, et &#8230; moi-même (pour organiser mes notes diverses)!</simpara>
+</section>
+<section id="_a_qui_il_n_8217_est_pas_destiné">
+<title>A qui il n&#8217;est pas destiné?</title>
+<simpara>Si vous appartenez à une de ces catégories, ce document n&#8217;est pas pour vous :</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+vous cherchez un livre de référence
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vous voulez vous perfectionner
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vous souhaitez préparer une certification
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_historique">
+<title>Historique</title>
+<simpara>Ce document est la compilation de plusieurs années d&#8217;enseignement &#8230;</simpara>
+<simpara>Vous trouverez en référence (cf. <link linkend="refs">Bibiliographie</link>) les ouvrages et autres documents utilisés.</simpara>
+<simpara>Je tiens à remercier mes collègues qui m&#8217;ont aidé dans mon entreprise :</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Nicolas Belloir de l&#8217;Université de Pau et des Pays de l&#8217;Adour, Laurent Nonne de l&#8217;IUT de Blagnac;
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+le maître d&#8217;<ulink url="http://www.methods.co.nz/asciidoc">AsciiDoc</ulink> : Jean-Michel Inglebert.
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_sur_l_8217_auteur">
+<title>Sur l&#8217;auteur</title>
+<itemizedlist>
+<listitem>
+<simpara>
+Professeur à l&#8217;<ulink url="http://www.univ-toulouse.fr">Univesité de Toulouse</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Cofoundateur de l&#8217;association <ulink url="http://www.sysml-france.fr">SysML France</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Member of the Software and System Modeling journal editorial board
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Co-lead of the Ambient Systems Research group at IRIT
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Chef du département informatique de l&#8217;IUT de Blagnac 2009 à 2012
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Married, one (wonderful) child
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="comment-lire">
+<title>Comment lire ce document?</title>
+<simpara>Ce document a été réalisé de manière à être lu de préférence
+dans sa version électronique (au format PDF), ce qui permet de
+naviguer entre les références et les renvois interactivement, de consulter
+directement les documents référencés par une URL, etc.</simpara>
+<warning><simpara>Si vous lisez la version papier de ce document, ces liens clickables ne
+vous servent à rien, et c&#8217;est votre punition pour avoir utilisé du papier
+au lieu du support électronique!</simpara></warning>
+<section id="_conventions_typographiques">
+<title>Conventions typographiques</title>
+<simpara>J&#8217;ai utilisé un certain nombre de conventions personnelles
+pour rendre ce document le plus agréable à lire et le plus
+utile possible, grâce notamment à la puissance d&#8217;<ulink url="http://www.methods.co.nz/asciidoc">AsciiDoc</ulink> :</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Des mises en formes particulières concernent les noms de
+personnalités (e.g., Jean-Michel Inglebert), etc.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Les références bibliographiques présentées en fin de document
+(cf. <link linkend="refs">Bibliographie</link>) sont complétées par le numéro des pages (lien clickable dans la
+version électronique de ce document) qui renvoie à l&#8217;endroit du document où elles sont
+citées.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Tous les <emphasis>flottants</emphasis> (figures, tableaux, définitions, etc.) sont
+listés à la suite de la table des matière.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Les termes anglais (souvent incontournables) sont repérés
+en <emphasis>italique</emphasis>, non pas pour indiquer qu&#8217;il s&#8217;agit d&#8217;un
+mot anglais, mais pour indiquer au lecteur que nous employons
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+</section>
+<section id="_pourquoi_parler_de_document">
+<title>Pourquoi parler de "document"?</title>
+<simpara>Parce que j&#8217;ignore la version que vous êtes en train de lire. A partir de l&#8217;<ulink url="main.txt">original</ulink>, plusieurs versions ont été générées grâce à <ulink url="http://www.methods.co.nz/asciidoc">AsciiDoc</ulink>:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+<ulink url="main.html">html</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<ulink url="main.slidy.html">présentation</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<ulink url="main.pdf">pdf</ulink>
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara>Si vous êtes curieux sur la production de document "par programmation", je vous invite à lire la <link linkend="Prog">section dédiée</link>.</simpara>
+</section>
+<section id="_utilisation_et_autres_mentions_légales">
+<title>Utilisation et autres mentions légales</title>
+<simpara>Les images qui ne sont pas libres de droit contiennent un lien vers les sites où je les ai "empruntées".</simpara>
+<sidebar>
+<simpara>Document généré par <ulink url="mailto:jean-michel.bruel@univ-tlse2.fr">Jean-Michel Bruel</ulink> via <ulink url="http://www.methods.co.nz/asciidoc">AsciiDoc</ulink> (version <literal>8.6.8</literal>) de <emphasis>Stuart Rackham</emphasis>.
+La version présentation a été générée en utilisant <ulink url="http://www.w3.org/Talks/Tools/Slidy2/">W3C HTML Slidy</ulink> &#169; de <emphasis>Dave Raggett</emphasis>, amélioré par <ulink url="mailto:jean-michel.inglebert@univ-tlse2.fr">Jean-Michel Inglebert</ulink>.
+Pour l&#8217;instant ce document est libre d&#8217;utilisation et géré par la <emphasis>Licence Creative Commons</emphasis>.
+<inlinemediaobject>
+  <imageobject>
+  <imagedata fileref="../images/icons/88x31.png"/>
+  </imageobject>
+  <textobject><phrase>Licence Creative Commons</phrase></textobject>
+</inlinemediaobject>
+<ulink url="http://creativecommons.org/licenses/by-sa/3.0/">licence Creative Commons Paternité - Partage à l&#39;Identique 3.0 non transposé</ulink>.</simpara>
+</sidebar>
+<simpara>N&#8217;hésitez pas à m&#8217;envoyer vos remarques en tout genre.</simpara>
+</section>
+</chapter>
+<part id="_partie_1_généralités">
+<title>Partie 1 : Généralités</title>
+<chapter id="_place_dans_la_formation">
+<title>Place dans la formation</title>
+<itemizedlist>
+<listitem>
+<simpara>
+Ce module est <emphasis role="strong">central</emphasis>
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+(presque) tous les autres tournent autour
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Fil conducteur
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<simpara>
+Le contenu est « flou »
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Le PPN ne décrit que les compétences
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Très variable en contenu
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Soyez critiques!
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+</itemizedlist>
+</chapter>
+<chapter id="_organisation">
+<title>Organisation</title>
+<itemizedlist>
+<listitem>
+<simpara>
+2 intervenants permanents
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Laurent Nonne
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<ulink url="mailto:jean-michel.bruel@univ-tlse2.fr">Jean-Michel Bruel</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+"interchangeables"
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<simpara>
+2 intervenants supplémentaires en TD/TP
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Cyril Charon
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Olivier Teste
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<simpara>
+Découpage Cours / TD / TP
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+3 semestres + 1
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Pour ce semestre (S1) :
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+16 semaines (devoir en 8ème semaine environ)
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+1H30 de Cours toutes les 2 semaines
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+1H30 de TD chaque semaine
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+</itemizedlist>
+</chapter>
+<chapter id="_généralités">
+<title>Généralités</title>
+<itemizedlist>
+<listitem>
+<simpara>
+Supports
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+disponibles sur Moodle
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Après ou avant les cours
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Après (pdf) pour ce genre de supports
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Avant (distribués en cours) pour les supports « techniques »
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+</itemizedlist>
+</listitem>
+</itemizedlist>
+<warning><simpara>uniquement une aide à vos notes personnelles</simpara></warning>
+<itemizedlist>
+<listitem>
+<simpara>
+Outils
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+UML
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+WinDesign
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+</itemizedlist>
+</chapter>
+<chapter id="_objectifs">
+<title>Objectifs</title>
+<simpara>Comme tout le reste du programme enseigné au DUT, ce cours est une adaptation du PPN :
+￼￼￼
+* Les organisations et leurs Systèmes d&#8217;Information
+* Le Génie Logiciel et la façon de concevoir un système de qualité
+* Les démarches/méthodes (Merise), notations (UML <indexterm>
+  <primary>UML</primary>
+</indexterm>) et outils nécessaires aux futurs métiers qui vous attendent</simpara>
+<simpara>Le module ACSI se décompose en deux parties principales (<emphasis role="strong">U</emphasis>nités de <emphasis role="strong">F</emphasis>ormation) :</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Modélisation des Systèmes d&#8217;Information
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Techniques Complémentaires de Production Logicielles
+</simpara>
+</listitem>
+</itemizedlist>
+<section id="_modélisation_des_systèmes_d_8217_information">
+<title>Modélisation des Systèmes d&#8217;Information</title>
+<itemizedlist>
+<listitem>
+<simpara>
+Objectifs :
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Connaître les outils de modélisation des systèmes d&#8217;information
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Connaître un atelier de génie logiciel
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<simpara>
+Compétences visées :
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Produire une spécification opérationnelle
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<simpara>
+Pré-requis :
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Algorithmique
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Théorie des ensembles, relations, logique
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Calcul des propositions et des prédicats
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<simpara>
+Programme :
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Organisations et systèmes d&#8217;information
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Langages de modélisation
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Méthodes d&#8217;analyse et de conception orientée objet
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Initiation à l&#8217;utilisation d&#8217;un Atelier de Génie Logiciel
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Etude de cas
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+</itemizedlist>
+<note><simpara>Ces éléments sont tirés du PPN.</simpara></note>
+</section>
+<section id="_techniques_complémentaires_de_production_logicielles">
+<title>Techniques Complémentaires de Production Logicielles</title>
+<itemizedlist>
+<listitem>
+<simpara>
+Objectifs :
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Connaître les principes de conception de l&#8217;Interface Homme-Machine
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Connaître les principes de mise en œuvre de la qualité logicielle
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<simpara>
+Compétences visées :
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Mettre en œuvre les principes de conception de l&#8217;I.H.M.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Mettre en œuvre une approche qualité dans le processus de production du
+logiciel
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<simpara>
+Pré-requis :
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Expérience en programmation et en modélisation des systèmes d&#8217;information
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<simpara>
+Programme :
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Qualité du logiciel : objectif du génie logiciel ; assurance qualité, normes,
+gestion des
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+projets logiciels et documentation, cycle de vie du logiciel, architecture logicielle
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Principes et techniques de base des tests : familles et niveaux de tests, outil de
+tests
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Interaction homme-machine : prise en compte de l&#8217;utilisateur, conception de
+l&#8217;I.H.M.,
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+composants graphiques, choix et recommandations ergonomiques, I.D.E.
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+</itemizedlist>
+<note><simpara>Ces éléments sont tirés du PPN.</simpara></note>
+</section>
+<section id="_interactions_avec_les_autres_cours">
+<title>Interactions avec les autres cours</title>
+<itemizedlist>
+<listitem>
+<simpara>
+Programmation
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Bases de données
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Gestion de projet
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+&#8230;
+</simpara>
+</listitem>
+</itemizedlist>
+<note>
+<simpara>Voici un exemple :</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+en S1/S2 : tests sur requêtes SQL
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+en S3 : dvpt site Web dy
+</simpara>
+</listitem>
+</itemizedlist>
+</note>
+</section>
+<section id="_concrètement">
+<title>Concrètement</title>
+<itemizedlist>
+<listitem>
+<simpara>
+Plusieurs matières
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Plusieurs intervenants
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Plusieurs supports de cours
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Organisation
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Merise
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+UML
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Systèmes d&#8217;Information
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Génie Logiciel
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<simpara>
+Nombreux exercices
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+sujets
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+corrections
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<simpara>
+Très nombreux supports Internet
+</simpara>
+</listitem>
+</itemizedlist>
+<warning>
+<simpara>Rien ne vaut la pratique elle-même!</simpara>
+</warning>
+</section>
+</chapter>
+<chapter id="_fondements">
+<title>Fondements</title>
+<simpara>Pour mener à bien le développement d&#8217;un système informatique industriel
+ou commercial, on ne peut pas improviser. Il s&#8217;agit d&#8217;un travail impliquant
+un grand nombre de personnes, des enjeux financiers souvent énormes.
+Le but de ce cours est de vous faire prendre conscience de cet état de fait
+autant que de vous donner les différentes techniques liées à cette activité.
+Au nom de quoi pouvez-vous avoir confiance dans les conseils présentés dans ce cours?
+Il ne faut pas justement! Il vous faut sans arrêt questionner, remettre en cause
+les idées reçues. Néanmoins, les éléments de ce cours ne sortent pas de l&#8217;imagination
+fertile de son auteur. Je m&#8217;inspire principalement de ceux qui ont l&#8217;expérience
+en la matière. C&#8217;est pourquoi vous trouverez un grand nombre de références et d&#8217;informations
+pour aller plus loin (généralement des URLs).</simpara>
+<simpara>L&#8217;objectif de ce cours est d&#8217;aborder la problématique du développement
+raisonné (de qualité, sûr, rapide, pas cher, etc.) de systèmes d&#8217;information.
+La méthode choisie est celle des études de cas et des applications concrètes.</simpara>
+<simpara>Les concepts abordés peuvent se classer en différents niveaux  <xref linkend="gram86"/> :</simpara>
+<variablelist>
+<varlistentry>
+<term>
+stratégies
+</term>
+<listitem>
+<simpara>
+        règles de comportement général guidant les choix du développeur (par exemple,
+        obtenir le plus rapidement possible un énoncé exécutable relève de la stratégie "prototyper").
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+tactiques
+</term>
+<listitem>
+<simpara>
+        décrivent des étapes logiques de développement conduisant à un énoncé possédant
+        certaines propriétés (par exemple, passer d&#8217;un énoncé imprécis à un énoncé totalement défini
+        relève de la tactique "spécifier").
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+paradigmes
+</term>
+<listitem>
+<simpara>
+        sont des étapes élémentaires de la construction d&#8217;un programme (par exemple,
+        expliciter une entité par un nom et une définition informelle revient à appliquer le paradigme "désigner").
+</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+<section id="_stratégies">
+<title>Stratégies</title>
+<simpara>On vous parlera ici de méthodes, de cycle de vie, de gestion de projet. Mais nous aborderons cela bien plus tard
+car dans un premier temps cela va être à la fois rébarbatif et très loin de vos préoccupations.</simpara>
+<simpara>Pour l&#8217;instant retenons des principes simples :</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Comprendre
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+S&#8217;organiser
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Modéliser
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+S&#8217;adapter
+</simpara>
+</listitem>
+</itemizedlist>
+<section id="_comprendre">
+<title>Comprendre</title>
+<blockquote>
+<attribution>
+Auguste Detoeuf
+<citetitle>découvert dans Le Lexique d'Habrias</citetitle>
+</attribution>
+<simpara>Théoricien : individu qui n&#8217;est pas de votre avis.</simpara>
+</blockquote>
+<simpara>Le problème, l&#8217;environnement, les outils à maîtriser, la solution attendue, le domaine métier, etc.</simpara>
+</section>
+<section id="_s_8217_organiser">
+<title>S&#8217;organiser</title>
+<blockquote>
+<attribution>
+N. Boileau
+</attribution>
+<simpara>Vingt fois sur le métier remettez votre ouvrage :
+Polissez-le sans cesse et le repolissez ;
+Ajoutez quelquefois, et souvent effacez.</simpara>
+</blockquote>
+<simpara>Descartes : diviser pour mieux s&#8217;atteler à chaque tâche.</simpara>
+</section>
+<section id="_modéliser">
+<title>Modéliser</title>
+<blockquote>
+<attribution>
+N. Boileau
+</attribution>
+<simpara>Ce que l&#8217;on conçoit bien s'énonce clairement,
+Et les mots pour le dire arrivent aisément.</simpara>
+</blockquote>
+<simpara>Pour s&#8217;abstraire.</simpara>
+</section>
+<section id="_s_8217_adapter">
+<title>S&#8217;adapter</title>
+<simpara>Se mettre à jour des techniques. Adapter sa façon de procéder au contexte (au poste que l&#8217;on occupe
+par exemple). Voir <xref linkend="feedback"/>.</simpara>
+</section>
+</section>
+<section id="_tactiques">
+<title>Tactiques</title>
+<simpara>Liste de tactiques :</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+spécifier
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+décomposition (d&#8217;un problème en sous-problème)
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+itération
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+induction (construire un énoncé récursif)
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+approximation (organiser la résolution d&#8217;un problème en étudiant d&#8217;abord un nouveau problème, considéré comme plus simple)
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+généralisation (formuler et résoudre le problème à un niveau d&#8217;abstraction plus général pour permettre ensuite
+        un plus grand nombre d&#8217;identifications)
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+réutilisation (exploiter au mieux tout travail déjà fait, cf. aussi <xref linkend="DRY"/>)
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_paradigmes">
+<title>Paradigmes</title>
+<simpara>Liste de paradigmes :</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+désigner
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+typer (décrire les proriétés pertinentes d&#8217;une entité)
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+affaiblir (transformer un énoncé pour en réduire la complexité)
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+renforcer (compléter un énoncé par des contraintes supplémentaires)
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+décomposer par cas (lorsqu&#8217;on distingue plusieurs traitements suivant
+        les données du problème à un endroit donné)
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+sérialiser (pour définir un résultat, utiliser un résultat intermédiaire <literal>x</literal> à
+        partir des données, puis exprimer le résultat à partir de <literal>x</literal>)
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+répartir (définir séparément un certain nombre de sous-résultats, qu&#8217;il s&#8217;agit ensuite de
+        composer entre eux pour obtenir le résultat attendu)
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+identifier (identifier deux problèmes consiste à reconnaître leur identité au-delà
+        des différences de forme de leurs énoncés)
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+paramétrer (faire abstraction des valeurs particulières de certaines entités,
+        parce qu&#8217;elles ne sont pas pertinentes pour l'élaboration de la solution visée)
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+représenter (choisir, pour certaines entités, les types, les relations et le moyen d&#8217;expression adéquats)
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara>Les tactiques sont des compositions de paradigmes.
+Ainsi, la mise en oeuvre de la tactique d&#8217;approximation consiste à appliquer le paradigme
+<emphasis role="strong">affaiblir</emphasis>, et le cas échéant le paradigme <emphasis role="strong">renforcer</emphasis> pour revenir au problème posé.</simpara>
+</section>
+<section id="_le_manifeste_agile">
+<title>Le Manifeste Agile</title>
+<simpara>Le <emphasis role="strong">Manifeste Agile</emphasis> (<emphasis>Agile Manifesto</emphasis> <xref linkend="HighsmithFowler2001"/>)
+        est un ensemble de principes (voir aussi <xref linkend="1030005"/> pour une analyse plus récente).</simpara>
+<example id="Satisfaction">
+<title>Satisfaction</title>
+<simpara>Notre plus haute priorité est de satisfaire le client
+en lui livrant rapidement, et ce, de façon continue
+un logiciel de qualité.</simpara>
+</example>
+<example id="feedback">
+<title>Améliorations</title>
+<simpara>À intervalles réguliers, l'équipe réfléchit sur une façon
+de devenir plus efficace, puis adapte et ajuste son comportement en conséquence.</simpara>
+</example>
+</section>
+</chapter>
+</part>
+<part id="_partie_2_merise">
+<title>Partie 2 : Merise</title>
+<simpara>Plan de cette partie :</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Pourquoi une méthode ?
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Pourquoi MERISE ?
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Concepts clés et principes de bases
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Les flux
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Les traitements
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Les données
+</simpara>
+</listitem>
+</itemizedlist>
+<chapter id="_pourquoi_une_méthode">
+<title>Pourquoi une méthode ?</title>
+<itemizedlist>
+<listitem>
+<simpara>
+On peut faire ce qu&#8217;on veut :
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+si on est seul
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+si on a le temps
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+si on n&#8217;a pas de comptes à rendre
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+si les erreurs n&#8217;ont pas de conséquences
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<simpara>
+Pour tout le reste
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+besoin de communiquer
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+besoin de s&#8217;abstraire de la complexité
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+besoin de rendre des comptes
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+</itemizedlist>
+</chapter>
+<chapter id="_pourquoi_merise">
+<title>Pourquoi MERISE ?</title>
+<itemizedlist>
+<listitem>
+<simpara>
+méthode très utilisée <emphasis role="strong">en France</emphasis>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+des générations de programmeurs l&#8217;ont apprise
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+elle permet donc de servir de <emphasis role="strong">référence</emphasis> pour les autres approches
+</simpara>
+</listitem>
+</itemizedlist>
+</chapter>
+<chapter id="_concepts_clés_et_principes_de_bases">
+<title>Concepts clés et principes de bases</title>
+<itemizedlist>
+<listitem>
+<simpara>
+Approche systémique
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Différents niveaux d&#8217;abstraction
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Différentes considérations ("vues")
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Démarche globale
+</simpara>
+</listitem>
+</itemizedlist>
+<section id="_approche_systémique">
+<title>Approche systémique</title>
+<simpara>On complète Descartes :</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+<emphasis role="strong">logique ternaire</emphasis> ou conjonctive (qui relie) plutôt que logique binaire ou disjonctive (qui sépare)
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+centrée sur le <emphasis role="strong">but à atteindre</emphasis> (finalité) plutôt que sur la recherche des causes (causalité)
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+relationnelle et <emphasis role="strong">globale</emphasis> plutôt qu&#8217;analytique
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+orientée par le <emphasis role="strong">présent/futur</emphasis> (prospective) plutôt que par le passé/présent (déterminisme)
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ouverte sur la <emphasis role="strong">diversité</emphasis> des réalités et la pluralité des solutions plutôt que sur la quête de certitudes et de réponses "universelles"
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+propice à l'émergence de la <emphasis role="strong">nouveauté</emphasis> et à l&#8217;invention (moins réductrice)
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_différents_niveaux_d_8217_abstraction">
+<title>Différents niveaux d&#8217;abstraction</title>
+<variablelist>
+<varlistentry>
+<term>
+Conceptuel
+</term>
+<listitem>
+<itemizedlist>
+<listitem>
+<simpara>
+quoi?
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+Organisationnel
+</term>
+<listitem>
+<itemizedlist>
+<listitem>
+<simpara>
+d&#8217;où?
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+qui?
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+quand?
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+Logique
+</term>
+<listitem>
+<itemizedlist>
+<listitem>
+<simpara>
+quand? où? comment?
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+indépendamment de l'"implémentation"
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+Technique
+</term>
+<listitem>
+<itemizedlist>
+<listitem>
+<simpara>
+comment?
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+le concret
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+</varlistentry>
+</variablelist>
+</section>
+<section id="_différentes_considérations_vues">
+<title>Différentes considérations ("vues")</title>
+<variablelist>
+<varlistentry>
+<term>
+Flux
+</term>
+<listitem>
+<itemizedlist>
+<listitem>
+<simpara>
+ce qui circule
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+architecture
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+Traitements
+</term>
+<listitem>
+<itemizedlist>
+<listitem>
+<simpara>
+dynamique
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+comment le système se comporte
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+Données
+</term>
+<listitem>
+<itemizedlist>
+<listitem>
+<simpara>
+statique
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ce qui est manipulé
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+</varlistentry>
+</variablelist>
+</section>
+<section id="_démarche_globale">
+<title>Démarche globale</title>
+<simpara>Intersection entre vues et niveaux</simpara>
+<table id="Matrice"
+frame="all"
+rowsep="1" colsep="1"
+>
+<title>La carte de base</title>
+<?dbhtml table-width="50%"?>
+<?dbfo table-width="50%"?>
+<?dblatex table-width="50%"?>
+<tgroup cols="4">
+<colspec colname="col_1" colwidth="53*"/>
+<colspec colname="col_2" colwidth="53*"/>
+<colspec colname="col_3" colwidth="53*"/>
+<colspec colname="col_4" colwidth="53*"/>
+<thead>
+<row>
+<entry align="left" valign="top">                                       </entry>
+<entry align="left" valign="top"> Flux        </entry>
+<entry align="left" valign="top"> Traitements </entry>
+<entry align="left" valign="top"> Données</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left" valign="top"><simpara><emphasis role="strong">Conceptuel</emphasis></simpara></entry>
+<entry align="left" valign="top"><simpara></simpara></entry>
+<entry align="left" valign="top"><simpara></simpara></entry>
+<entry align="left" valign="top"><simpara></simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><emphasis role="strong">Organisationel</emphasis></simpara></entry>
+<entry align="left" valign="top"><simpara></simpara></entry>
+<entry align="left" valign="top"><simpara></simpara></entry>
+<entry align="left" valign="top"><simpara></simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><emphasis role="strong">Technique</emphasis></simpara></entry>
+<entry align="left" valign="top"><simpara></simpara></entry>
+<entry align="left" valign="top"><simpara></simpara></entry>
+<entry align="left" valign="top"><simpara></simpara></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<simpara>Démarche par étape</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Le schéma directeur
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+L'étude préalable
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+L'étude détaillée
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+La réalisation
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+La mise en œuvre
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+La maintenance
+</simpara>
+</listitem>
+</itemizedlist>
+<note><simpara>On verra ça plus tard</simpara></note>
+</section>
+</chapter>
+<chapter id="_les_flux">
+<title>Les flux</title>
+</chapter>
+<chapter id="_les_traitements">
+<title>Les traitements</title>
+</chapter>
+<chapter id="_les_données">
+<title>Les données</title>
+</chapter>
+</part>
+<part id="_partie_3_si">
+<title>Partie 3 : SI</title>
+</part>
+<part id="_partie_4_si_et_organisations">
+<title>Partie 4 : SI et Organisations</title>
+</part>
+<part id="_partie_5_uml">
+<title>Partie 5 : UML</title>
+<chapter id="Exos">
+<title>Exercices de révision</title>
+<simpara>Reprendre ici les questions des chapitres (à organiser en fichiers!) et
+également le <ulink url="test-QCM4.txt">quizz</ulink>.</simpara>
+</chapter>
+<chapter id="_liens_utiles">
+<title>Liens utiles</title>
+<itemizedlist>
+<listitem>
+<simpara>
+Sites officiels
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Le site de l&#8217;association <ulink url="http://www.sysml-france.org">SysML-France</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Le site de l&#8217;<ulink url="http://www.omg.org/">OMG</ulink>  (Object Management Group)
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Le portail <ulink url="http://www.omgwiki.org/OMGSysML/">SysML</ulink> de l&#8217;OMG (Object
+        Management Group)
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<ulink url="http://www.omg.org/spec/SysML/1.3/PDF">La spécification elle-même</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Le site de l&#8217;<ulink url="http://www.incose.org/">INCOSE</ulink> (International Council on
+        Systems Engineering)
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Le site de l&#8217;<ulink url="http://www.afis.fr/">AFIS</ulink> (Association Française
+        d&#8217;Ingénierie Système)
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<simpara>
+Blogs
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Le site de <ulink url="http://model-based-systems-engineering.com/">Tim Weilkiens</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+La démarche <ulink url="http://caminao.wordpress.com/">Caminao</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<ulink url="http://www.omgwiki.org/MBSE/doku.php">Un WiKi avec de nombreux exemples</ulink>
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<simpara>
+Outils SysML
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+<ulink url="http://www.topcased.org/">TopCased</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<ulink url="http://www.eclipse.org/modeling/mdt/papyrus/">Papyrus</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<ulink url="http://www.artisansw.com/">Artisan</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<ulink url="http://www-01.ibm.com/software/rational/products/rhapsody">Rhapsody</ulink>
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<simpara>
+Outils de production
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Les conseils généraux de Scott Ambler sur <ulink url="http://www.ambysoft.com/books/bookWriting.html">Ecrire un livre technique</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Les conseils techniques de Matthew Mc Cullough sur <ulink url="https://gist.github.com/1609255">Ecrire un livre technique</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<ulink url="http://www.methods.co.nz/asciidoc">AsciiDoc</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<ulink url="http://johnmacfarlane.net/pandoc/">Pandoc</ulink>
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<simpara>
+Divers
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Pour en savoir plus sur l&#8217;<ulink url="http://jmb.c.la">auteur</ulink>
+</simpara>
+<literallayout class="monospaced">The specification itself:</literallayout>
+</listitem>
+</itemizedlist>
+</listitem>
+</itemizedlist>
+</chapter>
+<chapter id="_a_propos_de_ce_document_8230">
+<title>A propos de ce document&#8230;</title>
+<sidebar>
+<simpara>Document généré par <ulink url="mailto:jean-michel.bruel@univ-tlse2.fr">Jean-Michel Bruel</ulink> via <ulink url="http://www.methods.co.nz/asciidoc">AsciiDoc</ulink> (version <literal>8.6.8</literal>) de <emphasis>Stuart Rackham</emphasis>.
+La version présentation a été générée en utilisant <ulink url="http://www.w3.org/Talks/Tools/Slidy2/">W3C HTML Slidy</ulink> &#169; de <emphasis>Dave Raggett</emphasis>, amélioré par <ulink url="mailto:jean-michel.inglebert@univ-tlse2.fr">Jean-Michel Inglebert</ulink>.
+Pour l&#8217;instant ce document est libre d&#8217;utilisation et géré par la <emphasis>Licence Creative Commons</emphasis>.
+<inlinemediaobject>
+  <imageobject>
+  <imagedata fileref="../images/icons/88x31.png"/>
+  </imageobject>
+  <textobject><phrase>Licence Creative Commons</phrase></textobject>
+</inlinemediaobject>
+<ulink url="http://creativecommons.org/licenses/by-sa/3.0/">licence Creative Commons Paternité - Partage à l&#39;Identique 3.0 non transposé</ulink>.</simpara>
+</sidebar>
+</chapter>
+</part>
+<appendix id="_annexes">
+<title>Annexes</title>
+<simpara>One or more optional appendixes go here at section level zero.</simpara>
+<note><simpara>Preface and appendix subsections start out of sequence at level
+2 (level 1 is skipped).  This only applies to multi-part book
+documents.</simpara></note>
+<chapter id="_faq">
+<title>FAQ</title>
+<simpara>Cette <emphasis><emphasis role="strong">F</emphasis>requently <emphasis role="strong">A</emphasis>sked <emphasis role="strong">Q</emphasis>uestion</emphasis> a été construite par expérience, en regroupant
+les questions des étudiants durant mes différentes interventions.</simpara>
+<section id="_exemple">
+<title>Exemple</title>
+</section>
+<section id="_divers">
+<title>Divers</title>
+<simpara>Quelques autres questions que je laisse à votre sagacité :</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+blabla
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="Prog">
+<title>A propos de la production de documents par programmation</title>
+<simpara>blabla &#8230;</simpara>
+</section>
+</chapter>
+</appendix>
+<bibliography id="refs">
+<title>Bibliographie</title>
+<simpara>Les références&#8230;</simpara>
+<bibliodiv>
+<bibliomixed>
+<bibliomisc>
+<anchor id="gram86" xreflabel="[gram86]"/>[gram86] Ana Gram. Raisonner pour programmer. Dunod, 1986.
+</bibliomisc>
+</bibliomixed>
+<bibliomixed>
+<bibliomisc>
+<anchor id="HighsmithFowler2001" xreflabel="[HighsmithFowler2001]"/>[HighsmithFowler2001] Jim Highsmith and Martin Fowler. The agile manifesto. Software Development Magazine, 9(8) :29–30, 2001.
+</bibliomisc>
+</bibliomixed>
+<bibliomixed>
+<bibliomisc>
+<anchor id="1030005" xreflabel="[1030005]"/>[1030005] Kieran Conboy and Brian Fitzgerald. Toward a conceptual framework of agile methods : a study of agility in different disciplines. In WISER ’04 : Proceedings of the 2004 ACM workshop on Interdisciplinary software engineering research, pages 37–44, New York, NY, USA, 2004. ACM.
+</bibliomisc>
+</bibliomixed>
+<bibliomixed>
+<bibliomisc>
+<anchor id="Roques2007a" xreflabel="[Roques2007a]"/>[Roques2007a] Les Cahiers du Programmeur, UML2, Pascal Roques 3ème Edition, Eyrolles, 2007.
+</bibliomisc>
+</bibliomixed>
+<bibliomixed>
+<bibliomisc>
+<anchor id="Roques2007b" xreflabel="[Roques2007b]"/>[Roques2007b] UML 2 par la pratique, Pascal Roques 6ème Edition, Eyrolles, 2007.
+</bibliomisc>
+</bibliomixed>
+<bibliomixed>
+<bibliomisc>
+<anchor id="Blanc2006" xreflabel="[Blanc2006]"/>[Blanc2006] UML pour les développeurs, Xavier Blanc, Eyrolles, 2006.
+</bibliomisc>
+</bibliomixed>
+<bibliomixed>
+<bibliomisc>
+<anchor id="Longepe2006" xreflabel="[Longepe2006]"/>[Longepe2006] Le projet d&#8217;urbanisation du S.I., C. Longépé, 3ème édition, Dunod, 2006.
+</bibliomisc>
+</bibliomixed>
+<bibliomixed>
+<bibliomisc>
+<anchor id="Gillet2008" xreflabel="[Gillet2008]"/>[Gillet2008] Management des SI, M. &amp; P. Gillet, Dunod, 2008.
+</bibliomisc>
+</bibliomixed>
+</bibliodiv>
+</bibliography>
+<glossary id="_glossaire">
+<title>Glossaire</title>
+<note>
+<title>Ressources</title>
+<simpara>Les définitions ci-dessous sont regroupées à titre indicatif. Les sources utilisées sont :</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Glossaire du <ulink url="http://www.sei.cmu.edu/architecture/start/glossary">Software Engineering Institute</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<ulink url="http://www.computer-dictionary-online.org/">IEEE Computer Dictionary Online</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<ulink url="http://fr.wikipedia.org/">Wikipedia</ulink> –- Version française￼￼
+</simpara>
+</listitem>
+</itemizedlist>
+</note>
+<glossentry>
+<glossterm>
+<anchor id="DRY" xreflabel="[DRY]"/>DRY
+</glossterm>
+<glossdef>
+<simpara>
+        <emphasis><emphasis role="strong">D</emphasis>on&#8217;t <emphasis role="strong">R</emphasis>epeat <emphasis role="strong">Y</emphasis>ourself</emphasis> :
+</simpara>
+</glossdef>
+</glossentry>
+<glossentry>
+<glossterm>
+PPN
+</glossterm>
+<glossdef>
+<simpara>
+        <emphasis role="strong">P</emphasis>rogramme <emphasis role="strong">P</emphasis>édagogique <emphasis role="strong">N</emphasis>ational
+</simpara>
+</glossdef>
+</glossentry>
+<glossentry>
+<glossterm>
+OMG
+</glossterm>
+<glossdef>
+<simpara>
+        <emphasis><emphasis role="strong">O</emphasis>bject <emphasis role="strong">M</emphasis>anagement <emphasis role="strong">G</emphasis>roup</emphasis> : L&#8217;organisme international chargé des principales normes liés à l&#8217;objet (CORBA, UML, etc.).
+</simpara>
+</glossdef>
+</glossentry>
+<glossentry>
+<glossterm>
+<anchor id="SysML" xreflabel="[SysML]"/>SysML
+</glossterm>
+<glossdef>
+<simpara>
+                <emphasis><emphasis role="strong">Sys</emphasis>tem <emphasis role="strong">M</emphasis>odeling <emphasis role="strong">L</emphasis>anguage</emphasis> &#8482; : le langage de modélisation de systèmes maintenu par l&#8217;OMG.
+</simpara>
+</glossdef>
+</glossentry>
+<glossentry>
+<glossterm>
+TRL
+</glossterm>
+<glossdef>
+<simpara>
+        <emphasis><emphasis role="strong">T</emphasis>echnology <emphasis role="strong">R</emphasis>eadiness <emphasis role="strong">L</emphasis>evel</emphasis> : système de mesure employé par des agences gouvernementales américaines et par de nombreuses compagnies (et agences) mondiales afin d'évaluer le niveau de maturité d&#8217;une technologie (cf. <ulink url="http://fr.wikipedia.org/wiki/Technology_Readiness_Level">Wikipedia</ulink>).
+</simpara>
+</glossdef>
+</glossentry>
+<glossentry>
+<glossterm>
+URL
+</glossterm>
+<glossdef>
+<simpara>
+        <emphasis><emphasis role="strong">U</emphasis>niversal <emphasis role="strong">R</emphasis>essource <emphasis role="strong">L</emphasis>ocator</emphasis> : xxx
+</simpara>
+</glossdef>
+</glossentry>
+</glossary>
+<index id="_index">
+<title>Index</title>
+</index>
+</book>

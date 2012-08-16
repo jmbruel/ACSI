@@ -1,0 +1,19 @@
+== Liens utiles
+
+- Merise
+	* http://www.compucycles.com/nouveausite/articles/Merise/Article_07.htm
+	* http://www.wikituto.org/index.php/Catégorie:Cours_Merise
+- Blogs
+- Outils
+	* http://www.topcased.org/[TopCased]
+    * http://www.eclipse.org/modeling/mdt/papyrus/[Papyrus]
+    * http://www.artisansw.com/[Artisan]
+	* http://www-01.ibm.com/software/rational/products/rhapsody[Rhapsody]
+- Outils de production
+	* Les conseils généraux de Scott Ambler sur http://www.ambysoft.com/books/bookWriting.html[Ecrire un livre technique]
+	* Les conseils techniques de Matthew Mc Cullough sur https://gist.github.com/1609255[Ecrire un livre technique]
+	* {asciidoc}
+	* {pandoc}
+- Divers
+	* Pour en savoir plus sur l'http://jmb.c.la[auteur]
+    

@@ -1,0 +1,89 @@
+= make.txt : an AsciiDoc poor man Makefile
+
+
+// edit accordingly to your AsciiDoc/OS settings
+ifdef::nt[]
+:asciidocdir: X:\\path\\to\\asciidoc\\
+:asciidocdir: D:\\JMI\\tools\\asciidoc866\\
+:asciidocbin: {asciidocdir}asciidoc.py
+:cp: copy
+:ditaajar: X:\\path\\to\\ditaa\\ditaa0_9.jar
+:dbdir: X:\\path\\to\\docbook\\
+:dbdir: D:\\JMI\\tools\\docbook\\
+:xsltprocbin: {dbdir}bin\\xsltproc
+:fopbin: {dbdir}fop\\fop.bat
+endif::nt[]
+
+ifdef::posix[]
+:asciidocdir: /opt/local/etc/asciidoc/
+:asciidocbin: /opt/local/bin/asciidoc.py
+:cp: cp 
+:ditaajar: /Users/bruel/dev/ditaa0_9/ditaa0_9.jar
+:style: /Users/bruel/.asciidoc/backends/slidy2/doc/keycap.css
+endif::posix[]
+
+:scriptsdir: {asciidocdir}javascripts
+:stylesdir: {asciidocdir}stylesheets
+
+// output files relative paths
+:iconsdir: ../images/icons
+
+// remove exclamation mark (!) to select output
+:html:
+:slidy:
+:pdf!:
+:ditaa:
+
+// remove exclamation mark (!) to select audience
+:local:
+
+// remove exclamation mark (!) to select document source
+:doc1: main
+:doc2!: 
+
+// remove exclamation mark (!) to force compilation
+:force:
+
+// global settings
+:doc_version: 1.0
+
+// generic commands defs
+:cmddb: {asciidocbin} -b docbook  -a revnumber={doc_version}
+
+:cmdfo: {xsltprocbin} --stringparam ulink.show 0 --stringparam callout.graphics 1 --stringparam navig.graphics 1 --stringparam admon.textlabel 0 --stringparam admon.graphics 1 --stringparam admon.graphics.path ../images/icons/ --stringparam callout.graphics.path ./images/icons/callouts/ --stringparam navig.graphics.path ../images/icons/
+
+:cmdpdf: a2x -v -f pdf -L --fop --icons-dir=../images/icons -a revnumber={doc_version}
+
+:cmdditaa: java -jar {ditaajar} -r -o 
+
+// backends plugins /////////////////////////////////////////
+== backends plugins list
+os:{asciidocbin} --backend list[]
+
+
+// local outputs /////////////////////////////////////////
+ifdef::local[]
+
+== local outputs
+
+:cmdhtml: {asciidocbin} {stylesdir? -a stylesdir={stylesdir}} {scriptsdir? -a scriptsdir={scriptsdir}} -a numbered -a icons {iconsdir? -a iconsdir={iconsdir}} {style? -a stylesheet={style}} -a badges -a toc -a revnumber={doc_version} -a data-uri
+
+:cmdslidy: {asciidocbin} --backend slidy2 -a numbered -a icons -a badges  {iconsdir? -a iconsdir=../images/icons} {style? -a stylesheet={style}} -a revnumber={doc_version} -a data-uri -a slide
+
+{slidy}asciidoc:{cmdslidy}[{doc1}.txt,{doc1}.slidy.html]
+
+{nt}{pdf}asciidoc:{cmddb}[{doc1}.txt,{doc1}.xml]
+{nt}{pdf}asciidoc:{cmddb}[{doc2}.txt,{doc2}.xml]
+
+{nt}{pdf}os:{cmdfo} --output {doc1}S1.fo {asciidocdir}docbook-xsl/fo.xsl[{doc1}.xml]
+{nt}{pdf}os:{cmdfo} --output {doc2}.fo {asciidocdir}docbook-xsl/fo.xsl[{doc2}.xml]
+
+{nt}{pdf}os:{fopbin}[-fo {doc1}.fo -pdf ,{doc1}.pdf]
+{nt}{pdf}os:{fopbin}[-fo {doc2}.fo -pdf ,{doc2}.pdf]
+
+{posix}{pdf}os:{cmdpdf}[{doc1}.txt]
+{posix}{pdf}os:{cmdpdf}[{doc2}.txt]
+
+{html}asciidoc:{cmdhtml} -a info1[{doc1}.txt,{doc1}.html]
+
+endif::local[]
