@@ -1,0 +1,24 @@
+window_sizes 1280 752 300 974 559 136
+diagrams
+  usecasediagram_ref 128056 // Exemple1
+    779 447 100 4 0 0
+  active  classdiagram_ref 128184 // Exemple1
+    779 447 140 4 0 0
+  deploymentdiagram_ref 128312 // test
+    779 447 100 4 0 0
+  classdiagram_ref 128440 // Exp
+    779 447 100 4 0 0
+  classdiagram_ref 128568 // exp
+    779 447 100 4 0 0
+end
+show_stereotypes
+selected class_ref 128696 // Voitures
+open
+  usecaseview_ref 128056 // Vue Systeme
+  classview_ref 128056 // Elements
+  deploymentview_ref 128056 // test
+  classview_ref 128184 // Vue systeme
+  classview_ref 128312 // exp
+end
+end
+verbose

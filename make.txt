@@ -19,7 +19,9 @@ ifdef::posix[]
 :asciidocbin: /opt/local/bin/asciidoc.py
 :cp: cp 
 :ditaajar: /Users/bruel/dev/ditaa0_9/ditaa0_9.jar
-:style: /Users/bruel/.asciidoc/backends/slidy2/doc/keycap.css
+:styleslidy: /Users/bruel/.asciidoc/backends/slidy2/doc/keycap.css
+:style: /Users/bruel/dev/asciidoc/ACSI/stylesheets/jmbslidy2.css
+//:style: {styleslidy}
 endif::posix[]
 
 :scriptsdir: {asciidocdir}javascripts
@@ -32,7 +34,7 @@ endif::posix[]
 :html:
 :slidy:
 :pdf!:
-:ditaa:
+:ditaa!:
 
 // remove exclamation mark (!) to select audience
 :local:
@@ -68,7 +70,7 @@ ifdef::local[]
 
 :cmdhtml: {asciidocbin} {stylesdir? -a stylesdir={stylesdir}} {scriptsdir? -a scriptsdir={scriptsdir}} -a numbered -a icons {iconsdir? -a iconsdir={iconsdir}} {style? -a stylesheet={style}} -a badges -a toc -a revnumber={doc_version} -a data-uri
 
-:cmdslidy: {asciidocbin} --backend slidy2 -a numbered -a icons -a badges  {iconsdir? -a iconsdir=../images/icons} {style? -a stylesheet={style}} -a revnumber={doc_version} -a data-uri -a slide
+:cmdslidy: {asciidocbin} --backend slidy2 -a numbered -a icons -a badges  {iconsdir? -a iconsdir=../images/icons} {styleslidy? -a stylesheet={style}} -a revnumber={doc_version} -a data-uri -a slide
 
 {slidy}asciidoc:{cmdslidy}[{doc1}.txt,{doc1}.slidy.html]
 

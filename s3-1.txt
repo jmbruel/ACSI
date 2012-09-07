@@ -1,0 +1,346 @@
+:incremental:
+:duration: 85
+
+== Le Diagramme des Cas d’Utilisation
+
+Le *Diagramme des Cas d'Utilisation* est un modèle UML permettant de représenter :
+
+- les *UC* (_Use Case_ ou Cas d’Utilisation)
+- les *acteurs* (principaux et secondaires)
+- les *relations* entre acteurs et UC
+
+[NOTE]
+=====================================================================
+On notera simplement +UC+ pour signifier "diagramme des UC"
+=====================================================================
+
+=== Définition et concepts
+
+==== Cas d'Utilisation (_Use Case_ ou UC en abrégé).
+
+Un cas d'utilisation représente un ensemble de *scénarios* que le système doit exécuter pour produire un résultat observable par un *acteur*.
+
+===== Exemple d'UC
+
+Retrait par carte bancaire
+
+Scénario principal::
+	L'UC démarre lorsque le Guichet Automatique Bancaire (GAB) demande au client son numéro confidentiel après l’introduction de sa CB. Le client 
+	entre son code et valide son entrée. Le GAB contrôle la validité du code. Si le code est valide, le GAB autorise 
+	le retrait et l’UC se termine.
+Scénario alternatif n°1 ::
+	Le client peut à tout instant annuler l'opération. La carte est éjectée et l'UC se termine.
+Exemple de codification de l'UC:: 
+	UC01 ou RetraitCB (pour Retrait par carte bleue)
+
+===== Précisions
+
+Un cas d'utilisation peut être précisé par : 
+
+- une description textuelle
+- un ou des diagrammes UML (séquence, activité)
+
+[NOTE]
+=====================================================================
+Dans les outils, cette "précision" se manifeste par le fait que l'on "attache"
+généralement un diagramme de séquence à un cas d'utilisation (clic droit sur un UC -> nouveau +seq+).
+=====================================================================
+
+==== Acteur
+
+Un acteur peut être une personne, un ensemble de personnes, un logiciel, un processus qui interagit avec un ou plusieurs UC.
+
+On peut trouver plusieurs types d'acteurs :
+
+* extérieurs au système (cf. +actor+ <<uc>>)
+** les acteurs principaux (= acteurs internes du MOT de Merise)
+** les acteurs secondaires (= acteurs externes du MOT de Merise)
+** les administrateurs (ils gèrent le système : données, sécurité, droits d'accès, utilisateurs...)
+* types d'acteurs prédéfinis dans UML :
+** +\<<metaclass>>+
+** +\<<utility>>+
+** +\<<process>>+
+** +\<<thread>>+
+** +\<<powertype>>+
+
+==== Relations entre UC 
+
+Extension (+\<<extend>>+)::
+	Indique que l’UC source est *éventuellement* exécutée en complément de l’UC destination (cas particulier, erreur...)
+Inclusion (+\<<include>>+)::
+	Indique qu’un UC est inclus *obligatoirement* dans un autre UC (notion de sous-programme par exemple)
+Généralisation::
+	Relation entre un UC général et un autre plus spécialisé qui hérite de ses caractéristiques et en rajoute
+
+ifdef::backend-slidy2[<<<]
+
+[[uc]]
+.Notation dans le diagramme d'UC
+image::{dessins}/UC.png["Diagramme d'UC",width=35%"]
+
+[TIP]
+=====================================================================
+On n'utilise généralement +\<<include>>+ que dans le cas où le sous-cas d'utilisation est
+inclut dans plusieurs UC. Si ce n'est pas le cas, il est généralement englobé dans l'UC.
+=====================================================================
+
+
+=== Pour construire un UC (de manière générale)
+
+. identifier les acteurs
+. identifier les cas d'utilisation
+. structurer en _packages_
+. ajouter les relations
+. finaliser les diagrammes de cas d'utilisation
+
+=== Obtention des UC dans le cadre de ce cours
+
+Deux cas peuvent se présenter :
+
+Un nouveau MOT a été construit::
+	Chaque tâche informatique du nouveau MOT devient un UC
+Un MOT n'a pas été nécessaire::
+	Les cas d'utilisation doivent directement être extraits des interviews d’utilisateurs ou des compte-rendus de 
+	réunions (cf. cas général ci-dessus).
+
+=== Exemples complets
+
+==== Service comptable
+
+[[ucexp]]
+.Exemple de diagramme d'UC
+image::{images}/UC.png["Exemple de Diagramme d'UC",width="80%"]
+
+==== Gestion des notes
+
+[[ucexp2]]
+.Autre exemple de diagramme d'UC
+image::{images}/uc2.png["Exemple de Diagramme d'UC",width="70%"]
+
+== Opérations, Paquetages et Java
+
+=== Opérations
+
+Un ensemble d'opérations définit le comportement de l’objet (ex : +setVitesse(valeur)+), 
+c’est à dire son interface.
+
+[[classeVoit]]
+.Exemple de classe avec opération
+image::{images}/voiture.png["Exemple de classe avec opération",width="20%"] 
+
+[[classeVoit]]
+.Opération et objet
+image::{dessins}/encapsulation.png["Opérations et objet",width="40%"]
+
+=== Opérations et Visibilité
+
+L'*encapsulation* ::
+
+* facilite l'évolution d'une application car elle stabilise l'utilisation des objets. On peut modifier l'implémentation des attributs d'un objet sans modifier son interface
+* garantit l'intégrité des données, car elle permet d'interdire l'accès direct aux attributs des objets (utilisation d’_accesseurs_). Un objet n’est manipulable qu’à travers son interface
+
+[TIP]
+=====================================================================
+Rappel : chaque opération a un argument implicite qui est l’objet sur lequel elle porte. +
++Int getKilometrage( );+ 
+
+Exemple : +varKm = v2.getKilometrage( );+
+=====================================================================
+
+ifdef::backend-slidy2[<<<]
+
+Type d’opérations ::
+
+Un accesseur +getX()+ permet de consulter l’attribut +X+ de l’objet, le modificateur +setX(val)+ permet de modifier la valeur de l’attribut +X+ avec le paramètre +val+. Par défaut, on doit avoir un accesseur par attribut privé.
+
+Visibilité ::
+Il existe 4 niveaux de visibilité des attributs et des opérations :
+
+- +-+ *privé* (l’élément n’est visible que par la classe)
+- +++ *public* (l’élément est visible par toutes les autres classes)
+- +#+ *protégé* (l’élément est visible par la classe et ses sous-classes) 
+- +~+ *package* (l’élément est visible par la classe et les classes du même paquetage)
+
+=== Paquetages
+
+Les paquetages permettent de regrouper les éléments de modélisation. Ils peuvent contenir d’autres sous-paquetages sans limites de niveaux.
+
+Le paquetage est un espace de *nommage*.
+
+Un paquetage peut importer une classe issue d’un autre paquetage.
+
+Exemple : +Vehicules::Voitures+ signifie que la classe +Voiture+ est importée du paquetage +Vehicules+.
+
+[[pack]]
+.Dépendances entre packages
+image::{dessins}/pack.png["Dépendances entre packages",width="70%"]
+
+[NOTE]
+=====================================================================
+On emploiera souvent dans ce cours le terme anglais de _package_ pour désigner un paquetage.
+=====================================================================
+
+=== Génération de code
+
+Voici quelques exemples de diagramme de classes et du code java associé.
+
+==== Classe
+
+[[catalogue]]
+.La classe +Catalogue+ du package +Catalogue+
+image::{images}/catalogue.png["Une classe",width="40%"]
+
+[source,java]
+-------------------------------------------
+package Catalogue;
+import java.util.Date;
+
+public class Catalogue {
+	private String nom;
+	private Date dateCreation;
+	
+	public Catalogue() {
+		...
+	}
+	
+	public Livre chercherLivre(String isbn) {
+		...
+	}
+}
+-------------------------------------------
+
+==== Généralisation
+
+[[personne]]
+.La classe +Adherent+ hérite de +Personne+
+image::{images}/personne.png["Généralisation",width="40%"]
+
+[source,java]
+-------------------------------------------
+public abstract class Personne {
+	private String nom;
+	private String prenom;
+	protected Date dateNaissance;
+	private static int ageMajorite = 18;
+	public abstract int calculerDureePret() {... } 
+	public static void setAgeMajorite (int aMaj) {... }
+}
+
+public class Adherent extends Personne { 
+	private int iD;
+	
+	public Adherent() { ... }
+	public int getAge() { ... }
+	public int calculerDureePret() { ... } 
+}
+-------------------------------------------
+
+==== Associations
+
+[[Association]]
+.Associations
+image::{images}/association.png["Associations",width="40%"]
+
+[source,java]
+-------------------------------------------
+public class A1 { 
+	private B1 leB1;
+}
+public class A2 { 
+	private B2 lesB2[ ];
+}
+public class A3 {
+	private List lesB3 = new ArrayList();
+}
+-------------------------------------------
+
+==== Dépendance
+
+[[dependance]]
+.Dépendance
+image::{images}/dependances.png["Dépendance",width="40%"]
+
+[source,java]
+-------------------------------------------
+package Bibliotheque; 
+import Catalogue;
+
+public class Bibliotheque {
+	private Catalogue leCatalogue; 
+	...
+}
+-------------------------------------------
+
+
+
+==== Equivalences entre diagramme de classes
+
+[[Equivalences]]
+.Equivalences
+image::{images}/equiv.png["Equivalences",width="70%"]
+
+==== Classe Association
+
+[[assoc]]
+.Classe Association
+image::{images}/assoc.png["Classe Association",width="50%"]
+
+[source,java]
+-------------------------------------------
+public class Emploi {
+	private String titre
+	private Double salaire; 
+	private Employe salarie; 
+	private Societe employeur; 
+	...
+}
+-------------------------------------------
+
+
+== Le Diagramme de Séquence
+== L’Architecture MVC
+== Schéma d’Enchaînement des Pages (SEP)
+== Les Dessins d’Etats imprimés
+== La démarche MACAO
+== Analyse Globale de MACAO
+== Conception Globale de MACAO
+== Développement de MACAO
+== Finalisation de MACAO
+== Equivalence DC – MCD
+
+
+
+
+[NOTE]
+=====================================================================
+- Pour 1 événement déclencheur, pas de synchronisation.
+- Pour 2 événements déclencheurs, souvent un seul opérateur.
+- A partir de 3, les événements peuvent être renommés (lettres).
+=====================================================================
+
+
+ifdef::backend-slidy2[]
+
+<<<
+
+[TIP]
+.Possibilité de compléter les informations
+===============================
+* Durée/Volume des tâches
+* Exemple : 20 enr./semaine, 6 mn/tâche, …
+===============================
+
+
+=== Définitions (récapitulatif)
+
+.Flux
+[caption="Définition : "]
+==========================
+Représentation d’un échange d’informations entre deux acteurs du domaine étudié
+ex: livraison, paiement
+==========================
+
+
+== Références utiles pour cette partie
+* http://www.compucycles.com/nouveausite/articles/Merise/Article_07.htm
+* http://www.wikituto.org/index.php/Catégorie:Cours_Merise

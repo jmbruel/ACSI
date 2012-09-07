@@ -1,0 +1,86 @@
+:title: Classes et OCL
+:doctype: article
+:description: Cours de DUT Informatique
+:keywords: ACSI Merise UML Analyse Conception Systèmes d'Information
+:Author: Jean-Michel Bruel et Laurent Nonne
+:Author Initials: JMB
+:Email: jean-michel.bruel@univ-tlse2.fr
+:Revision: 1.0
+:localdate: {sys: date +%d/%m/%Y}
+:Date: {localdate}
+:startdate: 29/09/2012
+:slideshowlocation: [IUT Blagnac]
+:slidebackground: asciidocslidy
+:copyright: {date={localdate}}, {slideshowlocation} *** {author} *** Powered by Asciidoc and W3C Slidy &#169; 
+:incremental!:
+:indir: dessins
+
+//----------- définitions --------------
+:umlsite: http://webetud.iut-blagnac.fr/file.php/35/SupportCours/5-UML-1.pdf
+:oclsite: http://webetud.iut-blagnac.fr/mod/resource/view.php?id=9621
+:pre: PreReq
+:objtd: ObjTD
+:objgen: ObjGen
+:lien: Lien
+
+= ACSI–S3–UML : {title}
+
+[[cartouche]]
+[align="left",cols="1,10",width="90%"]
+|======================
+| {pre}		| 
+Je connais les règles de conception d'un diag. de classes. +
+Je connais les mots-clés d’une contrainte OCL.
+| {objtd}	| Je révise le diag. de classes et les contraintes OCL.
+| {objgen}	| Je suis capable de modéliser les besoins d'un SI et d'exprimer les contraintes sur celui-ci.
+| {lien}	| BD SQL Trigger
+|======================
+
+[NOTE]
+====
+- Pour UML cf: {umlsite}
+- Pour OCL cf: {oclsite}
+====
+
+== Diagramme des classes
+
+La société IUT (Installations Urbaines Toulousaines) organise la construction de maisons préfabriquées (25 *modèles* différents dont la durée de construction varie de 6 à 12 mois). Chaque modèle est décrit par un code, une désignation, un prix de vente, un prix de revient et une durée de construction en mois.
+
+La construction d'un modèle de maison se décompose en un certain nombre de *tâches* élémentaires dont le bureau d'études a précisé la planification (ordre de réalisation) ainsi que la durée moyenne pour chacun des modèles vendus. L’ordre de réalisation (simple numéro) et la durée moyenne n’ont pas la même valeur suivant le modèle de maison concerné. Chaque tâche est définie par un code et une désignation et par une qualification demandée. Par exemple une tâche de pose de lavabo demande la qualification de plombier.
+
+Les travaux sont assurés par des *artisans* sous contrat connus par leur nom, adresse, téléphone et numéro SIRET (identifiant). Chaque artisan possède une et une seule qualification (maçon, menuisier, plombier, électricien...) décrite par un code et un libellé. Plusieurs artisans peuvent avoir la même *qualification*.
+
+La construction d'une maison fait l'objet d'un *chantier* caractérisé par :
+
+- son propriétaire (nom, adresse, téléphone),
+- sa situation géographique (adresse),
+- sa date d'ouverture,
+- le modèle de maison construit,
+- un historique des travaux (ensemble des tâches réalisées avec leur date et les artisans qui sont intervenus) ; association ternaire (*réaliser*) liant les chantiers, les artisans et les tâches.
+- Un champ indiquant s’il est terminé 
+
+=== Question 1 : Construire le diagramme des classes
+
+Construire le diagramme des classes correspondant aux informations données. 
+Parmi toutes les tâches réalisables pour construire une maison il y a lieu de distinguer celles qui relèvent de la fabrication proprement dite (tâches d’exécution) telles que monter un mur, construire la charpente, poser les papiers peints... et celles qui permettent de préparer le travail (tâches de préparation) telles que lancer une commande de matériaux, effectuer un métrage précis, remplir des fiches de travail...
+
+Les tâches d’exécution concernent toujours l’utilisation de divers matériaux nécessaires (briques, ciment, papier peint...) pour lesquels on doit connaître un code, un libellé, une quantité en stock ainsi que l’unité de mesure (kilogramme, mètre linéaire, mètre cube, rouleaux...). Un même matériau pouvant être employé dans diverses tâches, et il faut chaque fois connaître la quantité nécessaire pour chacune. Les tâches d’exécution nécessitent également l’utilisation de divers outils (pelle, truelle, bétonnière, mètre...) fournis par la société IUT et qu’il faut donc enregistrer avec un code, un libellé, une quantité en stock et pour lesquels il faut préciser la quantité nécessaire pour chaque tâche.
+
+Les tâches de préparation peuvent donner lieu au remplissage de divers documents obtenus à partir de formulaires qui seront enregistrés dans le système (bon de commande, fiche de travail…). Un même formulaire peut être utilisé dans diverses tâches et une même tâche peut nécessiter le remplissage de plusieurs formulaires.
+
+Par ailleurs, chaque tâche de préparation concerne toujours une tâche d’exécution et une tâche d’exécution peut être précédée d’aucune ou plusieurs tâches de préparation.
+
+=== Question 2 : Compléter le diagramme des classes
+
+Compléter le diagramme des classes de la question 1 pour prendre en compte ces nouveaux besoins. Réaliser pour cela un deuxième diagramme dans lequel on recopiera seulement les classes du premier diagramme qui sont liées avec les nouvelles classes.
+
+
+=== Question 3 : Contraintes OCL
+
+Présenter les contraintes d’intégrité suivantes en utilisant le langage OCL :
+
+. Pour chaque artisan, les tâches qu’il réalise sur les divers chantiers doivent toutes correspondre à la qualification qu’il possède.
+. A la fin d’un chantier, l’ensemble des tâches réalisées sur ce chantier égale l’ensemble des tâches prévues par le modèle de ce chantier.
+
+
+

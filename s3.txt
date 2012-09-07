@@ -1,0 +1,78 @@
+:title: Analyse et Conception des Systèmes d'Information
+:doctype: book
+:description: Cours de DUT Informatique
+:keywords: ACSI Merise UML Analyse Conception Systèmes d'Information
+:Author: Jean-Michel Bruel 
+:Author Initials: JMB
+:Email: jean-michel.bruel@univ-tlse2.fr
+:Revision: 1.0
+:localdate: {sys: date +%d/%m/%Y}
+:Date: {localdate}
+:startdate: 29/07/2012
+:images: images
+:toc_title: Content
+:slideshowlocation: [IUT Blagnac]
+:duration: 85
+:slidebackground: asciidocslidy
+:copyright: {date={localdate}}, {slideshowlocation} *** {author} *** Powered by Asciidoc and W3C Slidy &#169; 
+:incremental!:
+:indir: dessins
+
+= {title}
+
+// raccourcis sites
+:asciidoc: http://www.methods.co.nz/asciidoc[AsciiDoc]
+:models: http://www.modelsconference.org/[MODELS]
+:moodle: http://webetud.iut-blagnac.fr[Moodle]
+:omg: http://www.omg.org[OMG]
+:pandoc: http://johnmacfarlane.net/pandoc/[Pandoc]
+:slidy2: http://www.w3.org/Talks/Tools/Slidy2/[W3C HTML Slidy]
+:sosym: http://www.sosym.org[Software and System Modeling journal]
+:sysmlfrance: http://www.sysml-france.fr[SysML France]
+
+// data
+:uml: UML indexterm:[UML]
+:flux: Flux
+:traitements: Traitements
+:donnees: Données
+:conceptuel: Conceptuel
+:organisationel: Organisationel				
+:logique: Logique
+:technique: Technique
+:resume: En résumé
+:revisions: Questions de révision
+:dessins: ./dessins
+:images: ./images
+
+// personnes et institutions
+:nico: Nicolas Belloir
+:jmb: mailto:jean-michel.bruel@univ-tlse2.fr[Jean-Michel Bruel]
+:jmi: Jean-Michel Inglebert
+:jmimail: jean-michel.inglebert@univ-tlse2.fr
+:iut: IUT de Blagnac
+:nonne: Laurent Nonne
+:omg: OMG
+:prfc: Pascal Roques
+:univ-tlse: http://www.univ-toulouse.fr[Univesité de Toulouse]
+:uppa: Université de Pau et des Pays de l'Adour
+
+= Partie 5 : UML
+
+Plan de cette partie :
+
+* Le Diagramme des Cas d’Utilisation
+* Opérations, Paquetages et Java
+* Le Diagramme de Séquence
+* L’Architecture MVC
+* Schéma d’Enchaînement des Pages (SEP)
+* Les Dessins d’Etats imprimés
+* La démarche MACAO
+* Analyse Globale de MACAO
+* Conception Globale de MACAO
+* Développement de MACAO
+* Finalisation de MACAO
+* Equivalence DC – MCD
+
+
+include::S3-1.txt[]
+

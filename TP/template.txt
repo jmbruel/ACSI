@@ -1,0 +1,66 @@
+:title: Généralités
+:doctype: article
+:description: Cours de DUT Informatique
+:keywords: ACSI Merise UML Analyse Conception Systèmes d'Information
+:Author: Jean-Michel Bruel et Laurent Nonne
+:Author Initials: JMB
+:Email: jean-michel.bruel@univ-tlse2.fr
+:Revision: 1.0
+:localdate: {sys: date +%d/%m/%Y}
+:Date: {localdate}
+:startdate: 29/09/2012
+:slideshowlocation: [IUT Blagnac]
+:slidebackground: asciidocslidy
+:copyright: {date={localdate}}, {slideshowlocation} *** {author} *** Powered by Asciidoc and W3C Slidy &#169; 
+:incremental!:
+:indir: dessins
+
+//----------- définitions --------------
+:umlsite: http://www.uml.org
+:oclsite: http://www.ocl.org
+:pre: PreReq
+:objtd: ObjTD
+:objgen: ObjGen
+:lien: Lien
+:moodle: http://webetud.iut-blagnac.fr/[Moodle]
+
+= ACSI–S*–Généralités : {title}
+
+== Format électronique
+
+Cette année les TD et TP seront disponibles sous {moodle}.
+
+[NOTE]
+====
+- Pour le S1/S2 cf: http://webetud.iut-blagnac.fr/course/view.php?id=35
+- Pour le S3 cf: http://webetud.iut-blagnac.fr/course/view.php?id=147
+====
+
+== Canevas type
+
+Le titre des TD/TP seront génériques : ACSI suivi du semestre concerné (S1 par exemple) suivi d'une indication de ce qui est abordé dans l'exercice (exemple complet : ACSI-S3-UMLClasses).
+
+Les TD/TP commenceront par un entête comme celui ci-dessous permettant de définir :
+
+Pré-requis (PreReq)::
+	Les notions à connaître avant d'aborder l'exercice.
+Objectif du TD (ObjTD)::
+	Les connaissances que vise à développer l'exercice.
+Objectif Général (ObjGen)::
+	L'objectif générale de cet exercice dans le cours d'ACSI.
+Lien avec les autres cours (Lien)::
+	Les cours qui sont en relations avec cette partie du cours.
+
+Exemple d'un tel entête :
+
+[[cartouche]]
+[align="left",cols="1,10",width="90%"]
+|======================
+| {pre}		| 
+Je connais les règles de conception d'un diag. de classes. +
+Je connais les mots-clés d’une contrainte OCL.
+| {objtd}	| Je révise le diag. de classes et les contraintes OCL.
+| {objgen}	| Je suis capable de modéliser les besoins d'un SI et d'exprimer les contraintes sur celui-ci.
+| {lien}	| BD SQL Trigger
+|======================
+

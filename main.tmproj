@@ -10,7 +10,7 @@
 			<key>filename</key>
 			<string>make.txt</string>
 			<key>lastUsed</key>
-			<date>2012-08-09T11:49:20Z</date>
+			<date>2012-09-05T17:05:19Z</date>
 		</dict>
 		<dict>
 			<key>filename</key>
@@ -22,7 +22,7 @@
 			<key>filename</key>
 			<string>main.txt</string>
 			<key>lastUsed</key>
-			<date>2012-08-09T13:18:11Z</date>
+			<date>2012-09-05T17:05:19Z</date>
 			<key>selected</key>
 			<true/>
 		</dict>
@@ -228,24 +228,40 @@
 				<key>line</key>
 				<integer>39</integer>
 			</dict>
+			<key>columnSelection</key>
+			<false/>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>113</integer>
+			<integer>45</integer>
+			<key>selectFrom</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>0</integer>
+			</dict>
+			<key>selectTo</key>
+			<dict>
+				<key>column</key>
+				<integer>64</integer>
+				<key>line</key>
+				<integer>150</integer>
+			</dict>
 		</dict>
 		<key>make.txt</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>6</integer>
+				<integer>14</integer>
 				<key>line</key>
-				<integer>32</integer>
+				<integer>23</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>2</integer>
+			<integer>23</integer>
 		</dict>
 	</dict>
 	<key>openDocuments</key>
@@ -263,6 +279,6 @@
 	<key>showFileHierarchyDrawer</key>
 	<true/>
 	<key>windowFrame</key>
-	<string>{{-3, 4}, {900, 774}}</string>
+	<string>{{176, -35}, {900, 774}}</string>
 </dict>
 </plist>

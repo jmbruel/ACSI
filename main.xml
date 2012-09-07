@@ -6,21 +6,21 @@
 <book lang="en">
 <bookinfo>
     <title>Analyse et Conception des Systèmes d'Information</title>
-    <date>07/08/2012</date>
+    <date>07/09/2012</date>
     <author>
         <firstname>Jean-Michel</firstname>
         <surname>Bruel</surname>
         <email>jean-michel.bruel@univ-tlse2.fr</email>
     </author>
     <authorinitials>JMB</authorinitials>
-<revhistory><revision><revnumber>1.0</revnumber><date>07/08/2012</date><authorinitials>JMB</authorinitials></revision></revhistory>
+<revhistory><revision><revnumber>1.0</revnumber><date>07/09/2012</date><authorinitials>JMB</authorinitials></revision></revhistory>
 </bookinfo>
 <chapter id="_avant_propos">
 <title>Avant-propos</title>
 <figure id="Architecte"><title>Analyser et Concevoir</title>
 <mediaobject>
   <imageobject>
-  <imagedata fileref="./images/architecte-d-interieur-id518.jpg" contentwidth="60%"/>
+  <imagedata fileref="./images/architecte-d-interieur-id518.jpg" contentwidth="40%"/>
   </imageobject>
   <textobject><phrase>Architecte</phrase></textobject>
 </mediaobject>
@@ -80,17 +80,17 @@ Professeur à l&#8217;<ulink url="http://www.univ-toulouse.fr">Univesité de Tou
 </listitem>
 <listitem>
 <simpara>
-Cofoundateur de l&#8217;association <ulink url="http://www.sysml-france.fr">SysML France</ulink>
+Co-foundateur de l&#8217;association <ulink url="http://www.sysml-france.fr">SysML France</ulink>
 </simpara>
 </listitem>
 <listitem>
 <simpara>
-Member of the Software and System Modeling journal editorial board
+Membre du comité éditorial de la revue <emphasis><ulink url="http://www.sosym.org">Software and System Modeling journal</ulink></emphasis>
 </simpara>
 </listitem>
 <listitem>
 <simpara>
-Co-lead of the Ambient Systems Research group at IRIT
+Membre du <emphasis>Steering Committee</emphasis> de la conférence ACM/IEEE <ulink url="http://www.modelsconference.org/">MODELS</ulink>
 </simpara>
 </listitem>
 <listitem>
@@ -100,7 +100,7 @@ Chef du département informatique de l&#8217;IUT de Blagnac 2009 à 2012
 </listitem>
 <listitem>
 <simpara>
-Married, one (wonderful) child
+Marié, une (merveilleuse) fille
 </simpara>
 </listitem>
 </itemizedlist>
@@ -129,9 +129,7 @@ personnalités (e.g., Jean-Michel Inglebert), etc.
 <listitem>
 <simpara>
 Les références bibliographiques présentées en fin de document
-(cf. <link linkend="refs">Bibliographie</link>) sont complétées par le numéro des pages (lien clickable dans la
-version électronique de ce document) qui renvoie à l&#8217;endroit du document où elles sont
-citées.
+(cf. <link linkend="refs">Bibliographie</link>).
 </simpara>
 </listitem>
 <listitem>
@@ -152,25 +150,25 @@ mot anglais, mais pour indiquer au lecteur que nous employons
 </section>
 <section id="_pourquoi_parler_de_document">
 <title>Pourquoi parler de "document"?</title>
-<simpara>Parce que j&#8217;ignore la version que vous êtes en train de lire. A partir de l&#8217;<ulink url="main.txt">original</ulink>, plusieurs versions ont été générées grâce à <ulink url="http://www.methods.co.nz/asciidoc">AsciiDoc</ulink>:</simpara>
+<simpara>Parce que j&#8217;ignore la version que vous êtes en train de lire. A partir de l&#8217;<ulink url="main.txt">original</ulink>, plusieurs versions ont été générées grâce à <ulink url="http://www.methods.co.nz/asciidoc">AsciiDoc</ulink> :</simpara>
 <itemizedlist>
 <listitem>
 <simpara>
-<ulink url="main.html">html</ulink>
+Une version pour le web (Moodle) au format <ulink url="main.html">html</ulink>
 </simpara>
 </listitem>
 <listitem>
 <simpara>
-<ulink url="main.slidy.html">présentation</ulink>
+Une version pour présentation en amphi au format <ulink url="main.slidy.html">présentation</ulink>
 </simpara>
 </listitem>
 <listitem>
 <simpara>
-<ulink url="main.pdf">pdf</ulink>
+Une version pour impression au format <ulink url="main.pdf">pdf</ulink>
 </simpara>
 </listitem>
 </itemizedlist>
-<simpara>Si vous êtes curieux sur la production de document "par programmation", je vous invite à lire la <link linkend="Prog">section dédiée</link>.</simpara>
+<tip><simpara>Si vous êtes curieux sur la production de document "par programmation", je vous invite à lire la <link linkend="Prog">section dédiée</link>.</simpara></tip>
 </section>
 <section id="_utilisation_et_autres_mentions_légales">
 <title>Utilisation et autres mentions légales</title>
@@ -187,7 +185,7 @@ Pour l&#8217;instant ce document est libre d&#8217;utilisation et géré par la 
 </inlinemediaobject>
 <ulink url="http://creativecommons.org/licenses/by-sa/3.0/">licence Creative Commons Paternité - Partage à l&#39;Identique 3.0 non transposé</ulink>.</simpara>
 </sidebar>
-<simpara>N&#8217;hésitez pas à m&#8217;envoyer vos remarques en tout genre.</simpara>
+<simpara>N&#8217;hésitez pas à m&#8217;envoyer vos remarques en tout genre en m'écrivant <ulink url="mailto:jean-michel.bruel@univ-tlse2.fr">ici</ulink>.</simpara>
 </section>
 </chapter>
 <part id="_partie_1_généralités">
@@ -202,7 +200,7 @@ Ce module est <emphasis role="strong">central</emphasis>
 <itemizedlist>
 <listitem>
 <simpara>
-(presque) tous les autres tournent autour
+(presque) tous les autres tournent autour (cf. <xref linkend="Central"/>)
 </simpara>
 </listitem>
 <listitem>
@@ -368,13 +366,26 @@ WinDesign
 </chapter>
 <chapter id="_objectifs">
 <title>Objectifs</title>
-<simpara>Comme tout le reste du programme enseigné au DUT, ce cours est une adaptation du PPN :
-￼￼￼
-* Les organisations et leurs Systèmes d&#8217;Information
-* Le Génie Logiciel et la façon de concevoir un système de qualité
-* Les démarches/méthodes (Merise), notations (UML <indexterm>
+<simpara>Comme tout le reste du programme enseigné au DUT, ce cours est une adaptation du PPN :</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Les organisations et leurs Systèmes d&#8217;Information
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Le Génie Logiciel et la façon de concevoir un système de qualité
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Les démarches/méthodes (Merise), notations (UML <indexterm>
   <primary>UML</primary>
-</indexterm>) et outils nécessaires aux futurs métiers qui vous attendent</simpara>
+</indexterm>) et outils nécessaires aux futurs métiers qui vous attendent
+</simpara>
+</listitem>
+</itemizedlist>
 <simpara>Le module ACSI se décompose en deux parties principales (<emphasis role="strong">U</emphasis>nités de <emphasis role="strong">F</emphasis>ormation) :</simpara>
 <itemizedlist>
 <listitem>
@@ -599,11 +610,19 @@ en S1/S2 : tests sur requêtes SQL
 </listitem>
 <listitem>
 <simpara>
-en S3 : dvpt site Web dy
+en S3 : dvpt site Web dynamique
 </simpara>
 </listitem>
 </itemizedlist>
 </note>
+<figure id="Central"><title>Place centrale du module d&#8217;ACSI</title>
+<mediaobject>
+  <imageobject>
+  <imagedata fileref="./images/fig-placeCentrale.png"/>
+  </imageobject>
+  <textobject><phrase>Place Centrale</phrase></textobject>
+</mediaobject>
+</figure>
 </section>
 <section id="_concrètement">
 <title>Concrètement</title>
@@ -1272,6 +1291,12 @@ rowsep="1" colsep="1"
 <entry align="left" valign="top"><simpara></simpara></entry>
 </row>
 <row>
+<entry align="left" valign="top"><simpara><emphasis role="strong">Logique</emphasis></simpara></entry>
+<entry align="left" valign="top"><simpara></simpara></entry>
+<entry align="left" valign="top"><simpara></simpara></entry>
+<entry align="left" valign="top"><simpara></simpara></entry>
+</row>
+<row>
 <entry align="left" valign="top"><simpara><emphasis role="strong">Technique</emphasis></simpara></entry>
 <entry align="left" valign="top"><simpara></simpara></entry>
 <entry align="left" valign="top"><simpara></simpara></entry>
@@ -1318,12 +1343,1417 @@ La maintenance
 </chapter>
 <chapter id="_les_flux">
 <title>Les flux</title>
+<section id="_notation">
+<title>Notation</title>
+<itemizedlist>
+<listitem>
+<simpara>
+cerner le domaine qui nous intéresse
+<inlinemediaobject>
+  <imageobject>
+  <imagedata fileref="./dessins/domaine.png"/>
+  </imageobject>
+  <textobject><phrase>Domaine</phrase></textobject>
+</inlinemediaobject>
+</simpara>
+<screen>        +-----------+
+        |  Domaine  |
+        +-----------+</screen>
+</listitem>
+<listitem>
+<simpara>
+identifier les échanges
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+flux
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+acteurs <inlinemediaobject>
+  <imageobject>
+  <imagedata fileref="./dessins/acteur.png"/>
+  </imageobject>
+  <textobject><phrase>Acteur</phrase></textobject>
+</inlinemediaobject>
+</simpara>
+<screen>+---------+ +----=----+
+|         | |         |    Nom du flux
+| Interne | | Externe | -----------------&gt;
+|    {o}  | |    {o}  |
++---------+ +---------+</screen>
+</listitem>
+</itemizedlist>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_exemples">
+<title>Exemples</title>
+<screen>+----=---+                  +-------+
+|        |     commande     |       |
+| Client +-----------------&gt;+ Vente |
+|   {o}  |                  |       |
++--------+                  +-------+</screen>
+</section>
+<section id="_exercice">
+<title>Exercice</title>
+<itemizedlist>
+<listitem>
+<simpara>
+Une agence de location de voitures veut informatiser la gestion des locations.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Lorsqu’un client se présente à l’accueil, il précise le type de voiture désiré ainsi que la durée de location.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+L’accueil vérifie si la location est possible et donne la réponse au client.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Si c’est le cas, la facture est éditée et donnée au client.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Celui-ci doit payer immédiatement.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Le paiement et la facture sont transmis au service comptable.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+L’accueil transmet alors la demande au garage.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Ce dernier va préparer le véhicule demandé et le mettre à disposition du client.
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_règles_de_conception">
+<title>Règles de conception</title>
+<simpara><inlinemediaobject>
+  <imageobject>
+  <imagedata fileref="./dessins/noSelfFlux.png"/>
+  </imageobject>
+  <textobject><phrase>Pas de flux sur soi-même</phrase></textobject>
+</inlinemediaobject></simpara>
+<sidebar>
+<title>Pas de flux qui boucle sur un même acteur</title>
+<itemizedlist>
+<listitem>
+<simpara>
+Les flux ne sont qu’entre 2 acteurs distincts.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Si l’on désire représenter des flux à l’intérieur d’un acteur,
+c’est que l’acteur doit être décomposé en plusieurs.
+</simpara>
+</listitem>
+</itemizedlist>
+</sidebar>
+<simpara><inlinemediaobject>
+  <imageobject>
+  <imagedata fileref="./dessins/noFluxExternes.png"/>
+  </imageobject>
+  <textobject><phrase>Pas de flux sur soi-même</phrase></textobject>
+</inlinemediaobject></simpara>
+<sidebar>
+<title>Pas de flux entre acteurs externes</title>
+<simpara>Ces flux ne nous intéressent pas car ils ne concernent pas le domaine à informatiser.</simpara>
+</sidebar>
+<note><simpara>Dans de rares cas, on représentera tout de même les flux entre certains acteurs externes pour une meilleure compréhension du système.</simpara></note>
+<simpara><inlinemediaobject>
+  <imageobject>
+  <imagedata fileref="./dessins/noBiFlux.png"/>
+  </imageobject>
+  <textobject><phrase>Pas de flux sur soi-même</phrase></textobject>
+</inlinemediaobject></simpara>
+<sidebar>
+<title>Pas de flux bidirectionnels</title>
+<simpara>La représentation doit donner lieu à 2 flux distincts.</simpara>
+</sidebar>
+</section>
+<section id="_erreurs_classiques">
+<title>Erreurs classiques</title>
+<itemizedlist>
+<listitem>
+<simpara>
+un acteur n&#8217;est pas un objet <inlinemediaobject>
+  <imageobject>
+  <imagedata fileref="./dessins/noObjectActor.png"/>
+  </imageobject>
+  <textobject><phrase>Acteur n&#8217;est pas Objet</phrase></textobject>
+</inlinemediaobject>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+un flux n&#8217;est pas un mouvement d&#8217;acteur <inlinemediaobject>
+  <imageobject>
+  <imagedata fileref="./dessins/noMove.png"/>
+  </imageobject>
+  <textobject><phrase>Flux n&#8217;est pas déplacement</phrase></textobject>
+</inlinemediaobject>
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_modèle_conceptuel_des_flux">
+<title>Modèle Conceptuel des Flux</title>
+<table id="MCF"
+frame="all"
+rowsep="1" colsep="1"
+>
+<title>MCF</title>
+<?dbhtml table-width="50%"?>
+<?dbfo table-width="50%"?>
+<?dblatex table-width="50%"?>
+<tgroup cols="4">
+<colspec colname="col_1" colwidth="30*"/>
+<colspec colname="col_2" colwidth="61*"/>
+<colspec colname="col_3" colwidth="61*"/>
+<colspec colname="col_4" colwidth="61*"/>
+<thead>
+<row>
+<entry align="left" valign="top">                                       </entry>
+<entry align="center" valign="top"> Flux        </entry>
+<entry align="center" valign="top"> Traitements </entry>
+<entry align="center" valign="top"> Données</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left" valign="top"><simpara><emphasis role="strong">Conceptuel</emphasis></simpara></entry>
+<entry align="center" valign="top"><simpara><emphasis role="strong"><phrase role="red yellow-background">MCF</phrase></emphasis></simpara></entry>
+<entry align="center" valign="top"><simpara></simpara></entry>
+<entry align="center" valign="top"><simpara></simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><emphasis role="strong">Organisationel</emphasis></simpara></entry>
+<entry align="center" valign="top"><simpara></simpara></entry>
+<entry align="center" valign="top"><simpara></simpara></entry>
+<entry align="center" valign="top"><simpara></simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><emphasis role="strong">Logique</emphasis></simpara></entry>
+<entry align="center" valign="top"><simpara></simpara></entry>
+<entry align="center" valign="top"><simpara></simpara></entry>
+<entry align="center" valign="top"><simpara></simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><emphasis role="strong">Technique</emphasis></simpara></entry>
+<entry align="center" valign="top"><simpara></simpara></entry>
+<entry align="center" valign="top"><simpara></simpara></entry>
+<entry align="center" valign="top"><simpara></simpara></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<itemizedlist>
+<listitem>
+<simpara>
+Pas de représentation des acteurs internes
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Juste le domaine et ses échanges avec les acteurs externes
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Vue "boîte noire"
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_modèle_organisationnel_des_flux">
+<title>Modèle Organisationnel des Flux</title>
+<table id="MOF"
+frame="all"
+rowsep="1" colsep="1"
+>
+<title>MOF</title>
+<?dbhtml table-width="50%"?>
+<?dbfo table-width="50%"?>
+<?dblatex table-width="50%"?>
+<tgroup cols="4">
+<colspec colname="col_1" colwidth="30*"/>
+<colspec colname="col_2" colwidth="61*"/>
+<colspec colname="col_3" colwidth="61*"/>
+<colspec colname="col_4" colwidth="61*"/>
+<thead>
+<row>
+<entry align="left" valign="top">                                       </entry>
+<entry align="center" valign="top"> Flux        </entry>
+<entry align="center" valign="top"> Traitements </entry>
+<entry align="center" valign="top"> Données</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left" valign="top"><simpara><emphasis role="strong">Conceptuel</emphasis></simpara></entry>
+<entry align="center" valign="top"><simpara>MCF</simpara></entry>
+<entry align="center" valign="top"><simpara></simpara></entry>
+<entry align="center" valign="top"><simpara></simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><emphasis role="strong">Organisationel</emphasis></simpara></entry>
+<entry align="center" valign="top"><simpara><emphasis role="strong"><phrase role="red  yellow-background">MOF</phrase></emphasis></simpara></entry>
+<entry align="center" valign="top"><simpara></simpara></entry>
+<entry align="center" valign="top"><simpara></simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><emphasis role="strong">Logique</emphasis></simpara></entry>
+<entry align="center" valign="top"><simpara></simpara></entry>
+<entry align="center" valign="top"><simpara></simpara></entry>
+<entry align="center" valign="top"><simpara></simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><emphasis role="strong">Technique</emphasis></simpara></entry>
+<entry align="center" valign="top"><simpara></simpara></entry>
+<entry align="center" valign="top"><simpara></simpara></entry>
+<entry align="center" valign="top"><simpara></simpara></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<itemizedlist>
+<listitem>
+<simpara>
+Représentation des acteurs internes
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+De leurs échanges avec les acteurs externes
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Vue "boîte blanche"
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Doit être cohérent avec le MCF correspondant
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_exercice_gestion_de_carte_bleue">
+<title>Exercice : gestion de Carte Bleue</title>
+<itemizedlist>
+<listitem>
+<simpara>
+Le demandeur désirant obtenir une carte bleue doit en faire la demande auprès d’un employé de son agence.  La carte bleue n’est accordée que si le demandeur est un client de l’agence.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Chaque jour, un employé de l’agence transmet au centre de gestion des cartes bleues les demandes des clients. Dès que le chef d’agence reçoit la carte bleue en provenance du centre (en général 4 jours après la demande), il adresse au client un avis de mise à disposition et un avis de prélèvement de la cotisation annuelle.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Le client vient alors retirer sa carte auprès du chef d’agence. Si au bout de 2 mois la carte n’a pas été retirée, elle est détruite.
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_correction_gestion_de_carte_bleue">
+<title>Correction : gestion de Carte Bleue</title>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>
+Détermination des acteurs externes
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Réalisation du MCF
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Détermination des acteurs internes
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Réalisation du MOF
+</simpara>
+</listitem>
+</orderedlist>
+</section>
 </chapter>
 <chapter id="_les_traitements">
 <title>Les traitements</title>
+<section id="_objectifs_2">
+<title>Objectifs</title>
+<itemizedlist>
+<listitem>
+<simpara>
+Déterminer des <emphasis role="strong">processus</emphasis>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+A partir des <emphasis role="strong">acteurs</emphasis> et des <emphasis role="strong">flux</emphasis> d&#8217;information
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Notion de <emphasis role="strong">rôles de gestion</emphasis>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Concepts
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+les événements
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+les opérations
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+les résultats
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+la synchronisation
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_diagrammes">
+<title>Diagrammes</title>
+<variablelist>
+<varlistentry>
+<term>
+Modèle Conceptuel de Traitement
+</term>
+<listitem>
+<simpara>
+        Répondre au <emphasis role="strong">QUOI?</emphasis>
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+Modèle Organisationnel de Traitement
+</term>
+<listitem>
+<simpara>
+        Répondre au <emphasis role="strong">QUI</emphasis> fait <emphasis role="strong">QUOI</emphasis> et <emphasis role="strong">QUAND?</emphasis>
+</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+<table id="MCT"
+frame="all"
+rowsep="1" colsep="1"
+>
+<title>MCT et MOT</title>
+<?dbhtml table-width="50%"?>
+<?dbfo table-width="50%"?>
+<?dblatex table-width="50%"?>
+<tgroup cols="4">
+<colspec colname="col_1" colwidth="30*"/>
+<colspec colname="col_2" colwidth="61*"/>
+<colspec colname="col_3" colwidth="61*"/>
+<colspec colname="col_4" colwidth="61*"/>
+<thead>
+<row>
+<entry align="left" valign="top">                                       </entry>
+<entry align="center" valign="top"> Flux        </entry>
+<entry align="center" valign="top"> Traitements </entry>
+<entry align="center" valign="top"> Données</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left" valign="top"><simpara><emphasis role="strong">Conceptuel</emphasis></simpara></entry>
+<entry align="center" valign="top"><simpara></simpara></entry>
+<entry align="center" valign="top"><simpara><emphasis role="strong"><phrase role="red  yellow-background">MCT</phrase></emphasis></simpara></entry>
+<entry align="center" valign="top"><simpara></simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><emphasis role="strong">Organisationel</emphasis></simpara></entry>
+<entry align="center" valign="top"><simpara></simpara></entry>
+<entry align="center" valign="top"><simpara><emphasis role="strong"><phrase role="red  yellow-background">MOT</phrase></emphasis></simpara></entry>
+<entry align="center" valign="top"><simpara></simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><emphasis role="strong">Logique</emphasis></simpara></entry>
+<entry align="center" valign="top"><simpara></simpara></entry>
+<entry align="center" valign="top"><simpara></simpara></entry>
+<entry align="center" valign="top"><simpara></simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><emphasis role="strong">Technique</emphasis></simpara></entry>
+<entry align="center" valign="top"><simpara></simpara></entry>
+<entry align="center" valign="top"><simpara></simpara></entry>
+<entry align="center" valign="top"><simpara></simpara></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="_notation_2">
+<title>Notation</title>
+<itemizedlist>
+<listitem>
+<simpara>
+événements
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+synchronisation
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+opération
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Règles d’émission
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Résultats
+</simpara>
+</listitem>
+</itemizedlist>
+<section id="_modèle_conceptuel_de_traitement">
+<title>Modèle Conceptuel de Traitement</title>
+<section id="_eléments_importants">
+<title>Eléments importants</title>
+<itemizedlist>
+<listitem>
+<simpara>
+Fiches de poste
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Tâches
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Evénements déclencheur
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Actions
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Résultats
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<simpara>
+Opération
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Événements déclencheurs
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Synchronisation éventuelle (règles logiques)
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Résultats
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Règles d’émission
+</simpara>
+</listitem>
+</itemizedlist>
+<informaltable
+frame="all"
+rowsep="1" colsep="1"
+>
+<?dbhtml table-width="20%"?>
+<?dbfo table-width="20%"?>
+<?dblatex table-width="20%"?>
+<tgroup cols="4">
+<colspec colname="col_1" colwidth="12*"/>
+<colspec colname="col_2" colwidth="24*"/>
+<colspec colname="col_3" colwidth="24*"/>
+<colspec colname="col_4" colwidth="24*"/>
+<thead>
+<row>
+<entry align="left" valign="top">                                       </entry>
+<entry align="center" valign="top"> Flux        </entry>
+<entry align="center" valign="top"> Traitements </entry>
+<entry align="center" valign="top"> Données</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left" valign="top"><simpara><emphasis role="strong">Conceptuel</emphasis></simpara></entry>
+<entry align="center" valign="top"><simpara></simpara></entry>
+<entry align="center" valign="top"><simpara><emphasis role="strong"><phrase role="red  yellow-background">MCT</phrase></emphasis></simpara></entry>
+<entry align="center" valign="top"><simpara></simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><emphasis role="strong">Organisationel</emphasis></simpara></entry>
+<entry align="center" valign="top"><simpara></simpara></entry>
+<entry align="center" valign="top"><simpara>MOT</simpara></entry>
+<entry align="center" valign="top"><simpara></simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><emphasis role="strong">Logique</emphasis></simpara></entry>
+<entry align="center" valign="top"><simpara></simpara></entry>
+<entry align="center" valign="top"><simpara></simpara></entry>
+<entry align="center" valign="top"><simpara></simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><emphasis role="strong">Technique</emphasis></simpara></entry>
+<entry align="center" valign="top"><simpara></simpara></entry>
+<entry align="center" valign="top"><simpara></simpara></entry>
+<entry align="center" valign="top"><simpara></simpara></entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+</section>
+<section id="_exemples_2">
+<title>Exemples</title>
+</section>
+<section id="_récapitulatif_de_la_démarche_mct">
+<title>Récapitulatif de la démarche (MCT)</title>
+<itemizedlist>
+<listitem>
+<simpara>
+Identifier les postes
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Définir les tâches
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Déterminer les opérations
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Associer les événements déclencheurs
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Déterminer les résultats
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Décrire les règles d’émission
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_règles_de_bonne_conception_mct">
+<title>Règles de bonne conception (MCT)</title>
+<itemizedlist>
+<listitem>
+<simpara>
+Regroupement de tous les traitements effectués dès l’arrivée d’un événement
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Ne pas tenir compte de l’organisation interne du domaine étudié (répartition du travail entre acteurs internes)
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Seule l’attente d’événements externes (=flux externes) justifie le découpage en plusieurs opérations
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2 opérations consécutives liées exclusivement par des flux internes doivent être fusionnées.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Réutiliser les acteurs externes, les autres domaines et les flux externes trouvés dans le MCF
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_evénements_déclencheurs">
+<title>Evénements déclencheurs</title>
+<variablelist>
+<varlistentry>
+<term>
+Evénement externe
+</term>
+<listitem>
+<simpara>
+        Arrivée d’une cde, dde du client&#8230;
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+Evénement temporel
+</term>
+<listitem>
+<simpara>
+        18h, tous les lundis matin…
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+Evénement interne
+</term>
+<listitem>
+<simpara>
+        résultat d&#8217;une opération précédente
+</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+</section>
+<section id="_synchronisation">
+<title>Synchronisation</title>
+<simpara>Opérateurs :</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+ET
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+OU
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+NON
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+( )
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+combinaisons multiples
+</simpara>
+</listitem>
+</itemizedlist>
+<note>
+<itemizedlist>
+<listitem>
+<simpara>
+Pour 1 événement déclencheur, pas de synchronisation.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Pour 2 événements déclencheurs, souvent un seul opérateur.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+A partir de 3, les événements peuvent être renommés (lettres).
+</simpara>
+</listitem>
+</itemizedlist>
+</note>
+</section>
+<section id="_exercice_2">
+<title>Exercice</title>
+</section>
+<section id="_actions">
+<title>Actions</title>
+<itemizedlist>
+<listitem>
+<simpara>
+Types d&#8217;actions :
+</simpara>
+<variablelist>
+<varlistentry>
+<term>
+action sur un objet
+</term>
+<listitem>
+<simpara>
+        création, lecture, modification, suppression
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+action résultat
+</term>
+<listitem>
+<simpara>
+        impression, …
+</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+</listitem>
+<listitem>
+<simpara>
+Conditions
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+une action peut être soumise à condition
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_exercice_3">
+<title>Exercice</title>
+</section>
+<section id="_règles_d_émission">
+<title>Règles d'émission</title>
+<variablelist>
+<varlistentry>
+<term>
+Règle d'émission
+</term>
+<listitem>
+<simpara>
+        résultat de l&#8217;action
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+Nombre
+</term>
+<listitem>
+<simpara>
+        1 ou plusieurs
+</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+<note>
+<itemizedlist>
+<listitem>
+<simpara>
+S&#8217;il n&#8217;y a qu&#8217;une règle d'émission, elle est souvent omise, ou son nom est TOUJOURS.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Une règle d'émission peut utiliser une condition.
+</simpara>
+</listitem>
+</itemizedlist>
+</note>
+</section>
+<section id="_résultats">
+<title>Résultats</title>
+<itemizedlist>
+<listitem>
+<simpara>
+Evénement résultat externe
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+impression, mail, coup de téléphone…
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<simpara>
+Evénement résultat interne
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+déclencheur d&#8217;une opération
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+changement d'état d&#8217;un objet
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+</itemizedlist>
+<note><simpara>Une opération possède au moins un événement résultat par règle d'émission. Un résultat externe est toujours dirigé vers un acteur externe ou un autre domaine.</simpara></note>
+</section>
+<section id="_exercice_4">
+<title>Exercice</title>
+<itemizedlist>
+<listitem>
+<simpara>
+Lorsqu&#8217;un client envoie un bon de commande, il faut vérifier, pour chacun des articles, si le stock est suffisant pour la quantité commandée :
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+si c&#8217;est le cas, on enregistre la date de livraison, on met à jour le stock et on imprime un bon de livraison pour le service Livraison;
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+sinon le stock à réapprovisionner est incrémenté de la quantité commandée.
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+</itemizedlist>
+</section>
+</section>
+<section id="_modèle_organisationnel_de_traitement">
+<title>Modèle Organisationnel de Traitement</title>
+<section id="_eléments_importants_2">
+<title>Eléments importants</title>
+<itemizedlist>
+<listitem>
+<simpara>
+Prise en compte de l’organisation interne
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Cerne l&#8217;activité de
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+chaque poste de travail (informatique ou non),
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+chaque service
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<simpara>
+Prise en compte
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Du « planning »
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+du type de ressources (manuel, automatisé),
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+du type de support (document écrit, magnétique etc.)
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+</itemizedlist>
+<informaltable
+frame="all"
+rowsep="1" colsep="1"
+>
+<?dbhtml table-width="20%"?>
+<?dbfo table-width="20%"?>
+<?dblatex table-width="20%"?>
+<tgroup cols="4">
+<colspec colname="col_1" colwidth="12*"/>
+<colspec colname="col_2" colwidth="24*"/>
+<colspec colname="col_3" colwidth="24*"/>
+<colspec colname="col_4" colwidth="24*"/>
+<thead>
+<row>
+<entry align="left" valign="top">                                       </entry>
+<entry align="center" valign="top"> Flux        </entry>
+<entry align="center" valign="top"> Traitements </entry>
+<entry align="center" valign="top"> Données</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left" valign="top"><simpara><emphasis role="strong">Conceptuel</emphasis></simpara></entry>
+<entry align="center" valign="top"><simpara></simpara></entry>
+<entry align="center" valign="top"><simpara>MCT</simpara></entry>
+<entry align="center" valign="top"><simpara></simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><emphasis role="strong">Organisationel</emphasis></simpara></entry>
+<entry align="center" valign="top"><simpara></simpara></entry>
+<entry align="center" valign="top"><simpara><emphasis role="strong"><phrase role="red  yellow-background">MOT</phrase></emphasis></simpara></entry>
+<entry align="center" valign="top"><simpara></simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><emphasis role="strong">Logique</emphasis></simpara></entry>
+<entry align="center" valign="top"><simpara></simpara></entry>
+<entry align="center" valign="top"><simpara></simpara></entry>
+<entry align="center" valign="top"><simpara></simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><emphasis role="strong">Technique</emphasis></simpara></entry>
+<entry align="center" valign="top"><simpara></simpara></entry>
+<entry align="center" valign="top"><simpara></simpara></entry>
+<entry align="center" valign="top"><simpara></simpara></entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+</section>
+<section id="_exemples_de_mot">
+<title>Exemples de MOT</title>
+</section>
+<section id="_règles_de_bonne_conception_d_un_mot">
+<title>Règles de bonne conception d’un MOT</title>
+<itemizedlist>
+<listitem>
+<simpara>
+Examiner les traitements effectués par chaque acteur interne lorsqu’il reçoit un flux
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Une tâche = un ensemble ininterrompu d’actions effectuées par un même acteur interne
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Un MOT représente un processus c’est à dire un ensemble de tâches consécutives concourant à un même but
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Les événements initiaux déclenchant un processus sont, soit des flux externes, soit des événements temporels
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_exercice_1">
+<title>Exercice 1</title>
+<itemizedlist>
+<listitem>
+<simpara>
+Lorsqu’un agent d’une compagnie d’assurances automobiles reçoit une déclaration d’accident de la part d’un assuré, il vérifie tout d’abord la situation de ce dernier.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Si l’assuré n’est pas couvert pour ce type d’accident alors l’agent lui envoie un avis de rejet.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Tous les soirs à 18h, un traitement automatique édite les avis de sinistre de la journée (ces avis correspondent aux déclarations d’accident du jour pour les assurés couverts). Ces avis sont expédiés par l’agent au siège social de la compagnie d’assurance.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Le siège social désigne alors un expert pour chaque sinistre et envoie les coordonnées des experts désignés à l’agent d’assurance. Ce dernier envoie alors une convocation manuscrite à chaque expert.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Lorsque l’agent d’assurance a reçu le rapport de l’expert et la facture de l’assuré (cette facture a été produite par le garage qui a effectué les réparations sur le véhicule accidenté et a été ensuite donné à l’assuré propriétaire du véhicule), il peut régler le sinistre en envoyant un chèque de remboursement à l’assuré.
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_exercice_2_2">
+<title>Exercice 2</title>
+<itemizedlist>
+<listitem>
+<simpara>
+A partir des demandes d’approvisionnement établies par le service commercial, le service des achats envoie des demandes de prix aux fournisseurs possibles.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Les fournisseurs envoient des offres de prix au service achat.
+Ce dernier choisit alors un fournisseur particulier (au plus tard 10 jours après l’envoi des offres) et lui envoie un bon de commande. Une copie est conservée en vue de la réception.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Quand la livraison arrive (généralement 2 jours après le choix du fournisseur), le service achat contrôle quantitativement et qualitativement la marchandise. La livraison est renvoyée en bloc si l’un des contrôles est négatif.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Les contrôles satisfaisants aboutissent à l’entrée en stock des articles. Dans ce cas, le service achat établit alors le bon à payer aux services financiers. Quand les services financiers reçoivent la facture du fournisseur (généralement 3 jours après la livraison), ils vérifient la correspondance avec le bon à payer et émettent le chèque de paiement.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+A partir des <emphasis role="strong"><phrase role="blue">demandes d’approvisionnement</phrase></emphasis> établies par le <emphasis role="strong"><phrase role="yellow">service commercial</phrase></emphasis>, le <emphasis role="strong"><phrase role="yellow">service des achats</phrase></emphasis> envoie des <emphasis role="strong"><phrase role="blue">demandes de prix</phrase></emphasis> aux <emphasis role="strong"><phrase role="green">fournisseurs possibles</phrase></emphasis>.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Les <emphasis role="strong"><phrase role="yellow">fournisseurs</phrase></emphasis> envoient des offres de prix au service achat.
+Ce dernier <emphasis role="strong"><phrase role="green">choisit alors un fournisseur</phrase></emphasis> particulier (au plus tard 10 jours après l’envoi des offres) et lui envoie un <emphasis role="strong"><phrase role="blue">bon de commande</phrase></emphasis>. Une <emphasis role="strong"><phrase role="blue">copie</phrase></emphasis> est conservée en vue de la réception.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Quand la <emphasis role="strong"><phrase role="blue">livraison</phrase></emphasis> arrive (généralement 2 jours après le choix du fournisseur), le service achat <emphasis role="strong"><phrase role="green">contrôle</phrase></emphasis> quantitativement et qualitativement la marchandise. La livraison est renvoyée en bloc si l’un des contrôles est négatif.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Les contrôles satisfaisants aboutissent à l’entrée en stock des <emphasis role="strong"><phrase role="blue">articles</phrase></emphasis>. Dans ce cas, le service achat établit alors le <emphasis role="strong"><phrase role="blue">bon à payer</phrase></emphasis> aux <emphasis role="strong"><phrase role="yellow">services financiers</phrase></emphasis>. Quand les services financiers reçoivent la <emphasis role="strong"><phrase role="blue">facture</phrase></emphasis> du fournisseur (généralement 3 jours après la livraison), ils <emphasis role="strong"><phrase role="green">vérifient</phrase></emphasis> la correspondance avec le bon à payer et <emphasis role="strong"><phrase role="green">émettent</phrase></emphasis> le <emphasis role="strong"><phrase role="blue">chèque de paiement</phrase></emphasis>.
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+</section>
+<section id="_modélisation_du_futur_système">
+<title>Modélisation du futur Système</title>
+<simpara><inlinemediaobject>
+  <imageobject>
+  <imagedata fileref="./dessins/MCTfutur.png"/>
+  </imageobject>
+  <textobject><phrase>Enchainements</phrase></textobject>
+</inlinemediaobject></simpara>
+<section id="_mot_mof_futurs">
+<title>MOT/MOF Futurs</title>
+<itemizedlist>
+<listitem>
+<simpara>
+Degré d’automatisation
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+<emphasis role="strong">A</emphasis>utomatisée : aucune intervention humaine
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<emphasis role="strong">C</emphasis>onversationnelle (ou Interactive) : utilisation de l’informatique par l’humain
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<emphasis role="strong">M</emphasis>anuelle : aucune intervention informatique
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<simpara>
+Délai de réponse
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+<emphasis role="strong">I</emphasis>mmédiat : dès l’arrivée de l’événement déclencheur
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<emphasis role="strong">D</emphasis>ifféré : après l’arrivée (délai sur décision ou chrono)
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<simpara>
+Mode de fonctionnement
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+<emphasis role="strong">U</emphasis>nitaire : la tâche s’effectue à chaque flux entrant
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Par <emphasis role="strong">L</emphasis>ot : plusieurs flux d’entrée avant lancement
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+</itemizedlist>
+<tip>
+<title>Certaines combinaisons plus fréquentes</title>
+<itemizedlist>
+<listitem>
+<simpara>
+CIU (dialogue)
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ADL (batch)
+</simpara>
+</listitem>
+</itemizedlist>
+</tip>
+<tip>
+<title>Certaines implications</title>
+<itemizedlist>
+<listitem>
+<simpara>
+L&#8594;D
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+I&#8594;U
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+IL rare
+</simpara>
+</listitem>
+</itemizedlist>
+</tip>
+<tip>
+<title>Possibilité de compléter les informations</title>
+<itemizedlist>
+<listitem>
+<simpara>
+Durée/Volume des tâches
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Exemple : 20 enr./semaine, 6 mn/tâche, …
+</simpara>
+</listitem>
+</itemizedlist>
+</tip>
+</section>
+<section id="_exemple_de_tâche_de_mct_futur">
+<title>Exemple de tâche de MCT futur</title>
+<simpara><inlinemediaobject>
+  <imageobject>
+  <imagedata fileref="./dessins/tache.png"/>
+  </imageobject>
+  <textobject><phrase>Exemple de tâche</phrase></textobject>
+</inlinemediaobject></simpara>
+</section>
+</section>
+</section>
+<section id="_définitions_récapitulatif">
+<title>Définitions (récapitulatif)</title>
+<example>
+<title>Flux</title>
+<simpara>Représentation d’un échange d’informations entre deux acteurs du domaine étudié
+ex: livraison, paiement</simpara>
+</example>
+<example>
+<title>Acteurs</title>
+<itemizedlist>
+<listitem>
+<simpara>
+Composants du système étudié (acteurs internes) ou ayant une relation avec le système étudié (acteurs externes)
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ex: étudiant, client, comptable
+</simpara>
+</listitem>
+</itemizedlist>
+</example>
+<example>
+<title>Evénement</title>
+<itemizedlist>
+<listitem>
+<simpara>
+Fait susceptible de déclencher une opération
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ex: commande, échéance (date)
+</simpara>
+</listitem>
+</itemizedlist>
+</example>
+<example>
+<title>Opération</title>
+<itemizedlist>
+<listitem>
+<simpara>
+Ensemble d’actions (non interruptibles) conditionnées par aucun agent extérieur autre que l’événement déclencheur
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ex: prise en charge d’une demande
+</simpara>
+</listitem>
+</itemizedlist>
+</example>
+<example>
+<title>Poste de travail</title>
+<itemizedlist>
+<listitem>
+<simpara>
+Centre d’activités élémentaires regroupant zéro, une ou plusieurs personnes, utilisant du matériel ou pas, faisant l’objet d’une ou plusieurs occurrences sur le terrain.
+</simpara>
+</listitem>
+</itemizedlist>
+</example>
+<example>
+<title>Tâche</title>
+<itemizedlist>
+<listitem>
+<simpara>
+Ensemble homogène d’activités élémentaires résultant de la décomposition d’une opération conceptuelle.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Est associée à un poste de travail ;
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+A un niveau d’automatisation :
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Manuelle (M),
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Interactive ou Conversationnelle &#169;,
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Automatique (A) ;
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<simpara>
+A un délai de réponse :
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Immédiat (I),
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Différé (D) ;
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<simpara>
+A un fonctionnement :
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Unitaire (U) ou
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+par Lot (L) ;
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+</itemizedlist>
+</example>
+</section>
+</chapter>
+<chapter id="_les_niveaux_logiques_et_techniques">
+<title>Les niveaux logiques et techniques?</title>
+<simpara>Pourquoi a-t&#8217;on décidé de "zapper" ces niveaux&#8230;</simpara>
 </chapter>
 <chapter id="_les_données">
 <title>Les données</title>
+</chapter>
+<chapter id="_références_utiles_pour_cette_partie">
+<title>Références utiles pour cette partie</title>
+<itemizedlist>
+<listitem>
+<simpara>
+<ulink url="http://www.compucycles.com/nouveausite/articles/Merise/Article_07.htm">http://www.compucycles.com/nouveausite/articles/Merise/Article_07.htm</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<ulink url="http://www.wikituto.org/index.php/Catégorie:Cours_Merise">http://www.wikituto.org/index.php/Catégorie:Cours_Merise</ulink>
+</simpara>
+</listitem>
+</itemizedlist>
 </chapter>
 </part>
 <part id="_partie_3_si">
@@ -1334,6 +2764,148 @@ La maintenance
 </part>
 <part id="_partie_5_uml">
 <title>Partie 5 : UML</title>
+<simpara>Plan de cette partie :</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Le Diagramme des Cas d’Utilisation
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Opérations, Paquetages et Java
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Le Diagramme de Séquence
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+L’Architecture MVC
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Schéma d’Enchaînement des Pages (SEP)
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Les Dessins d’Etats imprimés
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+La démarche MACAO
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Analyse Globale de MACAO
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Conception Globale de MACAO
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Développement de MACAO
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Finalisation de MACAO
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Equivalence DC – MCD
+</simpara>
+</listitem>
+</itemizedlist>
+<chapter id="_le_diagramme_des_cas_d_utilisation">
+<title>Le Diagramme des Cas d’Utilisation</title>
+<simpara>Le <emphasis role="strong">Diagramme des Cas d&#8217;Utilisation</emphasis> est un modèle UML permettant de représenter :</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+les <emphasis role="strong">UC</emphasis> (<emphasis>Use Case</emphasis> ou Cas d’Utilisation),
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+les <emphasis role="strong">acteurs</emphasis> (principaux et secondaires),
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+les <emphasis role="strong">relations</emphasis> entre acteurs et UC
+</simpara>
+</listitem>
+</itemizedlist>
+<section id="_définition_et_concepts">
+<title>Définition et concepts</title>
+</section>
+</chapter>
+<chapter id="_opérations_paquetages_et_java">
+<title>Opérations, Paquetages et Java</title>
+</chapter>
+<chapter id="_le_diagramme_de_séquence">
+<title>Le Diagramme de Séquence</title>
+</chapter>
+<chapter id="_l_architecture_mvc">
+<title>L’Architecture MVC</title>
+</chapter>
+<chapter id="_schéma_d_enchaînement_des_pages_sep">
+<title>Schéma d’Enchaînement des Pages (SEP)</title>
+</chapter>
+<chapter id="_les_dessins_d_etats_imprimés">
+<title>Les Dessins d’Etats imprimés</title>
+</chapter>
+<chapter id="_la_démarche_macao">
+<title>La démarche MACAO</title>
+</chapter>
+<chapter id="_analyse_globale_de_macao">
+<title>Analyse Globale de MACAO</title>
+</chapter>
+<chapter id="_conception_globale_de_macao">
+<title>Conception Globale de MACAO</title>
+</chapter>
+<chapter id="_développement_de_macao">
+<title>Développement de MACAO</title>
+</chapter>
+<chapter id="_finalisation_de_macao">
+<title>Finalisation de MACAO</title>
+</chapter>
+<chapter id="_equivalence_dc_mcd">
+<title>Equivalence DC – MCD</title>
+<note>
+<itemizedlist>
+<listitem>
+<simpara>
+Pour 1 événement déclencheur, pas de synchronisation.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Pour 2 événements déclencheurs, souvent un seul opérateur.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+A partir de 3, les événements peuvent être renommés (lettres).
+</simpara>
+</listitem>
+</itemizedlist>
+</note>
+</chapter>
+</part>
+<appendix id="_annexes">
+<title>Annexes</title>
 <chapter id="Exos">
 <title>Exercices de révision</title>
 <simpara>Reprendre ici les questions des chapitres (à organiser en fichiers!) et
@@ -1344,40 +2916,17 @@ La maintenance
 <itemizedlist>
 <listitem>
 <simpara>
-Sites officiels
+Merise
 </simpara>
 <itemizedlist>
 <listitem>
 <simpara>
-Le site de l&#8217;association <ulink url="http://www.sysml-france.org">SysML-France</ulink>
+<ulink url="http://www.compucycles.com/nouveausite/articles/Merise/Article_07.htm">http://www.compucycles.com/nouveausite/articles/Merise/Article_07.htm</ulink>
 </simpara>
 </listitem>
 <listitem>
 <simpara>
-Le site de l&#8217;<ulink url="http://www.omg.org/">OMG</ulink>  (Object Management Group)
-</simpara>
-</listitem>
-<listitem>
-<simpara>
-Le portail <ulink url="http://www.omgwiki.org/OMGSysML/">SysML</ulink> de l&#8217;OMG (Object
-        Management Group)
-</simpara>
-</listitem>
-<listitem>
-<simpara>
-<ulink url="http://www.omg.org/spec/SysML/1.3/PDF">La spécification elle-même</ulink>
-</simpara>
-</listitem>
-<listitem>
-<simpara>
-Le site de l&#8217;<ulink url="http://www.incose.org/">INCOSE</ulink> (International Council on
-        Systems Engineering)
-</simpara>
-</listitem>
-<listitem>
-<simpara>
-Le site de l&#8217;<ulink url="http://www.afis.fr/">AFIS</ulink> (Association Française
-        d&#8217;Ingénierie Système)
+<ulink url="http://www.wikituto.org/index.php/Catégorie:Cours_Merise">http://www.wikituto.org/index.php/Catégorie:Cours_Merise</ulink>
 </simpara>
 </listitem>
 </itemizedlist>
@@ -1386,27 +2935,10 @@ Le site de l&#8217;<ulink url="http://www.afis.fr/">AFIS</ulink> (Association Fr
 <simpara>
 Blogs
 </simpara>
-<itemizedlist>
-<listitem>
-<simpara>
-Le site de <ulink url="http://model-based-systems-engineering.com/">Tim Weilkiens</ulink>
-</simpara>
 </listitem>
 <listitem>
 <simpara>
-La démarche <ulink url="http://caminao.wordpress.com/">Caminao</ulink>
-</simpara>
-</listitem>
-<listitem>
-<simpara>
-<ulink url="http://www.omgwiki.org/MBSE/doku.php">Un WiKi avec de nombreux exemples</ulink>
-</simpara>
-</listitem>
-</itemizedlist>
-</listitem>
-<listitem>
-<simpara>
-Outils SysML
+Outils
 </simpara>
 <itemizedlist>
 <listitem>
@@ -1467,7 +2999,6 @@ Divers
 <simpara>
 Pour en savoir plus sur l&#8217;<ulink url="http://jmb.c.la">auteur</ulink>
 </simpara>
-<literallayout class="monospaced">The specification itself:</literallayout>
 </listitem>
 </itemizedlist>
 </listitem>
@@ -1488,13 +3019,6 @@ Pour l&#8217;instant ce document est libre d&#8217;utilisation et géré par la 
 <ulink url="http://creativecommons.org/licenses/by-sa/3.0/">licence Creative Commons Paternité - Partage à l&#39;Identique 3.0 non transposé</ulink>.</simpara>
 </sidebar>
 </chapter>
-</part>
-<appendix id="_annexes">
-<title>Annexes</title>
-<simpara>One or more optional appendixes go here at section level zero.</simpara>
-<note><simpara>Preface and appendix subsections start out of sequence at level
-2 (level 1 is skipped).  This only applies to multi-part book
-documents.</simpara></note>
 <chapter id="_faq">
 <title>FAQ</title>
 <simpara>Cette <emphasis><emphasis role="strong">F</emphasis>requently <emphasis role="strong">A</emphasis>sked <emphasis role="strong">Q</emphasis>uestion</emphasis> a été construite par expérience, en regroupant
