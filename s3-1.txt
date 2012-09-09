@@ -18,7 +18,7 @@ On notera simplement +UC+ pour signifier "diagramme des UC"
 
 ==== Cas d'Utilisation (_Use Case_ ou UC en abrégé).
 
-Un cas d'utilisation représente un ensemble de *scénarios* que le système doit exécuter pour produire un résultat observable par un *acteur*.
+include::{defs}/uc.txt
 
 ===== Exemple d'UC
 
@@ -48,11 +48,11 @@ généralement un diagramme de séquence à un cas d'utilisation (clic droit sur
 
 ==== Acteur
 
-Un acteur peut être une personne, un ensemble de personnes, un logiciel, un processus qui interagit avec un ou plusieurs UC.
+include::{defs}/acteur.txt
 
 On peut trouver plusieurs types d'acteurs :
 
-* extérieurs au système (cf. +actor+ <<uc>>)
+* extérieurs au système (cf. +actor+ <<ucdiag,Diagramme d'UC ci-après>>)
 ** les acteurs principaux (= acteurs internes du MOT de Merise)
 ** les acteurs secondaires (= acteurs externes du MOT de Merise)
 ** les administrateurs (ils gèrent le système : données, sécurité, droits d'accès, utilisateurs...)
@@ -74,7 +74,7 @@ Généralisation::
 
 ifdef::backend-slidy2[<<<]
 
-[[uc]]
+[[ucdiag]]
 .Notation dans le diagramme d'UC
 image::{dessins}/UC.png["Diagramme d'UC",width=35%"]
 
@@ -163,7 +163,7 @@ Il existe 4 niveaux de visibilité des attributs et des opérations :
 
 === Paquetages
 
-Les paquetages permettent de regrouper les éléments de modélisation. Ils peuvent contenir d’autres sous-paquetages sans limites de niveaux.
+include::{defs}/paq.txt[]
 
 Le paquetage est un espace de *nommage*.
 
@@ -271,8 +271,6 @@ public class Bibliotheque {
 }
 -------------------------------------------
 
-
-
 ==== Equivalences entre diagramme de classes
 
 [[Equivalences]]
@@ -296,51 +294,97 @@ public class Emploi {
 }
 -------------------------------------------
 
-
 == Le Diagramme de Séquence
-== L’Architecture MVC
-== Schéma d’Enchaînement des Pages (SEP)
-== Les Dessins d’Etats imprimés
-== La démarche MACAO
-== Analyse Globale de MACAO
-== Conception Globale de MACAO
-== Développement de MACAO
-== Finalisation de MACAO
-== Equivalence DC – MCD
 
+=== Généralités
 
+* Modélise les interactions entre objets
+* Séquencement dans le temps
+* Échange de messages
+* Spécifie les scénarios des cas d'études
+* Éléments :
+** participants
+** lignes de vie
+** barres d'activation
+** messages
 
+[[seq]]
+.Diagramme de séquence
+image:{images}/seq1.png["Diagramme de séquence",width="40%"]
+image:{images}/seq2.png["Eléments de notation",width="40%"]
 
-[NOTE]
+[WARNING]
 =====================================================================
-- Pour 1 événement déclencheur, pas de synchronisation.
-- Pour 2 événements déclencheurs, souvent un seul opérateur.
-- A partir de 3, les événements peuvent être renommés (lettres).
+Les lignes de vie représentent des objets et non des classes
 =====================================================================
 
 
-ifdef::backend-slidy2[]
+=== Exemple
+
+[[seqexp]]
+.Exemple de diagramme de séquence
+image::{images}/seq3.png["Exemple de diagramme de séquence",width="60%"]
+
+=== Notions avancées
+
+* Instructions itératives et conditionnelles
+* Mieux vaut utiliser un diagramme d'activité
+* Cadres d'interaction
+** +loop+ (boucle)
+** +alt+ (alternative)
+** +opt+ (optionel)
+** +par+ (parallèle)
+** +region+ (région critique - un seul thread à la fois)
 
 <<<
 
-[TIP]
-.Possibilité de compléter les informations
-===============================
-* Durée/Volume des tâches
-* Exemple : 20 enr./semaine, 6 mn/tâche, …
-===============================
+[[fowler]]
+.Exemple algorithme / diagramme
+image:{images}/fowl1.png["Un algorithme",width="30%"]
+image:{images}/fowl2.png["Sa modélisation",width="60%"]
 
+=== Exemple de conceptions
 
-=== Définitions (récapitulatif)
+[[fowler1]]
+.Conception "centralisée"
+image::{images}/fowl3.png["Conception 'centralisée'",width="60%"]
 
-.Flux
-[caption="Définition : "]
-==========================
-Représentation d’un échange d’informations entre deux acteurs du domaine étudié
-ex: livraison, paiement
-==========================
+[[fowler2]]
+.Conception "objet"
+image::{images}/fowl4.png["Conception 'objet'",width="60%"]
 
+=== Diagramme de séquence système
 
-== Références utiles pour cette partie
-* http://www.compucycles.com/nouveausite/articles/Merise/Article_07.htm
-* http://www.wikituto.org/index.php/Catégorie:Cours_Merise
+Bien que non présent dans UML, il est courant de trouver un diagramme de séquence particulier, le
+*diagramme de séquence système* ou *DSS*, où on ne représente qu'un seul objet : le système en cours de développement lui-même.
+
+[[exp1-dss]]
+.Un exemple de DSS
+image::{images}/dssexp1.png["Exemple de DSS",width="40%"]
+
+=== Lien entre UC, DSS et DS
+
+La décomposition hiérarchique permet de réaliser une description "_TOP-DOWN_" du système à réaliser.
+
+On fait un Diagramme de Séquence Système pour chaque UC (issu du Diagramme d’UC) pour déterminer les échanges d’informations entre l’acteur et le système.
+
+Ensuite on fait un Diagramme de Séquence (DS) pour décrire comment les objets composants le système (issus du Diagramme de Classes) collaborent pour réaliser le traitement demandé.
+
+<<<
+
+[[exp1-uc]]
+.Diagramme d'UC
+image::{images}/ucexp1.png["Diagramme d'UC",width="30%"]
+
+<<<
+
+[[exp1-dss]]
+.Le DSS correspondant
+image::{images}/dssexp1.png["Le DSS correspondant",width="30%"]
+
+<<<
+
+[[exp1-ds]]
+.Le DS correspondant
+image::{images}/dsexp1.png["Le DS correspondant",width="70%"]
+

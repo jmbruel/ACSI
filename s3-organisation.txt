@@ -1,0 +1,230 @@
+:title: Analyse et Conception des Systèmes d'Information
+:doctype: book
+:description: Cours de DUT Informatique
+:keywords: ACSI Merise UML Analyse Conception Systèmes d'Information
+:Author: Jean-Michel Bruel 
+:Author Initials: JMB
+:Email: jean-michel.bruel@univ-tlse2.fr
+:Revision: 1.0
+:localdate: {sys: date +%d/%m/%Y}
+:Date: {localdate}
+:startdate: 29/07/2012
+:images: images
+:toc_title: Content
+:slideshowlocation: [IUT Blagnac]
+:duration: 85
+:slidebackground: asciidocslidy
+:copyright: {date={localdate}}, {slideshowlocation} *** {author} *** Powered by Asciidoc and W3C Slidy &#169; 
+:incremental!:
+:indir: dessins
+:defs: defs
+:parttitle: UML avancé
+
+= {title}
+
+// raccourcis sites
+:asciidoc: http://www.methods.co.nz/asciidoc[AsciiDoc]
+:models: http://www.modelsconference.org/[MODELS]
+:moodle: http://webetud.iut-blagnac.fr[Moodle]
+:omg: http://www.omg.org[OMG]
+:pandoc: http://johnmacfarlane.net/pandoc/[Pandoc]
+:slidy2: http://www.w3.org/Talks/Tools/Slidy2/[W3C HTML Slidy]
+:sosym: http://www.sosym.org[Software and System Modeling journal]
+:sysmlfrance: http://www.sysml-france.fr[SysML France]
+:bouml: http://www.bouml.fr/[BOUML]
+:topcased: http://www.topcased.org/[TopCased]
+:windesign: http://www.win-design.com/fr/index.htm[WinDesign]
+
+// data
+:uml: UML indexterm:[UML]
+:flux: Flux
+:traitements: Traitements
+:donnees: Données
+:conceptuel: Conceptuel
+:organisationel: Organisationel				
+:logique: Logique
+:technique: Technique
+:resume: En résumé
+:revisions: Questions de révision
+:dessins: ./dessins
+:images: ./images
+
+// personnes et institutions
+:nico: Nicolas Belloir
+:jmb: mailto:jean-michel.bruel@univ-tlse2.fr[Jean-Michel Bruel]
+:cc: mailto:cc.charron@wanadoo.fr[Cyril Charon]
+:nh: mailto:nabil.hanine@free.fr[Nabil Hanine]
+:jmi: Jean-Michel Inglebert
+:jmimail: jean-michel.inglebert@univ-tlse2.fr
+:iut: IUT de Blagnac
+:nonne: mailto:laurent.nonne@univ-tlse2.fr[Laurent Nonne]
+:omg: OMG
+:prfc: Pascal Roques
+:univ-tlse: http://www.univ-toulouse.fr[Univesité de Toulouse]
+:uppa: Université de Pau et des Pays de l'Adour
+
+= ASCI S3
+
+== Points abordés
+
+Plan de cette partie :
+
+* Le Diagramme des Cas d’Utilisation
+* Opérations, Paquetages et Java
+* Le Diagramme de Séquence
+* L’Architecture MVC
+* Schéma d’Enchaînement des Pages (SEP)
+* Les Dessins d’Etats imprimés
+* Une démarche complète
+* Analyse Globale
+* Conception Globale
+* Développement
+* Finalisation
+* Equivalence DC – MCD
+
+== Organisation
+
+* 4 intervenants permanents
+** {nonne}
+** {jmb}
+** {cc}
+** {nh}
+** "interchangeables"
+* Découpage Cours / TD / TP
+** semestres 3 uniquement
+** 16 semaines (devoir en 8ème semaine environ)
+** 6 cours (une semaine sur deux environ) 
+** 8 premières semaines : 3h TD exercices
+** 8 dernière semaines : 3h projet complets par étapes
+
+== Généralités
+
+* Supports
+** disponibles sur Moodle
+** Après ou avant les cours
+
+WARNING: uniquement une aide à vos notes personnelles
+
+ifdef::backend-slidy2[<<<]
+
+* Outils
+** UML
+*** {bouml}
+*** {topcased}
+** {WinDesign}
+
+== Objectifs (rappels)
+
+Comme tout le reste du programme enseigné au DUT, ce cours est une adaptation du PPN :
+
+* Les organisations et leurs Systèmes d'Information
+* Le Génie Logiciel et la façon de concevoir un système de qualité
+* Les démarches/méthodes (Merise), notations ({UML}) et outils nécessaires aux futurs métiers qui vous attendent
+
+Le module ACSI se décompose en deux parties principales (**U**nités de **F**ormation) :
+
+* Modélisation des Systèmes d'Information
+* Techniques Complémentaires de Production Logicielles
+
+=== Modélisation des Systèmes d'Information
+
+* Objectifs :
+** Connaître les outils de modélisation des systèmes d'information
+** Connaître un atelier de génie logiciel
+* Compétences visées :
+** Produire une spécification opérationnelle
+* Pré-requis :
+** Algorithmique
+** Théorie des ensembles, relations, logique
+** Calcul des propositions et des prédicats
+* Programme :
+** Organisations et systèmes d'information
+** Langages de modélisation
+** Méthodes d'analyse et de conception orientée objet
+** Initiation à l'utilisation d'un Atelier de Génie Logiciel
+** Etude de cas
+
+NOTE: Ces éléments sont tirés du PPN.
+
+=== Techniques Complémentaires de Production Logicielles
+
+* Objectifs :
+** Connaître les principes de conception de l'Interface Homme-Machine
+** Connaître les principes de mise en œuvre de la qualité logicielle
+* Compétences visées :
+** Mettre en œuvre les principes de conception de l'I.H.M.
+** Mettre en œuvre une approche qualité dans le processus de production du
+logiciel
+* Pré-requis :
+** Expérience en programmation et en modélisation des systèmes d'information
+* Programme :
+** Qualité du logiciel : objectif du génie logiciel ; assurance qualité, normes,
+gestion des
+** projets logiciels et documentation, cycle de vie du logiciel, architecture logicielle
+** Principes et techniques de base des tests : familles et niveaux de tests, outil de
+tests
+** Interaction homme-machine : prise en compte de l'utilisateur, conception de
+l'I.H.M.,
+** composants graphiques, choix et recommandations ergonomiques, I.D.E.
+
+NOTE: Ces éléments sont tirés du PPN.
+
+=== Interactions avec les autres cours
+
+* Programmation
+* Bases de données
+* Gestion de projet
+* ...
+
+[NOTE]
+=====================================================================
+Voici un exemple :
+
+- en S1/S2 : tests sur requêtes SQL
+- en S3 : dvpt site Web dynamique
+=====================================================================
+
+[[Central]]
+.Place centrale du module d'ACSI
+ifndef::backend-slidy2[]
+image::./images/fig-placeCentrale.png["Place Centrale"]
+endif::backend-slidy2[]
+ifdef::backend-slidy2[]
+:incremental:
+<<<
+images::{images}/fig-placeCentrale.png[{images}/fig-placeCentrale-1.png,{images}/fig-placeCentrale-2.png,{images}/fig-placeCentrale-3.png,{images}/fig-placeCentrale-4.png]
+:incremental!:
+endif::backend-slidy2[]
+
+=== Concrètement
+
+* Plusieurs matières
+* Plusieurs intervenants
+* Plusieurs supports de cours
+** Organisation
+** Merise
+** UML
+** Systèmes d'Information
+** Génie Logiciel
+* Nombreux exercices
+** sujets
+** corrections
+* Très nombreux supports Internet
+
+[WARNING]
+=====================================================================
+Rien ne vaut la pratique elle-même!
+=====================================================================
+
+[NOTE]
+=====================================================================
+Document généré par mailto:{email}[{author}] via {asciidoc} (version +8.6.8+) de 'Stuart Rackham'.
+La version présentation a été générée en utilisant {slidy2} (C) de 'Dave Raggett', amélioré par mailto:{jmimail}[{jmi}].
+
+Pour l'instant ce document est libre d'utilisation et géré par la 'Licence Creative Commons'. 
+image:../images/icons/88x31.png["Licence Creative 
+Commons",style="border-width:0",link="http://creativecommons.org/licenses/by-sa/3.0/"]
+http://creativecommons.org/licenses/by-sa/3.0/[licence Creative Commons Paternité - Partage à l&#39;Identique 3.0 non transposé].
+=====================================================================
+
+

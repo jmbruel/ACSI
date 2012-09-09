@@ -17,6 +17,8 @@
 :copyright: {date={localdate}}, {slideshowlocation} *** {author} *** Powered by Asciidoc and W3C Slidy &#169; 
 :incremental!:
 :indir: dessins
+:defs: defs
+:parttitle: UML avancé
 
 = {title}
 
@@ -56,7 +58,7 @@
 :univ-tlse: http://www.univ-toulouse.fr[Univesité de Toulouse]
 :uppa: Université de Pau et des Pays de l'Adour
 
-= Partie 5 : UML
+= Partie 5 : {parttitle}
 
 Plan de cette partie :
 
@@ -75,4 +77,56 @@ Plan de cette partie :
 
 
 include::S3-1.txt[]
+
+== L’Architecture MVC
+== Schéma d’Enchaînement des Pages (SEP)
+== Les Dessins d’Etats imprimés
+== La démarche MACAO
+== Analyse Globale de MACAO
+== Conception Globale de MACAO
+== Développement de MACAO
+== Finalisation de MACAO
+== Equivalence DC – MCD
+
+=== Définitions (récapitulatif {parttitle})
+
+[[acteur]]
+.Acteur (dans un diagramme des UC)
+[caption="Définition : "]
+==========================
+include::{defs}/acteur.txt[]
+==========================
+
+[[uc]]
+.Cas d'Utilisation (UC, _Use Case_)
+[caption="Définition : "]
+==========================
+include::{defs}/uc.txt[]
+==========================
+
+[[paq]]
+.Paquetage (_package_)
+[caption="Définition : "]
+==========================
+include::{defs}/paq.txt[]
+==========================
+
+
+== Références utiles pour cette partie
+* http://www.compucycles.com/nouveausite/articles/Merise/Article_07.htm
+* http://www.wikituto.org/index.php/Catégorie:Cours_Merise
+
+[NOTE]
+=====================================================================
+Site en cours de construction ...
+
+Document généré par mailto:{email}[{author}] via {asciidoc} (version +8.6.8+) de 'Stuart Rackham'.
+La version présentation a été générée en utilisant {slidy2} (C) de 'Dave Raggett', amélioré par mailto:{jmimail}[{jmi}].
+
+Pour l'instant ce document est libre d'utilisation et géré par la 'Licence Creative Commons'. 
+image:../images/icons/88x31.png["Licence Creative 
+Commons",style="border-width:0",link="http://creativecommons.org/licenses/by-sa/3.0/"]
+http://creativecommons.org/licenses/by-sa/3.0/[licence Creative Commons Paternité - Partage à l&#39;Identique 3.0 non transposé].
+=====================================================================
+
 

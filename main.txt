@@ -17,6 +17,7 @@
 :copyright: {date={localdate}}, {slideshowlocation} *** {author} *** Powered by Asciidoc and W3C Slidy &#169; 
 :incremental!:
 :indir: dessins
+:defs: defs
 
 = {title}
 
