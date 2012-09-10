@@ -1,0 +1,81 @@
+:title: Classes, Méthodes, Diag. Séquence, Java, SNI, SEF
+:doctype: article
+:description: Cours de DUT Informatique
+:keywords: ACSI Merise UML Analyse Conception Systèmes d'Information
+:Author: Jean-Michel Bruel et Laurent Nonne
+:Author Initials: JMB
+:Email: jean-michel.bruel@univ-tlse2.fr
+:Revision: 1.0
+:localdate: {sys: date +%d/%m/%Y}
+:Date: {localdate}
+:startdate: 29/09/2012
+:slideshowlocation: [IUT Blagnac]
+:slidebackground: asciidocslidy
+:copyright: {date={localdate}}, {slideshowlocation} *** {author} *** Powered by Asciidoc and W3C Slidy &#169; 
+:incremental!:
+:indir: dessins
+
+//----------- définitions --------------
+:umlsite: http://webetud.iut-blagnac.fr/file.php/35/SupportCours/5-UML-1.pdf
+:oclsite: http://webetud.iut-blagnac.fr/mod/resource/view.php?id=9621
+:pre: PreReq
+:objtd: ObjTD
+:objgen: ObjGen
+:lien: Lien
+
+= ACSI–S3–UML : {title}
+
+[[cartouche]]
+[align="left",cols="1,10",width="90%"]
+|======================
+| {pre}		| 
+. Je connais les concepts objets suivants : encapsulation, visibilité
+des méthodes et des attributs, référence d’objet
+. Je connais le Diagramme de Séquence, le SNI et le SEF
+. J’ai quelques notions du langage Java
+| {objtd}	| J’apprends à représenter des méthodes objet dans différents
+modèles : diag. de Classes, diag. de Séquence (et code Java),
+SNI et SEF.
+| {objgen}	| J’apprends à réaliser la partie dynamique d’une conception
+objet.
+| {lien}	| Java
+|======================
+
+== Diagramme des classes
+
+A partir du diagramme des classes simplifié de la société IUT présenté ci-dessous
+on se propose de rajouter les méthodes et les attributs permettant de répondre aux besoins
+supplémentaires exprimés par les utilisateurs.
+
+image::{images}/td2.png["Société IUT",width="60%"]
+
+Les besoins exprimés sont les suivants :
+
+- Renseigner la date de fin de chantier (clôture d’un chantier).
+- Mettre à jour l’avancement des chantiers par mise à jour de la date et de la durée de la
+relation Réaliser.
+- Calculer et mettre à jour la durée moyenne réelle de fabrication de chaque modèle de
+maison
+- Faire le bilan d’avancement de chaque chantier : tâches à faire et tâches réalisées
+- Obtenir tous les artisans susceptibles d’intervenir pour chaque tâche de fabrication
+d’un modèle.
+- Obtenir le montant des rémunérations d’un artisan pour un chantier donné sur lequel il
+a travaillé.
+
+=== Questions
+
+. Rajouter les attributs et les méthodes nécessaires sur le diagramme de classes.
+. Ecrire le code Java de la méthode +getPayeArtisan(...)+.
+. Faire le diagramme de séquence correspondant à ce code Java.
+. Construire le SNI permettant à toute personne de consulter les divers éléments de la base
+de données construite à partir du diagramme des classes et aux chefs de chantiers de mettre à
+jour l’avancement des chantiers et de clôturer les chantiers.
+. Construire le SEF et les dessins de boites de dialogue nécessaires pour programmer ce
+SNI dans une application fenêtrée.
+
+[NOTE]
+=====================================================================
+On ne tiendra pas compte de la gestion courante des informations
+(CRUD : Create, Read, Update, Delete).
+[WARNING]
+=====================================================================

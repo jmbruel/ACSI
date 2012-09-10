@@ -20,8 +20,8 @@ ifdef::posix[]
 :cp: cp 
 :ditaajar: /Users/bruel/dev/ditaa0_9/ditaa0_9.jar
 :styleslidy: /Users/bruel/.asciidoc/backends/slidy2/doc/keycap.css
-:style: /Users/bruel/dev/asciidoc/ACSI/stylesheets/jmbslidy2.css
-//:style: {styleslidy}
+//:style: /Users/bruel/dev/asciidoc/ACSI/stylesheets/jmbslidy2.css
+:style: {styleslidy}
 endif::posix[]
 
 :scriptsdir: {asciidocdir}javascripts
@@ -40,7 +40,7 @@ endif::posix[]
 :local:
 
 // remove exclamation mark (!) to select document source
-:doc1: main
+:doc1: S3-1
 :doc2!: 
 
 // remove exclamation mark (!) to force compilation
