@@ -22,7 +22,7 @@
 			<key>filename</key>
 			<string>main.txt</string>
 			<key>lastUsed</key>
-			<date>2012-09-05T17:05:19Z</date>
+			<date>2012-09-10T08:36:40Z</date>
 			<key>selected</key>
 			<true/>
 		</dict>
@@ -224,30 +224,14 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>13</integer>
+				<integer>71</integer>
 				<key>line</key>
-				<integer>39</integer>
+				<integer>73</integer>
 			</dict>
-			<key>columnSelection</key>
-			<false/>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>45</integer>
-			<key>selectFrom</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>0</integer>
-			</dict>
-			<key>selectTo</key>
-			<dict>
-				<key>column</key>
-				<integer>64</integer>
-				<key>line</key>
-				<integer>150</integer>
-			</dict>
+			<integer>46</integer>
 		</dict>
 		<key>make.txt</key>
 		<dict>
@@ -279,6 +263,6 @@
 	<key>showFileHierarchyDrawer</key>
 	<true/>
 	<key>windowFrame</key>
-	<string>{{176, -35}, {900, 774}}</string>
+	<string>{{392, 194}, {900, 774}}</string>
 </dict>
 </plist>
