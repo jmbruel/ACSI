@@ -77,8 +77,6 @@ include::chap00AvantPropos.txt[]
 
 include::Generalites.txt[]
 
-ifdef::backend-slidy2[<<<] 
-
 = Partie 2 : Merise
 
 include::Merise.txt[]
@@ -89,8 +87,11 @@ include::Merise.txt[]
 
 = Partie 5 : UML
 
+= Partie 6 : UML Avancé
+
 Dans cette partie, nous allons aborder une démarche générale de conception.
 Nous allons aborder des diagrammes UML comme le diagramme des cas d'utilisation ou de séquences.
+Dans nos enseignements de DUT Informatique, cette partie est abordée en 3ème semestre.
 
 La démarche présentée, inspirée de la méthode MACAO de {jbc}, qui fut professeur à l'IUT de Blagnac jusqu'en 2008,
 n'est donné ici qu'à titre d'exemple. Aucune démarche n'est associée à UML et nous faisons une aggrégation ici des meilleures pratiques entre UML et Merise.

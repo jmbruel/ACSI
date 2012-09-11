@@ -34,13 +34,13 @@ endif::posix[]
 :html:
 :slidy:
 :pdf!:
-:ditaa!:
+:ditaa:
 
 // remove exclamation mark (!) to select audience
 :local:
 
 // remove exclamation mark (!) to select document source
-:doc1: S3-1
+:doc1: main
 :doc2!: 
 
 // remove exclamation mark (!) to force compilation
@@ -68,7 +68,7 @@ ifdef::local[]
 
 == local outputs
 
-:cmdhtml: {asciidocbin} {stylesdir? -a stylesdir={stylesdir}} {scriptsdir? -a scriptsdir={scriptsdir}} -a numbered -a icons {iconsdir? -a iconsdir={iconsdir}} {style? -a stylesheet={style}} -a badges -a toc -a revnumber={doc_version} -a data-uri
+:cmdhtml: {asciidocbin} {stylesdir? -a stylesdir={stylesdir}} {scriptsdir? -a scriptsdir={scriptsdir}} -a numbered -a icons {iconsdir? -a iconsdir={iconsdir}} {style? -a stylesheet={style}} -a badges -a toc -a revnumber={doc_version} -a data-uri --filter /Users/bruel/dev/ditaa0_9
 
 :cmdslidy: {asciidocbin} --backend slidy2 -a numbered -a icons -a badges  {iconsdir? -a iconsdir=../images/icons} {styleslidy? -a stylesheet={style}} -a revnumber={doc_version} -a data-uri -a slide
 

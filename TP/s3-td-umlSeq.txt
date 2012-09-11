@@ -29,10 +29,10 @@
 [align="left",cols="1,10",width="90%"]
 |======================
 | {pre}		| 
-. Je connais les concepts objets suivants : encapsulation, visibilité
-des méthodes et des attributs, référence d’objet
-. Je connais le Diagramme de Séquence, le SNI et le SEF
-. J’ai quelques notions du langage Java
+Je connais les concepts objets suivants : encapsulation, visibilité
+des méthodes et des attributs, référence d’objet.
+Je connais le Diagramme de Séquence, le SNI et le SEF.
+J’ai quelques notions du langage Java.
 | {objtd}	| J’apprends à représenter des méthodes objet dans différents
 modèles : diag. de Classes, diag. de Séquence (et code Java),
 SNI et SEF.
@@ -47,8 +47,6 @@ A partir du diagramme des classes simplifié de la société IUT présenté ci-d
 on se propose de rajouter les méthodes et les attributs permettant de répondre aux besoins
 supplémentaires exprimés par les utilisateurs.
 
-image::{images}/td2.png["Société IUT",width="60%"]
-
 Les besoins exprimés sont les suivants :
 
 - Renseigner la date de fin de chantier (clôture d’un chantier).
@@ -61,6 +59,8 @@ maison
 d’un modèle.
 - Obtenir le montant des rémunérations d’un artisan pour un chantier donné sur lequel il
 a travaillé.
+
+image::td2.png["Société IUT",width="80%"]
 
 === Questions
 
