@@ -1,0 +1,1383 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+<meta name="generator" content="AsciiDoc 8.6.8" />
+<meta name="description" content="Cours de DUT Informatique" />
+<meta name="keywords" content="ACSI Merise UML Analyse Conception Systèmes d'Information" />
+<title>Classes et OCL</title>
+<style type="text/css">
+/* Shared CSS for AsciiDoc xhtml11 and html5 backends */
+
+/* Default font. */
+body {
+  font-family: Georgia,serif;
+}
+
+/* Title font. */
+h1, h2, h3, h4, h5, h6,
+div.title, caption.title,
+thead, p.table.header,
+#toctitle,
+#author, #revnumber, #revdate, #revremark,
+#footer {
+  font-family: Arial,Helvetica,sans-serif;
+}
+
+body {
+  margin: 1em 5% 1em 5%;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+}
+a:visited {
+  color: fuchsia;
+}
+
+em {
+  font-style: italic;
+  color: navy;
+}
+
+strong {
+  font-weight: bold;
+  color: #083194;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #527bbd;
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
+  line-height: 1.3;
+}
+
+h1, h2, h3 {
+  border-bottom: 2px solid silver;
+}
+h2 {
+  padding-top: 0.5em;
+}
+h3 {
+  float: left;
+}
+h3 + * {
+  clear: left;
+}
+h5 {
+  font-size: 1.0em;
+}
+
+div.sectionbody {
+  margin-left: 0;
+}
+
+hr {
+  border: 1px solid silver;
+}
+
+p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+ul, ol, li > p {
+  margin-top: 0;
+}
+ul > li     { color: #aaa; }
+ul > li > * { color: black; }
+
+.monospaced, code, pre {
+  font-family: "Courier New", Courier, monospace;
+  font-size: inherit;
+  color: navy;
+  padding: 0;
+  margin: 0;
+}
+
+
+#author {
+  color: #527bbd;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+#email {
+}
+#revnumber, #revdate, #revremark {
+}
+
+#footer {
+  font-size: small;
+  border-top: 2px solid silver;
+  padding-top: 0.5em;
+  margin-top: 4.0em;
+}
+#footer-text {
+  float: left;
+  padding-bottom: 0.5em;
+}
+#footer-badges {
+  float: right;
+  padding-bottom: 0.5em;
+}
+
+#preamble {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+div.imageblock, div.exampleblock, div.verseblock,
+div.quoteblock, div.literalblock, div.listingblock, div.sidebarblock,
+div.admonitionblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+div.admonitionblock {
+  margin-top: 2.0em;
+  margin-bottom: 2.0em;
+  margin-right: 10%;
+  color: #606060;
+}
+
+div.content { /* Block element content. */
+  padding: 0;
+}
+
+/* Block element titles. */
+div.title, caption.title {
+  color: #527bbd;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 1.0em;
+  margin-bottom: 0.5em;
+}
+div.title + * {
+  margin-top: 0;
+}
+
+td div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content + div.title {
+  margin-top: 0.0em;
+}
+
+div.sidebarblock > div.content {
+  background: #ffffee;
+  border: 1px solid #dddddd;
+  border-left: 4px solid #f0f0f0;
+  padding: 0.5em;
+}
+
+div.listingblock > div.content {
+  border: 1px solid #dddddd;
+  border-left: 5px solid #f0f0f0;
+  background: #f8f8f8;
+  padding: 0.5em;
+}
+
+div.quoteblock, div.verseblock {
+  padding-left: 1.0em;
+  margin-left: 1.0em;
+  margin-right: 10%;
+  border-left: 5px solid #f0f0f0;
+  color: #888;
+}
+
+div.quoteblock > div.attribution {
+  padding-top: 0.5em;
+  text-align: right;
+}
+
+div.verseblock > pre.content {
+  font-family: inherit;
+  font-size: inherit;
+}
+div.verseblock > div.attribution {
+  padding-top: 0.75em;
+  text-align: left;
+}
+/* DEPRECATED: Pre version 8.2.7 verse style literal block. */
+div.verseblock + div.attribution {
+  text-align: left;
+}
+
+div.admonitionblock .icon {
+  vertical-align: top;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: underline;
+  color: #527bbd;
+  padding-right: 0.5em;
+}
+div.admonitionblock td.content {
+  padding-left: 0.5em;
+  border-left: 3px solid #dddddd;
+}
+
+div.exampleblock > div.content {
+  border-left: 3px solid #dddddd;
+  padding-left: 0.5em;
+}
+
+div.imageblock div.content { padding-left: 0; }
+span.image img { border-style: none; }
+a.image:visited { color: white; }
+
+dl {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+dt {
+  margin-top: 0.5em;
+  margin-bottom: 0;
+  font-style: normal;
+  color: navy;
+}
+dd > *:first-child {
+  margin-top: 0.1em;
+}
+
+ul, ol {
+    list-style-position: outside;
+}
+ol.arabic {
+  list-style-type: decimal;
+}
+ol.loweralpha {
+  list-style-type: lower-alpha;
+}
+ol.upperalpha {
+  list-style-type: upper-alpha;
+}
+ol.lowerroman {
+  list-style-type: lower-roman;
+}
+ol.upperroman {
+  list-style-type: upper-roman;
+}
+
+div.compact ul, div.compact ol,
+div.compact p, div.compact p,
+div.compact div, div.compact div {
+  margin-top: 0.1em;
+  margin-bottom: 0.1em;
+}
+
+tfoot {
+  font-weight: bold;
+}
+td > div.verse {
+  white-space: pre;
+}
+
+div.hdlist {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+div.hdlist tr {
+  padding-bottom: 15px;
+}
+dt.hdlist1.strong, td.hdlist1.strong {
+  font-weight: bold;
+}
+td.hdlist1 {
+  vertical-align: top;
+  font-style: normal;
+  padding-right: 0.8em;
+  color: navy;
+}
+td.hdlist2 {
+  vertical-align: top;
+}
+div.hdlist.compact tr {
+  margin: 0;
+  padding-bottom: 0;
+}
+
+.comment {
+  background: yellow;
+}
+
+.footnote, .footnoteref {
+  font-size: 0.8em;
+}
+
+span.footnote, span.footnoteref {
+  vertical-align: super;
+}
+
+#footnotes {
+  margin: 20px 0 20px 0;
+  padding: 7px 0 0 0;
+}
+
+#footnotes div.footnote {
+  margin: 0 0 5px 0;
+}
+
+#footnotes hr {
+  border: none;
+  border-top: 1px solid silver;
+  height: 1px;
+  text-align: left;
+  margin-left: 0;
+  width: 20%;
+  min-width: 100px;
+}
+
+div.colist td {
+  padding-right: 0.5em;
+  padding-bottom: 0.3em;
+  vertical-align: top;
+}
+div.colist td img {
+  margin-top: 0.3em;
+}
+
+@media print {
+  #footer-badges { display: none; }
+}
+
+#toc {
+  margin-bottom: 2.5em;
+}
+
+#toctitle {
+  color: #527bbd;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-top: 1.0em;
+  margin-bottom: 0.1em;
+}
+
+div.toclevel0, div.toclevel1, div.toclevel2, div.toclevel3, div.toclevel4 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+div.toclevel2 {
+  margin-left: 2em;
+  font-size: 0.9em;
+}
+div.toclevel3 {
+  margin-left: 4em;
+  font-size: 0.9em;
+}
+div.toclevel4 {
+  margin-left: 6em;
+  font-size: 0.9em;
+}
+
+span.aqua { color: aqua; }
+span.black { color: black; }
+span.blue { color: blue; }
+span.fuchsia { color: fuchsia; }
+span.gray { color: gray; }
+span.green { color: green; }
+span.lime { color: lime; }
+span.maroon { color: maroon; }
+span.navy { color: navy; }
+span.olive { color: olive; }
+span.purple { color: purple; }
+span.red { color: red; }
+span.silver { color: silver; }
+span.teal { color: teal; }
+span.white { color: white; }
+span.yellow { color: yellow; }
+
+span.aqua-background { background: aqua; }
+span.black-background { background: black; }
+span.blue-background { background: blue; }
+span.fuchsia-background { background: fuchsia; }
+span.gray-background { background: gray; }
+span.green-background { background: green; }
+span.lime-background { background: lime; }
+span.maroon-background { background: maroon; }
+span.navy-background { background: navy; }
+span.olive-background { background: olive; }
+span.purple-background { background: purple; }
+span.red-background { background: red; }
+span.silver-background { background: silver; }
+span.teal-background { background: teal; }
+span.white-background { background: white; }
+span.yellow-background { background: yellow; }
+
+span.big { font-size: 2em; }
+span.small { font-size: 0.6em; }
+
+span.underline { text-decoration: underline; }
+span.overline { text-decoration: overline; }
+span.line-through { text-decoration: line-through; }
+
+div.unbreakable { page-break-inside: avoid; }
+
+
+/*
+ * xhtml11 specific
+ *
+ * */
+
+div.tableblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+div.tableblock > table {
+  border: 3px solid #527bbd;
+}
+thead, p.table.header {
+  font-weight: bold;
+  color: #527bbd;
+}
+p.table {
+  margin-top: 0;
+}
+/* Because the table frame attribute is overriden by CSS in most browsers. */
+div.tableblock > table[frame="void"] {
+  border-style: none;
+}
+div.tableblock > table[frame="hsides"] {
+  border-left-style: none;
+  border-right-style: none;
+}
+div.tableblock > table[frame="vsides"] {
+  border-top-style: none;
+  border-bottom-style: none;
+}
+
+
+/*
+ * html5 specific
+ *
+ * */
+
+table.tableblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+thead, p.tableblock.header {
+  font-weight: bold;
+  color: #527bbd;
+}
+p.tableblock {
+  margin-top: 0;
+}
+table.tableblock {
+  border-width: 3px;
+  border-spacing: 0px;
+  border-style: solid;
+  border-color: #527bbd;
+  border-collapse: collapse;
+}
+th.tableblock, td.tableblock {
+  border-width: 1px;
+  padding: 4px;
+  border-style: solid;
+  border-color: #527bbd;
+}
+
+table.tableblock.frame-topbot {
+  border-left-style: hidden;
+  border-right-style: hidden;
+}
+table.tableblock.frame-sides {
+  border-top-style: hidden;
+  border-bottom-style: hidden;
+}
+table.tableblock.frame-none {
+  border-style: hidden;
+}
+
+th.tableblock.halign-left, td.tableblock.halign-left {
+  text-align: left;
+}
+th.tableblock.halign-center, td.tableblock.halign-center {
+  text-align: center;
+}
+th.tableblock.halign-right, td.tableblock.halign-right {
+  text-align: right;
+}
+
+th.tableblock.valign-top, td.tableblock.valign-top {
+  vertical-align: top;
+}
+th.tableblock.valign-middle, td.tableblock.valign-middle {
+  vertical-align: middle;
+}
+th.tableblock.valign-bottom, td.tableblock.valign-bottom {
+  vertical-align: bottom;
+}
+
+
+/*
+ * manpage specific
+ *
+ * */
+
+body.manpage h1 {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  border-top: 2px solid silver;
+  border-bottom: 2px solid silver;
+}
+body.manpage h2 {
+  border-style: none;
+}
+body.manpage div.sectionbody {
+  margin-left: 3em;
+}
+
+@media print {
+  body.manpage div#toc { display: none; }
+}
+
+
+/* slidy.css
+
+   Copyright (c) 2005-2010 W3C (MIT, ERCIM, Keio), All Rights Reserved.
+   W3C liability, trademark, document use and software licensing
+   rules apply, see:
+
+   http://www.w3.org/Consortium/Legal/copyright-documents
+   http://www.w3.org/Consortium/Legal/copyright-software
+*/
+
+/*
+   SJR: 2010-09-29: Modified for AsciiDoc slidy backend.
+   Mostly just commented out stuff that is handled by AsciiDoc's CSS files.
+*/
+
+body
+{
+  color: black;
+  background-color: white;
+  font-family:verdana,helvetica,arial,sans-serif;
+  font-size: 12pt;
+  text-align : justify;
+}
+
+div.toolbar {
+  position: fixed; z-index: 200;
+  top: auto; bottom: 0; left: 0; right: 0;
+  height: 1.2em; text-align: right;
+  padding-left: 1em;
+  padding-right: 1em;
+  font-size: 60%;
+  color: red;
+  background-color: rgb(240,240,240);
+  border-top: solid 1px rgb(180,180,180);
+}
+
+div.toolbar span.copyright {
+  color: black;
+  margin-left: 0.5em;
+}
+
+div.initial_prompt {
+  position: absolute;
+  z-index: 1000;
+  bottom: 1.2em;
+  width: 90%;
+  background-color: rgb(200,200,200);
+  opacity: 0.35;
+  cursor: pointer;
+}
+
+div.initial_prompt p.help {
+  text-align: center;
+}
+
+div.initial_prompt p.close {
+  text-align: right;
+  font-style: italic;
+}
+
+div.slidy_toc {
+  position: absolute;
+  z-index: 300;
+  width: 60%;
+  max-width: 30em;
+  height: 30em;
+  overflow: auto;
+  top: auto;
+  right: auto;
+  left: 4em;
+  bottom: 4em;
+  padding: 1em;
+  background: rgb(240,240,240);
+  border-style: solid;
+  border-width: 2px;
+  font-size: 60%;
+}
+
+div.slidy_toc .toc_heading {
+  text-align: center;
+  width: 100%;
+  margin: 0;
+  margin-bottom: 1em;
+  border-bottom-style: solid;
+  border-bottom-color: rgb(180,180,180);
+  border-bottom-width: 1px;
+}
+
+div.slide {
+  z-index: 20;
+  margin: 0 0 0 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-width: 0;
+  clear: both;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  line-height: 120%;
+  background-color: transparent;
+}
+
+div.background {
+  display: none;
+}
+
+div.handout {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+div.slide.titlepage {
+  text-align: center;
+}
+
+div.slide.titlepage.h1 {
+  padding-top: 10%;
+}
+
+div.slide h1 {
+  padding-left: 0;
+  padding-right: 20pt;
+  padding-top: 4pt;
+  padding-bottom: 4pt;
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 60pt;
+  margin-bottom: 0.5em;
+  display: block;
+  font-size: 160%;
+  line-height: 1.2em;
+  background: transparent;
+}
+
+div.toc {
+  position: absolute;
+  top: auto;
+  bottom: 4em;
+  left: 4em;
+  right: auto;
+  width: 60%;
+  max-width: 30em;
+  height: 30em;
+  border: solid thin black;
+  padding: 1em;
+  background: rgb(240,240,240);
+  color: black;
+  z-index: 300;
+  overflow: auto;
+  display: block;
+  visibility: visible;
+}
+
+div.toc-heading {
+  width: 100%;
+  border-bottom: solid 1px rgb(180,180,180);
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+/*
+pre {
+ font-size: 80%;
+ font-weight: bold;
+ line-height: 120%;
+ padding-top: 0.2em;
+ padding-bottom: 0.2em;
+ padding-left: 1em;
+ padding-right: 1em;
+ border-style: solid;
+ border-left-width: 1em;
+ border-top-width: thin;
+ border-right-width: thin;
+ border-bottom-width: thin;
+ border-color: #95ABD0;
+ color: #00428C;
+ background-color: #E4E5E7;
+}
+*/
+
+/*
+li pre { margin-left: 0; }
+
+blockquote { font-style: italic }
+
+img { background-color: transparent }
+
+p.copyright { font-size: smaller }
+*/
+
+.center { text-align: center }
+.footnote { font-size: smaller; margin-left: 2em; }
+
+/*
+a img { border-width: 0; border-style: none }
+*/
+
+a:visited { color: navy }
+a:link { color: navy }
+a:hover { color: red; text-decoration: underline }
+a:active { color: red; text-decoration: underline }
+
+a {text-decoration: none}
+.navbar a:link {color: white}
+.navbar a:visited {color: yellow}
+.navbar a:active {color: red}
+.navbar a:hover {color: red}
+
+/*
+ul { list-style-type: square; }
+ul ul { list-style-type: disc; }
+ul ul ul { list-style-type: circle; }
+ul ul ul ul { list-style-type: disc; }
+li { margin-left: 0.5em; margin-top: 0.5em; }
+li li { font-size: 85%; font-style: italic }
+li li li { font-size: 85%; font-style: normal }
+*/
+
+div dt
+{
+  margin-left: 0;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+}
+div dd
+{
+  margin-left: 2em;
+  margin-bottom: 0.5em;
+}
+
+
+/*
+p,pre,ul,ol,blockquote,h2,h3,h4,h5,h6,dl,table {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+*/
+
+p.subhead { font-weight: bold; margin-top: 2em; }
+
+.smaller { font-size: smaller }
+.bigger { font-size: 130% }
+
+/*
+td,th { padding: 0.2em }
+*/
+
+ul {
+  margin: 0.5em 1.5em 0.5em 1.5em;
+  padding: 0;
+}
+
+ol {
+  margin: 0.5em 1.5em 0.5em 1.5em;
+  padding: 0;
+}
+
+ul { list-style-type: square; }
+ul ul { list-style-type: disc; }
+ul ul ul { list-style-type: circle; }
+ul ul ul ul { list-style-type: disc; }
+
+/*
+ul li {
+  list-style: square;
+  margin: 0.1em 0em 0.6em 0;
+  padding: 0 0 0 0;
+  line-height: 140%;
+}
+
+ol li {
+  margin: 0.1em 0em 0.6em 1.5em;
+  padding: 0 0 0 0px;
+  line-height: 140%;
+  list-style-type: decimal;
+}
+
+li ul li {
+  font-size: 85%;
+  font-style: italic;
+  list-style-type: disc;
+  background: transparent;
+  padding: 0 0 0 0;
+}
+li li ul li {
+  font-size: 85%;
+  font-style: normal;
+  list-style-type: circle;
+  background: transparent;
+  padding: 0 0 0 0;
+}
+li li li ul li {
+  list-style-type: disc;
+  background: transparent;
+  padding: 0 0 0 0;
+}
+
+li ol li {
+  list-style-type: decimal;
+}
+
+
+li li ol li {
+  list-style-type: decimal;
+}
+*/
+
+/*
+ setting class="outline" on ol or ul makes it behave as an
+ ouline list where blocklevel content in li elements is
+ hidden by default and can be expanded or collapsed with
+ mouse click. Set class="expand" on li to override default
+*/
+
+ol.outline li:hover { cursor: pointer }
+ol.outline li.nofold:hover { cursor: default }
+
+ul.outline li:hover { cursor: pointer }
+ul.outline li.nofold:hover { cursor: default }
+
+ol.outline { list-style:decimal; }
+ol.outline ol { list-style-type:lower-alpha }
+
+ol.outline li.nofold {
+  padding: 0 0 0 20px;
+  background: transparent url(../graphics/nofold-dim.gif) no-repeat 0px 0.5em;
+}
+ol.outline li.unfolded {
+  padding: 0 0 0 20px;
+  background: transparent url(../graphics/fold-dim.gif) no-repeat 0px 0.5em;
+}
+ol.outline li.folded {
+  padding: 0 0 0 20px;
+  background: transparent url(../graphics/unfold-dim.gif) no-repeat 0px 0.5em;
+}
+ol.outline li.unfolded:hover {
+  padding: 0 0 0 20px;
+  background: transparent url(../graphics/fold.gif) no-repeat 0px 0.5em;
+}
+ol.outline li.folded:hover {
+  padding: 0 0 0 20px;
+  background: transparent url(../graphics/unfold.gif) no-repeat 0px 0.5em;
+}
+
+ul.outline li.nofold {
+  padding: 0 0 0 20px;
+  background: transparent url(../graphics/nofold-dim.gif) no-repeat 0px 0.5em;
+}
+ul.outline li.unfolded {
+  padding: 0 0 0 20px;
+  background: transparent url(../graphics/fold-dim.gif) no-repeat 0px 0.5em;
+}
+ul.outline li.folded {
+  padding: 0 0 0 20px;
+  background: transparent url(../graphics/unfold-dim.gif) no-repeat 0px 0.5em;
+}
+ul.outline li.unfolded:hover {
+  padding: 0 0 0 20px;
+  background: transparent url(../graphics/fold.gif) no-repeat 0px 0.5em;
+}
+ul.outline li.folded:hover {
+  padding: 0 0 0 20px;
+  background: transparent url(../graphics/unfold.gif) no-repeat 0px 0.5em;
+}
+
+/* for slides with class "title" in table of contents */
+a.titleslide { font-weight: bold; font-style: italic }
+
+/*
+ hide images for work around for save as bug
+ where browsers fail to save images used by CSS
+*/
+img.hidden { display: none; visibility: hidden }
+div.initial_prompt { display: none; visibility: hidden }
+
+  div.slide {
+     visibility: visible;
+     position: inherit;
+  }
+  div.handout {
+     border-top-style: solid;
+     border-top-width: thin;
+     border-top-color: black;
+  }
+
+@media screen {
+  .hidden { display: none; visibility: visible }
+
+  div.slide.hidden { display: block; visibility: visible }
+  div.handout.hidden { display: block; visibility: visible }
+  div.background { display: none; visibility: hidden }
+  body.single_slide div.initial_prompt { display: block; visibility: visible }
+  body.single_slide div.background { display: block; visibility: visible }
+  body.single_slide div.background.hidden { display: none; visibility: hidden }
+  body.single_slide .invisible { visibility: hidden }
+  body.single_slide .hidden { display: none; visibility: hidden }
+  body.single_slide div.slide { position: absolute }
+  body.single_slide div.handout { display: none; visibility: hidden }
+}
+
+@media print {
+  .hidden { display: block; visibility: visible }
+
+/*
+  div.slide pre { font-size: 60%; padding-left: 0.5em; }
+*/
+  div.toolbar { display: none; visibility: hidden; }
+  div.slidy_toc { display: none; visibility: hidden; }
+  div.background { display: none; visibility: hidden; }
+  div.slide { page-break-before: always }
+  /* :first-child isn't reliable for print media */
+  div.slide.first-slide { page-break-before: avoid }
+}
+
+
+/* SJR: AsciiDoc slidy backend tweaks */
+
+ol, ul {
+  margin: 0.8em 1.5em 0.8em 1.8em;
+}
+li > ul, li > ol {
+  margin-top: 0.5em;
+}
+
+.outline > li.folded,
+.outline > li.unfolded {
+  color: #527bbd;
+}
+ul > li{ color: #aaa; }
+ul > li > *, ol > li > * { color: black; }
+
+li {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+/* jmi hack */
+@media screen {
+  body.single_slide .invisible { opacity: 0.15; visibility: visible; }
+  /*img.invisible { opacity: 0.1; visibility: visible; } */
+  img.invisible { visibility: hidden !important }
+}
+a {text-decoration: underline;}
+</style>
+<script type="text/javascript">
+/*<![CDATA[*/
+var asciidoc = {  // Namespace.
+
+/////////////////////////////////////////////////////////////////////
+// Table Of Contents generator
+/////////////////////////////////////////////////////////////////////
+
+/* Author: Mihai Bazon, September 2002
+ * http://students.infoiasi.ro/~mishoo
+ *
+ * Table Of Content generator
+ * Version: 0.4
+ *
+ * Feel free to use this script under the terms of the GNU General Public
+ * License, as long as you do not remove or alter this notice.
+ */
+
+ /* modified by Troy D. Hanson, September 2006. License: GPL */
+ /* modified by Stuart Rackham, 2006, 2009. License: GPL */
+
+// toclevels = 1..4.
+toc: function (toclevels) {
+
+  function getText(el) {
+    var text = "";
+    for (var i = el.firstChild; i != null; i = i.nextSibling) {
+      if (i.nodeType == 3 /* Node.TEXT_NODE */) // IE doesn't speak constants.
+        text += i.data;
+      else if (i.firstChild != null)
+        text += getText(i);
+    }
+    return text;
+  }
+
+  function TocEntry(el, text, toclevel) {
+    this.element = el;
+    this.text = text;
+    this.toclevel = toclevel;
+  }
+
+  function tocEntries(el, toclevels) {
+    var result = new Array;
+    var re = new RegExp('[hH]([1-'+(toclevels+1)+'])');
+    // Function that scans the DOM tree for header elements (the DOM2
+    // nodeIterator API would be a better technique but not supported by all
+    // browsers).
+    var iterate = function (el) {
+      for (var i = el.firstChild; i != null; i = i.nextSibling) {
+        if (i.nodeType == 1 /* Node.ELEMENT_NODE */) {
+          var mo = re.exec(i.tagName);
+          if (mo && (i.getAttribute("class") || i.getAttribute("className")) != "float") {
+            result[result.length] = new TocEntry(i, getText(i), mo[1]-1);
+          }
+          iterate(i);
+        }
+      }
+    }
+    iterate(el);
+    return result;
+  }
+
+  var toc = document.getElementById("toc");
+  if (!toc) {
+    return;
+  }
+
+  // Delete existing TOC entries in case we're reloading the TOC.
+  var tocEntriesToRemove = [];
+  var i;
+  for (i = 0; i < toc.childNodes.length; i++) {
+    var entry = toc.childNodes[i];
+    if (entry.nodeName.toLowerCase() == 'div'
+     && entry.getAttribute("class")
+     && entry.getAttribute("class").match(/^toclevel/))
+      tocEntriesToRemove.push(entry);
+  }
+  for (i = 0; i < tocEntriesToRemove.length; i++) {
+    toc.removeChild(tocEntriesToRemove[i]);
+  }
+
+  // Rebuild TOC entries.
+  var entries = tocEntries(document.getElementById("content"), toclevels);
+  for (var i = 0; i < entries.length; ++i) {
+    var entry = entries[i];
+    if (entry.element.id == "")
+      entry.element.id = "_toc_" + i;
+    var a = document.createElement("a");
+    a.href = "#" + entry.element.id;
+    a.appendChild(document.createTextNode(entry.text));
+    var div = document.createElement("div");
+    div.appendChild(a);
+    div.className = "toclevel" + entry.toclevel;
+    toc.appendChild(div);
+  }
+  if (entries.length == 0)
+    toc.parentNode.removeChild(toc);
+},
+
+
+/////////////////////////////////////////////////////////////////////
+// Footnotes generator
+/////////////////////////////////////////////////////////////////////
+
+/* Based on footnote generation code from:
+ * http://www.brandspankingnew.net/archive/2005/07/format_footnote.html
+ */
+
+footnotes: function () {
+  // Delete existing footnote entries in case we're reloading the footnodes.
+  var i;
+  var noteholder = document.getElementById("footnotes");
+  if (!noteholder) {
+    return;
+  }
+  var entriesToRemove = [];
+  for (i = 0; i < noteholder.childNodes.length; i++) {
+    var entry = noteholder.childNodes[i];
+    if (entry.nodeName.toLowerCase() == 'div' && entry.getAttribute("class") == "footnote")
+      entriesToRemove.push(entry);
+  }
+  for (i = 0; i < entriesToRemove.length; i++) {
+    noteholder.removeChild(entriesToRemove[i]);
+  }
+
+  // Rebuild footnote entries.
+  var cont = document.getElementById("content");
+  var spans = cont.getElementsByTagName("span");
+  var refs = {};
+  var n = 0;
+  for (i=0; i<spans.length; i++) {
+    if (spans[i].className == "footnote") {
+      n++;
+      var note = spans[i].getAttribute("data-note");
+      if (!note) {
+        // Use [\s\S] in place of . so multi-line matches work.
+        // Because JavaScript has no s (dotall) regex flag.
+        note = spans[i].innerHTML.match(/\s*\[([\s\S]*)]\s*/)[1];
+        spans[i].innerHTML =
+          "[<a id='_footnoteref_" + n + "' href='#_footnote_" + n +
+          "' title='View footnote' class='footnote'>" + n + "</a>]";
+        spans[i].setAttribute("data-note", note);
+      }
+      noteholder.innerHTML +=
+        "<div class='footnote' id='_footnote_" + n + "'>" +
+        "<a href='#_footnoteref_" + n + "' title='Return to text'>" +
+        n + "</a>. " + note + "</div>";
+      var id =spans[i].getAttribute("id");
+      if (id != null) refs["#"+id] = n;
+    }
+  }
+  if (n == 0)
+    noteholder.parentNode.removeChild(noteholder);
+  else {
+    // Process footnoterefs.
+    for (i=0; i<spans.length; i++) {
+      if (spans[i].className == "footnoteref") {
+        var href = spans[i].getElementsByTagName("a")[0].getAttribute("href");
+        href = href.match(/#.*/)[0];  // Because IE return full URL.
+        n = refs[href];
+        spans[i].innerHTML =
+          "[<a href='#_footnote_" + n +
+          "' title='View footnote' class='footnote'>" + n + "</a>]";
+      }
+    }
+  }
+},
+
+install: function(toclevels) {
+  var timerId;
+
+  function reinstall() {
+    asciidoc.footnotes();
+    if (toclevels) {
+      asciidoc.toc(toclevels);
+    }
+  }
+
+  function reinstallAndRemoveTimer() {
+    clearInterval(timerId);
+    reinstall();
+  }
+
+  timerId = setInterval(reinstall, 500);
+  if (document.addEventListener)
+    document.addEventListener("DOMContentLoaded", reinstallAndRemoveTimer, false);
+  else
+    window.onload = reinstallAndRemoveTimer;
+}
+
+}
+asciidoc.install();
+/*]]>*/
+</script>
+</head>
+<body class="article">
+<div id="header">
+<h1>ACSI–S1-Merise : Classes et OCL</h1>
+<span id="author">Jean-Michel Bruel et Laurent Nonne</span><br />
+<span id="email"><code>&lt;<a href="mailto:jean-michel.bruel@univ-tlse2.fr">jean-michel.bruel@univ-tlse2.fr</a>&gt;</code></span><br />
+<span id="revnumber">version 1.0,</span>
+<span id="revdate">11/09/2012</span>
+</div>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="tableblock" id="cartouche">
+<table rules="all"
+style="margin-left:0; margin-right:auto;"
+width="90%"
+frame="border"
+cellspacing="0" cellpadding="4">
+<col width="9%" />
+<col width="90%" />
+<tbody>
+<tr>
+<td align="left" valign="top"><p class="table">PreReq</p></td>
+<td align="left" valign="top"><p class="table">1.      Je sais définir les concepts suivants : domaine, acteur externe,
+acteur interne, flux externe, flux interne, évènement déclencheur, synchronisation, tâche, action, règles d’émission, résultats
+2.      Je connais les règles de bonne conception d’un MCF, d’un MOF et d’un MOT vues en cours.</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table">ObjTD</p></td>
+<td align="left" valign="top"><p class="table">Je suis capable de <strong>modéliser les flux d’informations et les traitements actuels</strong> d’une organisation.</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table">ObjGen</p></td>
+<td align="left" valign="top"><p class="table">Je suis capable de <strong>comprendre une organisation existante</strong> afin de pouvoir y travailler efficacement (informatiser des tâches, réorganiser le processus, connaître les différents acteurs et leurs tâches&#8230;).</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table">Lien</p></td>
+<td align="left" valign="top"><p class="table">EGO – Fonctionnement de l’entreprise</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img alt="Note" src="data:image/png;base64,
+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" />
+</td>
+<td class="content">
+<div class="ulist"><ul>
+<li>
+<p>
+Rappel du lien sur le <a href="http://webetud.iut-blagnac.fr/mod/resource/view.php?id=9644">support de cours</a>
+</p>
+</li>
+<li>
+<p>
+Explication sur le <a href="http://webetud.iut-blagnac.fr/file.php/35/SupportsTDs/template.html">canevas-type</a> d&#8217;un TD/TP
+</p>
+</li>
+</ul></div>
+</td>
+</tr></table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_exercice_i_gestion_des_stages">Exercice I : Gestion des Stages</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>Le domaine d’étude est la gestion des stages en entreprise des étudiants de 2ème année d’IUT. Début Décembre, le responsable des stages envoie une demande de stage aux entreprises qu’il connait. Après réception d&#8217;une proposition de stage, il détermine quelle promotion d’étudiant correspond le mieux à ce stage (2ème année d’Informatique, de R&amp;T, de GIM ou de 2A2M). Il envoie alors l’offre de stage à tous les étudiants de la promotion concernée. Les étudiants intéressés envoient alors au responsable de stages une demande d’attribution de stage.</p></div>
+<div class="paragraph"><p>Début avril, le responsable des stages reprend les demandes d’attribution de stage en attente  et affecte chaque stage (et un professeur jouant le rôle de tuteur pédagogique) à un étudiant, un document d’affectation de stage/tuteur est envoyé à l’étudiant, une déclaration de stage est donnée au tuteur pédagogique (qui l’archive) et une convention de stage est envoyée à l&#8217;entreprise. En fin de stage, chaque tuteur pédagogique reçoit le rapport de stage de l’étudiant, il note alors celui-ci et transmet la note au responsable des stages (qui l’archive).</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Réaliser le MCF de ce domaine
+</p>
+</li>
+<li>
+<p>
+Réaliser le MOF de ce domaine (en utilisant le MCF réalisé et le sujet)
+</p>
+</li>
+<li>
+<p>
+Réaliser le MOT de ce domaine (en utilisant le MOF réalisé et le sujet)
+</p>
+</li>
+</ol></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_exercice_ii_inscription_à_un_établissement_universitaire">Exercice II : Inscription à un établissement universitaire</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>Le domaine d’étude est le processus d’inscription à un établissement universitaire recrutant sur dossier.  Le candidat commence par déposer un dossier d’admission (entre une date de début et une date de clôture des dépôts des dossiers). Si le dépôt arrive trop tard (ou trop tôt), il est rejeté. 15 jours après la date de clôture des dépôts, le jury d’admission prend une décision (notifiée au candidat) soit de refus, soit d’admissibilité. L’admission définitive est notifiée aux candidats, par le secrétariat de la scolarité, lorsque ceux-ci lui ont envoyé le certificat d’obtention du baccalauréat (15 jours maximum après les résultats officiels de celui-ci). Les candidats déclarés reçus ont alors un mois pour confirmer leur inscription par le dépôt d’une demande d’inscription (avec un chèque de paiement des droits de scolarité) auprès du secrétariat de la scolarité. Ceci fait, ils reçoivent leur carte d’étudiant. Les demandes d’inscription hors délais sont rejetées. Fin août, le secrétariat de la scolarité envoie la liste des étudiants inscrits aux enseignants de l’établissement.</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Réaliser le MCF de ce domaine
+</p>
+</li>
+<li>
+<p>
+Réaliser le MOF de ce domaine (en utilisant le MCF réalisé et le sujet)
+</p>
+</li>
+<li>
+<p>
+Réaliser le MOT de ce domaine (en utilisant le MOF réalisé et le sujet)
+</p>
+</li>
+</ol></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_exercice_iii_location_d_8217_appartement">Exercice III : Location d&#8217;appartement</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>Notre domaine d’étude est une agence immobilière. Les propriétaires d’appartements adressent à l&#8217;agence immobilière une demande de location accompagnée d’une description du logement. L&#8217;agence passe alors une annonce dans des journaux gratuits. Quand une personne est intéressée par une location, elle demande à effectuer une visite. Une date de rendez-vous lui est alors donnée afin de visiter l’appartement.</p></div>
+<div class="paragraph"><p>Si la personne accepte de louer l’appartement, elle envoie son accord par courrier avec un justificatif de salaire (on considère ici que cette personne est toujours solvable). Le bail signé est alors remis au locataire. Au début de chaque mois, l’agence lui expédie une quittance de loyer. Le locataire envoie alors le chèque de paiement de son loyer à l’agence, qui l’envoie ensuite à sa banque pour encaissement. Un chèque est alors envoyé au propriétaire de l’appartement.</p></div>
+<div class="paragraph"><p>Si le locataire souhaite quitter l’appartement, il envoie à l’agence un préavis de départ. Une nouvelle annonce est alors envoyée aux journaux gratuits.</p></div>
+<div class="paragraph"><p>Hormis les flux échangés avec les locataires (gérés par son adjoint), tous les flux sont traités par le responsable de l’agence. Certains flux sont échangés entre le responsable et l’adjoint pour coordonner leurs actions. Ainsi l’adjoint transmet au responsable un avis de paiement de loyer (lorsque le locataire a payé) ainsi que le préavis de départ du locataire.</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Réaliser le MCF de ce domaine
+</p>
+</li>
+<li>
+<p>
+Réaliser le MOF de ce domaine (en utilisant le MCF réalisé et le sujet)
+</p>
+</li>
+<li>
+<p>
+Réaliser le MOT de ce domaine (en utilisant le MOF réalisé et le sujet)
+</p>
+</li>
+</ol></div>
+</div>
+</div>
+</div>
+<div id="footnotes"><hr /></div>
+<div id="footer">
+<div id="footer-text">
+Version 1.0<br />
+Last updated 2012-09-11 11:10:49 CEST
+</div>
+<div id="footer-badges">
+<a href="http://validator.w3.org/check?uri=referer">
+  <img style="border:0;width:88px;height:31px"
+    src="http://www.w3.org/Icons/valid-xhtml11-blue"
+    alt="Valid XHTML 1.1" height="31" width="88" />
+</a>
+<a href="http://jigsaw.w3.org/css-validator/">
+  <img style="border:0;width:88px;height:31px"
+    src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+    alt="Valid CSS!" />
+</a>
+</div>
+</div>
+</body>
+</html>

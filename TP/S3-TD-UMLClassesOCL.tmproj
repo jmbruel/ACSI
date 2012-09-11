@@ -2,43 +2,34 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>currentDocument</key>
-	<string>template.txt</string>
 	<key>documents</key>
 	<array>
 		<dict>
 			<key>filename</key>
 			<string>template.txt</string>
 			<key>lastUsed</key>
-			<date>2012-09-05T17:06:03Z</date>
+			<date>2012-09-11T08:28:06Z</date>
+			<key>selected</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>s3-td-umlClasses.txt</string>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>s3-td-umlSeq.txt</string>
+			<key>lastUsed</key>
+			<date>2012-09-11T08:28:04Z</date>
 		</dict>
 	</array>
 	<key>fileHierarchyDrawerWidth</key>
 	<integer>200</integer>
 	<key>metaData</key>
-	<dict>
-		<key>template.txt</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>25</integer>
-				<key>line</key>
-				<integer>53</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>26</integer>
-		</dict>
-	</dict>
-	<key>openDocuments</key>
-	<array>
-		<string>template.txt</string>
-	</array>
+	<dict/>
 	<key>showFileHierarchyDrawer</key>
 	<true/>
 	<key>windowFrame</key>
-	<string>{{152, 4}, {900, 774}}</string>
+	<string>{{29, 4}, {900, 774}}</string>
 </dict>
 </plist>

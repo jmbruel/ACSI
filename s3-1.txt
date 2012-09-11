@@ -3,6 +3,11 @@
 
 == Le Diagramme des Cas d’Utilisation
 
+ifdef:livre[]
+Nous allons analyser et organiser les besoins utilisateurs en nous efforçant de recenser le différents usages qui vont être fait du système à développer.
+
+endif:livre[]
+
 Le *Diagramme des Cas d'Utilisation* est un modèle UML permettant de représenter :
 
 - les *UC* (_Use Case_ ou Cas d’Utilisation)
@@ -18,7 +23,7 @@ On notera simplement +UC+ pour signifier "diagramme des UC"
 
 ==== Cas d'Utilisation (_Use Case_ ou UC en abrégé).
 
-include::{defs}/uc.txt
+include::{defs}/uc.txt[]
 
 ===== Exemple d'UC
 
@@ -48,7 +53,7 @@ généralement un diagramme de séquence à un cas d'utilisation (clic droit sur
 
 ==== Acteur
 
-include::{defs}/acteur.txt
+include::{defs}/acteur.txt[]
 
 On peut trouver plusieurs types d'acteurs :
 
@@ -72,7 +77,7 @@ Inclusion (+\<<include>>+)::
 Généralisation::
 	Relation entre un UC général et un autre plus spécialisé qui hérite de ses caractéristiques et en rajoute
 
-ifdef::backend-slidy2[<<<]
+//ifdef::backend-slidy2[<<<]
 
 [[ucdiag]]
 .Notation dans le diagramme d'UC
@@ -308,6 +313,8 @@ public class Emploi {
 ** barres d'activation
 ** messages
 
+<<<
+
 [[seq]]
 .Diagramme de séquence
 image:{images}/seq1.png["Diagramme de séquence",width="40%"]
@@ -348,6 +355,8 @@ image:{images}/fowl2.png["Sa modélisation",width="60%"]
 [[fowler1]]
 .Conception "centralisée"
 image::{images}/fowl3.png["Conception 'centralisée'",width="60%"]
+
+<<<
 
 [[fowler2]]
 .Conception "objet"

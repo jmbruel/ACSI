@@ -8,6 +8,8 @@ Plan de cette partie :
 * Les traitements
 * Les données
 
+Note: Dans nos enseignements de DUT Informatique, cette partie est abordée en 3ème semestre.
+
 == Pourquoi une méthode ?
 
 * On peut faire ce qu'on veut :
@@ -107,7 +109,7 @@ NOTE: On verra ça plus tard
 * cerner le domaine qui nous intéresse
 image:{dessins}/domaine.png["Domaine"]
 +
-[ditaa]
+["ditaa",scaling="2.0"]
 ---------------------------------------------------------------------
 	+-----------+  
 	|  Domaine  | 
