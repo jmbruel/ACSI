@@ -106,41 +106,41 @@ NOTE: On verra ça plus tard
 == Les flux
 
 === Notation
-* cerner le domaine qui nous intéresse
-image:{dessins}/domaine.png["Domaine"]
+* cerner le domaine qui nous intéresse 
 +
-["ditaa",scaling="2.0"]
----------------------------------------------------------------------
-	+-----------+  
-	|  Domaine  | 
-	+-----------+  
----------------------------------------------------------------------
+image:{dessins}/domaine.png["Domaine"]
 +
 * identifier les échanges
 ** flux
-** acteurs image:{dessins}/acteur.png["Acteur"]
 +
-[ditaa]
----------------------------------------------------------------------
-+---------+ +----=----+  
-|         | |         |    Nom du flux
-| Interne | | Externe | ----------------->
-|    {o}  | |    {o}  | 
-+---------+ +---------+
----------------------------------------------------------------------
+image:{dessins}/flux.png["Flux"]
++
+** acteurs 
+
+image:{dessins}/acteur.png["Acteur"]
+
 
 === Exemples
 
-[ditaa]
----------------------------------------------------------------------
-+----=---+                  +-------+
-|        |     commande     |       |
-| Client +----------------->+ Vente |
-|   {o}  |                  |       |
-+--------+                  +-------+
----------------------------------------------------------------------
+[[mof1]]
+.Exemple de flux entre acteurs
+image::{dessins}/clientVente.png["Exemple de flux entre acteurs"]
+
+ifdef::backend-slidy2[<<<]
+
+[[mof2]]
+.Exemple plus complet
+image::{images}/mof1.png["Un exemple",width="60%",scalewidth="60%"]
+
+ifdef::backend-slidy2[<<<]
+
+[[matriceFlux]]
+.Représentation en matrice
+image::{images}/mofTableau.png["Version textuelle",width="60%",scalewidth="60%"]
 
 === Exercice
+
+==== Enoncé
 
 * Une agence de location de voitures veut informatiser la gestion des locations.
 * Lorsqu’un client se présente à l’accueil, il précise le type de voiture désiré ainsi que la durée de location.
@@ -151,9 +151,20 @@ image:{dessins}/domaine.png["Domaine"]
 * L’accueil transmet alors la demande au garage.
 * Ce dernier va préparer le véhicule demandé et le mettre à disposition du client.
 
-=== Règles de conception
+==== Solution
 
-image:{dessins}/noSelfFlux.png["Pas de flux sur soi-même"]
+image:{images}/exoMof.png["Agence de location",width="40%",scalewidth="40%"]
+
+* 1 : demande de location
+* 2 : acceptation ou refus
+* si acceptation :
+**	3 : facture
+**	4 : paiement
+**	5 : détail location + paiement
+**	6 : détail demande
+**	7 : véhicule
+
+=== Règles de conception
 
 .Pas de flux qui boucle sur un même acteur
 ****
@@ -162,32 +173,43 @@ image:{dessins}/noSelfFlux.png["Pas de flux sur soi-même"]
 c’est que l’acteur doit être décomposé en plusieurs.
 ****
 
-ifdef::backend-slidy2[<<<]
+image:{dessins}/noSelfFlux.png["Pas de flux sur soi-même"]
 
-image:{dessins}/noFluxExternes.png["Pas de flux sur soi-même"]
+ifdef::backend-slidy2[<<<]
 
 .Pas de flux entre acteurs externes
 ****
 Ces flux ne nous intéressent pas car ils ne concernent pas le domaine à informatiser.
 ****
 
+image:{dessins}/noFluxExternes.png["Pas de flux sur soi-même"]
+
 NOTE: Dans de rares cas, on représentera tout de même les flux entre certains acteurs externes pour une meilleure compréhension du système.
 
 ifdef::backend-slidy2[<<<]
-
-image:{dessins}/noBiFlux.png["Pas de flux sur soi-même"]
 
 .Pas de flux bidirectionnels
 ****
 La représentation doit donner lieu à 2 flux distincts.
 ****
 
+image:{dessins}/noBiFlux.png["Pas de flux sur soi-même"]
+
 === Erreurs classiques
 
-* un acteur n'est pas un objet image:{dessins}/noObjectActor.png["Acteur n'est pas Objet", align="center"]
-* un flux n'est pas un mouvement d'acteur image:{dessins}/noMove.png["Flux n'est pas déplacement", align="center"]
+* un acteur n'est pas un objet 
++
+image:{dessins}/noObjectActor.png["Acteur n'est pas Objet", align="center"]
++
+* un flux n'est pas un mouvement d'acteur
+
+image:{dessins}/noMove.png["Flux n'est pas déplacement", align="center"]
 
 === Modèle Conceptuel des Flux
+
+* Pas de représentation des acteurs internes 
+* Juste le domaine et ses échanges avec les acteurs externes
+* Vue "boîte noire"
 
 [[MCF]]
 .MCF
@@ -200,11 +222,12 @@ La représentation doit donner lieu à 2 flux distincts.
 | {technique}		|			|        		|				
 |======================
 
-* Pas de représentation des acteurs internes 
-* Juste le domaine et ses échanges avec les acteurs externes
-* Vue "boîte noire"
-
 === Modèle Organisationnel des Flux
+
+* Représentation des acteurs internes 
+* De leurs échanges avec les acteurs externes
+* Vue "boîte blanche"
+* Doit être cohérent avec le MCF correspondant
 
 [[MOF]]
 .MOF
@@ -216,11 +239,6 @@ La représentation doit donner lieu à 2 flux distincts.
 | {logique} 		|			|        		|				
 | {technique}		|			|        		|				
 |======================
-
-* Représentation des acteurs internes 
-* De leurs échanges avec les acteurs externes
-* Vue "boîte blanche"
-* Doit être cohérent avec le MCF correspondant
 
 === Exercice : gestion de Carte Bleue
 
@@ -234,6 +252,24 @@ La représentation doit donner lieu à 2 flux distincts.
 . Réalisation du MCF
 . Détermination des acteurs internes
 . Réalisation du MOF
+
+[icon="dessins/CB.png"]
+NOTE: *MOF* +
+1. Demande CB +
+2. Refus +
+3. Demande Groupée CB +
+4. Livraison CB +
+5. Avis de mise à disposition et avis de prél. +
+6. Retrait de la carte
+
+[icon="dessins/CBmcf.png"]
+NOTE: *MCF* +
+1. Demande CB +
+2. Refus +
+3. Demande Groupée CB +
+4. Livraison CB +
+5. Avis de mise à disposition et avis de prél. +
+6. Retrait de la carte
 
 == Les traitements
 
@@ -295,6 +331,16 @@ Modèle Organisationnel de Traitement::
 | {logique} 		|			|        		|				
 | {technique}		|			|        		|				
 |======================
+
+===== Notations
+
+* Evénements
++
+image:{dessins}/commande.png["Commande"]
++
+* Synchronisation
+* Opération
+
 
 ===== Exemples
 
