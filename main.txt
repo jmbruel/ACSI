@@ -49,11 +49,11 @@
 :cc: mailto:cc.charron@wanadoo.fr[Cyril Charon]
 :iut: http://www.iut-blagnac.fr[IUT de Blagnac]
 :jmb: mailto:jean-michel.bruel@univ-tlse2.fr[Jean-Michel Bruel]
-:jmi: Jean-Michel Inglebert
 :jmimail: jean-michel.inglebert@univ-tlse2.fr
+:jmi: mailto:{jmimail}[Jean-Michel Inglebert]
 :nh: mailto:nabil.hanine@free.fr[Nabil Hanine]
-:nico: Nicolas Belloir
-:nonne: Laurent Nonne
+:nico: mailto:Nicolas Belloir
+:nonne: mailto:laurent.nonne@univ-tlse2.fr[Laurent Nonne]
 :omg: OMG
 :prfc: Pascal Roques
 :univ-tlse: http://www.univ-toulouse.fr[Univesité de Toulouse]

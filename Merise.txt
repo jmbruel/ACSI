@@ -284,10 +284,10 @@ NOTE: *MCF* +
 ** la synchronisation
 
 === Diagrammes
-Modèle Conceptuel de Traitement::
+**M**odèle **C**onceptuel de **T**raitement (MCT)::
 	Répondre au *QUOI?*
 
-Modèle Organisationnel de Traitement::
+**M**odèle **O**rganisationnel de **T**raitement (MOT)::
 	Répondre au *QUI* fait *QUOI* et *QUAND?*
 
 [[MCT]]
@@ -303,10 +303,24 @@ Modèle Organisationnel de Traitement::
 
 === Notation
 * événements
++
+image:{dessins}/commande.png["Exemple d'événement"]
++
 * synchronisation
++
+image:{dessins}/synchro.png["Notation de synchronisation"]
++
 * opération
++
+image:{dessins}/operation.png["Notation d'une opération"]
++
 * Règles d’émission
++
+image:{dessins}/regles.png["Règles d'émission"]
++
 * Résultats
+
+image:{dessins}/commande.png["Exemple d'événement"]
 
 ==== Modèle Conceptuel de Traitement
 
@@ -332,25 +346,32 @@ Modèle Organisationnel de Traitement::
 | {technique}		|			|        		|				
 |======================
 
-===== Notations
-
-* Evénements
-+
-image:{dessins}/commande.png["Commande"]
-+
-* Synchronisation
-* Opération
-
-
 ===== Exemples
 
+[[mctexp1]]
+.Opération complète
+image::{dessins}/mct-exp1.png["Opération complète",width="50%"]
+
+[[mctexp2]]
+.Opération complète
+image::{images}/mct-exp3.png["Opération complète",width="50%"]
+
+[[mctexp3]]
+.Opération complète
+image::{images}/mct-exp4.png["Opération complète",width="50%"]
+
+[[mctexp4]]
+.Opération complète
+image::{images}/mct-exp2.png["Opération complète",width="50%"]
+
 ===== Récapitulatif de la démarche (MCT)
-* Identifier les postes
-* Définir les tâches
-* Déterminer les opérations
-* Associer les événements déclencheurs
-* Déterminer les résultats
-* Décrire les règles d’émission
+
+. Identifier les postes
+. Définir les tâches
+. Déterminer les opérations
+. Associer les événements déclencheurs
+. Déterminer les résultats
+. Décrire les règles d’émission
 
 ===== Règles de bonne conception (MCT)
 * Regroupement de tous les traitements effectués dès l’arrivée d’un événement
