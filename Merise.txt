@@ -124,7 +124,7 @@ image:{dessins}/acteur.png["Acteur"]
 
 [[mof1]]
 .Exemple de flux entre acteurs
-image::{dessins}/clientVente.png["Exemple de flux entre acteurs"]
+image::{dessins}/clientVente.png["Exemple de flux entre acteur et domaine"]
 
 ifdef::backend-slidy2[<<<]
 
