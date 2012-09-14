@@ -15,8 +15,8 @@
 ** {jmb}
 ** "interchangeables"
 * 2 intervenants supplémentaires en TD/TP
-** Cyril Charon
-** Olivier Teste
+** {cc}
+** {nh}
 * Découpage Cours / TD / TP
 * 3 semestres + 1
 * Pour ce semestre (S1) :
