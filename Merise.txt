@@ -374,6 +374,7 @@ image::{images}/mct-exp2.png["Opération complète",width="50%"]
 . Décrire les règles d’émission
 
 ===== Règles de bonne conception (MCT)
+
 * Regroupement de tous les traitements effectués dès l’arrivée d’un événement
 * Ne pas tenir compte de l’organisation interne du domaine étudié (répartition du travail entre acteurs internes)
 * Seule l’attente d’événements externes (=flux externes) justifie le découpage en plusieurs opérations

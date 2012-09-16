@@ -1,0 +1,379 @@
+:incremental:
+:duration: 85
+
+== Schéma d’Enchaînement des Pages (SEP)
+
+Ni Merise ni UML n'ont de schémas spécifiques pour représenter les interfaces graphiques, ni les enchaînements des pages dans un site web par exemple. On peut par exemple utiliser un diagramme d'état UML où chaque état est une page et les transitions représentent les événements qui font passer d'une page à l'autre.
+
+La méthode MACAO, déjà évoquée introduit plusieurs schémas utiles à cet effet, que nous allons reprendre dans ce cours. Le livre de Pascal Roques <<Roques2007a>> reprend par exemple ce genre de diagramme dans sa démarche globale de conception de site web.
+
+Le SEP (**S**chéma d’**E**nchaînement des **P**ages) que nous voyons ici complète le SNI vu précédemment
+(cf. <<sni,SNI>>).
+
+=== Concepts des PUI
+
+On peut distinguer 4 types de pages :
+
+- Pages de cadres
+- Pages de présentation constantes 
+- Pages de présentation variables 
+- Pages de formulaires
+
+==== Pages de cadres (_Frameset_)
+
+Un cadre est un découpage rectangulaire pouvant accueillir une page HTML (y compris une autre page de cadres).
+
+Une page de cadre est divisée en deux ou plusieurs cadres occupant la totalité de la page.
+
+[[cadre]]
+.Exemples de cadres
+image::{images}/cadre.png["Pages de cadre",width=50%"]
+
+==== Pages de présentation constantes 
+
+Pages ne contenant que des objets visuels constants statiques et des objets de navigation :
+
+- boutons d’action 
+- zones réactives 
+- liens hypertextes
+
+[NOTE]
+========================================================================
+Pages rencontrées habituellement en surfant sur le Net.
+========================================================================
+
+==== Pages de présentation variables (ou pages dynamiques)
+
+Analogues aux précédentes mais comportant en plus des données variables obtenues par calcul ou lues dans des fichiers ou des bases de données.
+
+Méthodes d'obtention :
+
+- CGI (Common Gateway Interface),
+- ASP (Active Server Pages) de Microsoft, PHP d'Open Source
+- OAS (Oracle Application Server)
+- JSP (Java Server Page)
+- Servlet Java
+- ...
+
+==== Pages de formulaires
+
+Pages contenant des objets de saisie (équivalentes aux boîtes de dialogue de saisie)
+
+- zones de textes (champs d'entrée) 
+- boutons radios, cases à cocher 
+- listes déroulantes
+
+[[form]]
+.Exemple de formulaire
+image::{images}/form.png["Formulaire",width=50%"]
+
+==== Les types d'objets visuels
+
+Une page peut contenir 3 catégories d'objets :
+
+- Objets de positionnement 
+- Objets non référencés
+- Objets référencés
+
+===== Les objets de positionnement
+
+Ils permettent d'indiquer les zones d'interaction avec l’utilisateur.
+
+On trouve :
+
+- le cadre ne pouvant apparaître que dans une page de cadres
+- le signet (ou ancre d'arrivée) indiquant un point de chute possible dans une page
+- les objets de présentation et de mise en page : tableaux +<TR>+, +<TD>+, divisions de pages +<DIV>+...
+
+===== Les objets non référencés
+
+Ils ne sont utilisés que pour les affichages statiques et n'ont pas besoin d'être identifiés de façon précise.
+
+On trouve :
+
+- les statiques fixes : textes (ou labels), images (gif, jpeg...), encadrements, figures géométriques
+- les statiques animés : textes défilants, images animées (gif animé, vectorielles de type Flash...) scènes vidéo (mpeg, avi...), séquences audio (wav, mp3...)
+
+===== Les objets référencés
+
+Ils permettent d'assurer les interactions utilisateur : actions, saisie, navigation
+
+On trouve :
+
+-  les objets actifs de navigation : boutons d'actions simples ou sensitifs, liens vers les autres pages, liens hypertextes vers des URL (_Uniform Resource Locator_) ou des signets, zones réactives, zones de courrier électronique
+- les contrôles de formulaires : boutons (d’action, case à cocher, radio), champ d'entrée (simple, multilignes, de mot de passe), listbox (simple ou déroulante)
+
+=== Principes ergonomiques
+
+Cette partie fait l'objet dans le cours de DUT d'une intervention particulière, par une professionnelle de l'érgonomie. Nous reprenons simplement ici quelques grands principes.
+
+ifdef::backend-slidy2[<<<]
+
+.Utilisation des divisions
+[caption="Règle d'ergonomie : "]
+==========================
+Utilisez des divisions pour placer les informations répétées sur plusieurs pages : menus, en-têtes...
+==========================
+
+ifdef::backend-slidy2[<<<]
+
+.Affichage des listes de résultats
+[caption="Règle d'ergonomie : "]
+==========================
+Utilisez des tableaux plutôt que des listes déroulantes
+==========================
+
+ifdef::backend-slidy2[<<<]
+
+.Structure des formulaires
+[caption="Règle d'ergonomie : "]
+==========================
+Les règles de structuration des boîtes de dialogue sont applicables la plupart du temps (alignement des champs affichés, regroupement des contrôles par famille, ...)
+==========================
+
+ifdef::backend-slidy2[<<<]
+
+.Contrôles de saisie
+[caption="Règle d'ergonomie : "]
+==========================
+Effectuez les « contrôles de surface » en local (fonction javascript par exemple)
+==========================
+
+ifdef::backend-slidy2[<<<]
+
+.Polices et couleurs
+[caption="Règle d'ergonomie : "]
+==========================
+Utilisez des polices standard (Arial, Times, Verdana) +
+Utilisez plutôt des fonds de pages clairs et une écriture sombre
+==========================
+
+ifdef::backend-slidy2[<<<]
+
+.Styles
+[caption="Règle d'ergonomie : "]
+==========================
+Utilisez des feuilles de styles (CSS) pour les polices et les balises de présentations de textes : +<A>+, +<H1>+...
+==========================
+
+=== Le SEP
+
+==== Codification
+
+[[sep]]
+.Codification des types d'objets visuels nommés
+image::{images}/sep1.png["Codification",width=50%"]
+
+ifdef::backend-slidy2[<<<]
+
+[[sep1]]
+.Codification des types d'objets visuels nommés (suite)
+image::{images}/sep2.png["Codification suite",width=50%"]
+
+ifdef::backend-slidy2[<<<]
+
+[[sep2]]
+.Représentation des pages
+image::{images}/sep3.png["Codification",width=50%"]
+
+Caractéristiques générales :
+
+- Nom de la page précédé de son type : PCA, PPC, PPV, PFO
+- [ Droit d'accès ] ou [ Condition ]
+- "DESSIN", "MAQUETTE" ou "DESCRIPTIF" pour les pages complexes 
+- ( Paramètres ) : paramètre obligatoire souligné
+- FILTRE : <valeur du filtre> ; TRI : <attributs et sens>
+- CADRE : <nom du cadre d'accueil>
+- "FENETRE" si la page doit s'ouvrir dans un autre fenêtre navigateur 
+- "POPUP" si la page doit s'ouvrir dans une fenêtre popup
+
+==== Exemples de pages
+
+[[sep3]]
+.Page de cadres avec deux cadres
+image::{images}/sep4.png["Page de cadres avec deux cadres",width=50%"]
+
+ifdef::backend-slidy2[<<<]
+
+[[sep4]]
+.Page de présentation variable
+image::{images}/sep5.png["Page de présentation variable",width=50%"]
+
+ifdef::backend-slidy2[<<<]
+
+[[sep4]]
+.Page de présentation constante
+image::{images}/sep6.png["Page de présentation constante",width=50%"]
+
+ifdef::backend-slidy2[<<<]
+
+[[sep5]]
+.Page de formulaire
+image::{images}/sep7.png["Page de formulaire",width=50%"]
+
+==== Construction du SEP à partir du SNI
+
+[[sni-exp]]
+.Le SNI de départ
+image::{images}/sni-exp.png["Le SNI de départ",width=50%"]
+
+ifdef::backend-slidy2[<<<]
+
+[[sep-exp]]
+.Le SEP résultant
+image::{images}/sep-exp.png["Le SEP résultant",width=50%"]
+
+=== Dessin des pages complexes
+
+==== Généralités
+
+[[dessin]]
+.Notation pour les dessins de pages
+image::{images}/dessin1.png["Notation",width=50%"]
+
+==== Formulaires
+
+[[boutons]]
+.Boutons
+image::{images}/boutons.png["Boutons",width=50%"]
+
+[[saisie]]
+.Saisie
+image::{images}/saisie.png["Saisie",width=50%"]
+
+ifdef::backend-slidy2[<<<]
+
+[[liste]]
+.Liste
+image::{images}/liste.png["Liste",width=50%"]
+
+[[liens]]
+.Liens
+image::{images}/liens.png["Liens",width=50%"]
+
+ifdef::backend-slidy2[<<<]
+
+[[tableau]]
+.Tableau
+image::{images}/tableau.png["Tableau",width=50%"]
+
+==== Exemples
+
+[[dessin-exp]]
+.Détail compte
+image::{images}/dessin-exp.png["Exemple",width=50%"]
+
+ifdef::backend-slidy2[<<<]
+
+[[dessin-exp2]]
+.Saisie Note
+image::{images}/dessin-exp2.png["Exemple",width=50%"]
+
+== Les Dessins d’Etats imprimés
+
+=== Objet
+
+Les *états informatiques* doivent faire l'objet d'une analyse précise avant de
+procéder à leur programmation.
+
+Dans ce but on utilise une *grille d’imprimante* (ou grille d'impression).
+
+Cette grille est remplie à partir d’une maquette utilisateur (dessin rapide permettant de capter les besoins de l’utilisateur)
+
+Le report de la *maquette utilisateur* sur une grille d'imprimante permet de réaliser une mise à l'échelle de l'état et de donner des instructions précises au programmeur.
+
+[[Grille]]
+.Exemple de grille
+image::{images}/grille.jpeg["Grille",width=50%"]
+
+=== Les familles d’imprimantes
+
+==== Les imprimantes lignes
+
+Elles sont généralement utilisées dans les grands centres d’impression.
+
+L'impression est réalisée ligne par ligne avec un format fixe sur du papier en continu (pliage accordéon) muni de bandes d'entraînements latérales appelées bandes Carol.
+
+Caractères utilisés : très limités (26 lettres et 10 chiffres et qq caractères spéciaux) Vitesse : en lignes par minutes. Elle peut varier de 200 à 2000 lpm.
+
+==== Les imprimantes matricielles (ou à aiguilles)
+
+Ces imprimantes fonctionnent avec une colonne d'aiguilles (9, 12, 24 ... aiguilles) permettant d'imprimer les caractères sous forme d’un ensemble de points.
+Les aiguilles sont placées dans une tête d’écriture se déplaçant latéralement devant le papier.
+
+Caract. utilisés : formes et tailles variées ainsi que mise en relief (gras, souligné, italique).
+
+Vitesse : en cps (Caractères Par Seconde). Elle varie de 60 à 400 cps.
+
+==== Les imprimantes à jet d'encre
+
+Elles utilisent les mêmes principes que les imprimantes à aiguilles mais les aiguilles sont remplacées par une série de buses projetant un jet d'encre sur le papier : plus de silence et meilleure qualité d’impression.
+
+==== Les imprimantes laser
+
+Un rayon laser magnétise localement un tambour sur lequel est projetée une encre en poudre. L'encre est attirée par les régions magnétisées du tambour et se dépose sur le papier sur lequel elle est fixée par chauffage. Les imprimantes laser impriment directement une page complète.
+
+Les caractères : tous
+
+Vitesse : en ppm (Page Par Minute). 10 ppm environ
+
+=== Les formulaires en continu
+
+==== Les liasses
+
+On appelle liasse une superposition de plusieurs feuilles de papier chimique (de 2 à 4) permettant d'imprimer simultanément plusieurs exemplaires d'un même état. Les liasses ne peuvent être utilisées qu’avec les imprimantes lignes ou matricielles (qui « frappent » le papier).
+
+==== Les pré-imprimés
+
+Certaines informations apparaissant sur les états peuvent être- pré- imprimées par un imprimeur (à partir d’une maquette qu’on lui aura fournie).
+
+Caractéristiques du pré-imprimé :
+
+- + meilleure qualité d’impression 
+- + temps d’impression réduit
+- - coût du papier plus important
+
+=== La grille d’imprimante
+
+==== Types d'informations
+
+Il faut distinguer deux types d'informations apparaissant sur un état, les informations fixes et les zones variables.
+
+Les informations fixes::
+	Elles correspondent aux différents titres et encadrements. Les informations pré-imprimées sont forcément des 
+	informations fixes (on les représentera en rouge sur la grille d’impression).
+Les zones variables (3 catégories)::
+	les zones alphanumériques : format +COBOL X(n)+  +
+	les zones numériques entières :format +COBOL 9(n)+  +
+	les zones décimales avec séparateur : +9(n)V,9(m)+ 
+
+Chaque caractère, fixe ou variable, occupera une case de la grille d’imprimante.
+
+==== Graphisme "ancien"
+
+Utilisation d’étoiles, de +i+ majuscules et de tirets :
+
+image::{images}/grille2.png["Grille",width=50%"]
+
+=== Présentation générale des états
+
+Il faut prévoir l'impression de la date d'édition de l'état (en haut à gauche). Dans le cas de listes se poursuivant sur plusieurs pages on rajoutera systématiquement les informations suivantes :
+
+- un num. de page en haut à droite, avec le nb total de pages (ex : 3/10) 
+- une répétition des titres en haut de chaque page
+
+Il faudra veiller à imposer des sauts de page (FF : _Form Feed_) à certains endroits.
+
+==== Répétition de lignes et de blocs :
+
+Si une ligne de variable se répète de façon identique sur plusieurs lignes, on indiquera la répétition en plaçant sous chaque variable une colonne de points. Des répétitions de blocs de lignes seront représentées par des accolades.
+
+==== Numérotation des variables et légende :
+
+De façon à ce que le programmeur puisse identifier correctement chaque variable, on procédera à leur numérotation de gauche à droite et de haut en bas sur la grille d’imprimante.
+
+Le numéro sera porté au-dessus de chaque zone variable en utilisant une couleur différente de façon à ne pas les assimiler aux informations fixes.
+
+Seules les variables de la première ligne seront numérotées si la ligne est répétitive.
+
+Les numéros de variables seront reportés dans une légende qui sera placée sur la grille d'imprimante s'il y a de la place ou sur une feuille jointe. La légende portera les informations suivantes : numéro et nom de la variable, format d'édition COBOL.

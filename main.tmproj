@@ -3,14 +3,16 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>main.txt</string>
+	<string>Merise.txt</string>
 	<key>documents</key>
 	<array>
 		<dict>
 			<key>filename</key>
 			<string>make.txt</string>
 			<key>lastUsed</key>
-			<date>2012-09-12T13:53:55Z</date>
+			<date>2012-09-13T09:46:05Z</date>
+			<key>selected</key>
+			<true/>
 		</dict>
 		<dict>
 			<key>filename</key>
@@ -22,21 +24,19 @@
 			<key>filename</key>
 			<string>main.txt</string>
 			<key>lastUsed</key>
-			<date>2012-09-12T13:53:55Z</date>
-			<key>selected</key>
-			<true/>
+			<date>2012-09-14T14:17:16Z</date>
 		</dict>
 		<dict>
 			<key>filename</key>
 			<string>chap00AvantPropos.txt</string>
 			<key>lastUsed</key>
-			<date>2012-08-09T12:31:53Z</date>
+			<date>2012-09-13T07:35:04Z</date>
 		</dict>
 		<dict>
 			<key>filename</key>
 			<string>Generalites.txt</string>
 			<key>lastUsed</key>
-			<date>2012-09-11T18:18:08Z</date>
+			<date>2012-09-13T09:45:56Z</date>
 		</dict>
 		<dict>
 			<key>filename</key>
@@ -54,13 +54,13 @@
 			<key>filename</key>
 			<string>about.txt</string>
 			<key>lastUsed</key>
-			<date>2012-08-08T13:06:53Z</date>
+			<date>2012-09-13T09:44:36Z</date>
 		</dict>
 		<dict>
 			<key>filename</key>
 			<string>Merise.txt</string>
 			<key>lastUsed</key>
-			<date>2012-09-12T10:18:22Z</date>
+			<date>2012-09-14T14:17:16Z</date>
 		</dict>
 		<dict>
 			<key>filename</key>
@@ -72,7 +72,7 @@
 			<key>filename</key>
 			<string>s3-1.txt</string>
 			<key>lastUsed</key>
-			<date>2012-09-11T19:18:23Z</date>
+			<date>2012-09-13T07:30:33Z</date>
 		</dict>
 	</array>
 	<key>fileHierarchyDrawerWidth</key>
@@ -98,44 +98,28 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>0</integer>
+				<integer>6</integer>
 				<key>line</key>
-				<integer>272</integer>
+				<integer>18</integer>
 			</dict>
-			<key>columnSelection</key>
-			<false/>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>252</integer>
-			<key>selectFrom</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>268</integer>
-			</dict>
-			<key>selectTo</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>272</integer>
-			</dict>
+			<integer>0</integer>
 		</dict>
 		<key>Merise.txt</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>38</integer>
+				<integer>0</integer>
 				<key>line</key>
-				<integer>338</integer>
+				<integer>377</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>312</integer>
+			<integer>361</integer>
 		</dict>
 		<key>about.txt</key>
 		<dict>
@@ -195,7 +179,7 @@
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>68</integer>
+			<integer>55</integer>
 			<key>selectFrom</key>
 			<dict>
 				<key>column</key>
@@ -230,14 +214,14 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>0</integer>
+				<integer>14</integer>
 				<key>line</key>
-				<integer>32</integer>
+				<integer>54</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>13</integer>
+			<integer>60</integer>
 		</dict>
 		<key>make.txt</key>
 		<dict>
@@ -300,6 +284,6 @@
 	<key>showFileHierarchyDrawer</key>
 	<true/>
 	<key>windowFrame</key>
-	<string>{{251, 4}, {900, 774}}</string>
+	<string>{{190, 32}, {900, 746}}</string>
 </dict>
 </plist>
