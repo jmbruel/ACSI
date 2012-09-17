@@ -1,0 +1,151 @@
+[[sni]]
+== Le modèle conceptuel d'IHM – Le SNI
+
+===￼Objet
+
+Le SNI permet de concevoir et de modéliser la logique d'enchaînement des fonctions de l'application en fonction du comportement supposé de l'utilisateur.
+
+Le SNI est purement conceptuel :
+
+-  il est indépendant du type d'interface utilisé (Windows, WEB, Multimédia...)
+-  il ne représente pas la manière de faire de l'utilisateur (menu déroulant, bouton, glisser-déposer...)
+-  il fait abstraction de tout aspect matériel (clavier, type d’écran, souris...)
+-  il ne représente pas les traitements réalisés dans l'application
+
+===￼SNI et MVC
+
+Le SNI s'occupe de la partie "Vue" du MVC.
+
+=== Les Unités de Dialogue
+
+On appellera "**U**nité de **D**ialogue" (*UD*) l'ensemble des fonctions offertes à l'utilisateur de façon simultanée (sur un même écran, dans une même fenêtre, dans une même page).
+
+Chaque UD est représentée par un ou plusieurs symboles dans le SNI.
+
+[NOTE]
+==============
+Une UD élémentaire = un seul symbole +
+Une UD composée = plusieurs symboles
+==============
+
+==== Les UD élémentaires (UDE)
+
+[[sni-ude]]
+.Les UDE
+image::{images}/sni-ude.png["sni-ude",width=50%"]
+
+ifdef::backend-slidy2[<<<]
+
+[[sni-ude-exp]]
+.Exemple d'UDE
+image::{images}/sni-ude-exp.png["Exemple",width=50%"]
+
+ifdef::backend-slidy2[<<<]
+
+[[sni-ude-exp2]]
+.Autre exemple d'UDE
+image::{images}/sni-ude-exp2.png["Exemple",width=50%"]
+
+==== ￼Les UD composées par juxtaposition (UDC)
+
+[[sni-udc]]
+.Les UD composées par juxtaposition
+image::{images}/sni-udc.png["Les UD composées par juxtaposition",width=50%"]
+
+ifdef::backend-slidy2[<<<]
+
+[[sni-udc-exp1]]
+.Exemple d'UDC
+image::{images}/sni-udc-exp1.png["Exemple",width=50%"]
+
+==== ￼Les UD composées par boîte de groupage (UDC)
+
+[[sni-udc2]]
+.Les UD composées par boîte de groupage
+image::{images}/sni-udc2.png["Les UD composées par boîte de groupage",width=50%"]
+
+=== ￼Construction du Schéma Navigationnel d'IHM (SNI)
+
+Deux modes de construction
+
+-  Mode esquisse (construction progressive)
+-  Mode conception (construction structurée)
+
+==== Règles communes
+
+[TIP]
+.Règles des retours implicites
+===============================
+Après une UDE, le retour implicite s'effectue sur l'UD précédente. 
+Après une option d'un menu juxtaposé à une UD (élémentaire ou composée) le retour implicite 
+s'effectue sur l'UD juxtaposée
+===============================
+
+
+==== Construction du SNI en mode esquisse
+
+Au cours de l’acquisition des exigences ou
+
+En rétro-conception d'IHM :
+
+* A partir des besoins des utilisateurs "
+** Cas d’utilisation et fonctions
+** Droits et conditions d'accès
+** Contraintes diverses
+* Participation des utilisateurs
+
+==== Construction structurée (patrons d’IHM)
+
+* Pour les applications importantes 
+* Adoption du principe OBJET-ACTION
+** Dans une approche objet-action on demande en premier lieu à l'utilisateur d'indiquer quels sont les objets sur lesquels il désire travailler puis, quelles opérations il veut leur appliquer.
+
+ifdef::backend-slidy2[<<<]
+
+* Exemple d'illustration :
+** Soit une base de données comportant trois types d‘objets : CLIENTS, PRODUITS, FOURNISSEURS
+** L'utilisateur désire effectuer trois types d'actions générales sur ces objets : CONSULTER, MODIFIER, SUPPRIMER
+** Il désire également réaliser trois traitements spécifiques :
+- Lister les clients triés par régions,
+- Imprimer la fiche de stock d'un produit donné,
+- Marquer tous les fournisseurs dont le chiffre d'affaires est < 1000 €
+
+
+ifdef::backend-slidy2[<<<]
+
+[[sni-act-obj]]
+.Approche Action-Objet
+image::{images}/sni-act-obj.png["Approche Action-Objet",width=50%"]
+
+ifdef::backend-slidy2[<<<]
+
+[[sni-obj-act]]
+.Approche Objet-Action
+image::{images}/sni-obj-act.png["Approche Objet-Action",width=50%"]
+
+====￼Mise en oeuvre du principe OBJET-ACTION
+
+*  On part du diagramme des classes métier
+**   Classes et attributs
+**  Relations (associations, compositions, spécialisations)
+** Méthodes utilisateur
+* Utilisation de patrons de conception (_Design Patterns_) 
+
+Le SNI obtenu représente alors le squelette du SNI final.
+
+* Le squelette est complété avec 
+** Les filtres
+** Les droits et conditions d'accès
+** L’accès aux fonctions
+* Le SNI est optimisé en cherchant à minimiser le nombre d'actions utilisateur (clics souris)
+
+==== Patrons d'IHM
+
+Cinq patrons d’IHM obtenus à partir du diagramme des classes
+
+. Racine (classes ciblées)
+. Détail (sélection d’un objet dans une liste d’objets)
+. Liaison (association entre plusieurs classes)
+. Aiguillage (spécialisation-généralisation)
+. Administration (mise à jour, création, suppression d’objets)
+

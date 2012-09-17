@@ -89,8 +89,26 @@ include::Merise.txt[]
 
 = Partie 5 : UML
 
-= Partie 6 : SNI
-[[sni]]
+= Partie 6 : Conception des IHM
+
+Plan de cette partie :
+
+* Généralités
+* Le modèle conceptuel d'IHM – Le SNI
+* Construction du SNI en mode esquisse
+* Construction structurée (patrons d’IHM)
+* Les IHM orientées fenêtres (GUI) – Le SEF
+* Les IHM orientées page (PUI) – Le SEP
+
+== Généralités
+
+include::sni.txt[]
+
+== Les IHM orientées fenêtres (GUI) – Le SEF
+
+== Les IHM orientées page (PUI) – Le SEP
+
+Cette partie est traitée <<SEP,ici>>.
 
 = Partie 7 : Génie Logiciel
 

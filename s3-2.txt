@@ -106,3 +106,13 @@ Il s’agit des classes, issues des 3 paquetages MVC, qui "participent", dans un
 .Un exemple de Diagramme de Classe Participante 
 image::{images}/mvc-dcp.png["Diagramme de Classe Participante",width=50%"]
 
+=== Les MVC
+
+En fonction des langages et des architectures, vous trouverez autant de schéma MVC différents
+que l'on peut en imaginer! Attention à vous adaptez.
+
+[[mvc-zoo]]
+.La jungle des modèles MVC (petit extrait d'une recherche sur le web!) 
+image::{images}/mvc-zoo.png["Les MVC",width=50%"]
+
+

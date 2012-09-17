@@ -2,6 +2,7 @@
 :duration: 85
 
 == Schéma d’Enchaînement des Pages (SEP)
+[[SEP]]
 
 Ni Merise ni UML n'ont de schémas spécifiques pour représenter les interfaces graphiques, ni les enchaînements des pages dans un site web par exemple. On peut par exemple utiliser un diagramme d'état UML où chaque état est une page et les transitions représentent les événements qui font passer d'une page à l'autre.
 
