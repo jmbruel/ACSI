@@ -110,7 +110,6 @@ ifdef::backend-slidy2[<<<]
 - Imprimer la fiche de stock d'un produit donné,
 - Marquer tous les fournisseurs dont le chiffre d'affaires est < 1000 €
 
-
 ifdef::backend-slidy2[<<<]
 
 [[sni-act-obj]]
@@ -123,7 +122,8 @@ ifdef::backend-slidy2[<<<]
 .Approche Objet-Action
 image::{images}/sni-obj-act.png["Approche Objet-Action",width=50%"]
 
-====￼Mise en oeuvre du principe OBJET-ACTION
+
+==== Mise en oeuvre du principe OBJET-ACTION
 
 *  On part du diagramme des classes métier
 **   Classes et attributs

@@ -12,7 +12,8 @@ diagrams
     779 447 100 4 0 0
 end
 show_stereotypes
-selected class_ref 128696 // Voitures
+selected 
+  package_ref 135224 // Controler
 open
   usecaseview_ref 128056 // Vue Systeme
   classview_ref 128056 // Elements

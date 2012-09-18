@@ -1,6 +1,6 @@
 format 75
 "Architecture" // Architecture
-  revision 1
+  revision 2
   modified_by 56 "bruel"
   // class settings
   //class diagram settings
@@ -92,4 +92,10 @@ ${members}}
       end
     end
   end
+
+  package_ref 134968 // Model
+
+  package_ref 135096 // View
+
+  package_ref 135224 // Controler
 end
