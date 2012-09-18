@@ -1,0 +1,88 @@
+::Q1:: Que signifie ACSI?
+{       =analyse et conception des systèmes d'information # right; bonne réponse!
+        ~analyse et correspondance des systèmes d'information # wrong, faux !
+        ~analyse et conception des systèmes d'infrastructures# wrong, faux !
+}
+
+::Q2:: Quel mot est le plus appropriée pour définir conceptuel ?
+{   ~d'où
+    ~qui
+	=quoi
+    ~quand
+	~comment                   
+}
+
+::Q3:: Qu'est-ce que MERISE ?
+{       
+    ~Un logiciel?  # wrong, Une méthode de travail?
+	=Une méthode de travail? # right; good!
+    ~Un système d'exploitation ? # wrong, Une méthode de travail? 
+}
+
+::Q4:: Lequel de ces principes n'est pas un principe de base de MERISE ?
+{       =Approche générale # right; good!
+        ~Différents niveaux d'abstraction # wrong, Approche général
+	~Approche systémique # wrong, Approche général
+        ~Démarche globale # wrong, Approche général 
+}
+
+::Q5:: MERISE est de quelle nationalité ?
+{       =Française ? # right; good!
+        ~Américaine ? # wrong, Française
+        ~Japonaise ? # wrong, Française 
+}
+
+::Q6:: Un vendeur doit se déplacer chez son client à 13h30 le 25 mai. Comment doit-on représenter ce flux ?
+{       =Ce n'est pas un flux # right; good!
+        ~Par une flèche # wrong, Ce n'est pas un flux
+        ~Par une double flèche # wrong, Ce n'est pas un flux
+	~Par un trait discontinue # wrong, Ce n'est pas un flux 
+}
+
+::Q7:: Quels sont les 4 différents niveaux d'abstraction ?
+{       =Conceptuel, Organisationnel, Logique, Technique # right; good!
+        ~Conventionnel, Opérationnel, Libre, Technique # wrong, Conceptuel, Organisationnel, Logique, Technique
+	~Conceptuel, Opérationnel, Logique, Technique # wrong, Conceptuel, Organisationnel, Logique, Technique 
+}
+
+::Q8:: Que ne doit-on pas représenter dans un MCF ?
+{       
+        ~Les flux # wrong, Les acteur internes
+	~Le domaine # wrong, Les acteur internes
+        ~Les acteurs externes # wrong, Les acteur internes
+	=Les acteur internes # right; good! 
+}
+
+::Q9:: Qu'est ce qui correspond a quoi ? 
+{	=acteur externe -> rond en pointillé 
+	=acteur interne -> rond trait continu 
+	=domaine -> rectangle 
+}
+
+::Q10:: On peut effectuer un flux qui boucle sur un même acteur {F}
+
+::Q11:: On ne peut effectuer de flux entre acteurs externes {T}
+
+::Q12:: On peut effectuer un flux bidirectionnels {F}
+
+::Q13:: Le nom d'un flux est désigné par ?
+{
+	=une flèche
+	~un ovale
+	~un rectangle
+}
+
+::Q14:: Qu'est ce qu'un MOF ?
+{
+	~modèle organisationnel financier
+	=modèle organisationnel de flux
+}
+
+::Q15:: Quel sont les types que l'on retrouve dans Merise ?
+{
+	~%35%flux
+	~comportement
+	~%35%traitement
+	~%30%données
+	~concept
+}

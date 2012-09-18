@@ -25,6 +25,8 @@ Note: Dans nos enseignements de DUT Informatique, cette partie est abordée en 3
 
 == Pourquoi MERISE ?
 
+Ce qu'on peut dire de http://fr.wikipedia.org/wiki/Merise_(informatique)[Merise] :
+
 * méthode très utilisée *en France*
 * des générations de programmeurs l'ont apprise
 * elle permet donc de servir de *référence* pour les autres approches
