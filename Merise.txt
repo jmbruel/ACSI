@@ -450,6 +450,11 @@ NOTE: Une opération possède au moins un événement résultat par règle d'ém
 ** si c'est le cas, on enregistre la date de livraison, on met à jour le stock et on imprime un bon de livraison pour le service Livraison;
 ** sinon le stock à réapprovisionner est incrémenté de la quantité commandée.
 
+ifdef::backend-slidy2[<<<]
+
+.Exemple de MCT
+image:{images}/mct1.png["Exemple de MCT",width="60%"]
+
 ==== Modèle Organisationnel de Traitement
 
 ===== Eléments importants
@@ -504,7 +509,7 @@ ifdef::backend-slidy2[<<<]
 .Exemple de MOT
 image:{images}/mot4.png["Exemple de MOT",width="60%"]
 
-===== Exercice 2
+===== Exemple 2
 * A partir des demandes d’approvisionnement établies par le service commercial, le service des achats envoie des demandes de prix aux fournisseurs possibles.  
 * Les fournisseurs envoient des offres de prix au service achat. 
 Ce dernier choisit alors un fournisseur particulier (au plus tard 10 jours après l’envoi des offres) et lui envoie un bon de commande. Une copie est conservée en vue de la réception. 
