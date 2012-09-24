@@ -1,8 +1,8 @@
 window_sizes 1280 752 300 974 559 136
 diagrams
-  usecasediagram_ref 128056 // Exemple1
+  active  usecasediagram_ref 128056 // Exemple1
     779 447 100 4 0 0
-  active  classdiagram_ref 128184 // Exemple1
+  classdiagram_ref 128184 // Exemple1
     779 447 140 4 0 0
   deploymentdiagram_ref 128312 // test
     779 447 100 4 0 0
@@ -12,8 +12,7 @@ diagrams
     779 447 100 4 0 0
 end
 show_stereotypes
-selected 
-  package_ref 135224 // Controler
+selected usecasediagram_ref 128056 // Exemple1
 open
   usecaseview_ref 128056 // Vue Systeme
   classview_ref 128056 // Elements

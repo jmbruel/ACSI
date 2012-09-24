@@ -1,7 +1,9 @@
 [[sni]]
 == Le modèle conceptuel d'IHM – Le SNI
 
-===￼Objet
+Il n'existe pas de modèle de description d'IHM en UML ou en Merise. Nous allons donc voir le SNI de la méthode MACAO.
+
+=== Objet
 
 Le SNI permet de concevoir et de modéliser la logique d'enchaînement des fonctions de l'application en fonction du comportement supposé de l'utilisateur.
 
@@ -12,9 +14,9 @@ Le SNI est purement conceptuel :
 -  il fait abstraction de tout aspect matériel (clavier, type d’écran, souris...)
 -  il ne représente pas les traitements réalisés dans l'application
 
-===￼SNI et MVC
+=== SNI et MVC
 
-Le SNI s'occupe de la partie "Vue" du MVC.
+Le SNI concerne de la partie "Vue" du MVC.
 
 === Les Unités de Dialogue
 
@@ -32,37 +34,37 @@ Une UD composée = plusieurs symboles
 
 [[sni-ude]]
 .Les UDE
-image::{images}/sni-ude.png["sni-ude",width=50%"]
+image::{images}/sni-ude.png["sni-ude",width="50%"]
 
 ifdef::backend-slidy2[<<<]
 
 [[sni-ude-exp]]
 .Exemple d'UDE
-image::{images}/sni-ude-exp.png["Exemple",width=50%"]
+image::{images}/sni-ude-exp.png["Exemple",width="50%"]
 
 ifdef::backend-slidy2[<<<]
 
 [[sni-ude-exp2]]
 .Autre exemple d'UDE
-image::{images}/sni-ude-exp2.png["Exemple",width=50%"]
+image::{images}/sni-ude-exp2.png["Exemple",width="50%"]
 
 ==== ￼Les UD composées par juxtaposition (UDC)
 
 [[sni-udc]]
 .Les UD composées par juxtaposition
-image::{images}/sni-udc.png["Les UD composées par juxtaposition",width=50%"]
+image::{images}/sni-udc.png["Les UD composées par juxtaposition",width="50%"]
 
 ifdef::backend-slidy2[<<<]
 
 [[sni-udc-exp1]]
 .Exemple d'UDC
-image::{images}/sni-udc-exp1.png["Exemple",width=50%"]
+image::{images}/sni-udc-exp1.png["Exemple",width="50%"]
 
 ==== ￼Les UD composées par boîte de groupage (UDC)
 
 [[sni-udc2]]
 .Les UD composées par boîte de groupage
-image::{images}/sni-udc2.png["Les UD composées par boîte de groupage",width=50%"]
+image::{images}/sni-udc2.png["Les UD composées par boîte de groupage",width="50%"]
 
 === ￼Construction du Schéma Navigationnel d'IHM (SNI)
 
@@ -78,9 +80,41 @@ Deux modes de construction
 ===============================
 Après une UDE, le retour implicite s'effectue sur l'UD précédente. 
 Après une option d'un menu juxtaposé à une UD (élémentaire ou composée) le retour implicite 
-s'effectue sur l'UD juxtaposée
+s'effectue sur l'UD juxtaposée.
 ===============================
 
+ifdef::backend-slidy2[<<<]
+
+[TIP]
+.Filtres associés aux listes
+===============================
+Permet de restreindre le nombre de lignes d'une liste. +
+Un filtre porte sur certains attributs de la classe (présents ou non dans la liste).
+===============================
+
+.Exemple de filtre
+image::{images}/filtre.png["Filtre",width="40%"]
+
+ifdef::backend-slidy2[<<<]
+
+[TIP]
+.Tris multiples des listes
+===============================
+Permet de trier une liste de différentes façons. +
+Les différents tris possibles sont indiqués comme pour un filtre.
+===============================
+
+.Exemple de tri
+image::{images}/tris.png["tri",width="40%"]
+
+ifdef::backend-slidy2[<<<]
+
+[TIP]
+.Rôles et conditions d'accès
+===============================
+Les rôles et les conditions d'accès permettent de contraindre les accès aux menus 
+(+[Rôle,...]+ ou +[-Rôle,...]+, +[valeur > 1000]+).
+===============================
 
 ==== Construction du SNI en mode esquisse
 
@@ -114,16 +148,18 @@ ifdef::backend-slidy2[<<<]
 
 [[sni-act-obj]]
 .Approche Action-Objet
-image::{images}/sni-act-obj.png["Approche Action-Objet",width=50%"]
+image::{images}/sni-act-obj.png["Approche Action-Objet",width="50%"]
 
 ifdef::backend-slidy2[<<<]
 
 [[sni-obj-act]]
 .Approche Objet-Action
-image::{images}/sni-obj-act.png["Approche Objet-Action",width=50%"]
+image::{images}/sni-obj-act.png["Approche Objet-Action",width="50%"]
 
 
 ==== Mise en oeuvre du principe OBJET-ACTION
+
+===== Démarche
 
 *  On part du diagramme des classes métier
 **   Classes et attributs
@@ -139,6 +175,49 @@ Le SNI obtenu représente alors le squelette du SNI final.
 ** L’accès aux fonctions
 * Le SNI est optimisé en cherchant à minimiser le nombre d'actions utilisateur (clics souris)
 
+===== Exemple
+
+Les exigences :
+
+- Afficher la liste de tous les étudiants classés par année, groupe et ordre alphabétique +
+- Imprimer la liste +
+- Afficher le détail d'un étudiant +
+- Modifier l'étudiant affiché
+
+image::{images}/sni1.png["SNI de départ",width="60%"]
+
+ifdef::backend-slidy2[<<<]
+
+Complément 1 : Nouveaux étudiants et Constitution groupes
+
+image::{images}/sni2.png["Complément de SNI",width="60%"]
+
+ifdef::backend-slidy2[<<<]
+
+Complément 2 : Gestion complète des groupes
+
+image::{images}/sni3.png["Complément de SNI",width="60%"]
+
+ifdef::backend-slidy2[<<<]
+
+Complément 3 : Saisie des notes d’un partiel
+
+image::{images}/sni4.png["Complément de SNI",width="60%"]
+
+==== Mise en oeuvre du principe ACTION-OBJET
+
+===== Démarche
+
+Dans une approche *objet-action* on demande en premier lieu à l'utilisateur d'indiquer quels sont les objets sur lesquels il désire travailler puis, quelles opérations il veut leur appliquer.
+Exemple d'illustration :
+Soit une base de données comportant trois types d‘objets : CLIENTS, PRODUITS, FOURNISSEURS
+L'utilisateur désire effectuer trois types d'actions générales sur ces objets : CONSULTER, MODIFIER, SUPPRIMER
+Il désire également réaliser trois traitements spécifiques : - Lister les clients triés par régions,
+- Imprimer la fiche de stock d'un produit donné,
+- Marquer tous les fournisseurs dont le chiffre d'affaires est < 1000 €
+===== Exemple
+
+
 ==== Patrons d'IHM
 
 Cinq patrons d’IHM obtenus à partir du diagramme des classes
@@ -148,4 +227,36 @@ Cinq patrons d’IHM obtenus à partir du diagramme des classes
 . Liaison (association entre plusieurs classes)
 . Aiguillage (spécialisation-généralisation)
 . Administration (mise à jour, création, suppression d’objets)
+
+===== Patron Racine (classes ciblées)
+
+- Ciblage des classes métier
+- Mettre en évidence les classes prépondérantes, dont les objets seront présentés au premier niveau de l’IHM
+
+image::{images}/sni5.png["Patron Racine",width="60%"]
+
+===== Patron Détail (sélection d’un objet dans une liste d’objets)
+
+- Représenter tous les attributs d'un objet désigné dans une liste.
+
+image:{images}/sni6.png["Patron Détail",width="40%"] image:{images}/sni7.png["Patron Détail avec Fils",width="40%"]
+
+===== Patron Liaison (association entre plusieurs classes)
+
+- Suivre les liens entre les objets appartenant à des classes liées par des associations multiples (+*+)
+
+image:{images}/sni8.png["Patron Liaison",width="40%"] image:{images}/sni9.png["Patron Liaison avec classe-association",width="40%"] 
+
+===== Patron Aiguillage (spécialisation-généralisation)
+
+- utile pour présenter les détails d'une généralisation
+
+image:{images}/sni10.png["Patron Aiguillage",width="40%"]
+image:{images}/sni11.png["Patron Aiguillage",width="40%"]
+
+===== Patron Administration (mise à jour, création, suppression d’objets)
+
+- utile pour matérialiser un CRUD limité à l'administrateur
+
+image::{images}/sni12.png["Patron Admin",width="60%"]
 

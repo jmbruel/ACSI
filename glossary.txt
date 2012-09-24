@@ -14,14 +14,29 @@ Les définitions ci-dessous sont regroupées à titre indicatif. Les sources uti
 [glossary]
 [[DRY]]DRY::
 	_**D**on't **R**epeat **Y**ourself_ : 
-PPN::
-	**P**rogramme **P**édagogique **N**ational
+IHM::
+	**I**nterface **H**omme-**M**achine
+MCF:: 
+	**M**odèle **C**onceptuel des **F**lux
+MCT:: 
+	**M**odèle **C**onceptuel des **T**raitements
+MOF:: 
+	**M**odèle **O**rganisationnel des **F**lux
+MOT:: 
+	**M**odèle **O**rganisationnel des **T**raitements
 OMG::
 	_**O**bject **M**anagement **G**roup_ : L'organisme international chargé des principales normes liés à l'objet (CORBA, UML, etc.).
+PPN::
+	**P**rogramme **P**édagogique **N**ational
+SEF::
+	**S**chéma d'**E**nchaînement des **F**enêtres
+SEP::
+	**S**chéma d'**E**nchaînement des **P**ages
+SNI::
+	**S**chéma de **N**avigation d'**I**nterfaces
 [[SysML]]SysML::
-		_**Sys**tem **M**odeling **L**anguage_ (TM) : le langage de modélisation de systèmes maintenu par l'{omg}.
+	_**Sys**tem **M**odeling **L**anguage_ (TM) : le langage de modélisation de systèmes maintenu par l'{omg}.
 TRL::
 	_**T**echnology **R**eadiness **L**evel_ : système de mesure employé par des agences gouvernementales américaines et par de nombreuses compagnies (et agences) mondiales afin d'évaluer le niveau de maturité d'une technologie (cf. http://fr.wikipedia.org/wiki/Technology_Readiness_Level[Wikipedia]).
-
 URL::
-	_**U**niversal **R**essource **L**ocator_ : xxx
+	_**U**niversal **R**essource **L**ocator_

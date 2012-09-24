@@ -1,4 +1,4 @@
-:title: Classes et OCL
+:title: MOF/MCF/MCT
 :doctype: article
 :description: Cours de DUT Informatique
 :keywords: ACSI Merise UML Analyse Conception Systèmes d'Information
@@ -55,7 +55,7 @@ Début avril, le responsable des stages reprend les demandes d’attribution de 
 
 == Exercice II : Inscription à un établissement universitaire
 
-Le domaine d’étude est le processus d’inscription à un établissement universitaire recrutant sur dossier.  Le candidat commence par déposer un dossier d’admission (entre une date de début et une date de clôture des dépôts des dossiers). Si le dépôt arrive trop tard (ou trop tôt), il est rejeté. 15 jours après la date de clôture des dépôts, le jury d’admission prend une décision (notifiée au candidat) soit de refus, soit d’admissibilité. L’admission définitive est notifiée aux candidats, par le secrétariat de la scolarité, lorsque ceux-ci lui ont envoyé le certificat d’obtention du baccalauréat (15 jours maximum après les résultats officiels de celui-ci). Les candidats déclarés reçus ont alors un mois pour confirmer leur inscription par le dépôt d’une demande d’inscription (avec un chèque de paiement des droits de scolarité) auprès du secrétariat de la scolarité. Ceci fait, ils reçoivent leur carte d’étudiant. Les demandes d’inscription hors délais sont rejetées. Fin août, le secrétariat de la scolarité envoie la liste des étudiants inscrits aux enseignants de l’établissement.
+Le domaine d’étude est le processus d’inscription à un établissement universitaire recrutant sur dossier.  Le candidat commence par déposer un dossier d’admission auprès du secrétariat de la scolarité (entre une date de début et une date de clôture des dépôts des dossiers). Si le dépôt arrive trop tard (ou trop tôt), il est rejeté (rejet notifié au candidat). 15 jours après la date de clôture des dépôts, le jury d’admission prend une décision (notifiée au candidat) soit de refus, soit d’admissibilité. L’admission définitive est notifiée aux candidats, par le secrétariat de la scolarité, lorsque ceux-ci lui ont envoyé le certificat d’obtention du baccalauréat (15 jours maximum après les résultats officiels de celui-ci). Les candidats déclarés reçus ont alors un mois pour confirmer leur inscription par le dépôt d’une demande d’inscription (avec un chèque de paiement des droits de scolarité) auprès du secrétariat de la scolarité. Ceci fait, ils reçoivent leur carte d’étudiant (envoyée par le secrétariat). Les demandes d’inscription hors délais sont rejetées. Fin août, le secrétariat de la scolarité envoie la liste des étudiants inscrits aux enseignants de l’établissement.
 
 1.	Réaliser le MCF de ce domaine
 2.	Réaliser le MOF de ce domaine (en utilisant le MCF réalisé et le sujet)

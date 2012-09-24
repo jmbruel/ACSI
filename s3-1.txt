@@ -117,6 +117,10 @@ image::{images}/UC.png["Exemple de Diagramme d'UC",width="80%"]
 .Autre exemple de diagramme d'UC
 image::{images}/uc2.png["Exemple de Diagramme d'UC",width="70%"]
 
+==== Liens entre SNI et UC
+
+image::{images}/uc-sni.png["Lien entre UC et SNI",width="70%"]
+
 == Opérations, Paquetages et Java
 
 === Opérations

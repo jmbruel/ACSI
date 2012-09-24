@@ -256,7 +256,7 @@ image:{dessins}/noMove.png["Flux n'est pas déplacement", align="center"]
 . Réalisation du MOF
 
 [icon="dessins/CB.png"]
-NOTE: *MOF* +
+NOTE: *MCF* +
 1. Demande CB +
 2. Refus +
 3. Demande Groupée CB +
@@ -265,7 +265,7 @@ NOTE: *MOF* +
 6. Retrait de la carte
 
 [icon="dessins/CBmcf.png"]
-NOTE: *MCF* +
+NOTE: *MOF* +
 1. Demande CB +
 2. Refus +
 3. Demande Groupée CB +
@@ -354,13 +354,19 @@ image:{dessins}/commande.png["Exemple d'événement"]
 .Opération complète
 image::{dessins}/mct-exp1.png["Opération complète",width="50%"]
 
+ifdef::backend-slidy2[<<<]
+
 [[mctexp2]]
 .Opération complète
 image::{images}/mct-exp3.png["Opération complète",width="50%"]
 
+ifdef::backend-slidy2[<<<]
+
 [[mctexp3]]
 .Opération complète
 image::{images}/mct-exp4.png["Opération complète",width="50%"]
+
+ifdef::backend-slidy2[<<<]
 
 [[mctexp4]]
 .Opération complète
@@ -407,7 +413,6 @@ Opérateurs :
 - A partir de 3, les événements peuvent être renommés (lettres).
 =====================================================================
 
-===== Exercice
 ===== Actions
 * Types d'actions :
 action sur un objet::
@@ -416,8 +421,6 @@ action résultat::
 	impression, …
 * Conditions
 ** une action peut être soumise à condition
-
-===== Exercice
 
 ===== Règles d'émission
 Règle d'émission::
@@ -470,6 +473,8 @@ NOTE: Une opération possède au moins un événement résultat par règle d'ém
 
 ===== Exemples de MOT
 
+image:{images}/mot1.png["Exemple de MOT",width="60%"]
+
 ===== Règles de bonne conception d’un MOT
 
 * Examiner les traitements effectués par chaque acteur interne lorsqu’il reçoit un flux
@@ -477,12 +482,27 @@ NOTE: Une opération possède au moins un événement résultat par règle d'ém
 * Un MOT représente un processus c’est à dire un ensemble de tâches consécutives concourant à un même but
 * Les événements initiaux déclenchant un processus sont, soit des flux externes, soit des événements temporels
 
-===== Exercice 1
+===== Exemple 1
 * Lorsqu’un agent d’une compagnie d’assurances automobiles reçoit une déclaration d’accident de la part d’un assuré, il vérifie tout d’abord la situation de ce dernier. 
 * Si l’assuré n’est pas couvert pour ce type d’accident alors l’agent lui envoie un avis de rejet. 
 * Tous les soirs à 18h, un traitement automatique édite les avis de sinistre de la journée (ces avis correspondent aux déclarations d’accident du jour pour les assurés couverts). Ces avis sont expédiés par l’agent au siège social de la compagnie d’assurance. 
 * Le siège social désigne alors un expert pour chaque sinistre et envoie les coordonnées des experts désignés à l’agent d’assurance. Ce dernier envoie alors une convocation manuscrite à chaque expert. 
 * Lorsque l’agent d’assurance a reçu le rapport de l’expert et la facture de l’assuré (cette facture a été produite par le garage qui a effectué les réparations sur le véhicule accidenté et a été ensuite donné à l’assuré propriétaire du véhicule), il peut régler le sinistre en envoyant un chèque de remboursement à l’assuré.
+
+ifdef::backend-slidy2[<<<]
+
+.Exemple de MCT
+image:{images}/mot2.png["Exemple de MCT",width="60%"]
+
+ifdef::backend-slidy2[<<<]
+
+.Exemple de MOF
+image:{images}/mot3.png["Exemple de MOF",width="60%"]
+
+ifdef::backend-slidy2[<<<]
+
+.Exemple de MOT
+image:{images}/mot4.png["Exemple de MOT",width="60%"]
 
 ===== Exercice 2
 * A partir des demandes d’approvisionnement établies par le service commercial, le service des achats envoie des demandes de prix aux fournisseurs possibles.  
@@ -517,6 +537,10 @@ endif::backend-slidy2[]
 Ce dernier [green]*choisit alors un fournisseur* particulier (au plus tard 10 jours après l’envoi des offres) et lui envoie un [blue]*bon de commande*. Une [blue]*copie* est conservée en vue de la réception. 
 * Quand la [blue]*livraison* arrive (généralement 2 jours après le choix du fournisseur), le service achat [green]*contrôle* quantitativement et qualitativement la marchandise. La livraison est renvoyée en bloc si l’un des contrôles est négatif. 
 * Les contrôles satisfaisants aboutissent à l’entrée en stock des [blue]*articles*. Dans ce cas, le service achat établit alors le [blue]*bon à payer* aux [yellow]*services financiers*. Quand les services financiers reçoivent la [blue]*facture* du fournisseur (généralement 3 jours après la livraison), ils [green]*vérifient* la correspondance avec le bon à payer et [green]*émettent* le [blue]*chèque de paiement*. 
+
+ifdef::backend-slidy2[<<<]
+
+image:{images}/mot5.png["Exemple de MOT",width="60%"]
 
 ==== Modélisation du futur Système
 

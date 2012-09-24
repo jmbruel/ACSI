@@ -17,6 +17,13 @@ L’avantage de ce patron d’architecture :
 - la clarté qu'il impose,
 - la simplification de maintenance du logiciel. La modification d’une partie (vue, modèle ou contrôleur) n’affecte pas ou peu les autres parties.
 
+[NOTE]
+========
+Le MVC est issu d'un modèle de programmation des applications interactives proposé par
+Xerox pour le langage Smalltalk-80, repris par SUN et recommandé pour la plateforme J2EE.
+========
+
+
 ifdef::backend-slidy2[<<<]
 
 La vue correspond à l'interface avec laquelle l'utilisateur interagit. Sa tâche est :

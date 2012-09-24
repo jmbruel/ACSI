@@ -52,7 +52,7 @@
 :jmimail: jean-michel.inglebert@univ-tlse2.fr
 :jmi: mailto:{jmimail}[Jean-Michel Inglebert]
 :nh: mailto:nabil.hanine@free.fr[Nabil Hanine]
-:nico: mailto:Nicolas Belloir
+:nico: mailto:beloir@univ-pau.fr[Nicolas Belloir]
 :nonne: mailto:laurent.nonne@univ-tlse2.fr[Laurent Nonne]
 :omg: OMG
 :prfc: Pascal Roques
@@ -102,13 +102,28 @@ Plan de cette partie :
 
 == Généralités
 
+Les trois types de programmes :
+
+1. Les programmes qui ne communiquent pas avec les utilisateurs (contrôles de processus)
+2. Les programmes qui communiquent de façon indirecte (_batch_)
+3. Les programmes interactifs (ceux qui nous intéressent :-)
+
+Les types d’IHM :
+
+- Les IHM orientées texte : TUI (_Text User Interface_). Sur Mainframes ou Unix essentiellement.
+- Les IHM orientées fenêtres : GUI (_Graphic User Interface_). Sous Windows, Mac-OS ...
+- Les IHM orientées pages : PUI (_Page User Interface_). Internet, Intranet, Extranet (HTML ou XML)
+- Les IHM Multimodales : vocales, tactiles ...
+
 include::sni.txt[]
 
 == Les IHM orientées fenêtres (GUI) – Le SEF
 
-== Les IHM orientées page (PUI) – Le SEP
+Cette partie, réalisée en 1ère année de DUT en 2011/2012, n'est pas encore intégrée à ce support.
+Elle est proche du  <<SEP>>.
 
-Cette partie est traitée <<SEP,ici>>.
+//Cette partie est traitée <<SEP,ici>>.
+include::sep.txt[]
 
 = Partie 7 : Génie Logiciel
 
@@ -141,9 +156,19 @@ Plan de cette partie :
 
 include::S3-1.txt[]
 
+//* Le Diagramme des Cas d’Utilisation
+//* Opérations, Paquetages et Java
+//* Le Diagramme de Séquence
+
 include::S3-2.txt[]
 
+//* L’Architecture MVC
+
 include::S3-3.txt[]
+
+//* Schéma d’Enchaînement des Pages (SEP)
+//* Les Dessins d’Etats imprimés
+
 
 //================================================================
 // APPENDIX
