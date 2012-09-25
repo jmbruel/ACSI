@@ -1,0 +1,78 @@
+:title: Exercice Complet
+:doctype: article
+:description: Cours de DUT Informatique
+:keywords: ACSI Merise UML Analyse Conception Systèmes d'Information
+:Author: Jean-Michel Bruel et Laurent Nonne
+:Author Initials: JMB
+:Email: jean-michel.bruel@univ-tlse2.fr
+:Revision: 1.0
+:localdate: {sys: date +%d/%m/%Y}
+:Date: {localdate}
+:startdate: 29/09/2012
+:slideshowlocation: [IUT Blagnac]
+:slidebackground: asciidocslidy
+:copyright: {date={localdate}}, {slideshowlocation} *** {author} *** Powered by Asciidoc and W3C Slidy &#169; 
+:incremental!:
+:indir: dessins
+
+//----------- définitions --------------
+:umlsite: http://webetud.iut-blagnac.fr/file.php/35/SupportCours/5-UML-1.pdf
+:oclsite: http://webetud.iut-blagnac.fr/mod/resource/view.php?id=9621
+:pre: PreReq
+:objtd: ObjTD
+:objgen: ObjGen
+:lien: Lien
+
+= ACSI–S3–UML : {title}
+
+[[cartouche]]
+[align="left",cols="1,10",width="90%"]
+|======================
+| {pre}		| 
+1.	Je connais le Diagramme de Cas d’Utilisation +
+2.	Je connais l’architecture MVC +
+3.	Je connais le SEP et les dessins de pages Web
+| {objtd}	| J’apprends à créer et enchaîner différents modèles de conception orientée objet.
+| {objgen}	| J’apprends à réaliser la partie statique, fonctionnelle et dynamique d’une conception objet.
+| {lien}	| Intranet (Pages Web)
+|======================
+
+== Le projet "Assurance-Auto"
+
+Nous allons étudier une compagnie d’assurances automobiles. Une analyse globale a permis d’obtenir le cahier des charges utilisateur ci-dessous.
+
+Chaque client assuré dans la compagnie est identifié par un numéro qui lui a été attribué lors de la souscription de son assurance. Dans le cadre de sa souscription, un client peut assurer plusieurs véhicules différents identifiés par leur numéro minéralogique. Il existe à ce jour quatre types de contrats appelés respectivement "simple responsabilité", "tierce collision", "tous risques" et "multirisques".
+
+La prime annuelle versée par chaque assuré pour un véhicule est calculée en fonction du type de contrat et de la catégorie du véhicule assuré. Il existe actuellement 8 catégories de tarifs qui dépendent du modèle de véhicule. Par exemple, le modèle "Peugeot 106" aura un tarif de catégorie 1, le modèle "Renault Mégane" de catégorie 2, ..., le modèle "BMW Série 7" de catégorie 8. Le montant de base de la prime (obtenu à partir de la catégorie de tarif et du type de contrat) est majoré d'un certain pourcentage si l'assuré est un jeune conducteur de moins de 25 ans et/ou ayant obtenu son permis de conduire depuis moins d'un an. On ajoute ou retranche au montant obtenu un certain pourcentage (bonus ou malus) calculé par une formule, non indiquée ici, à partir du nombre d'accidents déclarés par l'assuré au cours des trois années précédentes et pour lesquels sa responsabilité est engagée. Le bonus-malus est calculé pour chaque véhicule assuré.
+
+En début d'année (le 15 janvier), un certain nombre de traitements batch devront être exécutés pour calculer les primes et éditer les avis d'échéance des clients triés par département. Un avis d'échéance concerne un assuré et comporte son numéro d’assuré, son nom, son adresse, la date d'obtention de son permis de conduire, l'indication éventuelle « jeune conducteur », le montant total de sa prime et la liste des véhicules assurés. Pour chaque véhicule assuré sont indiqués la marque, le genre, la puissance fiscale, le type de contrat souscrit, la catégorie de tarif, la prime de base, la majoration éventuelle, le pourcentage de bonus-malus et le montant à payer (on n'envisagera pas ici les calculs de TVA).
+
+Les assurés ont jusqu'au 15 février pour régler leur prime. Les paiements sont enregistrés en mode transactionnel (interactif) au fur et à mesure de leur arrivée entre le 15 janvier et le 15 février par du personnel intérimaire habilité à effectuer cette opération. Les relances pour non-paiement ne sont pas envisagées ici. 
+
+Tous les vendredis, des employés saisissent les dossiers d'accidents constitués dans la semaine en enregistrant les propriétés suivantes : identification du véhicule de l'assuré impliqué dans l'accident, expert nommé, date d'ouverture du dossier, description sommaire de l'accident, autres véhicules impliqués dans l'accident (tiers). L'un des tiers peut être un assuré de la même compagnie. On parlera alors de « tiers interne ». Dans le cas contraire (« tiers externe ») et s’il n’est pas déjà connu, il faut saisir les propriétés du véhicule et de son propriétaire ainsi que la compagnie d'assurances qui l'assure (toutes les compagnies existantes sont répertoriées avec leur raison sociale, leur téléphone et leur adresse). Remarquons qu'un même assuré peut avoir plusieurs dossiers en cours concernant le même véhicule et/ou des véhicules différents.
+
+Les chargés de dossier devront réaliser les traitements suivants afin de traiter le dossier :
+
+- le rapport d'expertise aura été enregistré avec le montant estimé des dégâts,
+- la part de responsabilité de l'assuré aura été déterminée et enregistrée,
+- le malus aura été actualisé,
+- le montant de l'indemnité de l'assuré aura été enregistré,
+- le chèque d'indemnisation éventuel de l'assuré aura été émis,
+- le chèque de paiement des honoraires de l'expert aura été émis.
+
+== Questions
+
+1.	Réaliser le diagramme des UC après avoir défini les acteurs principaux et secondaires.
+2.	A partir du jeu d’essai donné par l’enseignant au tableau, construire le Diagramme des Classes métier (sans les méthodes).
+3.	Construire le SNI (à partir des 2 diag. précédents)
+4.	Construire un diagramme de Paquetages respectant l’architecture MVC puis réaliser un diagramme de classes pour chaque paquetage (M, V et C). 
+5.	Construire le diagramme de séquence système pour l’UC « Saisie des dossiers accidents ».
+6.	Construire le diagramme de séquence de l’UC « Saisie des dossiers accidents ».
+7.	Compléter le diagramme des classes participantes de cet UC
+8.	Construire le SEP et réaliser deux dessins de page Web.
+
+== Annexe : exemple de jeu de données
+
+Voici un exemple : Le dossier accident D34 correspond à un même accident entre 2 assurés de la MAIF, ce qui donne lieu à 1 seul dossier pour plusieurs véhicules (notion de « tiers interne »). D75 est un accident sans tiers. D12 et D98 sont des accidents différents avec un même tiers externe.
+
+image::assurauto.png[width="60%",alt="Exemple"]
