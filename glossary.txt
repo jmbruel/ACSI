@@ -20,6 +20,9 @@ MCF::
 	**M**odèle **C**onceptuel des **F**lux
 MCT:: 
 	**M**odèle **C**onceptuel des **T**raitements
+MOA::
+	**M**aîtrise d’**o**uvr**a**ge (MOA)
+	**M**aîtrise d’**oe**uvre (MOE)
 MOF:: 
 	**M**odèle **O**rganisationnel des **F**lux
 MOT:: 

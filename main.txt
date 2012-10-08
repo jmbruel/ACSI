@@ -5,7 +5,7 @@
 :Author: Jean-Michel Bruel 
 :Author Initials: JMB
 :Email: jean-michel.bruel@univ-tlse2.fr
-:Revision: 1.0
+:Revision: 1.2
 :localdate: {sys: date +%d/%m/%Y}
 :Date: {localdate}
 :startdate: 29/07/2012
@@ -23,12 +23,16 @@
 
 // raccourcis sites
 :asciidoc: http://www.methods.co.nz/asciidoc[AsciiDoc]
+:eclipse: http://www.eclipse.org/[eclipse]
+:git: git
+:mercury: Mercury
 :models: http://www.modelsconference.org/[MODELS]
 :moodle: http://webetud.iut-blagnac.fr[Moodle]
 :omg: http://www.omg.org[OMG]
 :pandoc: http://johnmacfarlane.net/pandoc/[Pandoc]
 :slidy2: http://www.w3.org/Talks/Tools/Slidy2/[W3C HTML Slidy]
 :sosym: http://www.sosym.org[Software and System Modeling journal]
+:svn: Subversion
 :sysmlfrance: http://www.sysml-france.fr[SysML France]
 
 // data
@@ -47,14 +51,17 @@
 
 // personnes et institutions
 :cc: mailto:cc.charron@wanadoo.fr[Cyril Charon]
+:cs: http://www.c-s.fr/[Communication & System]
+:irit: http://www.irit.fr[IRIT]
 :iut: http://www.iut-blagnac.fr[IUT de Blagnac]
 :jmb: mailto:jean-michel.bruel@univ-tlse2.fr[Jean-Michel Bruel]
 :jmimail: jean-michel.inglebert@univ-tlse2.fr
 :jmi: mailto:{jmimail}[Jean-Michel Inglebert]
 :nh: mailto:nabil.hanine@free.fr[Nabil Hanine]
-:nico: mailto:beloir@univ-pau.fr[Nicolas Belloir]
+:nico: mailto:belloir@univ-pau.fr[Nicolas Belloir]
 :nonne: mailto:laurent.nonne@univ-tlse2.fr[Laurent Nonne]
 :omg: OMG
+:pam: Pierre-Alain Muller
 :prfc: Pascal Roques
 :univ-tlse: http://www.univ-toulouse.fr[Univesité de Toulouse]
 :uppa: Université de Pau et des Pays de l'Adour
@@ -125,7 +132,11 @@ Elle est proche du  <<SEP>>.
 //Cette partie est traitée <<SEP,ici>>.
 include::sep.txt[]
 
+ifdef::backend-slidy2[<<<]
+
 = Partie 7 : Génie Logiciel
+
+ifdef::backend-slidy2[<<<]
 
 = Partie 8 : UML Avancé
 
@@ -138,6 +149,8 @@ n'est donné ici qu'à titre d'exemple. Aucune démarche n'est associée à UML 
 
 Pour continuer avec l'image de l'architecte, il s'agit pour lui de s'assurer, par une démarche
 systématique, du succès de son projet. 
+
+ifdef::backend-slidy2[<<<]
 
 Plan de cette partie :
 
@@ -169,6 +182,10 @@ include::S3-3.txt[]
 //* Schéma d’Enchaînement des Pages (SEP)
 //* Les Dessins d’Etats imprimés
 
+include::S3-4.txt[]
+
+//* Analyse
+
 
 //================================================================
 // APPENDIX
@@ -193,6 +210,17 @@ include::about.txt[]
 
 Cette _**F**requently **A**sked **Q**uestion_ a été construite par expérience, en regroupant 
 les questions des étudiants durant mes différentes interventions. 
+
+Cette FAQ peut servir de base à la révision d'examens.
+
+=== Peut-on "séparer" un acteur externe en deux acteurs externes avec un statut différent. 
+
+(Par exemple, un acteur "Personne intéressée par l'achat d'un portable" et un autre acteur "Acheteur")
+
+Oui, c'est toujours permis puisque les acteurs sont des *rôles* et non des personnes bien identifiées. 
+La question qui se pose est : est-ce judicieux? Dans certains diagrammes on pourra restreindre 
+l'usage de telle ou telle partie de l'application à tel ou tel rôle. Donc dans l'exemple ça semble intéressant de différentier (l'acheteur pourrait être identifié avec un login et un num de carte bleue, la personne intéressée ne l'étant pas par exemple, etc.).
+
 
 === Exemple
 
@@ -222,7 +250,8 @@ Les références...
 - [[[Blanc2006]]] UML pour les développeurs, Xavier Blanc, Eyrolles, 2006.
 - [[[Longepe2006]]] Le projet d'urbanisation du S.I., C. Longépé, 3ème édition, Dunod, 2006.
 - [[[Gillet2008]]] Management des SI, M. & P. Gillet, Dunod, 2008.
-
+- [[[Muller]]] Modélisation objet avec UML. {pam} & Nathalie Gaetner, Eyrolles, 2003.
+- [[[RUP]]] http://fr.wikipedia.org/wiki/Unified_Process
 include::glossary.txt[]
 
 [index]

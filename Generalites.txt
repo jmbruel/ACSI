@@ -207,7 +207,20 @@ Polissez-le sans cesse et le repolissez ;
 Ajoutez quelquefois, et souvent effacez.
 ____________________________________________________________________
 
-Descartes : diviser pour mieux s'atteler à chaque tâche.
+Dans les méthodes agiles on parle de "sprint 0". Il est important de bien s'organiser avant de foncer tête baissée
+dans le travail à proprement parlé.
+
+Voici quelques éléments importants à aborder :
+
+Démarche globale::
+	Quelle démarche allez-vous mettre en oeuvre (Merise, RUP, Agile, personnelle, ...)?
+Rôles::
+	Qui va faire quoi?
+Environnement::
+	Quels outils allez-vous utiliser (modélisation, analyse, développement, test, documentation)?
+Versionnage::
+	Il est très important, surtout dans un travail collaboratif, de bien utiliser un outil de gestion de version. Que ce soit pour le code (facile), la documentation (moins évident) ou les modèles (très difficile). Pour le code, le nombre de systèmes disponibles vous empêche d'avoir une excuse ({git},{svn},{mercury}).
+
 
 ==== Modéliser
 

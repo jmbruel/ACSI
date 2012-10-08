@@ -266,3 +266,17 @@ ifdef::backend-slidy2[<<<]
 [[dessin-exp2]]
 .Saisie Note
 image::{images}/dessin-exp2.png["Exemple",width=50%"]
+
+=== Les dessins complexes
+
+Un certain nombre d'outils existent pour faire des dessins complexes. 
+Le *prototypage rapide* d'interface graphique est important pour 
+valider au plus tôt les *besoins du client* (au moins en terme d'interface).
+
+[[mockup]]
+.Un exemple de "mockup" réalisé avec l'outil balsamiq
+image::{images}/bruel-balsamiq.png["Dessin complexe",width=50%"]
+
+Nous n'en donnons que quelques-uns <<outils,ici>>.
+
+

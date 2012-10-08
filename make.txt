@@ -21,7 +21,8 @@ ifdef::posix[]
 :ditaajar: /Users/bruel/dev/ditaa0_9/ditaa0_9.jar
 :styleslidy: /Users/bruel/.asciidoc/backends/slidy2/doc/keycap.css
 //:style: /Users/bruel/dev/asciidoc/ACSI/stylesheets/jmbslidy2.css
-:style: {styleslidy}
+//:style: {styleslidy}
+:style: {flask}
 endif::posix[]
 
 :scriptsdir: {asciidocdir}javascripts
@@ -47,7 +48,7 @@ endif::posix[]
 :force:
 
 // global settings
-:doc_version: 1.0
+:doc_version: 1.2
 
 // generic commands defs
 :cmddb: {asciidocbin} -b docbook  -a revnumber={doc_version}
@@ -68,7 +69,7 @@ ifdef::local[]
 
 == local outputs
 
-:cmdhtml: {asciidocbin} {stylesdir? -a stylesdir={stylesdir}} {scriptsdir? -a scriptsdir={scriptsdir}} -a numbered -a icons {iconsdir? -a iconsdir={iconsdir}} {style? -a stylesheet={style}} -a badges -a toc -a revnumber={doc_version} -a data-uri --filter /Users/bruel/dev/ditaa0_9
+:cmdhtml: {asciidocbin} {stylesdir? -a stylesdir={stylesdir}} {scriptsdir? -a scriptsdir={scriptsdir}} -a numbered -a icons {iconsdir? -a iconsdir={iconsdir}} {style? -a stylesheet={style}} -a badges -a toc2 -a revnumber={doc_version} -a data-uri --filter /Users/bruel/dev/ditaa0_9
 
 :cmdslidy: {asciidocbin} --backend slidy2 -a numbered -a icons -a badges  {iconsdir? -a iconsdir=../images/icons} {styleslidy? -a stylesheet={style}} -a revnumber={doc_version} -a data-uri -a slide
 
