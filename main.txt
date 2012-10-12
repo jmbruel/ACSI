@@ -252,6 +252,7 @@ Les références...
 - [[[Gillet2008]]] Management des SI, M. & P. Gillet, Dunod, 2008.
 - [[[Muller]]] Modélisation objet avec UML. {pam} & Nathalie Gaetner, Eyrolles, 2003.
 - [[[RUP]]] http://fr.wikipedia.org/wiki/Unified_Process
+
 include::glossary.txt[]
 
 [index]
