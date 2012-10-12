@@ -1,0 +1,85 @@
+:title: Exercice Complet Gestion des Notes
+:doctype: article
+:description: Cours de DUT Informatique
+:keywords: ACSI Merise UML Analyse Conception Systèmes d'Information
+:Author: Jean-Michel Bruel et Laurent Nonne
+:Author Initials: JMB
+:Email: jean-michel.bruel@univ-tlse2.fr
+:Revision: 1.0
+:localdate: {sys: date +%d/%m/%Y}
+:Date: {localdate}
+:startdate: 29/09/2012
+:slideshowlocation: [IUT Blagnac]
+:slidebackground: asciidocslidy
+:copyright: {date={localdate}}, {slideshowlocation} *** {author} *** Powered by Asciidoc and W3C Slidy &#169; 
+:incremental!:
+:indir: dessins
+
+//----------- définitions --------------
+:umlsite: http://webetud.iut-blagnac.fr/file.php/35/SupportCours/5-UML-1.pdf
+:oclsite: http://webetud.iut-blagnac.fr/mod/resource/view.php?id=9621
+:pre: PreReq
+:objtd: ObjTD
+:objgen: ObjGen
+:lien: Lien
+
+= ACSI–S3–UML : {title}
+
+[[cartouche]]
+[align="left",cols="1,10",width="90%"]
+|======================
+| {pre}		| 
+1.	Je connais le MOT +
+2.	Je connais l'enchainement des diagrammes (UC, DS, DSS, DC, etc.)
+| {objtd}	| J’apprends à créer et enchaîner différents modèles de conception orientée objet.
+| {objgen}	| J’apprends à réaliser la partie statique, fonctionnelle et dynamique d’une conception objet.
+| {lien}	| EGO, Intranet (Pages Web)
+|======================
+
+== Gestion des étudiants du département informatique
+
+=== Fonctionnement actuel
+
+Les étudiants du département informatique de l’IUT de Blagnac sont répartis en trois années d’étude (1A, 2A et LP) et en différents groupes (5 maximum par année : G1 à G5). Chaque semaine les étudiants subissent un partiel dans une matière donnée. Ils obtiennent ainsi une note comprise entre 0 et 20 avec deux décimales. Chaque matière possède un coefficient différent pour chaque année d’étude. 
+
+A la suite d’un partiel concernant une année d’étude, l’enseignant responsable corrige les copies et remplit un bordereau de notes. Il archive les copies et transmet le bordereau de notes au secrétariat. La suite des opérations concernant les enseignants, le secrétariat et le directeur des études est décrite dans le MOT joint.
+
+=== Fonctionnement futur
+
+Les acteurs principaux concernés par cette application sont : le chef de département, les enseignants, le secrétariat et le directeur des études. Les acteurs secondaires sont les étudiants et les jurys de fin d'année. 
+Le chef de département souhaite que les travaux informatiques suivants soient réalisés (= nouveaux besoins) :
+
+. Les notes d’un partiel pourront être enregistrées à tout moment par le secrétariat ou par le directeur des études à partir du bordereau de notes rempli par l'enseignant.
+. Le chef de département gèrera les données permanentes (matières, partiels, groupes).
+. Tous les utilisateurs pourront consulter à tout instant un certain nombre d’informations concernant un étudiant donné : identifiant, nom et prénom, notes obtenues avec la date du partiel concerné, la matière et le coefficient et la moyenne de l’étudiant. Cette consultation permettra de supprimer la liste des notes frappée par le secrétariat et photocopiée pour chaque enseignant.
+. Le directeur des études devra pouvoir réaliser à tout instant les opérations suivantes :
+-	Consultation directe des groupes, des partiels et des matières.
+-	Consultation des étudiants à partir de leur nom et possibilité de modification de l’adresse, du téléphone et de l’eMail d’un étudiant donné.
+-	Sélection d’une matière et d’une année d’étude  et affichage de la liste des étudiants de l'année d’étude avec les notes obtenues pour la matière sélectionnée.
+-	Impression des relevés de notes au choix pour un seul étudiant, pour un groupe ou pour tous les étudiants d'une année d’étude. Ils sont diffusés aux étudiants
+. Le secrétariat pourra affecter ou enlever des étudiants d’un groupe
+. En fin d’année (le 15/6), on imprimera automatiquement les états suivants, destinés aux jurys :
+a.	Liste alphabétique des étudiants classés par année d’étude et par groupe comportant pour chacun son identifiant, son nom et prénom, son classement et sa moyenne. Cette liste devra également faire apparaître la moyenne de chaque groupe et de chaque année d’étude.
+b.	Liste de classement des étudiants pour chaque année d’étude. Cette liste contiendra l'année d’étude, la date d’impression et une ligne par étudiant avec son classement, son identifiant, son nom et sa moyenne. Le classement devra tenir compte des ex-æquo.
+
+
+== Travail à réaliser
+
+=== Analyse globale
+1. Nouveau MOT
+2. Maquette d'une consultation étudiant et des deux états imprimés annuels
+3. Recherche des cas d'utilisation (interactifs et batch) et construction du diagramme des UC
+
+=== Conception globale
+4. Architecture générale (MVC) 
+5. Diagramme des classes Métier et Diagramme des classes Contrôleur (sans les opérations)
+6. SNI
+7. Diagramme des classes d’IHM (sans les opérations)
+
+=== Développement
+8. Diagramme de séquence système pour le scénario nominal du CU +Saisir des notes+
+9. Diagramme de séquence et Diagramme des classes participantes pour le CU +Saisir des notes+
+10. SEP
+11. Dessins de la page WEB : +PFO_SaisieNotes+
+
+image::../images/enchainement.png[width="60%",alt="Exemple"]

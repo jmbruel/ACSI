@@ -1,0 +1,39 @@
+== Distributeur Automatique de Billets
+
+=== Enoncé
+
+Le déroulement normal d’utilisation d’un distributeur automatique de billets est le suivant :
+
+- le client introduit sa carte bancaire
+- la machine vérifie alors la validité de la carte et demande le code au client
+- si le code est correct, elle envoie une demande d’autorisation de prélèvement au groupement de banques. Ce dernier renvoie le solde autorisé à prélever.
+- le distributeur propose alors plusieurs montants à prélever
+- le client saisit le montant à retirer
+- après contrôle du montant par rapport au solde autorisé, le distributeur demande au client s’il désire un ticket
+- Après la réponse du client, la carte est éjectée et récupérée par le client
+- les billets sont alors délivrés (ainsi que le ticket)
+- le client récupère enfin les billets et son ticket
+ 
+=== Question
+
+- Modéliser cette situation à l’aide d’un diagramme de séquence en ne prenant en compte que le cas où tout se passe bien. 
+
+[NOTE]
+======
+On identifiera les scénarios qui peuvent poser problème en incluant des commentaires dans le diagramme
+======
+
+//----------------------------------------------------- Correction -------------------------
+ifdef::correction[] 
+
+=== Source
+
+http://fr.scribd.com/doc/8584444/Exercices-UML
+
+=== Correction
+
+image:ex-seq-dab.png[width="70%"]
+
+endif::correction[] 
+
+//----------------------------------------------------- fin Correction -------------------------

@@ -1,0 +1,76 @@
+:title: MOF/MCF/MCT
+:doctype: article
+:description: Cours de DUT Informatique
+:keywords: ACSI Merise UML Analyse Conception Systèmes d'Information
+:Author: Jean-Michel Bruel et Laurent Nonne
+:Author Initials: JMB
+:Email: jean-michel.bruel@univ-tlse2.fr
+:Revision: 1.0
+:localdate: {sys: date +%d/%m/%Y}
+:Date: {localdate}
+:startdate: 29/09/2012
+:slideshowlocation: [IUT Blagnac]
+:slidebackground: asciidocslidy
+:copyright: {date={localdate}}, {slideshowlocation} *** {author} *** Powered by Asciidoc and W3C Slidy &#169; 
+:incremental!:
+:indir: dessins
+
+//----------- définitions --------------
+:umlsite: http://webetud.iut-blagnac.fr/file.php/35/SupportCours/5-UML-1.pdf
+:oclsite: http://webetud.iut-blagnac.fr/mod/resource/view.php?id=9621
+:pre: PreReq
+:objtd: ObjTD
+:objgen: ObjGen
+:lien: Lien
+
+= ACSI–S1-Merise : {title}
+
+[[cartouche]]
+[align="left",cols="1,10",width="90%"]
+|======================
+| {pre}		| 
+1.	Je sais définir les concepts suivants : domaine, acteur externe,
+acteur interne, flux externe, flux interne, évènement déclencheur, synchronisation, tâche, action, règles d’émission, résultats 
+2.	Je connais les règles de bonne conception d’un MCF, d’un MOF et d’un MOT vues en cours.
+| {objtd}	| Je suis capable de *modéliser les flux d’informations et les traitements actuels* d’une organisation.
+| {objgen}	| Je suis capable de *comprendre une organisation existante* afin de pouvoir y travailler efficacement (informatiser des tâches, réorganiser le processus, connaître les différents acteurs et leurs tâches...).
+| {lien}	| EGO – Fonctionnement de l’entreprise
+|======================
+
+[NOTE]
+====
+- Rappel du lien sur le http://webetud.iut-blagnac.fr/mod/resource/view.php?id=9644[support de cours]
+- Explication sur le http://webetud.iut-blagnac.fr/file.php/35/SupportsTDs/template.html[canevas-type] d'un TD/TP
+====
+
+== Exercice I : Gestion des Stages 
+
+Le domaine d’étude est la gestion des stages en entreprise des étudiants de 2ème année d’IUT. Début Décembre, le responsable des stages envoie une demande de stage aux entreprises qu’il connait. Après réception d'une proposition de stage, il détermine quelle promotion d’étudiant correspond le mieux à ce stage (2ème année d’Informatique, de R&amp;T, de GIM ou de 2A2M). Il envoie alors l’offre de stage à tous les étudiants de la promotion concernée. Les étudiants intéressés envoient alors au responsable de stages une demande d’attribution de stage. 
+
+Début avril, le responsable des stages reprend les demandes d’attribution de stage en attente  et affecte chaque stage (et un professeur jouant le rôle de tuteur pédagogique) à un étudiant, un document d’affectation de stage/tuteur est envoyé à l’étudiant, une déclaration de stage est donnée au tuteur pédagogique (qui l’archive) et une convention de stage est envoyée à l'entreprise. En fin de stage, chaque tuteur pédagogique reçoit le rapport de stage de l’étudiant, il note alors celui-ci et transmet la note au responsable des stages (qui l’archive).
+
+1.	Réaliser le MCF de ce domaine
+2.	Réaliser le MOF de ce domaine (en utilisant le MCF réalisé et le sujet)
+3.	Réaliser le MOT de ce domaine (en utilisant le MOF réalisé et le sujet)
+
+== Exercice II : Inscription à un établissement universitaire
+
+Le domaine d’étude est le processus d’inscription à un établissement universitaire recrutant sur dossier.  Le candidat commence par déposer un dossier d’admission auprès du secrétariat de la scolarité (entre une date de début et une date de clôture des dépôts des dossiers). Si le dépôt arrive trop tard (ou trop tôt), il est rejeté (rejet notifié au candidat). 15 jours après la date de clôture des dépôts, le jury d’admission prend une décision (notifiée au candidat) soit de refus, soit d’admissibilité. L’admission définitive est notifiée aux candidats, par le secrétariat de la scolarité, lorsque ceux-ci lui ont envoyé le certificat d’obtention du baccalauréat (15 jours maximum après les résultats officiels de celui-ci). Les candidats déclarés reçus ont alors un mois pour confirmer leur inscription par le dépôt d’une demande d’inscription (avec un chèque de paiement des droits de scolarité) auprès du secrétariat de la scolarité. Ceci fait, ils reçoivent leur carte d’étudiant (envoyée par le secrétariat). Les demandes d’inscription hors délais sont rejetées. Fin août, le secrétariat de la scolarité envoie la liste des étudiants inscrits aux enseignants de l’établissement.
+
+1.	Réaliser le MCF de ce domaine
+2.	Réaliser le MOF de ce domaine (en utilisant le MCF réalisé et le sujet)
+3.	Réaliser le MOT de ce domaine (en utilisant le MOF réalisé et le sujet)
+
+== Exercice III : Location d'appartement 
+
+Notre domaine d’étude est une agence immobilière. Les propriétaires d’appartements adressent à l'agence immobilière une demande de location accompagnée d’une description du logement. L'agence passe alors une annonce dans des journaux gratuits. Quand une personne est intéressée par une location, elle demande à effectuer une visite. Une date de rendez-vous lui est alors donnée afin de visiter l’appartement. 
+
+Si la personne accepte de louer l’appartement, elle envoie son accord par courrier avec un justificatif de salaire (on considère ici que cette personne est toujours solvable). Le bail signé est alors remis au locataire. Au début de chaque mois, l’agence lui expédie une quittance de loyer. Le locataire envoie alors le chèque de paiement de son loyer à l’agence, qui l’envoie ensuite à sa banque pour encaissement. Un chèque est alors envoyé au propriétaire de l’appartement.
+
+Si le locataire souhaite quitter l’appartement, il envoie à l’agence un préavis de départ. Une nouvelle annonce est alors envoyée aux journaux gratuits.
+
+Hormis les flux échangés avec les locataires (gérés par son adjoint), tous les flux sont traités par le responsable de l’agence. Certains flux sont échangés entre le responsable et l’adjoint pour coordonner leurs actions. Ainsi l’adjoint transmet au responsable un avis de paiement de loyer (lorsque le locataire a payé) ainsi que le préavis de départ du locataire. 
+
+1.	Réaliser le MCF de ce domaine
+2.	Réaliser le MOF de ce domaine (en utilisant le MCF réalisé et le sujet)
+3.	Réaliser le MOT de ce domaine (en utilisant le MOF réalisé et le sujet)

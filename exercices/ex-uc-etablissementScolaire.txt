@@ -1,0 +1,24 @@
+== Etablissement scolaire
+
+=== Enoncé
+
+Dans un établissement scolaire, on désire gérer la réservation des salles de cours ainsi que du matériel pédagogique (ordinateur portable ou/et Vidéo projecteur). Seuls les enseignants sont habilités à effectuer des réservations (sous réserve de disponibilité de la salle ou du matériel).Le planning des salles peut quant à lui être consulté par tout le monde (enseignants et étudiants).Par contre, le récapitulatif horaire par enseignant (calculé à partir du planning des salles) ne peut être consulté que par les enseignants.Enfin, il existe pour chaque formation un enseignant responsable qui seul peut éditer le récapitulatif horaire pour l’ensemble de la formation.
+
+=== Question
+
+- Modéliser cette situation par un diagramme de cas d’utilisation.
+
+//----------------------------------------------------- Correction -------------------------
+ifdef::correction[] 
+
+=== Source
+
+http://fr.scribd.com/doc/8584444/Exercices-UML
+
+=== Correction
+
+image:ex-uc-etablissementScolaire.png[width="70%"]
+
+endif::correction[] 
+
+//----------------------------------------------------- fin Correction -------------------------

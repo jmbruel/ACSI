@@ -1,0 +1,63 @@
+:title: Exercices
+:doctype: book
+:description: Cours de DUT Informatique
+:keywords: ACSI Merise UML Analyse Conception Systèmes d'Information
+:Author: Jean-Michel Bruel
+:Author Initials: JMB
+:Email: jean-michel.bruel@univ-tlse2.fr
+:Revision: 1.0
+:localdate: {sys: date +%d/%m/%Y}
+:Date: {localdate}
+:startdate: 29/09/2012
+:slideshowlocation: [IUT Blagnac]
+:slidebackground: asciidocslidy
+:copyright: {date={localdate}}, {slideshowlocation} *** {author} *** Powered by Asciidoc and W3C Slidy &#169; 
+:incremental!:
+:indir: dessins
+
+//----------- définitions --------------
+:umlsite: http://webetud.iut-blagnac.fr/file.php/35/SupportCours/5-UML-1.pdf
+:oclsite: http://webetud.iut-blagnac.fr/mod/resource/view.php?id=9621
+:pre: PreReq
+:objtd: ObjTD
+:objgen: ObjGen
+:lien: Lien
+
+= UML : {title}
+
+//----------------------------------------------------- Correction -------------------------
+ifdef::correction[] 
+
+[NOTE]
+====
+Ceci est la version corrigée des exercices ...
+====
+endif::correction[] 
+
+//----------------------------------------------------- fin Correction -------------------------
+
+ifndef::correction[] 
+
+[NOTE]
+====
+Série d'exercices divers trouvés principalement sur le Net. En cherchant bien vous trouverez les réponses, mais cela n'a bien sûr aucun intérêt...
+====
+
+endif::correction[] 
+
+
+= Diagramme des UC
+
+include::ex-uc-etablissementScolaire.txt[]
+
+include::ex-uc-magazin.txt[]
+
+= Diagramme de séquence
+
+include::ex-seq-caisse.txt[]
+
+include::ex-seq-dab.txt[]
+
+include::ex-seq-SocieteIUT.txt[]
+
+include::../about.txt[]
