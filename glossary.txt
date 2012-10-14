@@ -35,8 +35,12 @@ SEF::
 	**S**chéma d'**E**nchaînement des **F**enêtres
 SEP::
 	**S**chéma d'**E**nchaînement des **P**ages
+SI::
+	**S**ystème d'**I**nformation
 SNI::
 	**S**chéma de **N**avigation d'**I**nterfaces
+SO::
+	**S**ystème **O**rganisationnel
 [[SysML]]SysML::
 	_**Sys**tem **M**odeling **L**anguage_ (TM) : le langage de modélisation de systèmes maintenu par l'{omg}.
 TRL::

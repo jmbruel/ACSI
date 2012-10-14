@@ -1,0 +1,241 @@
+[[SIO]]
+== Le Système d’Information d’une Organisation
+
+=== Généralités
+
+Une *organisation* est un ensemble d’objets structurés hiérarchiquement et fonctionnellement par un ensemble d’associations et ayant des buts définis. 
+
+Objets possible : 
+
+- Individus
+- Objets concrets (machine, produit…)
+- Objets abstraits (compte, taxe, note…)
+- Lieux (bureau, salle de cours, atelier…) 
+- Documents (facture, bon de commande…)
+
+Une *association* est une relation existant entre deux ou plusieurs objets
+
+Exemples d’associations :
+
+- M. Dupont est le supérieur hiérarchique de M. Durand
+- M. Durant travaille dans le bureau 125
+- La facture 98123 concerne le client Martin
+- Le professeur Tournier enseigne les mathématiques au groupe 3
+
+[NOTE]
+.Exemples d’organisations
+=====
+une entreprise, une université, un IUT, une administration, une association 1901, ...
+=====
+
+ifdef::backend-slidy2[<<<]
+
+L’*environnement* d’une organisation est constitué par un ensemble d’objets externes à l’organisation et en relation directe avec elle.
+
+Exemples pour une entreprise : 
+
+- Clients
+- Fournisseurs 
+- État
+- Banques
+- Organismes sociaux 
+
+Question : quel est l'environnement de l'IUT? Et de l'université elle-même?
+
+ifdef::backend-slidy2[<<<]
+
+Exemples pour l’UTM : 
+
+- MEN
+- Rectorat
+- Autres universités
+- Fournisseurs
+
+Exemples pour l’IUT : 
+
+- MEN
+- Rectorat
+- UTM
+- Entreprises
+- Autres IUT
+- Fournisseurs
+
+=== Notion de "Système Organisationnel"
+
+Un *système organisationnel* (SO) est constitué par une +organisation+, son +environnement+ et l’ensemble des +associations+ qui lient les objets de l’organisation et de l’environnement.
+
+.Le Système Organisationnel
+image::{images}/sio.png[alt="le SIO",width="70%"]
+
+==== Structure d’un SO
+
+La structure d’un SO est constituée par l’ensemble des éléments (objets et associations) qui le composent.
+
+Chaque élément est décrit par un ensemble de propriétés structurelles.
+
+La structure d’un SO peut changer au cours du temps par :
+
+- Ajout ou suppression d’éléments
+- Changement de valeur de certaines propriétés structurelles +
+	(Exemple : adresse ou situation familiale d’une personne)
+
+==== Activité d’un SO
+
+Une organisation interagit de façon permanente avec son environnement de façon à maintenir une situation d’équilibre.
+
+.Activité d’un SO
+image::{images}/activiteSO.png[alt="Activité d’un SO",width="70%"]
+
+Un *événement d’activité* est un fait élémentaire du flux d’activité opérationnelle.
+
+ifdef::backend-slidy2[<<<]
+
+Des perturbations externes ou internes du flux d’activité opérationnelle entraînent des ruptures d’équilibre.
+
+On désignera par *activité de gestion* l’ensemble des moyens et des méthodes permettant de contrôler l’activité opérationnelle de façon à conserver ou rétablir un état d’équilibre lors de perturbations.
+
+Un SO est composé de deux sous-systèmes :
+
+- Un système opérant (ou de production) +
+Raison d’être de l’organisation
+- Un système de gestion +
+Pour contrôler le système opérant
+
+==== Les 3 systèmes
+
+Le *système de pilotage* (ou de décision) fixe les objectifs, contrôle leur réalisation et apporte les modifications nécessaires.
+
+Le *système d’information* est un ensemble organisé de ressources (personnel, données, méthodes, matériel, logiciel,…) permettant d'acquérir, de stocker, de traiter et de communiquer des informations dans des organisations. Le SI permet la coordination des activités de l'organisation et lui permet ainsi d'atteindre ses objectifs.
+
+Le *système opérant* fabrique les produits et transforme les matières premières.
+
+ifdef::backend-slidy2[<<<]
+
+.Les 3 systèmes
+image::{images}/si.png[alt="le SI",width="80%"]
+
+=== Le système de décision
+
+Toute prise de décision s’effectue en trois temps :
+
+1. identification d’un phénomène (événement perturbant)
+2. résolution du problème posé
+3. action
+
+La classification des décisions peut se faire de deux façons :
+
+- par niveaux
+- par méthodes
+
+==== Classification par niveaux
+
+Le niveau d’une décision est l’impact de l’action dans l’activité de l’organisation.
+
+.Représentation pyramidale
+image::{images}/parNiveau.png[alt="par niveaux",width="50%"]
+
+ifdef::backend-slidy2[<<<]
+
+Exemples :
+
+Stratégiques::
++
+- Embauche de responsables
+- Lancement d’un nouveau produit
+- Informatisation
+
+Tactiques::
++
+- Embauche de personnels exécutant
+- Conditions de vente
+
+Opérationnelles::
++
+- Relance d’un client
+- Tenue de stocks
+
+==== Classification par méthodes
+
+Manière de procéder pour identifier le phénomène et/ou pour résoudre le problème.
+
+Décisions programmables::
+Connaissance de toutes les conditions et de la méthode de résolution utilisée (algorithme)
+Décisions non programmables structurées::
+Existence d’un modèle (mathématique, RO, statistique, comptable, économique…)
+Décisions non programmables non structurées::
+Aucune méthode, aucun modèle (intuition, expérience)
+
+=== Le système d'information
+
+==== Définition
+
+Le *système d’information* est un ensemble organisé de ressources permettant d'acquérir, de stocker, de traiter et de communiquer des informations dans des organisations
+
+==== Ressources
+
+- Moyens humains (emplois spécialisés)
+* Informaticien
+* Secrétaire
+* Archiviste, documentaliste
+* ...
+- Moyens matériels
+* Machines diverses (ordinateur…)
+* Supports d’information (papier, électronique, optique…)
+* Utilitaires divers (rangements, communications...)
+
+ifdef::backend-slidy2[<<<]
+
+- Méthodes
+* Algorithmes et programmes
+* Méthodes d’analyse et de conception
+* Modèles mathématiques
+* Modèles comptables
+* Modèles économiques
+* Recherche Opérationnelle (RO)
+
+ifdef::backend-slidy2[<<<]
+
+- Traitement de l'information
+* Enregistrement sur un support
+* Classement (information vivante)
+* Archivage (information morte)
+* Recherche et consultation
+* Modification de la forme (présentation)
+* Modification du contenu 
+* Diffusion
+- Différentes formes de l’information
+* Information naturelle (émise et appréhendée par l’homme)
+** Écrite (texte)
+** Picturale (dessin, photo, vidéo)
+** Orale (parole)
+** Sonore (signaux, bruits)
+** Tactile, olfactive
+* Information structurée (données)
+** Information extraite d’information naturelle pour permettre son traitement algorithmique
+
+==== Rôle d'un SI
+
+- Produire des informations légales réclamées par l’environnement socio-économique
+* Facture
+* Bilan comptable
+* Bulletin de salaire
+- Déclencher les décisions programmées
+* Relance client
+* Approvisionnement stock
+- Aider à la prise de décisions non programmées
+* Statistiques
+* Simulations
+* Bases de données
+* Documentation
+- Aider à la communication entre les individus
+
+==== Constitution d’un système d’information
+
+- Représentation de la structure du SO
+- Représentation de l’activité présente et passée +
+	(Base de données d’activité)
+- Moyens de traitement des données +
+	(Programmes)
+-  Moyens d’aide au traitement des informations naturelles
+
+Ces éléments seront modélisés grâce à UML.

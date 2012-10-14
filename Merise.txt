@@ -385,7 +385,7 @@ image::{images}/mct-exp2.png["Opération complète",width="50%"]
 
 * Regroupement de tous les traitements effectués dès l’arrivée d’un événement
 * Ne pas tenir compte de l’organisation interne du domaine étudié (répartition du travail entre acteurs internes)
-* Seule l’attente d’événements externes (=flux externes) justifie le découpage en plusieurs opérations
+* Seule l’attente d’événements externes (flux externes) justifie le découpage en plusieurs opérations
 * 2 opérations consécutives liées exclusivement par des flux internes doivent être fusionnées.
 * Réutiliser les acteurs externes, les autres domaines et les flux externes trouvés dans le MCF
 

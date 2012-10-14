@@ -92,11 +92,12 @@ include::Merise.txt[]
 
 = Partie 3 : SI
 
-= Partie 4 : SI et Organisations
+include::SI.txt[]
+include::SIO.txt[]
 
-= Partie 5 : UML
+= Partie 4 : UML
 
-= Partie 6 : Conception des IHM
+= Partie 5 : Conception des IHM
 
 Plan de cette partie :
 
@@ -134,11 +135,11 @@ include::sep.txt[]
 
 ifdef::backend-slidy2[<<<]
 
-= Partie 7 : Génie Logiciel
+= Partie 6 : Génie Logiciel
 
 ifdef::backend-slidy2[<<<]
 
-= Partie 8 : UML Avancé
+= Partie 7 : UML Avancé
 
 Dans cette partie, nous allons aborder une démarche générale de conception.
 Nous allons aborder des diagrammes UML comme le diagramme des cas d'utilisation ou de séquences.
