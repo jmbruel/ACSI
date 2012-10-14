@@ -1,9 +1,12 @@
 == Caisse Supermarché
 
+ifdef::backend-slidy2[>>>]
+
 === Enoncé
 
 Le déroulement normal d’utilisation d’une caisse de supermarché est le suivant :
 
+[options="incremental"]
 - un client arrive à la caisse avec ses articles à payer
 - le caissier enregistre le numéro d’identification de chaque article, ainsi que la quantité si elle est supérieure à 1
 - la caisse affiche le prix de chaque article et son libellé
@@ -16,7 +19,6 @@ Le déroulement normal d’utilisation d’une caisse de supermarché est le sui
 * carte de crédit : la demande d’autorisation est envoyée avant la saisie
 - la caisse enregistre la vente et l’imprime
 - le caissier donne le ticket de caisse au client
-
 
 === Question
 

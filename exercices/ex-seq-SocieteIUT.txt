@@ -51,7 +51,7 @@ image::../TP/td2-cor2.png["Société IUT",width="80%"]
 +
 . Pour info, voici le code Java de la méthode +getPayeArtisan(...)+.
 +
-[source,java]
+[source,java,numbered]
 -------------------------------------------
 include::../TP/getPayeArtisan.java[]
 -------------------------------------------

@@ -2,6 +2,7 @@
 
 === Enoncé
 
+[[ex-uc-magazin]] 
 Dans un magasin, le processus de vente est le suivant : le client entre, passe dans les rayons, demande éventuellement des renseignements ou procède à des essais, prend des articles (si le stock est suffisant), passe à la caisse où il règle ses achats (avec tout moyen de paiement accepté). Il peut éventuellement bénéficier d’une réduction.
  
 === Question
