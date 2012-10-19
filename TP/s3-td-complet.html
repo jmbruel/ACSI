@@ -1,11 +1,10 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
-    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
-<meta name="generator" content="AsciiDoc 8.6.8" />
-<meta name="description" content="Cours de DUT Informatique" />
-<meta name="keywords" content="ACSI Merise UML Analyse Conception Systèmes d'Information" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="AsciiDoc 8.6.8">
+<meta name="description" content="Cours de DUT Informatique">
+<meta name="keywords" content="ACSI Merise UML Analyse Conception Systèmes d'Information">
 <title>Exercice Complet</title>
 <style type="text/css">
 /* Shared CSS for AsciiDoc xhtml11 and html5 backends */
@@ -535,6 +534,40 @@ body.manpage div.sectionbody {
 }
 
 
+@media screen {
+  body {
+    max-width: 50em; /* approximately 80 characters wide */
+    margin-left: 16em;
+  }
+
+  #toc {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 13em;
+    padding: 0.5em;
+    padding-bottom: 1.5em;
+    margin: 0;
+    overflow: auto;
+    border-right: 3px solid #f8f8f8;
+    background-color: white;
+  }
+
+  #toc .toclevel1 {
+    margin-top: 0.5em;
+  }
+
+  #toc .toclevel2 {
+    margin-top: 0.25em;
+    display: list-item;
+    color: #aaaaaa;
+  }
+
+  #toctitle {
+    margin-top: 0.5em;
+  }
+}
 </style>
 <script type="text/javascript">
 /*<![CDATA[*/
@@ -727,55 +760,57 @@ install: function(toclevels) {
 }
 
 }
-asciidoc.install();
+asciidoc.install(2);
 /*]]>*/
 </script>
 </head>
 <body class="article">
 <div id="header">
 <h1>ACSI–S3–UML : Exercice Complet</h1>
-<span id="author">Jean-Michel Bruel et Laurent Nonne</span><br />
-<span id="email"><code>&lt;<a href="mailto:jean-michel.bruel@univ-tlse2.fr">jean-michel.bruel@univ-tlse2.fr</a>&gt;</code></span><br />
+<span id="author">Jean-Michel Bruel et Laurent Nonne</span><br>
+<span id="email" class="monospaced">&lt;<a href="mailto:jean-michel.bruel@univ-tlse2.fr">jean-michel.bruel@univ-tlse2.fr</a>&gt;</span><br>
 <span id="revnumber">version 1.0,</span>
-<span id="revdate">24/09/2012</span>
+<span id="revdate">15/10/2012</span>
+<div id="toc">
+  <div id="toctitle">Table of Contents</div>
+  <noscript><p><b>JavaScript must be enabled in your browser to display the table of contents.</b></p></noscript>
+</div>
 </div>
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
-<div class="tableblock" id="cartouche">
-<table rules="all"
-style="margin-left:0; margin-right:auto;"
-width="90%"
-frame="border"
-cellspacing="0" cellpadding="4">
-<col width="9%" />
-<col width="90%" />
+<table class="tableblock frame-all grid-all" id="cartouche"
+style="
+margin-left:0; margin-right:auto;
+width:90%;
+">
+<col style="width:9%;">
+<col style="width:90%;">
 <tbody>
 <tr>
-<td align="left" valign="top"><p class="table">PreReq</p></td>
-<td align="left" valign="top"><p class="table">1.      Je connais le Diagramme de Cas d’Utilisation<br />
-2.      Je connais l’architecture MVC<br />
+<td class="tableblock halign-left valign-top" ><p class="tableblock">PreReq</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">1.      Je connais le Diagramme de Cas d’Utilisation<br>
+2.      Je connais l’architecture MVC<br>
 3.      Je connais le SEP et les dessins de pages Web</p></td>
 </tr>
 <tr>
-<td align="left" valign="top"><p class="table">ObjTD</p></td>
-<td align="left" valign="top"><p class="table">J’apprends à créer et enchaîner différents modèles de conception orientée objet.</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">ObjTD</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">J’apprends à créer et enchaîner différents modèles de conception orientée objet.</p></td>
 </tr>
 <tr>
-<td align="left" valign="top"><p class="table">ObjGen</p></td>
-<td align="left" valign="top"><p class="table">J’apprends à réaliser la partie statique, fonctionnelle et dynamique d’une conception objet.</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">ObjGen</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">J’apprends à réaliser la partie statique, fonctionnelle et dynamique d’une conception objet.</p></td>
 </tr>
 <tr>
-<td align="left" valign="top"><p class="table">Lien</p></td>
-<td align="left" valign="top"><p class="table">Intranet (Pages Web)</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Lien</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Intranet (Pages Web)</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
-</div>
 <div class="sect1">
-<h2 id="_le_projet_assurance_auto">Le projet "Assurance-Auto"</h2>
+<h2 id="_le_projet_assurance_auto">1. Le projet "Assurance-Auto"</h2>
 <div class="sectionbody">
 <div class="paragraph"><p>Nous allons étudier une compagnie d’assurances automobiles. Une analyse globale a permis d’obtenir le cahier des charges utilisateur ci-dessous.</p></div>
 <div class="paragraph"><p>Chaque client assuré dans la compagnie est identifié par un numéro qui lui a été attribué lors de la souscription de son assurance. Dans le cadre de sa souscription, un client peut assurer plusieurs véhicules différents identifiés par leur numéro minéralogique. Il existe à ce jour quatre types de contrats appelés respectivement "simple responsabilité", "tierce collision", "tous risques" et "multirisques".</p></div>
@@ -819,7 +854,7 @@ le chèque de paiement des honoraires de l&#8217;expert aura été émis.
 </div>
 </div>
 <div class="sect1">
-<h2 id="_questions">Questions</h2>
+<h2 id="_questions">2. Questions</h2>
 <div class="sectionbody">
 <div class="olist arabic"><ol class="arabic">
 <li>
@@ -866,7 +901,7 @@ Construire le SEP et réaliser deux dessins de page Web.
 </div>
 </div>
 <div class="sect1">
-<h2 id="_annexe_exemple_de_jeu_de_données">Annexe : exemple de jeu de données</h2>
+<h2 id="_annexe_exemple_de_jeu_de_données">3. Annexe : exemple de jeu de données</h2>
 <div class="sectionbody">
 <div class="paragraph"><p>Voici un exemple : Le dossier accident D34 correspond à un même accident entre 2 assurés de la MAIF, ce qui donne lieu à 1 seul dossier pour plusieurs véhicules (notion de « tiers interne »). D75 est un accident sans tiers. D12 et D98 sont des accidents différents avec un même tiers externe.</p></div>
 <div class="imageblock">
@@ -1543,17 +1578,17 @@ OUogEY8llDnZSiCRSCAhxsJ9V08kEkAiFgpHJeQXFeYo+1QzYKjD2uVBJWKdwfCJSflFBX3XGGhP
 QVfO2BF2n8ifM2eio2mjajRPJk8GEe9ouqtoXq7JRekIIYSQM3z2b+blza5moXXiK28E6LGxY1T8
 tad/+2OHv3713ExHQgghJPPG5l0bQgghhJxfxmwbCSGEEELOI5SREEIIISTzKCMhhBBCSOZRRkII
 IYSQzKOMhBBCCCGZRxkJIYQQQjKPMhJCCCGEZB5lJIQQQgjJPMpICCGEEJJ5lJEQQgghJPP+H2dB
-+2qq81U3AAAAAElFTkSuQmCC" />
++2qq81U3AAAAAElFTkSuQmCC">
 </div>
 </div>
 </div>
 </div>
 </div>
-<div id="footnotes"><hr /></div>
+<div id="footnotes"><hr></div>
 <div id="footer">
 <div id="footer-text">
-Version 1.0<br />
-Last updated 2012-09-24 18:26:53 CEST
+Version 1.0<br>
+Last updated 2012-10-15 18:09:09 CEST
 </div>
 </div>
 </body>

@@ -6,6 +6,7 @@
 =====================================================================
 Les définitions ci-dessous sont regroupées à titre indicatif. Les sources utilisées sont :
 
+- https://eduscol.education.fr/sigles/
 - Glossaire du http://www.sei.cmu.edu/architecture/start/glossary[Software Engineering Institute]
 - http://www.computer-dictionary-online.org/[IEEE Computer Dictionary Online]
 - http://fr.wikipedia.org/[Wikipedia] –- Version française￼￼

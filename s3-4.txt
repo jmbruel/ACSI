@@ -79,8 +79,6 @@ les *études et l'exécution des travaux*.
 
 ==== Analyser, c’est difficile
 
-Service de vente en ligne (jeBouquine.com)
-
 ifdef::backend-slidy2[<<<]
 
 image::{images}/analyse2.png["Analyser, c'est difficile",width="60%"]
@@ -104,6 +102,18 @@ image::{images}/analyse6.png["Analyser, c'est difficile",width="60%"]
 ifdef::backend-slidy2[<<<]
 
 image::{images}/analyse7.png["Analyser, c'est difficile",width="60%"]
+
+==== Développer aussi 
+
+Il nous faut aborder les outils et démarches modernes de développement :
+
+- développement conduits par les tests (_Test Driven Development_)
+- les outils de gestions de versions ()
+
+.Le cycle (caché) de développement d'un logiciel (crédit image http://ourobengr.com/ourobengr/)
+image::{images}/ourobengr.png["http://ourobengr.com/ourobengr/",width="60%", link="http://ourobengr.com/ourobengr/"]
+
+
 
 === Exemple complet de démarche "ad hoc" autour d'UML
 

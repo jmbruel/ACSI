@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=1024, user-scalable=no">
         <meta name="author" content="Jean-Michel Bruel" />
         <meta name="generator" content="AsciiDoc 8.6.8" />
-        <meta name="presdate" content="14/10/2012" />
+        <meta name="presdate" content="17/10/2012" />
         
         <!-- Core and extension CSS files -->
 <style type="text/css">
@@ -2472,8 +2472,9 @@ This module adds the necessary methods and key bindings to blank/unblank the scr
 <section class="slide" id="title-slide">
         <h1>UML : Exercices</h1>
         <h3>Jean-Michel Bruel</h3>
-        <h4>14/10/2012</h4>
+        <h4>17/10/2012</h4>
 </section>
+<div style="page-break-after:always"></div>
 <section class="slide">
 <h2>Diagramme des UC</h2>
 <div class="sect2">
@@ -2504,6 +2505,7 @@ Modéliser cette situation par un diagramme de cas d’utilisation.
 Modéliser cette situation par un diagramme de cas d’utilisation
 </li>
 </ul>
+<div style="page-break-after:always"></div>
 </div>
 </div>
 </section>
@@ -2896,6 +2898,11 @@ Rajouter les attributs et les méthodes nécessaires sur le diagramme de classes
 </li>
 <li>
 <p>
+Ecrire le code Java de la méthode <code>getPayeArtisan(&#8230;)</code>.
+</p>
+</li>
+<li>
+<p>
 Faire le diagramme de séquence correspondant à ce code Java.
 </p>
 </li>
@@ -2955,6 +2962,83 @@ PAr9L8j/96+U/w3yCoCXW14B8HLLvwDd67nwZIEPdgAAAABJRU5ErkJggg==" />
 </td>
 </tr></table>
 </div>
+<div style="page-break-after:always"></div>
+</div>
+</div>
+</section>
+<section class="slide">
+<h2>Exercices complets</h2>
+<div class="sect2">
+<h3 id="_le_projet_assurance_auto">3.1. Le projet "Assurance-Auto"</h3>
+<div class="sect3">
+<h4 id="_enoncé_6">3.1.1. Enoncé</h4>
+<p>Nous allons étudier une compagnie d’assurances automobiles. Une analyse globale a permis d’obtenir le cahier des charges utilisateur ci-dessous.</p>
+<p>Chaque client assuré dans la compagnie est identifié par un numéro qui lui a été attribué lors de la souscription de son assurance. Dans le cadre de sa souscription, un client peut assurer plusieurs véhicules différents identifiés par leur numéro minéralogique. Il existe à ce jour quatre types de contrats appelés respectivement "simple responsabilité", "tierce collision", "tous risques" et "multirisques".</p>
+<p>La prime annuelle versée par chaque assuré pour un véhicule est calculée en fonction du type de contrat et de la catégorie du véhicule assuré. Il existe actuellement 8 catégories de tarifs qui dépendent du modèle de véhicule. Par exemple, le modèle "Peugeot 106" aura un tarif de catégorie 1, le modèle "Renault Mégane" de catégorie 2, &#8230;, le modèle "BMW Série 7" de catégorie 8. Le montant de base de la prime (obtenu à partir de la catégorie de tarif et du type de contrat) est majoré d&#8217;un certain pourcentage si l&#8217;assuré est un jeune conducteur de moins de 25 ans et/ou ayant obtenu son permis de conduire depuis moins d&#8217;un an. On ajoute ou retranche au montant obtenu un certain pourcentage (bonus ou malus) calculé par une formule, non indiquée ici, à partir du nombre d&#8217;accidents déclarés par l&#8217;assuré au cours des trois années précédentes et pour lesquels sa responsabilité est engagée. Le bonus-malus est calculé pour chaque véhicule assuré.</p>
+<p>En début d&#8217;année (le 15 janvier), un certain nombre de traitements batch devront être exécutés pour calculer les primes et éditer les avis d'échéance des clients triés par département. Un avis d'échéance concerne un assuré et comporte son numéro d’assuré, son nom, son adresse, la date d&#8217;obtention de son permis de conduire, l&#8217;indication éventuelle « jeune conducteur », le montant total de sa prime et la liste des véhicules assurés. Pour chaque véhicule assuré sont indiqués la marque, le genre, la puissance fiscale, le type de contrat souscrit, la catégorie de tarif, la prime de base, la majoration éventuelle, le pourcentage de bonus-malus et le montant à payer (on n&#8217;envisagera pas ici les calculs de TVA).</p>
+<p>Les assurés ont jusqu&#8217;au 15 février pour régler leur prime. Les paiements sont enregistrés en mode transactionnel (interactif) au fur et à mesure de leur arrivée entre le 15 janvier et le 15 février par du personnel intérimaire habilité à effectuer cette opération. Les relances pour non-paiement ne sont pas envisagées ici.</p>
+<p>Tous les vendredis, des employés saisissent les dossiers d&#8217;accidents constitués dans la semaine en enregistrant les propriétés suivantes : identification du véhicule de l&#8217;assuré impliqué dans l&#8217;accident, expert nommé, date d&#8217;ouverture du dossier, description sommaire de l&#8217;accident, autres véhicules impliqués dans l&#8217;accident (tiers). L&#8217;un des tiers peut être un assuré de la même compagnie. On parlera alors de « tiers interne ». Dans le cas contraire (« tiers externe ») et s’il n’est pas déjà connu, il faut saisir les propriétés du véhicule et de son propriétaire ainsi que la compagnie d&#8217;assurances qui l&#8217;assure (toutes les compagnies existantes sont répertoriées avec leur raison sociale, leur téléphone et leur adresse). Remarquons qu&#8217;un même assuré peut avoir plusieurs dossiers en cours concernant le même véhicule et/ou des véhicules différents.</p>
+<p>Les chargés de dossier devront réaliser les traitements suivants afin de traiter le dossier :</p>
+<ul>
+<li>
+le rapport d&#8217;expertise aura été enregistré avec le montant estimé des dégâts,
+</li>
+<li>
+la part de responsabilité de l&#8217;assuré aura été déterminée et enregistrée,
+</li>
+<li>
+le malus aura été actualisé,
+</li>
+<li>
+le montant de l&#8217;indemnité de l&#8217;assuré aura été enregistré,
+</li>
+<li>
+le chèque d&#8217;indemnisation éventuel de l&#8217;assuré aura été émis,
+</li>
+<li>
+le chèque de paiement des honoraires de l&#8217;expert aura été émis.
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="_questions_2">3.1.2. Questions</h4>
+<ol>
+<li>
+<p>
+Réaliser le diagramme des UC après avoir défini les acteurs principaux et secondaires.
+</p>
+</li>
+<li>
+<p>
+A partir du jeu d’essai donné par l’enseignant au tableau, construire le Diagramme des Classes métier (sans les méthodes).
+</p>
+</li>
+<li>
+<p>
+Construire un diagramme de Paquetages respectant l’architecture MVC puis réaliser un diagramme de classes pour chaque paquetage (M, V et C).
+</p>
+</li>
+<li>
+<p>
+Construire le diagramme de séquence système pour l’UC <code>Saisie des dossiers accidents</code>.
+</p>
+</li>
+<li>
+<p>
+Construire le diagramme de séquence de l’UC <code>Saisie des dossiers accidents</code>.
+</p>
+</li>
+<li>
+<p>
+Compléter le diagramme des classes participantes de cet UC
+</p>
+</li>
+</ol>
+</div>
+<div class="sect3">
+<h4 id="_annexe_exemple_de_jeu_de_données">3.1.3. Annexe : exemple de jeu de données</h4>
+<p>Voici un exemple : Le dossier accident D34 correspond à un même accident entre 2 assurés de la MAIF, ce qui donne lieu à 1 seul dossier pour plusieurs véhicules (notion de « tiers interne »). D75 est un accident sans tiers. D12 et D98 sont des accidents différents avec un même tiers externe.</p>
+<img src="../TP/assurauto.png" alt="Exemple" />
 <div class="sidebarblock">
 <div class="content">
 <p>Pour l&#8217;instant ce document est libre d&#8217;utilisation et géré par la <em>Licence Creative Commons</em>.

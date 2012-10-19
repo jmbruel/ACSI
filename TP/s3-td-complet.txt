@@ -75,4 +75,92 @@ Les chargés de dossier devront réaliser les traitements suivants afin de trait
 
 Voici un exemple : Le dossier accident D34 correspond à un même accident entre 2 assurés de la MAIF, ce qui donne lieu à 1 seul dossier pour plusieurs véhicules (notion de « tiers interne »). D75 est un accident sans tiers. D12 et D98 sont des accidents différents avec un même tiers externe.
 
+
 image::assurauto.png[width="60%",alt="Exemple"]
+
+//----------------------------------------------------- Correction -------------------------
+ifdef::correction[] 
+
+== Correction
+
+=== Réaliser le diagramme des UC après avoir défini les acteurs principaux et secondaires.
+
+Les acteurs principaux :
+
+- +Interim+ : intérimaires chargés de la saisie des paiement des primes
+- +EmpDoss+ : employés chargés de la saisie des dossiers accidents
+- +ChargéDoss+ : personnels qui gèrent les dossiers accidents
+- +Ordinateur+ : « pseudo » acteur qui lancera les traitements batch
+
+Les acteurs secondaires :
+
+- +Assuré+
+- +Expert+
+
+Les cas d'utilisation :
+
+- UC01 (+EnvEch+) : Envoi des avis d'échéance le 15 janvier (Batch)
+- UC02 (+SPrimes+): Saisie des paiements des primes (entre le 15/01 et le 15/02))
+- UC03 (+SDoss+): Saisie des dossiers accidents 
+- UC04 (+GesDoss+): Gestion des dossiers accidents 
+
+image::assurauto-uc.png[width="70%",alt="uc"]
+
+=== Construire le Diagramme des Classes métier
+
+image::assurauto-dc.png[width="70%",alt="Exemple"]
+
+=== Construire le SNI
+
+image::assurauto-sni.png[width="70%",alt="Exemple"]
+
+=== Construire un diagramme de Paquetages respectant l’architecture MVC
+
+.Diagramme de package
+image::assurauto-pkg1.png[width="20%",alt="Exemple"]
+
+[NOTE]
+=====
+On a déjà fait le DC du package Métier/Modèle (quest° 2).
+Chaque UC donne naissance à (au moins) une classe +Ctrl+ et le SNI nous donne les futurs fenêtres de l’application (donc les classes +Dlg+).
+=====
+
+.Diagramme de class du package +Application+
+image::assurauto-pkg2.png[width="60%",alt="Exemple"]
+
+.Diagramme de class du package +IHM+
+image::assurauto-pkg3.png[width="60%",alt="Exemple"]
+
+=== Construire le diagramme de séquence système pour l’UC « Saisie des dossiers accidents »
+
+image::assurauto-dss.png[width="70%",alt="Exemple"]
+
+=== Construire le diagramme de séquence de l’UC « Saisie des dossiers accidents ».
+
+Pour l’implémentation, on a choisi de créer une base de données avec une table pour chaque classe métier. 
+
+Pour le package +IHM+, on pourra créer des classes Java (JFrame ou JDialog). 
+
+Pour le package +Application+, on pourra créer des classes java standard. 
+
+[NOTE]
+=====
+Prendre une feuille A4 en format paysage pour faire le DS!
+=====
+
+image::assurauto-ds.png[width="60%",alt="Exemple"]
+
+=== Compléter le diagramme des classes participantes de cet UC
+
+image::assurauto-dcp.png[width="60%",alt="Exemple"]
+
+=== Construire le SEP et réaliser deux dessins de page Web
+
+image::assurauto-sep.png[width="60%",alt="Exemple"]
+image::assurauto-dessin1.png[width="60%",alt="Exemple"]
+image::assurauto-dessin2.png[width="60%",alt="Exemple"]
+
+endif::correction[] 
+
+//----------------------------------------------------- fin Correction -------------------------
+

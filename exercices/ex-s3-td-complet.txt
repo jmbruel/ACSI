@@ -1,0 +1,120 @@
+:locimages: ../TP/
+== Le projet "Assurance-Auto"
+
+ifdef::backend-slidy2[>>>]
+
+=== Enoncé
+
+Nous allons étudier une compagnie d’assurances automobiles. Une analyse globale a permis d’obtenir le cahier des charges utilisateur ci-dessous.
+
+Chaque client assuré dans la compagnie est identifié par un numéro qui lui a été attribué lors de la souscription de son assurance. Dans le cadre de sa souscription, un client peut assurer plusieurs véhicules différents identifiés par leur numéro minéralogique. Il existe à ce jour quatre types de contrats appelés respectivement "simple responsabilité", "tierce collision", "tous risques" et "multirisques".
+
+La prime annuelle versée par chaque assuré pour un véhicule est calculée en fonction du type de contrat et de la catégorie du véhicule assuré. Il existe actuellement 8 catégories de tarifs qui dépendent du modèle de véhicule. Par exemple, le modèle "Peugeot 106" aura un tarif de catégorie 1, le modèle "Renault Mégane" de catégorie 2, ..., le modèle "BMW Série 7" de catégorie 8. Le montant de base de la prime (obtenu à partir de la catégorie de tarif et du type de contrat) est majoré d'un certain pourcentage si l'assuré est un jeune conducteur de moins de 25 ans et/ou ayant obtenu son permis de conduire depuis moins d'un an. On ajoute ou retranche au montant obtenu un certain pourcentage (bonus ou malus) calculé par une formule, non indiquée ici, à partir du nombre d'accidents déclarés par l'assuré au cours des trois années précédentes et pour lesquels sa responsabilité est engagée. Le bonus-malus est calculé pour chaque véhicule assuré.
+
+En début d'année (le 15 janvier), un certain nombre de traitements batch devront être exécutés pour calculer les primes et éditer les avis d'échéance des clients triés par département. Un avis d'échéance concerne un assuré et comporte son numéro d’assuré, son nom, son adresse, la date d'obtention de son permis de conduire, l'indication éventuelle « jeune conducteur », le montant total de sa prime et la liste des véhicules assurés. Pour chaque véhicule assuré sont indiqués la marque, le genre, la puissance fiscale, le type de contrat souscrit, la catégorie de tarif, la prime de base, la majoration éventuelle, le pourcentage de bonus-malus et le montant à payer (on n'envisagera pas ici les calculs de TVA).
+
+Les assurés ont jusqu'au 15 février pour régler leur prime. Les paiements sont enregistrés en mode transactionnel (interactif) au fur et à mesure de leur arrivée entre le 15 janvier et le 15 février par du personnel intérimaire habilité à effectuer cette opération. Les relances pour non-paiement ne sont pas envisagées ici. 
+
+Tous les vendredis, des employés saisissent les dossiers d'accidents constitués dans la semaine en enregistrant les propriétés suivantes : identification du véhicule de l'assuré impliqué dans l'accident, expert nommé, date d'ouverture du dossier, description sommaire de l'accident, autres véhicules impliqués dans l'accident (tiers). L'un des tiers peut être un assuré de la même compagnie. On parlera alors de « tiers interne ». Dans le cas contraire (« tiers externe ») et s’il n’est pas déjà connu, il faut saisir les propriétés du véhicule et de son propriétaire ainsi que la compagnie d'assurances qui l'assure (toutes les compagnies existantes sont répertoriées avec leur raison sociale, leur téléphone et leur adresse). Remarquons qu'un même assuré peut avoir plusieurs dossiers en cours concernant le même véhicule et/ou des véhicules différents.
+
+Les chargés de dossier devront réaliser les traitements suivants afin de traiter le dossier :
+
+- le rapport d'expertise aura été enregistré avec le montant estimé des dégâts,
+- la part de responsabilité de l'assuré aura été déterminée et enregistrée,
+- le malus aura été actualisé,
+- le montant de l'indemnité de l'assuré aura été enregistré,
+- le chèque d'indemnisation éventuel de l'assuré aura été émis,
+- le chèque de paiement des honoraires de l'expert aura été émis.
+
+=== Questions
+
+.	Réaliser le diagramme des UC après avoir défini les acteurs principaux et secondaires.
+.	A partir du jeu d’essai donné par l’enseignant au tableau, construire le Diagramme des Classes métier (sans les méthodes).
+.	Construire un diagramme de Paquetages respectant l’architecture MVC puis réaliser un diagramme de classes pour chaque paquetage (M, V et C). 
+.	Construire le diagramme de séquence système pour l’UC +Saisie des dossiers accidents+.
+.	Construire le diagramme de séquence de l’UC +Saisie des dossiers accidents+.
+.	Compléter le diagramme des classes participantes de cet UC
+
+=== Annexe : exemple de jeu de données
+
+Voici un exemple : Le dossier accident D34 correspond à un même accident entre 2 assurés de la MAIF, ce qui donne lieu à 1 seul dossier pour plusieurs véhicules (notion de « tiers interne »). D75 est un accident sans tiers. D12 et D98 sont des accidents différents avec un même tiers externe.
+
+
+image::{locimages}assurauto.png[width="60%",alt="Exemple"]
+
+//----------------------------------------------------- Correction -------------------------
+ifdef::correction[] 
+
+== Correction
+
+=== Réaliser le diagramme des UC après avoir défini les acteurs principaux et secondaires.
+
+Les acteurs principaux :
+
+- +Interim+ : intérimaires chargés de la saisie des paiement des primes
+- +EmpDoss+ : employés chargés de la saisie des dossiers accidents
+- +ChargéDoss+ : personnels qui gèrent les dossiers accidents
+- +Ordinateur+ : « pseudo » acteur qui lancera les traitements batch
+
+Les acteurs secondaires :
+
+- +Assuré+
+- +Expert+
+
+Les cas d'utilisation :
+
+- UC01 (+EnvEch+) : Envoi des avis d'échéance le 15 janvier (Batch)
+- UC02 (+SPrimes+): Saisie des paiements des primes (entre le 15/01 et le 15/02))
+- UC03 (+SDoss+): Saisie des dossiers accidents 
+- UC04 (+GesDoss+): Gestion des dossiers accidents 
+
+image::{locimages}assurauto-uc.png[width="70%",alt="uc"]
+
+=== Construire le Diagramme des Classes métier
+
+image::{locimages}assurauto-dc.png[width="70%",alt="Exemple"]
+
+=== Construire un diagramme de Paquetages respectant l’architecture MVC
+
+.Diagramme de package
+image::{locimages}assurauto-pkg1.png[width="20%",alt="Exemple"]
+
+[NOTE]
+=====
+On a déjà fait le DC du package Métier/Modèle (quest° 2).
+Chaque UC donne naissance à (au moins) une classe +Ctrl+ et le SNI nous donne les futurs fenêtres de l’application (donc les classes +Dlg+).
+=====
+
+.Diagramme de class du package +Application+
+image::{locimages}assurauto-pkg2.png[width="60%",alt="Exemple"]
+
+.Diagramme de class du package +IHM+
+image::{locimages}assurauto-pkg3.png[width="60%",alt="Exemple"]
+
+=== Construire le diagramme de séquence système pour l’UC « Saisie des dossiers accidents »
+
+image::{locimages}assurauto-dss.png[width="70%",alt="Exemple"]
+
+=== Construire le diagramme de séquence de l’UC « Saisie des dossiers accidents ».
+
+Pour l’implémentation, on a choisi de créer une base de données avec une table pour chaque classe métier. 
+
+Pour le package +IHM+, on pourra créer des classes Java (JFrame ou JDialog). 
+
+Pour le package +Application+, on pourra créer des classes java standard. 
+
+[NOTE]
+=====
+Prendre une feuille A4 en format paysage pour faire le DS!
+=====
+
+image::{locimages}assurauto-ds.png[width="60%",alt="Exemple"]
+
+=== Compléter le diagramme des classes participantes de cet UC
+
+image::{locimages}assurauto-dcp.png[width="60%",alt="Exemple"]
+
+endif::correction[] 
+
+//----------------------------------------------------- fin Correction -------------------------
+

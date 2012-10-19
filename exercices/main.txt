@@ -81,6 +81,9 @@ endif::correction[]
 
 :leveloffset: 1
 
+//------------------------------------- saut de page ------------------------------
+<<<
+
 = Diagramme des UC
 
 ifdef::backend-slidy2[] 
@@ -93,9 +96,21 @@ endif::backend-slidy2[]
 include::ex-uc-etablissementScolaire.txt[]
 include::ex-uc-magazin.txt[]
 
+//------------------------------------- saut de page ------------------------------
+<<<
+
 = Diagramme de séquence
 
 include::ex-seq-caisse.txt[]
 include::ex-seq-dab.txt[]
 include::ex-seq-SocieteIUT.txt[]
+
+//------------------------------------- saut de page ------------------------------
+<<<
+
+= Exercices complets
+
+include::ex-s3-td-complet.txt[]
+
+//----------------------------------------------------- About -------------------------
 include::../about.txt[]

@@ -24,6 +24,7 @@ image::../TP/td2.png["Société IUT",width="80%"]
 === Questions
 
 . Rajouter les attributs et les méthodes nécessaires sur le diagramme de classes.
+. Ecrire le code Java de la méthode +getPayeArtisan(...)+.
 . Faire le diagramme de séquence correspondant à ce code Java.
 
 [NOTE]
