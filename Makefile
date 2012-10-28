@@ -30,6 +30,7 @@ github:
 push:
 	@echo '==> Pushing to gitub'
 	cp main.html main.slidy.html /Users/bruel/Dropbox/Public/dev/ACSI
+	cp main.html main.slidy.html /Users/bruel/dev/jmbhome/public
 	git push -u origin master
 
 init:
