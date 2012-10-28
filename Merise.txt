@@ -25,6 +25,8 @@ Note: Dans nos enseignements de DUT Informatique, cette partie est abordée en 3
 
 == Pourquoi MERISE ?
 
+Ce qu'on peut dire de http://fr.wikipedia.org/wiki/Merise_(informatique)[Merise] :
+
 * méthode très utilisée *en France*
 * des générations de programmeurs l'ont apprise
 * elle permet donc de servir de *référence* pour les autres approches
@@ -254,7 +256,7 @@ image:{dessins}/noMove.png["Flux n'est pas déplacement", align="center"]
 . Réalisation du MOF
 
 [icon="dessins/CB.png"]
-NOTE: *MOF* +
+NOTE: *MCF* +
 1. Demande CB +
 2. Refus +
 3. Demande Groupée CB +
@@ -263,7 +265,7 @@ NOTE: *MOF* +
 6. Retrait de la carte
 
 [icon="dessins/CBmcf.png"]
-NOTE: *MCF* +
+NOTE: *MOF* +
 1. Demande CB +
 2. Refus +
 3. Demande Groupée CB +
@@ -284,10 +286,10 @@ NOTE: *MCF* +
 ** la synchronisation
 
 === Diagrammes
-Modèle Conceptuel de Traitement::
+**M**odèle **C**onceptuel de **T**raitement (MCT)::
 	Répondre au *QUOI?*
 
-Modèle Organisationnel de Traitement::
+**M**odèle **O**rganisationnel de **T**raitement (MOT)::
 	Répondre au *QUI* fait *QUOI* et *QUAND?*
 
 [[MCT]]
@@ -303,10 +305,24 @@ Modèle Organisationnel de Traitement::
 
 === Notation
 * événements
++
+image:{dessins}/commande.png["Exemple d'événement"]
++
 * synchronisation
++
+image:{dessins}/synchro.png["Notation de synchronisation"]
++
 * opération
++
+image:{dessins}/operation.png["Notation d'une opération"]
++
 * Règles d’émission
++
+image:{dessins}/regles.png["Règles d'émission"]
++
 * Résultats
+
+image:{dessins}/commande.png["Exemple d'événement"]
 
 ==== Modèle Conceptuel de Traitement
 
@@ -332,30 +348,44 @@ Modèle Organisationnel de Traitement::
 | {technique}		|			|        		|				
 |======================
 
-===== Notations
-
-* Evénements
-+
-image:{dessins}/commande.png["Commande"]
-+
-* Synchronisation
-* Opération
-
-
 ===== Exemples
 
+[[mctexp1]]
+.Opération complète
+image::{dessins}/mct-exp1.png["Opération complète",width="50%"]
+
+ifdef::backend-slidy2[<<<]
+
+[[mctexp2]]
+.Opération complète
+image::{images}/mct-exp3.png["Opération complète",width="50%"]
+
+ifdef::backend-slidy2[<<<]
+
+[[mctexp3]]
+.Opération complète
+image::{images}/mct-exp4.png["Opération complète",width="50%"]
+
+ifdef::backend-slidy2[<<<]
+
+[[mctexp4]]
+.Opération complète
+image::{images}/mct-exp2.png["Opération complète",width="50%"]
+
 ===== Récapitulatif de la démarche (MCT)
-* Identifier les postes
-* Définir les tâches
-* Déterminer les opérations
-* Associer les événements déclencheurs
-* Déterminer les résultats
-* Décrire les règles d’émission
+
+. Identifier les postes
+. Définir les tâches
+. Déterminer les opérations
+. Associer les événements déclencheurs
+. Déterminer les résultats
+. Décrire les règles d’émission
 
 ===== Règles de bonne conception (MCT)
+
 * Regroupement de tous les traitements effectués dès l’arrivée d’un événement
 * Ne pas tenir compte de l’organisation interne du domaine étudié (répartition du travail entre acteurs internes)
-* Seule l’attente d’événements externes (=flux externes) justifie le découpage en plusieurs opérations
+* Seule l’attente d’événements externes (flux externes) justifie le découpage en plusieurs opérations
 * 2 opérations consécutives liées exclusivement par des flux internes doivent être fusionnées.
 * Réutiliser les acteurs externes, les autres domaines et les flux externes trouvés dans le MCF
 
@@ -383,7 +413,6 @@ Opérateurs :
 - A partir de 3, les événements peuvent être renommés (lettres).
 =====================================================================
 
-===== Exercice
 ===== Actions
 * Types d'actions :
 action sur un objet::
@@ -392,8 +421,6 @@ action résultat::
 	impression, …
 * Conditions
 ** une action peut être soumise à condition
-
-===== Exercice
 
 ===== Règles d'émission
 Règle d'émission::
@@ -423,6 +450,11 @@ NOTE: Une opération possède au moins un événement résultat par règle d'ém
 ** si c'est le cas, on enregistre la date de livraison, on met à jour le stock et on imprime un bon de livraison pour le service Livraison;
 ** sinon le stock à réapprovisionner est incrémenté de la quantité commandée.
 
+ifdef::backend-slidy2[<<<]
+
+.Exemple de MCT
+image:{images}/mct1.png["Exemple de MCT",width="60%"]
+
 ==== Modèle Organisationnel de Traitement
 
 ===== Eléments importants
@@ -446,6 +478,8 @@ NOTE: Une opération possède au moins un événement résultat par règle d'ém
 
 ===== Exemples de MOT
 
+image:{images}/mot1.png["Exemple de MOT",width="60%"]
+
 ===== Règles de bonne conception d’un MOT
 
 * Examiner les traitements effectués par chaque acteur interne lorsqu’il reçoit un flux
@@ -453,14 +487,29 @@ NOTE: Une opération possède au moins un événement résultat par règle d'ém
 * Un MOT représente un processus c’est à dire un ensemble de tâches consécutives concourant à un même but
 * Les événements initiaux déclenchant un processus sont, soit des flux externes, soit des événements temporels
 
-===== Exercice 1
+===== Exemple 1
 * Lorsqu’un agent d’une compagnie d’assurances automobiles reçoit une déclaration d’accident de la part d’un assuré, il vérifie tout d’abord la situation de ce dernier. 
 * Si l’assuré n’est pas couvert pour ce type d’accident alors l’agent lui envoie un avis de rejet. 
 * Tous les soirs à 18h, un traitement automatique édite les avis de sinistre de la journée (ces avis correspondent aux déclarations d’accident du jour pour les assurés couverts). Ces avis sont expédiés par l’agent au siège social de la compagnie d’assurance. 
 * Le siège social désigne alors un expert pour chaque sinistre et envoie les coordonnées des experts désignés à l’agent d’assurance. Ce dernier envoie alors une convocation manuscrite à chaque expert. 
 * Lorsque l’agent d’assurance a reçu le rapport de l’expert et la facture de l’assuré (cette facture a été produite par le garage qui a effectué les réparations sur le véhicule accidenté et a été ensuite donné à l’assuré propriétaire du véhicule), il peut régler le sinistre en envoyant un chèque de remboursement à l’assuré.
 
-===== Exercice 2
+ifdef::backend-slidy2[<<<]
+
+.Exemple de MCT
+image:{images}/mot2.png["Exemple de MCT",width="60%"]
+
+ifdef::backend-slidy2[<<<]
+
+.Exemple de MOF
+image:{images}/mot3.png["Exemple de MOF",width="60%"]
+
+ifdef::backend-slidy2[<<<]
+
+.Exemple de MOT
+image:{images}/mot4.png["Exemple de MOT",width="60%"]
+
+===== Exemple 2
 * A partir des demandes d’approvisionnement établies par le service commercial, le service des achats envoie des demandes de prix aux fournisseurs possibles.  
 * Les fournisseurs envoient des offres de prix au service achat. 
 Ce dernier choisit alors un fournisseur particulier (au plus tard 10 jours après l’envoi des offres) et lui envoie un bon de commande. Une copie est conservée en vue de la réception. 
@@ -493,6 +542,10 @@ endif::backend-slidy2[]
 Ce dernier [green]*choisit alors un fournisseur* particulier (au plus tard 10 jours après l’envoi des offres) et lui envoie un [blue]*bon de commande*. Une [blue]*copie* est conservée en vue de la réception. 
 * Quand la [blue]*livraison* arrive (généralement 2 jours après le choix du fournisseur), le service achat [green]*contrôle* quantitativement et qualitativement la marchandise. La livraison est renvoyée en bloc si l’un des contrôles est négatif. 
 * Les contrôles satisfaisants aboutissent à l’entrée en stock des [blue]*articles*. Dans ce cas, le service achat établit alors le [blue]*bon à payer* aux [yellow]*services financiers*. Quand les services financiers reçoivent la [blue]*facture* du fournisseur (généralement 3 jours après la livraison), ils [green]*vérifient* la correspondance avec le bon à payer et [green]*émettent* le [blue]*chèque de paiement*. 
+
+ifdef::backend-slidy2[<<<]
+
+image:{images}/mot5.png["Exemple de MOT",width="60%"]
 
 ==== Modélisation du futur Système
 

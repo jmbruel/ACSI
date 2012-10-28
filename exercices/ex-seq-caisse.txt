@@ -1,0 +1,42 @@
+== Caisse Supermarché
+
+ifdef::backend-slidy2[>>>]
+
+=== Enoncé
+
+Le déroulement normal d’utilisation d’une caisse de supermarché est le suivant :
+
+[options="incremental"]
+- un client arrive à la caisse avec ses articles à payer
+- le caissier enregistre le numéro d’identification de chaque article, ainsi que la quantité si elle est supérieure à 1
+- la caisse affiche le prix de chaque article et son libellé
+- lorsque tous les achats sont enregistrés, le caissier signale la fin de la vente
+- la caisse affiche le total des achats
+- le caissier annonce au client le montant total à payer
+- le client choisit son mode de paiement
+* liquide : le caissier encaisse l’argent, la caisse indique le montant à rendre au client
+* chèque : le caissier note le numéro de pièce d’identité du client
+* carte de crédit : la demande d’autorisation est envoyée avant la saisie
+- la caisse enregistre la vente et l’imprime
+- le caissier donne le ticket de caisse au client
+
+=== Question
+
+- Modéliser le _use case_ +PayerCourses+ à l’aide d’un diagramme de séquence en ne prenant en compte que le cas du paiement en liquide.
+
+image:ex-seq-caisse-uc.png[width="40%"]
+
+//----------------------------------------------------- Correction -------------------------
+ifdef::correction[] 
+
+=== Source
+
+http://fr.scribd.com/doc/8584444/Exercices-UML
+
+=== Correction
+
+image:ex-seq-caisse.png[width="70%"]
+
+endif::correction[] 
+
+//----------------------------------------------------- fin Correction -------------------------

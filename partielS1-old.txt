@@ -1,0 +1,250 @@
+The CMSS system is a distributed crash management system that is responsible for 
+coordinating the communication between a fire station coordinator (FSC) and a police station 
+coordinator (PSC) to handle a crisis in a timely manner (see Figure 1). Internal communication 
+among the police personnel (including the PSC) is outside the scope of the desired system. The 
+same assumption applies to the fire personnel (including the FSC). Information regarding the crisis 
+as it pertains to the tasks of the coordinators will be updated and maintained during and after the 
+crisis. 
+
+There are two collaborative sub-systems. Thus, the global coordination is the result of the 
+parallel composition of the (software) coordination processes controlled by the two (human) 
+distributed coordinators (i.e., PSC and FSC). There is no central database; fire and police stations 
+maintain separate databases and may only access information from the other database through the 
+CMSS system. Each coordination process is hence in charge of adding and updating information in 
+its respective database. 
+For simplicity, the context of the CMSS system is an accident involving an overturned oil tanker 
+on a highway, where the tanker is on fire. The actual execution of the mission (e.g., rescue victims 
+or remove obstacles) is outside the scope of the CMSS system except for specific information 
+about the mission as required by the coordinators. This information includes the crisis details and 
+the route plan as defined in the data dictionary in Section 8. Furthermore, the current version of the 
+CMSS system assumes that sufficient resources are available (e.g., fire trucks). Finally, there is 
+only one fire station and only one police station and only one crisis at a time. 
+CMSS starts operating at the point when a given crisis has been detected and declared both at the 
+fire station and the police station, independently. The coordinators (i.e., PSC and FSC) have 
+already defined the parameters necessary to start handling the crisis. The initial emergency call of a 
+witness and any subsequent notifications of the crisis from additional witnesses through either the 
+police station and/or fire station call centers are outside the scope of the desired system. 
+A number of policies exist governing the timing for actions to be completed, the number of 
+vehicles to be deployed for different types of crises, etc. The development and compliance checking 
+of these policies are outside the scope of the desired system. 
+Any variation of the system detailed in Section 7 may be either selected at design time or 
+activated at run time. 
+
+All stakeholders of the system are detailed in this  section. After a brief description of a 
+stakeholder, the objectives of the stakeholder are first stated. Thereafter, the responsibilities
+of the stakeholder are detailed which help to achieve the stakeholder’s objectives to a certain 
+degree. While the objectives characterize the general problems addressed by the CMSS system, the 
+responsibilities describe concrete actions that are expected from a stakeholder. Some of these 
+responsibilities can be traced to the use case in Section 4, and hence must be supported by the 
+CMSS system. Responsibilities that cannot be traced to the use case are outside the scope of the 
+system. All stakeholders listed in this section have an interest in the system or are affected by the 
+system in some way, but only a subset of the stakeholders are directly involved in the use case 
+described in Section 4. 
+3.1. Fire Station Coordinator (FSC) 
+A FSC maintains control over a crisis situation by communicating with the police station 
+coordinator (PSC) as well as firemen. 
+The objectives of a FSC are: 
+• to handle a crisis efficiently and effectively (e.g., minimize loss or injury to people and 
+property), 
+• to get resources to the crisis location in the shortest amount of time, 
+• to have accurate estimation of resource needs and time of arrivals for resources, 
+• to have effective negotiation skills (e.g., with other coordinators), 
+• to have dependable communication with involved stakeholders, 
+• to maintain a feeling of control over the crisis (e.g., minimize stress level by providing and 
+receiving crisis information to and from other coordinators in a timely fashion), and 
+• to provide clear, executable instructions to appropriate staff. 
+In order to achieve these objectives, the responsibilities of a FSC are: 
+• to determine where, when, and how many fire trucks to send, 
+• to communicate with the PSC to introduce herself, 
+• to keep PSC up to date regarding the nature of the crisis and the deployed resources, 
+• to propose a strategy for handling the crisis, 
+• to reach an agreement with the PSC on how to proceed, 
+ACMSS – Requirements Definition Document  5 / 12 
+• to receive updates regarding the crisis from individual firemen, and 
+• to collate and distribute updated information and instructions back to the firemen. 
+3.2. Fireman 
+A fireman acts on orders received from the FSC and reports crisis-related information back to the 
+FSC. Furthermore, a fireman communicates with other firemen, victims, and witnesses at the crisis 
+location. 
+The objectives of a fireman are: 
+• to stay alive, 
+• to minimize injury, 
+• to save and support the victim, 
+• to minimize damage to property, 
+• to work well in a team, 
+• to have confidence in the coordinator and follow instructions well, and 
+• to keep up to date regarding the crisis situation. 
+In order to achieve these objectives, the responsibilities of a fireman are: 
+• to receive requests to go to/return from the crisis location, 
+• to report location status to FSC, 
+• to report conditions of the crisis to FSC and all firemen, and 
+• to communicate with the victim and the witness at the crisis location. 
+3.3. Police Station Coordinator (PSC) 
+A PSC maintains control over a crisis situation by communicating with the fire station coordinator 
+(FSC) as well as policemen. 
+The objectives of a PSC are the same as the objectives of a FSC. 
+In order to achieve these objectives, a PSC performs the same activities as a FSC. The description 
+in Section 3.1 hence applies except that fire trucks are replaced with police cars, PSC with FSC, 
+and firemen with policemen. 
+3.4. Police Officer 
+A police officer acts on orders received from the PSC and reports crisis-related information back to 
+the PSC. Furthermore, a police officer communicates with other policemen, victims, and witnesses 
+at the crisis location. 
+The objectives of a police officer are the same as the objectives of a fireman. In addition, a police 
+officer wants to re-establish order disturbed by a crisis (e.g., manage traffic and people). 
+In order to achieve these objectives, a police officer performs the same activities as a fireman in 
+terms of communicating with his coordinator. Hence, the description in Section 3.2 applies except 
+that FSC is replaced with PSC. 
+3.5. Victim 
+A victim has been adversely affected by the crisis and may communicate with policemen and CMSS – Requirements Definition Document  6 / 12 
+firemen. 
+The objectives of a victim are: 
+• to be rescued in the shortest amount of time, 
+• to recover from injuries and/or loss in the shortest amount of time, 
+• to minimize stress caused by the crisis, 
+• to be informed of crisis status as it impacts the victim, and 
+• to know what to do at different stages of the crisis. 
+In order to achieve these objectives, the responsibilities of a victim are: 
+• to provide crisis-related information (including information about their location, identity, 
+and medical history) to firemen and policemen, and 
+• to follow instructions from firemen and policemen. 
+3.6. Witness (at the crisis location) 
+A witness has observed the crisis and communicates with policemen and firemen. 
+The objectives of a witness are: 
+• to provide accurate information about the crisis to the police and fire personnel, and 
+• to know what to do. 
+In order to achieve these objectives, the responsibilities of a witness are: 
+• to provide information to firemen and policemen, and 
+• to follow instructions from firemen and policemen.  
+3.7. Government Agencies 
+Government agencies provide funding for the system and expect improvements of the communities’ 
+living standard from the deployment of the system. 
+The objectives of a government agency are: 
+• to keep the community safe, and 
+• to ensure effective response times with minimal costs. 
+In order to achieve these objectives, the responsibilities of a government agency are: 
+• to provide funding for fire and police departments, and
+• to establish policies for both groups (e.g., security, response time expectations). 
+3.8. Communication Compromiser 
+A communication compromiser wants to achieve personal  gain, whether it is monetary or 
+otherwise, by accessing confidential information and disrupting the handling of the crisis situation. 
+The objectives of a communication compromiser are: 
+• to disrupt the response to the crisis for some personal gain. 
+In order to achieve these objectives, the actions of a communication compromiser are: 
+• to gain access to confidential information, 
+• to change confidential information, and CMSS – Requirements Definition Document  7 / 12 
+• to disrupt communications. 
+
+
+Le système CMS (_crash management system_) est un système distribué de gestion d'accidents 
+qui est responsable de la coordination de la communication entre un coordinateur présent dans
+une caserne de pompiers (FSC) et un autre présent dans un poste de police (CFP) afin de gérer 
+une crise dans un délai raisonnable (voir Figure 1). 
+
+La communication interne entre les membres de la police (y compris le CFP) est en dehors du 
+domaine qui nous intéresse ici. La même hypothèse s'applique aux pompiers (y compris le FSC). 
+Les informations concernant la crise ainsi que tout ce qui a trait aux tâches des coordinateurs 
+sont mises à jour et maintenues pendant et après la crise.
+
+Il existe deux sous-systèmes collaboratifs. Ainsi, la coordination globale est le résultat de la
+composition parallèle des processus de coordination (logiciel) commandés par les deux
+coordinateurs distribués (c'est à dire, le CFP et le FSC). 
+Il n'existe pas de base de données centrale; caserne de pompiers et police ayant leur
+base de données respectives distinctes et seulement accessible aux autre à travers le
+système CMS. Chaque processus de coordination est donc en charge de l'ajout et la mise 
+à jour des informations dans sa base de données respective.
+
+CMS commence à fonctionner au moment où une crise donnée a été détectée et déclarée à la fois à la
+caserne de pompiers et au poste de police. Les coordonnateurs (c'est à dire, le CFP et FSC) ont
+déjà défini les paramètres nécessaires pour commencer à gérer la crise. 
+Un certain nombre de politiques existent quant aux actions à mener, au nombre de
+véhicules qui seront déployés, etc. 
+
+Toutes les caractérisstiques du système sont détailleés ci-dessous. 
+
+_Fire Station Coordinator_ (FSC)
+
+Un FSC maintient le contrôle sur une situation de crise en communiquant avec le coordinateur du poste de police
+(CFP) ainsi que les pompiers.
+
+Pour atteindre ses objectifs, les responsabilités d'un FSC sont les suivantes :
+• de déterminer où, quand et combien de camions de pompiers à envoyer,
+• de communiquer avec la CFP pour se présenter,
+• de garder CFP à jour en ce qui concerne la nature de la crise et les moyens mis en œuvre,
+• de proposer une stratégie pour traiter la crise,
+• parvenir à un accord avec la CFP sur la façon de procéder,
+ACMSS - Document de définition des besoins 5/12
+• de recevoir des mises à jour concernant la crise de pompiers individuels, et
+• de rassembler et de diffuser des informations actualisées et des instructions de retour aux pompiers.
+3,2. Pompier
+A agit pompier sur les commandes reçues à partir du FSC et des rapports liés à la crise informations au
+FSC. Par ailleurs, un pompier communique avec d'autres pompiers, les victimes et les témoins à la crise
+emplacement.
+Les objectifs d'un pompier sont les suivants:
+• pour rester en vie,
+• pour minimiser les blessures,
+• d'enregistrer et de soutenir la victime,
+• réduire au minimum les dommages à la propriété,
+• de travailler en équipe,
+• d'avoir confiance dans le coordinateur et suivez les instructions bien, et
+• à tenir à jour en ce qui concerne la situation de crise.
+Pour atteindre ces objectifs, les responsabilités d'un pompier sont les suivants:
+• de recevoir des demandes pour aller à / retour à partir de l'emplacement de crise,
+• signaler statut de l'emplacement de la FSC,
+• de signaler les conditions de la crise au FSC et tous les pompiers, et
+• de communiquer avec la victime et le témoin à l'endroit crise.
+3,3. Poste de police de coordonnateur (CFP)
+Un CFP conserve le contrôle sur une situation de crise en communiquant avec le coordonnateur caserne de pompiers
+(FSC) ainsi que des policiers.
+Les objectifs d'un CFP sont les mêmes que les objectifs d'une FSC.
+Pour atteindre ces objectifs, un CFP effectue les mêmes activités que la FSC. La description
+dans la section 3.1 s'applique donc, sauf que les camions de pompiers sont remplacés par des voitures de police, la CFP avec le FSC,
+et les pompiers avec les policiers.
+3,4. Officier de police
+A actes des agents de police sur les ordres reçus de la CFP et des rapports d'informations liées à la crise revenir à
+la CFP. En outre, un agent de police communique avec d'autres policiers, les victimes et les témoins
+à l'emplacement de crise.
+Les objectifs d'un agent de police sont les mêmes que les objectifs d'un pompier. En outre, un service de police
+officier veut rétablir l'ordre troublé par une crise (par exemple, la gestion du trafic et des personnes).
+Pour atteindre ces objectifs, un agent de police exerce les mêmes activités que dans un pompier
+termes de communication avec son coordinateur. Par conséquent, la description à la section 3.2 s'applique, sauf
+que le FSC est remplacée par la CFP.
+3,5. Victime
+Une victime a été touchée par la crise et peut communiquer avec les policiers et CMS - Document de définition des exigences 12.06
+pompiers.
+Les objectifs de la victime sont les suivants:
+• d'être secourus dans le plus court laps de temps,
+• se remettre de blessures et / ou des pertes dans le plus court laps de temps,
+• réduire au minimum le stress causé par la crise,
+• d'être informé de l'état de crise car elle influe sur la victime, et
+• savoir ce qu'il faut faire à différents stades de la crise.
+Pour atteindre ces objectifs, les responsabilités d'une victime sont:
+• de fournir des informations liées à la crise (y compris des informations sur leur emplacement, l'identité,
+et les antécédents médicaux) pour les pompiers et les policiers, et
+• de suivre les instructions de pompiers et de policiers.
+3,6. Témoin (à l'emplacement de crise)
+Un témoin a observé la crise et communique avec les policiers et les pompiers.
+Les objectifs d'un témoin sont les suivants:
+• de fournir des informations précises sur la crise de la police et des pompiers et des
+• savoir quoi faire.
+Pour atteindre ces objectifs, les responsabilités d'un témoin sont les suivants:
+• de fournir des informations aux pompiers et les policiers, et
+• de suivre les instructions de pompiers et de policiers.
+3,7. Organismes gouvernementaux
+Les organismes gouvernementaux fournissent des fonds pour le système et s'attendre à des améliorations des communautés »
+le niveau de vie du déploiement du système.
+Les objectifs d'un organisme gouvernemental sont les suivants:
+• de maintenir la communauté en toute sécurité, et
+• d'assurer des temps de réponse efficaces à un coût minime.
+Pour atteindre ces objectifs, les responsabilités d'un organisme gouvernemental sont les suivants:
+• de fournir des fonds pour les services d'incendie et de police, et
+• d'établir des politiques pour les deux groupes (par exemple, la sécurité, les attentes temps de réponse).
+3,8. Communication conciliateur???
+Un conciliateur de communication veut réaliser un gain personnel, que ce soit monétaire ou
+autrement, en accédant à des informations confidentielles et de perturber le traitement de la situation de crise.
+Les objectifs d'un conciliateur de communication sont les suivantes:
+• de perturber la réponse à la crise pour certains des gains personnels.
+Pour atteindre ces objectifs, les actions d'un conciliateur de communication sont les suivantes:
+• d'avoir accès à des informations confidentielles,
+• de modifier les informations confidentielles et CMS - Document de définition des exigences 7/12
+• de perturber les communications.

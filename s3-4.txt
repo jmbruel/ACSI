@@ -1,0 +1,274 @@
+:incremental:
+:duration: 85
+
+== Rappels sur les démarches
+
+=== Généralités
+
+Les grandes étapes :
+
+- Analyser
+- ... puis Concevoir
+- ... ... puis Réaliser
+
+Deux grandes écoles :
+
+* Projets en cascade
+** Analyse
+** Conception
+** Réalisation
+
+* Projets itératifs
+** Prototypage
+** Contrat de moyens et non de résultats
+** Liens MOA/MOE plus compliqués (cf. plus loin)
+
+==== Analyser
+
+* Découvrir/décortiquer un *domaine*
+* Prendre en compte les *besoins* utilisateurs
+* Définir le *problème* à résoudre
+** Fonctionnalités
+** Qualités attendues
+** Environnement
+* *Modéliser* le tout
+
+==== Concevoir
+* Définir une solution :
+**  Structurer les données
+**  Organiser les traitements
+**  Définir les postes de travail
+**  Adopter certaines techniques
+
+==== Réaliser
+
+* Coder
+* Recoder une application existante (_Refactoring_)
+
+==== Qualités requises
+
+* Pour bien analyser et concevoir :
+** Avoir une bonne capacité d’*abstraction*
+** Maîtriser la *modélisation*
+*** Abstraire
+*** Communiquer
+** Qualités *relationnelles*
+** Etre *créatif*
+** Avoir de la *méthode*
+
+==== Rôles importants
+
+Deux acteurs importants :
+
+* Maîtrise d’ouvrage (MOA)
+* Maîtrise d’oeuvre (MOE)
+
+.Définis par la loi! (n° 85-704 du 12 juillet 1985)
+[NOTE]
+=====================================================================
+Le [red]#maître de l'ouvrage# est la personne morale, ..., [red]#pour laquelle l'ouvrage 
+est construit#. Responsable principal de l'ouvrage, il remplit dans ce rôle une fonction d'intérêt 
+général dont il ne peut se démettre.
+Il lui appartient, après s'être assuré de la faisabilité et de l'opportunité de 
+l'opération envisagée, d'en déterminer la localisation, d'en définir le programme, 
+d'en arrêter l'enveloppe financière prévisionnelle, d'en assurer le financement, 
+de [red]#choisir le processus selon lequel l'ouvrage sera réalisé# et de conclure, avec 
+les *maîtres d'oeuvre* et entrepreneurs qu'il choisit, les contrats ayant pour objet 
+les *études et l'exécution des travaux*.
+=====================================================================
+
+==== Analyser, c’est difficile
+
+ifdef::backend-slidy2[<<<]
+
+image::{images}/analyse2.png["Analyser, c'est difficile",width="60%"]
+
+ifdef::backend-slidy2[<<<]
+
+image::{images}/analyse3.png["Analyser, c'est difficile",width="60%"]
+
+ifdef::backend-slidy2[<<<]
+
+image::{images}/analyse4.png["Analyser, c'est difficile",width="60%"]
+
+ifdef::backend-slidy2[<<<]
+
+image::{images}/analyse5.png["Analyser, c'est difficile",width="60%"]
+
+ifdef::backend-slidy2[<<<]
+
+image::{images}/analyse6.png["Analyser, c'est difficile",width="60%"]
+
+ifdef::backend-slidy2[<<<]
+
+image::{images}/analyse7.png["Analyser, c'est difficile",width="60%"]
+
+==== Développer aussi 
+
+Il nous faut aborder les outils et démarches modernes de développement :
+
+- développement conduits par les tests (_Test Driven Development_)
+- les outils de gestions de versions ()
+
+.Le cycle (caché) de développement d'un logiciel (crédit image http://ourobengr.com/ourobengr/)
+image::{images}/ourobengr.png["http://ourobengr.com/ourobengr/",width="60%", link="http://ourobengr.com/ourobengr/"]
+
+
+
+=== Exemple complet de démarche "ad hoc" autour d'UML
+
+Nous allons aborder une étude de cas tirée du <<Roques2007a,livre de Pascal Roques>>.
+
+[NOTE]
+========
+Pour un apperçu du livre, cf. http://www.editions-eyrolles.com/Chapitres/9782212110708/chap01.pdf.
+========
+
+==== Le cahier des charges
+
+Il s'agit de développer un service de vente en ligne (http://jeBouquine.com).
+
+//XXX ajouter le cahier des charges XXX
+
+==== Des besoins au code
+
+.Le gap à combler (image tirée de <<Roques2007a>>)
+image::{images}/pr1.png["(c) Pascal Roques",width="50%"]
+
+==== Raffinement des besoins
+
+.Raffinement des besoins (image tirée de <<Roques2007a>>)
+image::{images}/pr2.png["(c) Pascal Roques",width="50%"]
+
+==== Près du code
+
+.Près du code (image tirée de <<Roques2007a>>)
+image::{images}/pr3.png["(c) Pascal Roques",width="50%"]
+
+==== Comment trouver les classes ?
+
+.Comment trouver les classes ? (image tirée de <<Roques2007a>>)
+image::{images}/pr4.png["(c) Pascal Roques",width="50%"]
+
+==== Comment trouver les interactions ?
+
+.Comment trouver les interactions ? (image tirée de <<Roques2007a>>)
+image::{images}/pr5.png["(c) Pascal Roques",width="50%"]
+
+==== Liens entre diagrammes
+
+.Liens entre diagrammes (image tirée de <<Roques2007a>>)
+image::{images}/pr6.png["(c) Pascal Roques",width="50%"]
+
+==== Démarche complète
+
+.Démarche complète (image tirée de <<Roques2007a>>)
+image::{images}/pr7.png["(c) Pascal Roques",width="50%"]
+
+=== Exemple d'une méthode industrielle
+
+Nous allons rapidement survoler la méthode *Neptune*. Développée en collaboration avec des académiques (dont l'{irit} et des industriels (dont {cs}), cette méthode couvre aussi bien le _business model_ (modèle orienté "économique" qui aborde aussi bien le produit que des notions comme les objectifs, les opportunités, les processus, etc.) que le génie logiciel (_software engineering_)
+qui nous intéresse ici.
+
+[NOTE]
+=====
+La méthode Neptune tire ses racines du _Unified Process_ (cf. <<RUP>>).
+Elle est compatible avec la méthode de {pam} (cf. <<Muller>>).
+Elle est supportée par un outil {eclipse}.  
+Pour plus d'information, voir http://neptune.irit.fr/.
+=====
+
+==== Démarche globale
+
+.La démarche globale Neptune
+image::{images}/Neptune.png["Neptune",width="70%"]
+
+[NOTE]
+=====
+Tous les ans un prix "CS" offert par {cs} récompense l'équipe du défi de {nuitinfo}
+qui utilise le mieux la méthode Neptune. L'an dernier ce prix était de 1.500 €!
+=====
+
+Les grandes étapes de la démarche sont :
+
+* Analyse des besoins (_Requirements Analysis_)
+* Analyse objet (_Object Analysis_)
+* Conception architecturale (_Architectural Design_)
+* Conception objet (_Object Design_)
+* Conception physique (_Physical Design_)
+
+===== Analyse des besoins
+
+L'objectif de cette étape est de définir l'environnement du système et son utilisation.
+
+Plusieurs activités concernent cette phase :
+
+* Définition des acteurs
+* Définition du contexte
+* Description du système
+
+===== Analyse objet
+
+L'objectif de cette étape est de commencer à organiser les classes déjà identifiées
+dans l'étape précédente et d'obtenir une première vue logique du système.
+
+Une seule activité concerne cette phase :
+
+* Analyse objet
+
+===== Conception architecturale
+
+L'objectif de cette étape est de définir l'architecture du système.
+
+Plusieurs activités concernent cette phase et se déroulent en parallèle :
+
+* Définition des composants logiciels
+* Description des composants logiciels
+* Identification des packages de conception
+* Application des patrons de conception (_designs patterns_)
+
+===== Conception objet
+
+L'objectif de cette étape est de développer pour chaque _package_ une conception détaillée.
+
+Plusieurs activités concernent cette phase :
+
+* Conception des classes
+* Mise en oeuvre du MVC et conception des modèles de données
+
+===== Conception Physique
+
+L'objectif de cette étape est de concevoir l'architecture physique de l'application.
+
+Plusieurs activités concernent cette phase :
+
+* Description de l'architecture physique
+* Identification des processus et des composants
+* Allocation des classes
+
+==== Analyse et vérification
+
+L'intérêt de la méthode Neptune réside essentiellement sur le fait qu'elle insiste
+sur la phase de vérification des modèles. Très détaillée, cette activité dépasse le
+cadre de ce cours d'introduction.
+
+[NOTE]
+=====
+Pour plus de détail, voir le livre en ligne http://neptune.irit.fr/images/files/NeptuneBook/407719ps.pdf.
+=====
+
+=== Au DUT Informatique de Blagnac
+
+==== Cycle en V
+
+La démarche que nous utilisons au DUT est résumée par le diagramme ci-dessous.
+
+.La démarche globale au DUT Info de Blagnac
+image::{images}/enchainement.png["chez nous",width="70%"]
+
+==== Méthodes agiles
+
+Cette partie sera abordée en S4, mais comme certains PTut nécessitent des rudiments,
+abordons-là rapidement.
+
+http://webetud.iut-blagnac.fr/file.php/413/2009-2010/intro_agile/agileintro.slidy.teacher.htm[Cours Méthodes Agiles de S4]

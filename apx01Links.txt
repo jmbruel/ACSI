@@ -1,3 +1,5 @@
+[[outils]]
+
 == Liens utiles
 
 - Merise
@@ -9,6 +11,17 @@
     * http://www.eclipse.org/modeling/mdt/papyrus/[Papyrus]
     * http://www.artisansw.com/[Artisan]
 	* http://www-01.ibm.com/software/rational/products/rhapsody[Rhapsody]
+- Outils de dessins d'écrans complexes :
+	* http://glade.gnome.org/
+	* http://www.eclipse.org/windowbuilder/
+	* http://socialcompare.com/en/comparison/mockup-wireframing-design-tools
+	* http://mockflow.comm (limitations pour la version gratuite)
+	* http://www.mobjectify.com/
+	* https://gomockingbird.com/
+	* http://www.balsamiq.com/
+	* http://iphonemockup.lkmc.ch/ (pour iphone)
+	* http://pencil.evolus.vn/en-US/Home.aspx
+
 - Outils de production
 	* Les conseils généraux de Scott Ambler sur http://www.ambysoft.com/books/bookWriting.html[Ecrire un livre technique]
 	* Les conseils techniques de Matthew Mc Cullough sur https://gist.github.com/1609255[Ecrire un livre technique]

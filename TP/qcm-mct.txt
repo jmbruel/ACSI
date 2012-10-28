@@ -1,0 +1,57 @@
+::Q1:: Que signifie MCT?
+{       =Modèle Conceptuel de Traitement # right; bonne réponse!
+        ~Modèle Computationel de Traitement # wrong, faux !
+        ~Méthode Conceptuel de Traitement# wrong, faux !
+}
+
+::Q2:: Quel élément du MCT se rapproche le plus des flux du MCF ?
+{   ~action
+    ~flux
+	=événement
+    ~résultat
+}
+
+::Q3:: A quoi doit répondre un MCT ?
+{       
+	~Qui ? # wrong, Quoi ?
+	=Quoi ? # right; good!
+	~Comment ? # wrong, Quoi?
+	~A qui ? # wrong, Quoi? 
+}
+
+::Q4:: Qu'est-ce qui peut séparer une opération dans un MCT ?
+{       =Un flux venant d'un acteur externe # right; good!
+        ~Un flux vers un acteur externe # wrong, Un flux venant d'un acteur externe
+        ~rien # wrong, Un flux venant d'un acteur externe 
+}
+
+::Q5:: "18h", "tous les lundis matin", sont des évenements ...
+{
+	=%100%temporels#
+}
+
+::Q6:: Que veut dire MOT ?
+{
+	~ Modèle Organisationnel des Taches  # Faux, réponse2
+	= Modèle Organisationnel de Traitement # Bien
+	~ N'est pas un acronyme.  # Faux, réponse2
+}
+
+::Q7:: "Les courriers sont postés en fin de journée et non à leur réception au secrétariat", est une tâche :
+{       
+	~Manuelle, immédiat, unitaire # wrong, Automatique, différée, par lot
+	=Manuelle, différée, par lot # right; good!
+	~Conversationelle, différée, par lot # wrong, Automatique, differer, par lot
+	~Conversationelle, immédiate, unitaire # wrong, Automatique, differer, par lot 
+}
+
+::Q8:: S’il n’y a qu’une règle d'émission, elle est souvent omise, ou son nom est {=TOUJOURS =toujours}.
+
+::Q9:: Quels sont les annotations de tâches qui vont souvent ensembles : {
+   ~%50%Lot -> Différé
+   ~%50%Immédiat  -> Unitaire
+   ~%-50%Conversationnel  -> Lot
+   ~%-50%Automatique  -> Immediat
+}
+
+::Q10:: Les événements initiaux (hors événements temporels) déclenchant un processus sont, des flux {=externes =externe}.

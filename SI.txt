@@ -1,0 +1,39 @@
+:incremental!:
+
+== C'est quoi un système d'information ?
+
+- Système d'information
+* Système
+** Façon d'appréhender la complexité
+** Théories, concepts à connaître
+** Pour nous => guide méthodologique
+* Information
+** Point commun de tous vos cours!
+** Théorie, concepts à connaître
+
+ifdef::backend-slidy2[<<<]
+
+- Système d'information
+* généralités (cf. <<SIO, Système d'Information et Organisation>>)
+* mise en oeuvre concrète : cf. Merise
+* notation pour les modèles : cf. UML
+
+=== Le SI dans le SO
+
+Le SI n'est qu'une composante du **S**ystème **O**rganisationnel.
+
+.La place du Système d'Information
+image::{images}/si.png[alt="le SI",width="50%"]
+
+=== SI et ACSI
+
+Le but de ce cours :
+
+- Apprendre à **A**nalyser et **C**oncevoir des *SI*
+* Vaste programme!
+* Palette impressionnante de :
+** Méthodes
+** Techniques
+** Outils
+** Approches
+** Écoles

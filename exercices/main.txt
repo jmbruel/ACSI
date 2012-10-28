@@ -1,0 +1,116 @@
+:title: Exercices
+:doctype: article
+:description: Cours de DUT Informatique
+:keywords: ACSI Merise UML Analyse Conception Systèmes d'Information
+:Author: Jean-Michel Bruel
+:Author Initials: JMB
+:Email: jean-michel.bruel@univ-tlse2.fr
+:Revision: 1.0
+:localdate: {sys: date +%d/%m/%Y}
+:Date: {localdate}
+:startdate: 29/09/2012
+:slideshowlocation: [IUT Blagnac]
+:slidebackground: asciidocslidy
+:copyright: {date={localdate}}, {slideshowlocation} *** {author} *** Powered by Asciidoc and W3C Slidy &#169; 
+:incremental!:
+:indir: dessins
+
+//----------- définitions --------------
+:umlsite: http://webetud.iut-blagnac.fr/file.php/35/SupportCours/5-UML-1.pdf
+:oclsite: http://webetud.iut-blagnac.fr/mod/resource/view.php?id=9621
+:pre: PreReq
+:objtd: ObjTD
+:objgen: ObjGen
+:lien: Lien
+
+//----------- dck.js --------------
+// swiss, neon beamer
+:deckjs_theme: web-2.0 
+
+//fade, horizontal-slide, vertical-slide
+:deckjs_transition: horizontal-slide
+
+///////////////////////
+	AsciiDoc use `source-highlight` as default highlighter.
+
+	Styles available for pygment highlighter:
+	monokai, manni, perldoc, borland, colorful, default, murphy, vs, trac,
+	tango, fruity, autumn, bw, emacs, vim, pastie, friendly, native,
+
+	Uncomment following two lines if you want to highlight your code
+	with `Pygments`.
+///////////////////////
+//:pygments:
+//:pygments_style: native
+///////////////////////
+	Uncomment following line if you want to scroll inside slides
+	with {down,up} arrow keys.
+///////////////////////
+:scrollable:
+///////////////////////
+	Uncomment following line if you want to link css and js file 
+	from outside instead of embedding them into the output file.
+///////////////////////
+//:linkcss:
+
+
+= UML : {title}
+
+//----------------------------------------------------- Correction -------------------------
+ifdef::correction[] 
+
+[NOTE]
+====
+Ceci est la version corrigée des exercices ...
+====
+endif::correction[] 
+
+//----------------------------------------------------- fin Correction -------------------------
+
+ifndef::correction[] 
+ifndef::backend-deckjs[] 
+
+[NOTE]
+====
+Série d'exercices divers trouvés principalement sur le Net. En cherchant bien vous trouverez les réponses, mais cela n'a bien sûr aucun intérêt...
+====
+
+endif::backend-deckjs[] 
+endif::correction[] 
+
+
+:leveloffset: 1
+
+//------------------------------------- saut de page ------------------------------
+<<<
+
+= Diagramme des UC
+
+ifdef::backend-slidy2[] 
+
+- <<ex-uc-etablissementScolaire,Etablissement Scolaire>>
+- <<ex-uc-magazin,Magasin>>
+
+endif::backend-slidy2[] 
+
+include::ex-uc-etablissementScolaire.txt[]
+include::ex-uc-magazin.txt[]
+
+//------------------------------------- saut de page ------------------------------
+<<<
+
+= Diagramme de séquence
+
+include::ex-seq-caisse.txt[]
+include::ex-seq-dab.txt[]
+include::ex-seq-SocieteIUT.txt[]
+
+//------------------------------------- saut de page ------------------------------
+<<<
+
+= Exercices complets
+
+include::ex-s3-td-complet.txt[]
+
+//----------------------------------------------------- About -------------------------
+include::../about.txt[]

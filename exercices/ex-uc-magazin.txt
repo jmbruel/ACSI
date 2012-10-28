@@ -1,0 +1,26 @@
+== Magasin
+
+=== Enoncé
+
+[[ex-uc-magazin]] 
+Dans un magasin, le processus de vente est le suivant : le client entre, passe dans les rayons, demande éventuellement des renseignements ou procède à des essais, prend des articles (si le stock est suffisant), passe à la caisse où il règle ses achats (avec tout moyen de paiement accepté). Il peut éventuellement bénéficier d’une réduction.
+ 
+=== Question
+
+- Modéliser cette situation par un diagramme de cas d’utilisation
+
+//----------------------------------------------------- Correction -------------------------
+ifdef::correction[] 
+
+=== Source
+
+http://fr.scribd.com/doc/8584444/Exercices-UML
+
+
+=== Correction
+
+image:ex-uc-magazin.png[width="70%"]
+
+endif::correction[] 
+
+//----------------------------------------------------- fin Correction -------------------------

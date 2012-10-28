@@ -1,0 +1,282 @@
+== Les IHM orientées page (PUI) – Le SEP
+[[SEP]]
+
+Ni Merise ni UML n'ont de schémas spécifiques pour représenter les interfaces graphiques, ni les enchaînements des pages dans un site web par exemple. On peut par exemple utiliser un diagramme d'état UML où chaque état est une page et les transitions représentent les événements qui font passer d'une page à l'autre.
+
+La méthode MACAO, déjà évoquée introduit plusieurs schémas utiles à cet effet, que nous allons reprendre dans ce cours. Le livre de Pascal Roques <<Roques2007a>> reprend par exemple ce genre de diagramme dans sa démarche globale de conception de site web.
+
+Le SEP (**S**chéma d’**E**nchaînement des **P**ages) que nous voyons ici complète le SNI vu précédemment
+(cf. <<sni,SNI>>).
+
+=== Concepts des PUI
+
+On peut distinguer 4 types de pages :
+
+- Pages de cadres
+- Pages de présentation constantes 
+- Pages de présentation variables 
+- Pages de formulaires
+
+==== Pages de cadres (_Frameset_)
+
+Un cadre est un découpage rectangulaire pouvant accueillir une page HTML (y compris une autre page de cadres).
+
+Une page de cadre est divisée en deux ou plusieurs cadres occupant la totalité de la page.
+
+[[cadre]]
+.Exemples de cadres
+image::{images}/cadre.png["Pages de cadre",width=50%"]
+
+==== Pages de présentation constantes 
+
+Pages ne contenant que des objets visuels constants statiques et des objets de navigation :
+
+- boutons d’action 
+- zones réactives 
+- liens hypertextes
+
+[NOTE]
+========================================================================
+Pages rencontrées habituellement en surfant sur le Net.
+========================================================================
+
+==== Pages de présentation variables (ou pages dynamiques)
+
+Analogues aux précédentes mais comportant en plus des données variables obtenues par calcul ou lues dans des fichiers ou des bases de données.
+
+Méthodes d'obtention :
+
+- CGI (Common Gateway Interface),
+- ASP (Active Server Pages) de Microsoft, PHP d'Open Source
+- OAS (Oracle Application Server)
+- JSP (Java Server Page)
+- Servlet Java
+- ...
+
+==== Pages de formulaires
+
+Pages contenant des objets de saisie (équivalentes aux boîtes de dialogue de saisie)
+
+- zones de textes (champs d'entrée) 
+- boutons radios, cases à cocher 
+- listes déroulantes
+
+[[form]]
+.Exemple de formulaire
+image::{images}/form.png["Formulaire",width=50%"]
+
+==== Les types d'objets visuels
+
+Une page peut contenir 3 catégories d'objets :
+
+- Objets de positionnement 
+- Objets non référencés
+- Objets référencés
+
+===== Les objets de positionnement
+
+Ils permettent d'indiquer les zones d'interaction avec l’utilisateur.
+
+On trouve :
+
+- le cadre ne pouvant apparaître que dans une page de cadres
+- le signet (ou ancre d'arrivée) indiquant un point de chute possible dans une page
+- les objets de présentation et de mise en page : tableaux +<TR>+, +<TD>+, divisions de pages +<DIV>+...
+
+===== Les objets non référencés
+
+Ils ne sont utilisés que pour les affichages statiques et n'ont pas besoin d'être identifiés de façon précise.
+
+On trouve :
+
+- les statiques fixes : textes (ou labels), images (gif, jpeg...), encadrements, figures géométriques
+- les statiques animés : textes défilants, images animées (gif animé, vectorielles de type Flash...) scènes vidéo (mpeg, avi...), séquences audio (wav, mp3...)
+
+===== Les objets référencés
+
+Ils permettent d'assurer les interactions utilisateur : actions, saisie, navigation
+
+On trouve :
+
+-  les objets actifs de navigation : boutons d'actions simples ou sensitifs, liens vers les autres pages, liens hypertextes vers des URL (_Uniform Resource Locator_) ou des signets, zones réactives, zones de courrier électronique
+- les contrôles de formulaires : boutons (d’action, case à cocher, radio), champ d'entrée (simple, multilignes, de mot de passe), listbox (simple ou déroulante)
+
+=== Principes ergonomiques
+
+Cette partie fait l'objet dans le cours de DUT d'une intervention particulière, par une professionnelle de l'érgonomie. Nous reprenons simplement ici quelques grands principes.
+
+ifdef::backend-slidy2[<<<]
+
+.Utilisation des divisions
+[caption="Règle d'ergonomie : "]
+==========================
+Utilisez des divisions pour placer les informations répétées sur plusieurs pages : menus, en-têtes...
+==========================
+
+ifdef::backend-slidy2[<<<]
+
+.Affichage des listes de résultats
+[caption="Règle d'ergonomie : "]
+==========================
+Utilisez des tableaux plutôt que des listes déroulantes
+==========================
+
+ifdef::backend-slidy2[<<<]
+
+.Structure des formulaires
+[caption="Règle d'ergonomie : "]
+==========================
+Les règles de structuration des boîtes de dialogue sont applicables la plupart du temps (alignement des champs affichés, regroupement des contrôles par famille, ...)
+==========================
+
+ifdef::backend-slidy2[<<<]
+
+.Contrôles de saisie
+[caption="Règle d'ergonomie : "]
+==========================
+Effectuez les « contrôles de surface » en local (fonction javascript par exemple)
+==========================
+
+ifdef::backend-slidy2[<<<]
+
+.Polices et couleurs
+[caption="Règle d'ergonomie : "]
+==========================
+Utilisez des polices standard (Arial, Times, Verdana) +
+Utilisez plutôt des fonds de pages clairs et une écriture sombre
+==========================
+
+ifdef::backend-slidy2[<<<]
+
+.Styles
+[caption="Règle d'ergonomie : "]
+==========================
+Utilisez des feuilles de styles (CSS) pour les polices et les balises de présentations de textes : +<A>+, +<H1>+...
+==========================
+
+=== Le SEP
+
+==== Codification
+
+[[sep]]
+.Codification des types d'objets visuels nommés
+image::{images}/sep1.png["Codification",width=50%"]
+
+ifdef::backend-slidy2[<<<]
+
+[[sep1]]
+.Codification des types d'objets visuels nommés (suite)
+image::{images}/sep2.png["Codification suite",width=50%"]
+
+ifdef::backend-slidy2[<<<]
+
+[[sep2]]
+.Représentation des pages
+image::{images}/sep3.png["Codification",width=50%"]
+
+Caractéristiques générales :
+
+- Nom de la page précédé de son type : PCA, PPC, PPV, PFO
+- [ Droit d'accès ] ou [ Condition ]
+- "DESSIN", "MAQUETTE" ou "DESCRIPTIF" pour les pages complexes 
+- ( Paramètres ) : paramètre obligatoire souligné
+- FILTRE : <valeur du filtre> ; TRI : <attributs et sens>
+- CADRE : <nom du cadre d'accueil>
+- "FENETRE" si la page doit s'ouvrir dans un autre fenêtre navigateur 
+- "POPUP" si la page doit s'ouvrir dans une fenêtre popup
+
+==== Exemples de pages
+
+[[sep3]]
+.Page de cadres avec deux cadres
+image::{images}/sep4.png["Page de cadres avec deux cadres",width=50%"]
+
+ifdef::backend-slidy2[<<<]
+
+[[sep4]]
+.Page de présentation variable
+image::{images}/sep5.png["Page de présentation variable",width=50%"]
+
+ifdef::backend-slidy2[<<<]
+
+[[sep4]]
+.Page de présentation constante
+image::{images}/sep6.png["Page de présentation constante",width=50%"]
+
+ifdef::backend-slidy2[<<<]
+
+[[sep5]]
+.Page de formulaire
+image::{images}/sep7.png["Page de formulaire",width=50%"]
+
+==== Construction du SEP à partir du SNI
+
+[[sni-exp]]
+.Le SNI de départ
+image::{images}/sni-exp.png["Le SNI de départ",width=50%"]
+
+ifdef::backend-slidy2[<<<]
+
+[[sep-exp]]
+.Le SEP résultant
+image::{images}/sep-exp.png["Le SEP résultant",width=50%"]
+
+=== Dessin des pages complexes
+
+==== Généralités
+
+[[dessin]]
+.Notation pour les dessins de pages
+image::{images}/dessin1.png["Notation",width=50%"]
+
+==== Formulaires
+
+[[boutons]]
+.Boutons
+image::{images}/boutons.png["Boutons",width=50%"]
+
+[[saisie]]
+.Saisie
+image::{images}/saisie.png["Saisie",width=50%"]
+
+ifdef::backend-slidy2[<<<]
+
+[[liste]]
+.Liste
+image::{images}/liste.png["Liste",width=50%"]
+
+[[liens]]
+.Liens
+image::{images}/liens.png["Liens",width=50%"]
+
+ifdef::backend-slidy2[<<<]
+
+[[tableau]]
+.Tableau
+image::{images}/tableau.png["Tableau",width=50%"]
+
+==== Exemples
+
+[[dessin-exp]]
+.Détail compte
+image::{images}/dessin-exp.png["Exemple",width=50%"]
+
+ifdef::backend-slidy2[<<<]
+
+[[dessin-exp2]]
+.Saisie Note
+image::{images}/dessin-exp2.png["Exemple",width=50%"]
+
+=== Les dessins complexes
+
+Un certain nombre d'outils existent pour faire des dessins complexes. 
+Le *prototypage rapide* d'interface graphique est important pour 
+valider au plus tôt les *besoins du client* (au moins en terme d'interface).
+
+[[mockup]]
+.Un exemple de "mockup" réalisé avec l'outil balsamiq
+image::{images}/bruel-balsamiq.png["Dessin complexe",width=50%"]
+
+Nous n'en donnons que quelques-uns <<outils,ici>>.
+
+

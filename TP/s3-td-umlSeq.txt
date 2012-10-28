@@ -77,5 +77,27 @@ SNI dans une application fenêtrée.
 =====================================================================
 On ne tiendra pas compte de la gestion courante des informations
 (CRUD : Create, Read, Update, Delete).
-[WARNING]
 =====================================================================
+
+=== Correction
+
+. Rajouter les attributs et les méthodes nécessaires sur le diagramme de classes.
++
+image::td2-cor1.png["Société IUT",width="80%"]
++
+. Ecrire le code Java de la méthode +getPayeArtisan(...)+.
++
+[source,java]
+-------------------------------------------
+include::getPayeArtisan.java[]
+-------------------------------------------
++
+. Faire le diagramme de séquence correspondant à ce code Java.
++
+image::td2-cor2.png["Société IUT",width="80%"]
++
+. Construire le SNI permettant à toute personne de consulter les divers éléments de la base
+de données construite à partir du diagramme des classes et aux chefs de chantiers de mettre à
+jour l’avancement des chantiers et de clôturer les chantiers.
+. Construire le SEF et les dessins de boites de dialogue nécessaires pour programmer ce
+SNI dans une application fenêtrée.

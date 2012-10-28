@@ -78,9 +78,10 @@ Plan de cette partie :
 
 include::S3-1.txt[]
 
-== L’Architecture MVC
-== Schéma d’Enchaînement des Pages (SEP)
-== Les Dessins d’Etats imprimés
+include::S3-2.txt[]
+
+include::S3-3.txt[]
+
 == La démarche MACAO
 == Analyse Globale de MACAO
 == Conception Globale de MACAO

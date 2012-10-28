@@ -1,0 +1,125 @@
+:incremental:
+:duration: 85
+
+== Le paradigme MVC
+
+Le paradigme **M**odèle-**V**ue-**C**ontrôleur, ou *MVC* (de l'anglais _Model-View-Controller_) est une architecture logicielle qui divise l’application en trois éléments importants (cf. <<mvc,MVC ci-dessous>>) :
+
+le modèle::
+	chargé de gérer les élements d'information (comme la base de donnée)
+les vues::
+ 	interfaces entre l'application et l'utilisateur
+les contrôleurs::
+	chargés de faire le lien entre vues et modèle.
+
+L’avantage de ce patron d’architecture :
+
+- la clarté qu'il impose,
+- la simplification de maintenance du logiciel. La modification d’une partie (vue, modèle ou contrôleur) n’affecte pas ou peu les autres parties.
+
+[NOTE]
+========
+Le MVC est issu d'un modèle de programmation des applications interactives proposé par
+Xerox pour le langage Smalltalk-80, repris par SUN et recommandé pour la plateforme J2EE.
+========
+
+
+ifdef::backend-slidy2[<<<]
+
+La vue correspond à l'interface avec laquelle l'utilisateur interagit. Sa tâche est :
+
+- de présenter les résultats renvoyés
+- de recevoir toutes les actions de l'utilisateur (clic de souris, sélection d'une entrée, boutons, ...)
+
+Ces différents événements sont envoyés au contrôleur.
+
+Le contrôleur gère les événements pour mettre à jour la vue ou le modèle et les synchroniser. +
+Il reçoit tous les événements de l'utilisateur et enclenche les actions à effectuer.
+
+[[mvc]]
+.Séparation des préoccupations dans le MVC
+ifndef::backend-slidy2[]
+image::{dessins}/mvc.png["MVC",width=50%"]
+endif::backend-slidy2[]
+ifdef::backend-slidy2[]
+:incremental:
+<<<
+images::{dessins}/mvc-6.png[{dessins}/mvc-1.png,{dessins}/mvc-2.png,{dessins}/mvc-3.png,{dessins}/mvc-5.png]
+:incremental!:
+endif::backend-slidy2[]
+
+[NOTE]
+=====================================================================
+Le modèle contient les données manipulées par l'application. +
+Il gère ces données et garantit leur intégrité. +
+Il offre des méthodes pour mettre à jour ces données. +
+Il correspond généralement au *diagramme des classes* métiers.
+=====================================================================
+
+[NOTE]
+=====================================================================
+Il y a en général un contrôleur par *UC*.
+=====================================================================
+
+[NOTE]
+=====================================================================
+Les 3 packages présentés ci-dessus (cf. <<mvc,MVC>> regrouperont respectivement +
+les classes d'IHM (View)+
+les classes contrôlleurs (une par UC - Controler) +
+les classes métiers (Model)
+=====================================================================
+
+=== Exemple
+
+[[mvc-exp1-cd]]
+.Diagramme de classe
+image::{images}/mvc-exp1-cd.png["Diagramme de classe",width=50%"]
+
+ifdef::backend-slidy2[<<<]
+
+[[mvc-exp1-uc]]
+.Diagramme des UC
+image::{images}/mvc-exp1-uc.png["Diagramme des UC",width=50%"]
+
+ifdef::backend-slidy2[<<<]
+
+[[mvc-exp1-cc]]
+.Diagramme des classes contrôlleurs
+image::{images}/mvc-exp1-cc.png["Diagramme des classes contrôleurs",width=50%"]
+
+ifdef::backend-slidy2[<<<]
+
+[[mvc-exp1-vue]]
+.Diagramme des classes vues
+image::{images}/mvc-exp1-vue.png["Diagramme des classes vues",width=50%"]
+
+ifdef::backend-slidy2[<<<]
+
+[[mvc-exp1-dss]]
+.Diagramme de Séquence Système
+image::{images}/mvc-exp1-dss.png["Diagramme de Séquence Système",width=50%"]
+
+ifdef::backend-slidy2[<<<]
+
+[[mvc-exp1-ds]]
+.Un Diagramme de Séquence 
+image::{images}/mvc-exp1-ds.png["Diagramme de Séquence",width=50%"]
+
+=== Le Diagramme des Classes Participantes
+
+Il s’agit des classes, issues des 3 paquetages MVC, qui "participent", dans un DS donné, à la réalisation d’un UC. On fait notamment apparaître les méthodes utilisées par le DS dans chaque classe.
+
+[[mvc-exp1-ds]]
+.Un exemple de Diagramme de Classe Participante 
+image::{images}/mvc-dcp.png["Diagramme de Classe Participante",width=50%"]
+
+=== Les MVC
+
+En fonction des langages et des architectures, vous trouverez autant de schéma MVC différents
+que l'on peut en imaginer! Attention à vous adaptez.
+
+[[mvc-zoo]]
+.La jungle des modèles MVC (petit extrait d'une recherche sur le web!) 
+image::{images}/mvc-zoo.png["Les MVC",width=50%"]
+
+

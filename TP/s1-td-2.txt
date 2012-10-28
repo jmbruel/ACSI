@@ -1,0 +1,90 @@
+:title: Flux et traitement
+:doctype: article
+:description: Cours de DUT Informatique
+:keywords: ACSI Merise UML Analyse Conception Systèmes d'Information
+:Author: Jean-Michel Bruel et Laurent Nonne
+:Author Initials: JMB
+:Email: jean-michel.bruel@univ-tlse2.fr
+:Revision: 1.0
+:localdate: {sys: date +%d/%m/%Y}
+:Date: {localdate}
+:startdate: 29/09/2012
+:slideshowlocation: [IUT Blagnac]
+:slidebackground: asciidocslidy
+:copyright: {date={localdate}}, {slideshowlocation} *** {author} *** Powered by Asciidoc and W3C Slidy &#169; 
+:incremental!:
+:indir: dessins
+
+//----------- définitions --------------
+:umlsite: http://webetud.iut-blagnac.fr/file.php/35/SupportCours/5-UML-1.pdf
+:oclsite: http://webetud.iut-blagnac.fr/mod/resource/view.php?id=9621
+:pre: PreReq
+:objtd: ObjTD
+:objgen: ObjGen
+:lien: Lien
+
+= ACSI–S1-Merise : {title}
+
+[[cartouche]]
+[align="left",cols="1,10",width="90%"]
+|======================
+| {pre}		| 
+1.	Je sais définir les concepts suivants : domaine, acteur externe,
+acteur interne, flux externe, flux interne, évènement déclencheur, synchronisation, tâche, action, règles d’émission, résultats 
+2.	Je connais les règles de bonne conception d’un MCF, d’un MOF et d’un MOT vues en cours.
+| {objtd}	| Je me perfectionne en *modélisation des flux d’informations et les traitements actuels* d’une organisation.
+| {objgen}	| Je suis capable de *comprendre une organisation existante* afin de pouvoir y travailler efficacement (informatiser des tâches, réorganiser le processus, connaître les différents acteurs et leurs tâches...).
+| {lien}	| EGO – Fonctionnement de l’entreprise
+|======================
+
+[NOTE]
+====
+- Rappel du lien sur le http://webetud.iut-blagnac.fr/mod/resource/view.php?id=9644[support de cours]
+- Explication sur le http://webetud.iut-blagnac.fr/file.php/35/SupportsTDs/template.html[canevas-type] d'un TD/TP
+====
+
+== Compte-rendu d'interview 
+
+Une société d'intérimaires (travail temporaire) dont le siège social est en région parisienne possède une agence à Toulouse composée de quatre personnes :
+
+- M. DUPONT, directeur de l'agence et chargé des relations commerciales (publicités, recherche de clients, recherche de nouveaux personnels intérimaires ... ),
+- Mme MARTIN, chargée de réceptionner les demandes d'entreprises recherchant du personnel intérimaire (entreprises clientes) et d'établir les contrats avec elles,
+- M. DURAND, dont le rôle consiste à rechercher un ou plusieurs personnels intérimaires parmi ceux qui sont fichés à l'agence pour répondre à une demande de travail formulée par une entreprise cliente,
+- Mlle LONBEC, chargée de la gestion administrative de l'agence.
+
+Le rôle de l'agence consiste à mettre en rapport les entreprises recherchant du personnel avec les intérimaires. Le processus de recherche et placement des intérimaires se déroule de la façon suivante.
+
+Lorsqu'une entreprise contacte l'agence dans le but de chercher du personnel pour un certain travail, elle s'adresse à Mme MARTIN. Si l'entreprise n'est pas fichée dans le fichier CLIENT que possède Mme MARTIN, celle ci la rajoute dans le fichier.
+
+Dans tous les cas elle établit un accusé de réception et une fiche de travail décrivant le type de travail que devra réaliser l'intérimaire recherché.
+
+L'accusé de réception est expédié au client et la fiche de travail est transmise à M. DURAND. Après cela, Mme MARTIN détruit le courrier client éventuel.
+
+A la réception d'une fiche de travail provenant de Mme MARTIN, M. DURAND recherche dans le fichier INTERIMAIRE qu'il détient une personne répondant à la description se trouvant sur la fiche de travail. Deux cas peuvent alors se présenter :
+
+Une personne est trouvée::
+M. DURAND remplit une fiche d'emploi en deux exemplaires dont l'un est expédié à l'intérimaire trouvé et l'autre est mis en attente de sa réponse. La fiche de travail est alors détruite. +
+Lorsque la réponse d'acceptation de l'intérimaire arrive, M. DURAND rédige un pré contrat de travail à partir de la fiche d'emploi mise en attente, de la réponse d'acceptation et du fichier INTERIMAIRE après quoi il archive la fiche d'emploi et détruit la réponse de l'intérimaire. +
+Le pré contrat est transmis à Mme MARTIN qui établit le contrat définitif en trois exemplaires puis détruit le pré contrat. Les trois exemplaires du contrat sont expédiés au client dont deux devront être retournés signés. Au retour des deux exemplaires signés, Mme MARTIN en archive un exemplaire et transmet l'autre à Mlle LONBEC.
+
+Aucun intérimaire n'est trouvé::
+
+Dans le cas où M. DURAND ne trouve aucun intérimaire disponible répondant au profil cherché, il met la fiche de travail en attente et remplit une demande de personnel qu'il transmet à M. DUPONT. Ce dernier rédige une lettre d'offre d'emploi qu'il transmet à la presse. Il classe ensuite la demande de personnel dans un échéancier qui lui permettra de contrôler le délai de réponse des demandeurs d'emplois. +
+
+A la réception d'une demande d'emploi provenant d'un demandeur d'emploi, M. DUPONT remplit une fiche de renseignement de nouvel intérimaire en double exemplaire. Il transmet un exemplaire à Mlle LONBEC et l'autre à M. DURAND. Après quoi, il détruit la demande d'emploi ainsi que la demande de personnel qu'il sort de l'échéancier.
+
+A la réception de la fiche de renseignements, M. DURAND met à jour le fichier intérimaire puis, en utilisant la fiche de travail qui était en attente ainsi que la fiche de renseignements, il établit une fiche d'emploi en deux exemplaires dont l'un est expédié à l'intérimaire et l'autre est mis en attente de sa réponse. Il détruit ensuite la fiche de renseignements ainsi que la fiche de travail. On se trouve alors dans la même situation qu'en a).
+
+Tous les soirs, M. DUPONT consulte l'échéancier des demandes de personnel et en extrait celles dont le délai est dépassé. Il rédige alors pour ces dernières une note d'indisponibilité qu'il transmet à M. DURAND accompagnée de la demande de personnel correspondante. M. DURAND porte une annotation manuscrite sur la fiche de travail qui était en attente pour expliquer les raisons de l'échec puis la transmet à Mme MARTIN accompagnée de la demande de personnel et de la note d'indisponibilité. A la réception de ces trois documents, Mme MARTIN rédige une lettre d'excuses qu'elle adresse au client, archive la fiche de travail et détruit la demande de personnel ainsi que la note d'indisponibilité.
+
+
+== Travail à réaliser
+
+1. Déterminer le domaine de l'étude
+2. Etablir les acteurs internes et externes
+3. Réaliser le MCF de ce domaine
+4. Réalisez le MCT correspondant
+5. Réaliser le MOF de ce domaine (en utilisant le MCF réalisé et le sujet)
+6. Réalisez la fiche de poste de chaque acteur interne (tâches effectuées, événements déclencheurs, actions, résultats)
+7. Déterminez les chronologies entre tâches
+8. Réaliser le MOT de ce domaine

@@ -1,0 +1,63 @@
+== Société IUT
+
+=== Enoncé
+
+A partir du diagramme des classes simplifié de la société IUT présenté ci-dessous
+on se propose de rajouter les méthodes et les attributs permettant de répondre aux besoins
+supplémentaires exprimés par les utilisateurs.
+
+Les besoins exprimés sont les suivants :
+
+- Renseigner la date de fin de chantier (clôture d’un chantier).
+- Mettre à jour l’avancement des chantiers par mise à jour de la date et de la durée de la
+relation Réaliser.
+- Calculer et mettre à jour la durée moyenne réelle de fabrication de chaque modèle de
+maison
+- Faire le bilan d’avancement de chaque chantier : tâches à faire et tâches réalisées
+- Obtenir tous les artisans susceptibles d’intervenir pour chaque tâche de fabrication
+d’un modèle.
+- Obtenir le montant des rémunérations d’un artisan pour un chantier donné sur lequel il
+a travaillé.
+
+image::../TP/td2.png["Société IUT",width="80%"]
+
+=== Questions
+
+. Rajouter les attributs et les méthodes nécessaires sur le diagramme de classes.
+. Ecrire le code Java de la méthode +getPayeArtisan(...)+.
+. Faire le diagramme de séquence correspondant à ce code Java.
+
+[NOTE]
+=====================================================================
+On ne tiendra pas compte de la gestion courante des informations
+(CRUD : Create, Read, Update, Delete).
+=====================================================================
+
+//----------------------------------------------------- Correction -------------------------
+ifdef::correction[] 
+
+=== Source
+
+Cours du département informatique de l'IUT de Blagnac.
+
+=== Correction
+
+. Rajouter les attributs et les méthodes nécessaires sur le diagramme de classes.
++
+image::../TP/td2-cor1.png["Société IUT",width="80%"]
++
+. Faire le diagramme de séquence correspondant à ce code Java.
++
+image::../TP/td2-cor2.png["Société IUT",width="80%"]
++
+. Pour info, voici le code Java de la méthode +getPayeArtisan(...)+.
++
+[source,java,numbered]
+-------------------------------------------
+include::../TP/getPayeArtisan.java[]
+-------------------------------------------
++
+
+endif::correction[] 
+
+//----------------------------------------------------- fin Correction -------------------------

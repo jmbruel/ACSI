@@ -29,6 +29,7 @@ github:
 
 push:
 	@echo '==> Pushing to gitub'
+	cp main.html main.slidy.html /Users/bruel/Dropbox/Public/dev/ACSI
 	git push -u origin master
 
 init:

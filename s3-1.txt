@@ -3,11 +3,6 @@
 
 == Le Diagramme des Cas d’Utilisation
 
-ifdef:livre[]
-Nous allons analyser et organiser les besoins utilisateurs en nous efforçant de recenser le différents usages qui vont être fait du système à développer.
-
-endif:livre[]
-
 Le *Diagramme des Cas d'Utilisation* est un modèle UML permettant de représenter :
 
 - les *UC* (_Use Case_ ou Cas d’Utilisation)
@@ -121,6 +116,10 @@ image::{images}/UC.png["Exemple de Diagramme d'UC",width="80%"]
 [[ucexp2]]
 .Autre exemple de diagramme d'UC
 image::{images}/uc2.png["Exemple de Diagramme d'UC",width="70%"]
+
+==== Liens entre SNI et UC
+
+image::{images}/uc-sni.png["Lien entre UC et SNI",width="70%"]
 
 == Opérations, Paquetages et Java
 
@@ -313,7 +312,7 @@ public class Emploi {
 ** barres d'activation
 ** messages
 
-<<<
+ifdef::backend-slidy2[<<<]
 
 [[seq]]
 .Diagramme de séquence
@@ -343,7 +342,7 @@ image::{images}/seq3.png["Exemple de diagramme de séquence",width="60%"]
 ** +par+ (parallèle)
 ** +region+ (région critique - un seul thread à la fois)
 
-<<<
+ifdef::backend-slidy2[<<<]
 
 [[fowler]]
 .Exemple algorithme / diagramme
@@ -356,7 +355,7 @@ image:{images}/fowl2.png["Sa modélisation",width="60%"]
 .Conception "centralisée"
 image::{images}/fowl3.png["Conception 'centralisée'",width="60%"]
 
-<<<
+ifdef::backend-slidy2[<<<]
 
 [[fowler2]]
 .Conception "objet"
@@ -379,19 +378,19 @@ On fait un Diagramme de Séquence Système pour chaque UC (issu du Diagramme d�
 
 Ensuite on fait un Diagramme de Séquence (DS) pour décrire comment les objets composants le système (issus du Diagramme de Classes) collaborent pour réaliser le traitement demandé.
 
-<<<
+ifdef::backend-slidy2[<<<]
 
 [[exp1-uc]]
 .Diagramme d'UC
 image::{images}/ucexp1.png["Diagramme d'UC",width="30%"]
 
-<<<
+ifdef::backend-slidy2[<<<]
 
 [[exp1-dss]]
 .Le DSS correspondant
 image::{images}/dssexp1.png["Le DSS correspondant",width="30%"]
 
-<<<
+ifdef::backend-slidy2[<<<]
 
 [[exp1-ds]]
 .Le DS correspondant
