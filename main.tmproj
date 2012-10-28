@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>chap00AvantPropos.txt</string>
+	<string>main.txt</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -16,15 +16,15 @@
 			<key>filename</key>
 			<string>main.txt</string>
 			<key>lastUsed</key>
-			<date>2012-10-15T09:33:25Z</date>
+			<date>2012-10-25T17:17:47Z</date>
+			<key>selected</key>
+			<true/>
 		</dict>
 		<dict>
 			<key>filename</key>
 			<string>chap00AvantPropos.txt</string>
 			<key>lastUsed</key>
-			<date>2012-10-15T13:43:06Z</date>
-			<key>selected</key>
-			<true/>
+			<date>2012-10-25T17:17:33Z</date>
 		</dict>
 		<dict>
 			<key>filename</key>
@@ -84,13 +84,13 @@
 			<key>filename</key>
 			<string>s3-4.txt</string>
 			<key>lastUsed</key>
-			<date>2012-10-15T13:43:05Z</date>
+			<date>2012-10-25T17:17:47Z</date>
 		</dict>
 		<dict>
 			<key>filename</key>
 			<string>apx01Links.txt</string>
 			<key>lastUsed</key>
-			<date>2012-10-07T21:19:30Z</date>
+			<date>2012-10-25T17:17:37Z</date>
 		</dict>
 		<dict>
 			<key>filename</key>
@@ -202,14 +202,30 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>17</integer>
+				<integer>0</integer>
 				<key>line</key>
-				<integer>94</integer>
+				<integer>223</integer>
 			</dict>
+			<key>columnSelection</key>
+			<false/>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>112</integer>
+			<integer>201</integer>
+			<key>selectFrom</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>220</integer>
+			</dict>
+			<key>selectTo</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>223</integer>
+			</dict>
 		</dict>
 		<key>make.txt</key>
 		<dict>
@@ -283,6 +299,20 @@
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
+		<key>s3-4.txt</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>0</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>236</integer>
+		</dict>
 		<key>sep.txt</key>
 		<dict>
 			<key>caret</key>
@@ -340,11 +370,12 @@
 		<string>Merise.txt</string>
 		<string>s3-1.txt</string>
 		<string>apx01Links.txt</string>
+		<string>s3-4.txt</string>
 		<string>chap00AvantPropos.txt</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<true/>
 	<key>windowFrame</key>
-	<string>{{270, 37}, {1010, 741}}</string>
+	<string>{{311, -24}, {1010, 741}}</string>
 </dict>
 </plist>
