@@ -1,0 +1,49 @@
+# -*- Makefile -*-
+
+SHELL=/bin/sh
+
+HVERSION=htdocs/version.shtml
+
+TMPDIR:=$(shell mktemp -d)
+
+STABLEVERSION=1.0
+STABLESRC=../download_area/files/auto-multiple-choice_$(STABLEVERSION)_sources.tar.gz
+
+DOCVERSION=1.0
+SRC=/tmp/auto-multiple-choice_$(DOCVERSION)_sources.tar.gz
+
+BASEDIR=$(TMPDIR)/auto-multiple-choice-$(DOCVERSION)
+DOCDIR=$(BASEDIR)/doc
+XML=$(DOCDIR)/auto-multiple-choice
+
+SITEDOC=htdocs/auto-multiple-choice
+
+version:
+	../work/local/derniere-version.pl --mode h --fich $(STABLESRC) --ext _sources.tar.gz > $(HVERSION)
+	echo '<!--#set var="DOCVERSION" value="$(DOCVERSION)"-->' >> $(HVERSION)
+
+map: FORCE
+	./sitemap.pl --repertoire htdocs --root http://home.gna.org/auto-qcm --o htdocs/sitemap.xml
+
+xml: FORCE
+	tar xvzf $(SRC) -C $(TMPDIR)
+	$(MAKE) -C $(BASEDIR) MAJ
+
+%.pdf: xml
+	dblatex -t tex $(XML).$*.xml -o $(XML).$*.tex
+	perl $(DOCDIR)/addlink.pl $(XML).$*.tex
+	cd $(DOCDIR); pdflatex `basename $(XML)`.$* ; pdflatex `basename $(XML)`.$*
+
+# doc a partir de la derniere version dans testing
+doc: FORCE fr.pdf en.pdf
+	xsltproc --nonet --stringparam base.dir $(SITEDOC).fr/ $(DOCDIR)/doc-xhtml-site.fr.xsl $(XML).fr.xml
+	xsltproc --nonet --stringparam base.dir $(SITEDOC).en/ $(DOCDIR)/doc-xhtml-site.en.xsl $(XML).en.xml
+	cp $(XML).fr.pdf  ../download_area/files/auto-multiple-choice.fr.pdf
+	cp $(XML).en.pdf  ../download_area/files/auto-multiple-choice.en.pdf
+
+site: version doc map
+	$(MAKE) -C ../download_area signe sync
+
+FORCE: ;
+
+.PHONY: site version map xml FORCE

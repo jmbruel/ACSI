@@ -1,0 +1,33 @@
+= Etude de cas
+
+== Sommaire
+
+== Introduction (description du sujet, problématique, du groupe)
+
+== MOF et MOT actuels
+
+== Nouveaux MOF et MOT
+
+== Diagramme des UC
+
+== Architecture MVC
+
+== Diagramme des Classes métier (sans les méthodes)
+
+== Schéma Relationnel du Package Métier
+
+== Script de création de la base de données (format ORACLE)
+
+== Script de création des vues de données / fichiers info. du nouveau MOT (format ORACLE) Diagramme des Classes contrôleur (avec les méthodes)
+
+== Diagramme de Séquence Système pour 2 cas d'utilisation « importants »
+
+== Diagramme de Séquence et Diagramme des Classes Participantes pour un des 2 UC précédents SNI et SEP
+
+== Maquettes d’écrans et d’états imprimés
+
+== Dessins de 2 pages complexes
+
+== Dessins d’états imprimés
+
+== Annexes : interviews des utilisateurs

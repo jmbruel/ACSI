@@ -1,0 +1,47 @@
+#! /usr/bin/perl
+#
+# Copyright (C) 2010-2012 Alexis Bienvenue <paamc@passoire.fr>
+#
+# This file is part of Auto-Multiple-Choice
+#
+# Auto-Multiple-Choice is free software: you can redistribute it
+# and/or modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation, either version 2 of
+# the License, or (at your option) any later version.
+#
+# Auto-Multiple-Choice is distributed in the hope that it will be
+# useful, but WITHOUT ANY WARRANTY; without even the implied warranty
+# of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with Auto-Multiple-Choice.  If not, see
+# <http://www.gnu.org/licenses/>.
+
+use Locale::PO;
+use Encode;
+use utf8;
+
+my ($from,$to)=@ARGV;
+
+$v="1.0.1065 (svn: 1065)";
+
+chomp($date=`date "+%Y-%m-%d %H:%M %z"`);
+
+my $aref = Locale::PO->load_file_asarray($from);
+
+my @ok=grep { $_->msgid() !~ /^\"?gtk-/ } @$aref;
+
+$ok[0]->comment(encode_utf8("Auto Multiple Choice\nCopyright 2008-2012 Alexis Bienvenüe\nThis file is distributed under the same license as the AMC software"));
+$ok[0]->msgstr("Project-Id-Version: $v\\n" .
+	       "Report-Msgid-Bugs-To: paamc\@passoire.fr\\n" .
+	       "POT-Creation-Date: $date\\n" .
+	       "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\\n" .
+	       "Last-Translator: FULL NAME <EMAIL@ADDRESS>\\n" .
+	       "Language-Team: LANGUAGE <LL@li.org>\\n" .
+	       "MIME-Version: 1.0\\n" .
+	       "Content-Type: text/plain; charset=UTF-8\\n" .
+	       "Content-Transfer-Encoding: 8bit\\n");
+
+Locale::PO->save_file_fromarray($to,\@ok);
+

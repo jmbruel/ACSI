@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Auto Multiple Choice
+Name[fr]=QCM automatique
+Type=Application
+Exec=auto-multiple-choice
+Icon=@/ICONSDIR/@/auto-multiple-choice.svg
+Terminal=false
+Categories=@/DESKTOP_CAT/@
+GenericName=Auto Multiple Choice
+GenericName[fr]=QCM automatique
+Comment=Manage multiple choice questionnaires, with automatic marking from papers' scans
+Comment[fr]=Conception et correction automatique de QCM en LaTeX
+

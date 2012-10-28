@@ -5,7 +5,7 @@
 :Author: Jean-Michel Bruel et Laurent Nonne
 :Author Initials: JMB
 :Email: jean-michel.bruel@univ-tlse2.fr
-:Revision: 1.0
+:Revision: 1.1
 :localdate: {sys: date +%d/%m/%Y}
 :Date: {localdate}
 :startdate: 29/09/2012
@@ -63,7 +63,7 @@ L'accusé de réception est expédié au client et la fiche de travail est trans
 A la réception d'une fiche de travail provenant de Mme MARTIN, M. DURAND recherche dans le fichier INTERIMAIRE qu'il détient une personne répondant à la description se trouvant sur la fiche de travail. Deux cas peuvent alors se présenter :
 
 Une personne est trouvée::
-M. DURAND remplit une fiche d'emploi en deux exemplaires dont l'un est expédié à l'intérimaire trouvé et l'autre est mis en attente de sa réponse. La fiche de travail est alors détruite. +
+Monsieur DURAND remplit une fiche d'emploi en deux exemplaires dont l'un est expédié à l'intérimaire trouvé et l'autre est mis en attente de sa réponse. La fiche de travail est alors détruite. +
 Lorsque la réponse d'acceptation de l'intérimaire arrive, M. DURAND rédige un pré contrat de travail à partir de la fiche d'emploi mise en attente, de la réponse d'acceptation et du fichier INTERIMAIRE après quoi il archive la fiche d'emploi et détruit la réponse de l'intérimaire. +
 Le pré contrat est transmis à Mme MARTIN qui établit le contrat définitif en trois exemplaires puis détruit le pré contrat. Les trois exemplaires du contrat sont expédiés au client dont deux devront être retournés signés. Au retour des deux exemplaires signés, Mme MARTIN en archive un exemplaire et transmet l'autre à Mlle LONBEC.
 
@@ -88,3 +88,16 @@ Tous les soirs, M. DUPONT consulte l'échéancier des demandes de personnel et e
 6. Réalisez la fiche de poste de chaque acteur interne (tâches effectuées, événements déclencheurs, actions, résultats)
 7. Déterminez les chronologies entre tâches
 8. Réaliser le MOT de ce domaine
+
+== MOT nouveau
+
+Il s'agit ici de rechercher le nouveau MOT pour l'agence d'intérim dont le MOT actuel a été construit précédemment (cf. figure ci-dessous) et en respectant les objectifs suivants :
+
+1.	Mme MARTIN part à la retraite à la fin de l'année et M. DUPONT a décidé de ne pas la remplacer. Son travail sera réattribué à M. DURAND et à l'ordinateur.
+2.	Conserver dans un fichier informatique tous les emplois en cours dans les entreprises avec les propriétés de l'entreprise, du ou des intérimaires et du travail lui même.
+3.	Envoyer un courrier à l'intérimaire pour lui indiquer qu'il est embauché pour un travail à partir de telle date dans telle entreprise. Ceci était fait de façon empirique (souvent par téléphone) dans l'organisation précédente.
+4.	Les contrats sont édités automatiquement par programme tous les vendredis.
+5.	Tous les soirs l'ordinateur édite une lettre d'excuse pour chaque demande dont le délai est dépassé
+
+.MOT actuel
+image:interimMOT.png[link="interimMOT.png", width="100%"]

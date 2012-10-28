@@ -195,13 +195,22 @@ include::S3-4.txt[]
 [appendix]
 = Annexes
 
+include::apx01Links.txt[]
+
 [[Exos]]	
 == Exercices de révision
+
+=== QCM
 
 Reprendre ici les questions des chapitres (à organiser en fichiers!) et 
 également le link:test-QCM4.txt[quizz].
 
-include::apx01Links.txt[]
+=== Mots-croisés
+
+Les mots croisés suivants ont été réalisés avec http://puzzlemaker.discoveryeducation.com/CrissCrossSetupForm.asp[PuzzleMaker].
+Ils sont issus des mots croisés donnés en révision lors des cours.
+
+- révisions sur les MCF/MOF/MCT/MOT : file:Puzzle2012-S1.pdf[PDF]
 
 == A propos de ce document...
 
@@ -262,3 +271,4 @@ include::glossary.txt[]
 The index is normally left completely empty, it's contents are
 generated automatically by the DocBook toolchain.
 ////////////////////////////////////////////////////////////////
+

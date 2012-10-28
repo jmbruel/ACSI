@@ -1,0 +1,7 @@
+#! /bin/sh
+
+for t in t/*/test.pl
+do
+  echo "[=] TEST: $t"
+  $t $@ || exit 1
+done

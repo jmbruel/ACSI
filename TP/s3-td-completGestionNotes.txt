@@ -66,20 +66,77 @@ b.	Liste de classement des étudiants pour chaque année d’étude. Cette liste
 == Travail à réaliser
 
 === Analyse globale
-1. Nouveau MOT
-2. Maquette d'une consultation étudiant et des deux états imprimés annuels
-3. Recherche des cas d'utilisation (interactifs et batch) et construction du diagramme des UC
+. Nouveau MOT
+. Maquette d'une consultation étudiant et des deux états imprimés annuels
+. Recherche des cas d'utilisation (interactifs et batch) et construction du diagramme des UC
 
 === Conception globale
-4. Architecture générale (MVC) 
-5. Diagramme des classes Métier et Diagramme des classes Contrôleur (sans les opérations)
-6. SNI
-7. Diagramme des classes d’IHM (sans les opérations)
+. Architecture générale (MVC) 
+. Diagramme des classes Métier et Diagramme des classes Contrôleur (sans les opérations)
+. SNI
+. Diagramme des classes d’IHM (sans les opérations)
 
 === Développement
+. Diagramme de séquence système pour le scénario nominal du CU +Saisir des notes+
+. Diagramme de séquence et Diagramme des classes participantes pour le CU +Saisir des notes+
+. SEP
+. Dessins de la page WEB : +PFO_SaisieNotes+
+
+image::../images/enchainement.png[width="60%",alt="Exemple"]
+
+//----------------------------------------------------- Correction -------------------------
+ifdef::correction[] 
+
+== Correction
+
+=== Nouveau MOT
+
+image::MOTGestionNotes.jpg[alt="MOT avec JMOT",width="100%",link="MOTGestionNotes.jpg"]
+
+=== Maquette d'une consultation étudiant et des deux états imprimés annuels
+
+image::MaquetteGestionNotes.png[alt="Exemple de maquette",width="100%",link="MaquetteGestionNotes.png"]
+
+=== Recherche des cas d'utilisation (interactifs et batch) et construction du diagramme des UC
+
+UC01 (ADM)::
+ 	Administration de la base de données (Suppression, Ajout, Modification d'une matière, d'un partiel ou d'un groupe) : INTERACTIF
+UC02 (SAISIE)::
+ 	Saisie notes d'un partiel  : INTERACTIF
+UC03 (CUTI)::
+ 	Consultations réalisées par tous les utilisateurs  : INTERACTIF
+UC04 (CDE)::
+ 	Consultations diverses et modifications réalisées par le directeur des études : INTERACTIF
+UC05 (GGR)::
+ 	Gestion des groupes par affectation ou enlèvement d'étudiants : INTERACTIF
+UC06 (RNOTES)::
+ 	Impression des relevés de notes : INTERACTIF
+UC07 (IMPFA)::
+ 	Impressions de fin d'année : BATCH
+
+image::UCGestionNotes.png[alt="Diagramme des UC",width="90%",link="UCGestionNotes.png"]
+
+=== Architecture générale (MVC) 
+
+image::MVCGestionNotes.png[alt="MVC",width="30%",link="MVCGestionNotes.png"]
+
+=== Diagramme des classes Métier et Diagramme des classes Contrôleur (sans les opérations)
+
+.Diagramme des Classes Métiers
+image::DCGestionNotes.png[alt="Diagramme de Classe",width="100%",link="DCGestionNotes.png"]
+
+.Diagramme des Classes Contrôleurs
+image::DCCGestionNotes.png[alt="Diagramme de Classe",width="100%",link="DCGestionNotes.png"]
+
+////////
+6. SNI
+7. Diagramme des classes d’IHM (sans les opérations)
 8. Diagramme de séquence système pour le scénario nominal du CU +Saisir des notes+
 9. Diagramme de séquence et Diagramme des classes participantes pour le CU +Saisir des notes+
 10. SEP
 11. Dessins de la page WEB : +PFO_SaisieNotes+
+///////
 
-image::../images/enchainement.png[width="60%",alt="Exemple"]
+endif::correction[] 
+
+//----------------------------------------------------- fin Correction -------------------------
