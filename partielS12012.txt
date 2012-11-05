@@ -2,7 +2,7 @@
 //  Created by Jean-Michel Bruel on 2012-10-19.
 //  Copyright (c) 2012 IRIT/U. Toulouse. All rights reserved.
 // ------------------------------------------
-:title: ACSI - S3 - Partiel
+:title: ACSI - S1 - Partiel
 // ------------------------------------------
 :doctype: article
 :description: 
@@ -10,9 +10,9 @@
 :Author: Jean-Michel Bruel 
 :Author Initials: JMB
 :Email: jean-michel.bruel@univ-tlse2.fr
-:Revision: 1.0
+:Revision: Finale
 :localdate: {sys: date +%d/%m/%Y}
-:Date: {localdate}
+:Date: 7 novembre 2012
 :startdate: 2012-10-19
 :images: ../images
 
@@ -62,17 +62,15 @@
 
 === Cadre général
 
-Monsieur Strobe, patron de "Strobe Consulting", a deux types de clients :
-
-- des garages automobiles vendeurs de voitures,
-- des loueurs de véhicules.
+Monsieur Strobe, patron de "Strobe Consulting", a des clients (des garages automobiles vendeurs de voitures,
+des loueurs de véhicules, etc.).
 
 Ses clients demandent à M. Strobe d’effectuer des opérations auprès des Préfectures. 
 Ces opérations consistent en : la demande de cartes grises footnote:[On garde ici l'ancien terme de _carte grise_ et non l'actuel de _Certificat d'Immatriculation_] pour des véhicules neufs (VN), la demande de cartes grises pour les véhicules d’occasion (VO), l’achat de vignettes, etc.
 
 Les clients confient à M. Strobe le règlement des opérations. 
 M. Strobe facture les services rendus à ses clients.
-Le suivi de toutes les opérations entraîne de nombreuses tâches administratives, en particulier la facturation en fin de mois qui nécessite de reprendre toutes les opérations du mois. Pour l'instant réalisées par un secrétariat (personnel intérimaire),
+Le suivi de toutes les opérations entraîne de nombreuses tâches administratives, en particulier la facturation en fin de mois qui nécessite de reprendre toutes les opérations du mois. Pour l'instant réalisé par un secrétariat (personnel intérimaire),
 M. Strobe aimerait informatiser ce travail afin d’être plus efficace et obtenir en plus des informations statistiques sur son activité.
 
 Il vous charge (moyennant récompense si vos modèles sont fidèles à la réalité) de 
@@ -81,7 +79,7 @@ une déclaration à la CNIL footnote:[Commission National Informatique et Libert
 
 === Cadre organisationnel
 
-Chaque jour, M. Strobe récupère les demandes d’opérations chez ses clients. 
+Chaque jour, M. Strobe récupère les demandes d’opérations envoyées par ses clients. 
 Il trie les demandes par opération et par Préfecture. Pour les demandes de cartes grises, 
 il remplit des bordereaux détaillant chacun des véhicules concernés. Le bordereau envoyé à chaque Préfecture, 
 est accompagné d’un double qui est gardé par la Préfecture. 
@@ -97,12 +95,12 @@ Les demandes refusées, pour diverses raisons, par la Préfecture sont facturée
 
 Il n’y a aucun autre document à remplir à la Préfecture lors du dépôt de demandes d’opérations.
 M. Strobe, pour chaque opération effectuée à la Préfecture, débourse la somme fiscale nécessaire.
-En fin de semaine, il demande le remboursement de cette somme auprès des clients qui ne l’ont pas déjà fait antérieurement.
+En fin de semaine, il demande le remboursement de cette somme auprès des clients.
 
-Chaque jour, M. Strobe note sur un carnet toutes les opérations, y compris les opérations gratuites pour la Préfecture, qu’il a effectuées pour le compte de ses différents clients.
+Chaque jour, M. Strobe note sur un carnet toutes les opérations qu’il a effectuées pour le compte de ses différents clients.
 Ces opérations y sont classées par client et par jour.
 
-Tous le jours, M. Strobe peut percevoir de ses clients, des remboursements de sommes fiscales dues, sous forme de chèques ou d’espèces. A cette occasion, il prend note sur un carnet de ces remises de paiement (le client, le montant, le type de paiement) et arrête un total à la date d’un dépôt en banque. M. Strobe dépose des paiements une à deux fois par semaine à la banque, qui lui fait parvenir un relevé détaillant, par date de remise, les sommes versées selon leur type (chèque ou espèce).
+Tous le jours, M. Strobe peut percevoir de ses clients, des remboursements de sommes fiscales dues, sous forme de chèques ou d’espèces. A cette occasion, il prend note sur un carnet de ces remises de paiement (le client, le montant, le type de paiement). M. Strobe dépose des paiements une à deux fois par semaine à la banque, qui lui fait parvenir un relevé détaillant, par date de remise, les sommes versées selon leur type (chèque ou espèce).
 
 Chaque fin de mois, le personnel intérimaire reprend le carnet et les relevés pour comptabiliser par client et par opération le nombre de demandes traitées.
 Il établit manuellement une facture par client à partir d’un document pré-imprimé. Ces factures sont transmises aux clients lors des premiers déplacements du mois suivant la facturation, sauf pour quelques uns où la facture est expédiée par courrier. Le suivi des règlements s’effectuent lors des visites aux clients. Il n’y a jamais de relance.
@@ -113,17 +111,20 @@ Monsieur Strobe délègue à un expert-comptable la gestion des données comptab
 
 . Réalisez le MCT de "Strobe Consulting" sans considérer la demande d'informatisation
 . Réalisez le MOT correspondant sans considérer la demande d'informatisation
-. Quels seront les modifications (donner juste une liste textuelle) importantes de vos modèles si on considère la demande d'informatisation?
+. Quelles seront les modifications importantes de vos modèles si on considère la demande d'informatisation (donner juste une liste, ne refaites pas les diagrammes)?
+. Réalisez le QCM distribué à part.
 
-== QCM
+=== Barême approximatif
 
-A suivre, mais extraits des 2 QCM déjà réalisés par les étudiants.
+Q1 : 4 points; Q2 : 7 points; Q3 : 3 points; Q4 : 5 points; Propreté : 1 point 
+
+ifdef::correction[]
 
 <<<
 
 == Correction
 
-Les corrections suivantes sont issues du sujet original (BTS) et n'incluent pas le personnel interimaire.
+Les corrections suivantes sont issues du sujet original (BTS) et n'incluent pas le personnel intérimaire.
 (et j'ai inversé les questions donc il me faut les refaire, mais en attendant...)
 
 .MOF (même si seulement MCF de demandé)
@@ -131,3 +132,11 @@ image:StrobeMOF.png[width="80%"]
 
 .MOT
 image:StrobeMCT.png[width="80%"]
+
+Modifications (Q3) :
+
+- ajout de la CNIL (1 point)
+- Lettres CIU ou ADL (1 point) et autres informations de fréquence/durée
+- liens avec les fichiers de la base de donnée
+
+endif::correction[]

@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=1024, user-scalable=no">
         <meta name="author" content="Jean-Michel Bruel" />
         <meta name="generator" content="AsciiDoc 8.6.8" />
-        <meta name="presdate" content="17/10/2012" />
+        <meta name="presdate" content="05/11/2012" />
         
         <!-- Core and extension CSS files -->
 <style type="text/css">
@@ -2472,7 +2472,7 @@ This module adds the necessary methods and key bindings to blank/unblank the scr
 <section class="slide" id="title-slide">
         <h1>UML : Exercices</h1>
         <h3>Jean-Michel Bruel</h3>
-        <h4>17/10/2012</h4>
+        <h4>05/11/2012</h4>
 </section>
 <div style="page-break-after:always"></div>
 <section class="slide">
@@ -3039,6 +3039,150 @@ Compléter le diagramme des classes participantes de cet UC
 <h4 id="_annexe_exemple_de_jeu_de_données">3.1.3. Annexe : exemple de jeu de données</h4>
 <p>Voici un exemple : Le dossier accident D34 correspond à un même accident entre 2 assurés de la MAIF, ce qui donne lieu à 1 seul dossier pour plusieurs véhicules (notion de « tiers interne »). D75 est un accident sans tiers. D12 et D98 sont des accidents différents avec un même tiers externe.</p>
 <img src="../TP/assurauto.png" alt="Exemple" />
+</div>
+</div>
+<div class="sect2">
+<h3 id="_gestion_des_étudiants_du_département_informatique">3.2. Gestion des étudiants du département informatique</h3>
+<div class="sect3">
+<h4 id="_fonctionnement_actuel">3.2.1. Fonctionnement actuel</h4>
+<p>Les étudiants du département informatique de l’IUT de Blagnac sont répartis en trois années d’étude (1A, 2A et LP) et en différents groupes (5 maximum par année : G1 à G5). Chaque semaine les étudiants subissent un partiel dans une matière donnée. Ils obtiennent ainsi une note comprise entre 0 et 20 avec deux décimales. Chaque matière possède un coefficient différent pour chaque année d’étude.</p>
+<p>A la suite d’un partiel concernant une année d’étude, l’enseignant responsable corrige les copies et remplit un bordereau de notes. Il archive les copies et transmet le bordereau de notes au secrétariat. La suite des opérations concernant les enseignants, le secrétariat et le directeur des études est décrite dans le MOT joint.</p>
+</div>
+<div class="sect3">
+<h4 id="_fonctionnement_futur">3.2.2. Fonctionnement futur</h4>
+<p>Les acteurs principaux concernés par cette application sont : le chef de département, les enseignants, le secrétariat et le directeur des études. Les acteurs secondaires sont les étudiants et les jurys de fin d&#8217;année.
+Le chef de département souhaite que les travaux informatiques suivants soient réalisés (= nouveaux besoins) :</p>
+<ol>
+<li>
+<p>
+Les notes d’un partiel pourront être enregistrées à tout moment par le secrétariat ou par le directeur des études à partir du bordereau de notes rempli par l&#8217;enseignant.
+</p>
+</li>
+<li>
+<p>
+Le chef de département gèrera les données permanentes (matières, partiels, groupes).
+</p>
+</li>
+<li>
+<p>
+Tous les utilisateurs pourront consulter à tout instant un certain nombre d’informations concernant un étudiant donné : identifiant, nom et prénom, notes obtenues avec la date du partiel concerné, la matière et le coefficient et la moyenne de l’étudiant. Cette consultation permettra de supprimer la liste des notes frappée par le secrétariat et photocopiée pour chaque enseignant.
+</p>
+</li>
+<li>
+<p>
+Le directeur des études devra pouvoir réaliser à tout instant les opérations suivantes :
+</p>
+<ul>
+<li>
+Consultation directe des groupes, des partiels et des matières.
+</li>
+<li>
+Consultation des étudiants à partir de leur nom et possibilité de modification de l’adresse, du téléphone et de l’eMail d’un étudiant donné.
+</li>
+<li>
+Sélection d’une matière et d’une année d’étude  et affichage de la liste des étudiants de l&#8217;année d’étude avec les notes obtenues pour la matière sélectionnée.
+</li>
+<li>
+Impression des relevés de notes au choix pour un seul étudiant, pour un groupe ou pour tous les étudiants d&#8217;une année d’étude. Ils sont diffusés aux étudiants
+</li>
+</ul>
+</li>
+<li>
+<p>
+Le secrétariat pourra affecter ou enlever des étudiants d’un groupe
+</p>
+</li>
+<li>
+<p>
+En fin d’année (le 15/6), on imprimera automatiquement les états suivants, destinés aux jurys :
+</p>
+<ol>
+<li>
+<p>
+Liste alphabétique des étudiants classés par année d’étude et par groupe comportant pour chacun son identifiant, son nom et prénom, son classement et sa moyenne. Cette liste devra également faire apparaître la moyenne de chaque groupe et de chaque année d’étude.
+</p>
+</li>
+<li>
+<p>
+Liste de classement des étudiants pour chaque année d’étude. Cette liste contiendra l&#8217;année d’étude, la date d’impression et une ligne par étudiant avec son classement, son identifiant, son nom et sa moyenne. Le classement devra tenir compte des ex-æquo.
+</p>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="sect3">
+<h4 id="_travail_à_réaliser">3.2.3. Travail à réaliser</h4>
+<div class="sect4">
+<h5 id="_analyse_globale">Analyse globale</h5>
+<ol>
+<li>
+<p>
+Nouveau MOT
+</p>
+</li>
+<li>
+<p>
+Maquette d&#8217;une consultation étudiant et des deux états imprimés annuels
+</p>
+</li>
+<li>
+<p>
+Recherche des cas d&#8217;utilisation (interactifs et batch) et construction du diagramme des UC
+</p>
+</li>
+</ol>
+</div>
+<div class="sect4">
+<h5 id="_conception_globale">Conception globale</h5>
+<ol>
+<li>
+<p>
+Architecture générale (MVC)
+</p>
+</li>
+<li>
+<p>
+Diagramme des classes Métier et Diagramme des classes Contrôleur (sans les opérations)
+</p>
+</li>
+<li>
+<p>
+SNI
+</p>
+</li>
+<li>
+<p>
+Diagramme des classes d’IHM (sans les opérations)
+</p>
+</li>
+</ol>
+</div>
+<div class="sect4">
+<h5 id="_développement">Développement</h5>
+<ol>
+<li>
+<p>
+Diagramme de séquence système pour le scénario nominal du CU <code>Saisir des notes</code>
+</p>
+</li>
+<li>
+<p>
+Diagramme de séquence et Diagramme des classes participantes pour le CU <code>Saisir des notes</code>
+</p>
+</li>
+<li>
+<p>
+SEP
+</p>
+</li>
+<li>
+<p>
+Dessins de la page WEB : <code>PFO_SaisieNotes</code>
+</p>
+</li>
+</ol>
+<img src="../images/enchainement.png" alt="Exemple" />
 <div class="sidebarblock">
 <div class="content">
 <p>Pour l&#8217;instant ce document est libre d&#8217;utilisation et géré par la <em>Licence Creative Commons</em>.
@@ -3139,6 +3283,7 @@ AABJRU5ErkJggg==" />
 </span>
 <a href="http://creativecommons.org/licenses/by-sa/3.0/">licence Creative Commons Paternité - Partage à l&#39;Identique 3.0 non transposé</a>.</p>
 </div></div>
+</div>
 </div>
 </div>
 </section>

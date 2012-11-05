@@ -112,5 +112,7 @@ include::ex-seq-SocieteIUT.txt[]
 
 include::ex-s3-td-complet.txt[]
 
+include::ex-complet-GestionNotes.txt[]
+
 //----------------------------------------------------- About -------------------------
 include::../about.txt[]
