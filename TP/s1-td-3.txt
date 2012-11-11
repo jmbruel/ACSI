@@ -1,0 +1,126 @@
+:title: Modèles de Flux et de Traitements
+:doctype: article
+:description: Cours de DUT Informatique
+:keywords: ACSI Merise UML Analyse Conception Systèmes d'Information
+:Author: Jean-Michel Bruel et Laurent Nonne
+:Author Initials: JMB
+:Email: jean-michel.bruel@univ-tlse2.fr
+:Revision: 1.1
+:localdate: {sys: date +%d/%m/%Y}
+:Date: {localdate}
+:startdate: 29/09/2012
+:slideshowlocation: [IUT Blagnac]
+:slidebackground: asciidocslidy
+:copyright: {date={localdate}}, {slideshowlocation} *** {author} *** Powered by Asciidoc and W3C Slidy &#169; 
+:incremental!:
+:indir: dessins
+
+//----------- définitions --------------
+:umlsite: http://webetud.iut-blagnac.fr/file.php/35/SupportCours/5-UML-1.pdf
+:oclsite: http://webetud.iut-blagnac.fr/mod/resource/view.php?id=9621
+:pre: PreReq
+:objtd: ObjTD
+:objgen: ObjGen
+:lien: Lien
+
+= ACSI–S1-Merise : {title}
+
+[[cartouche]]
+[align="left",cols="1,10",width="90%"]
+|======================
+| {pre}		| 
+1.	Je sais réaliser un MOT actuel
+2.	Je connais les concepts liés au nouveau MOT : type de tâche, fichier informatique et type d’accès
+| {objtd}	| J’apprends à réaliser un MOT nouveau à partir d’un MOT actuel et de nouveaux besoins organisationnels
+| {objgen}	| Je suis capable de comprendre et d’améliorer une organisation existante.
+| {lien}	| EGO – Fonctionnement de l’entreprise
+|======================
+
+[NOTE]
+====
+- Rappel du lien sur le http://webetud.iut-blagnac.fr/mod/resource/view.php?id=9644[support de cours]
+- Explication sur le http://webetud.iut-blagnac.fr/file.php/35/SupportsTDs/template.html[canevas-type] d'un TD/TP
+====
+
+== Compte-rendu d'interview 
+
+Une agence de voyages décide de réorganiser son système d'information en restructurant les traitements  et les circuits d'informations.
+
+Nous nous intéresserons ici au domaine d'étude *Voyages Organisés*.
+
+Trois personnes de l'agence sont chargées de la gestion des voyages organisés. Ce sont :
+
+- Madame Dutour chargée de l'accueil des clients
+- Monsieur Marco chargé de l'organisation des voyages
+- Monsieur Fontaine chargé de la comptabilité et des paiements
+
+Le fonctionnement actuel est donné dans le MOF actuel et le MOT actuel (cf. plus bas).
+
+Les dirigeants de l’agence de voyages veulent une nouvelle organisation informatisée dont les objectifs sont les suivants :
+
+- Limiter le nombre de documents papier et minimiser leurs circuits.
+- Permettre également à M. Fontaine d'obtenir à tout instant, à l'écran ou sur l'imprimante, une liste des commandes en cours OU une liste des commandes terminées (celles qui sont annulées ou dont la date de départ est dépassée), classées par clients. Les commandes terminées seront automatiquement supprimées après leur impression.
+- Libérer M. Marco des tâches d'organisation des voyages afin qu'il puisse entièrement se consacrer à des actions de publicité. Les tâches réalisées actuellement par M. Marco seront dorénavant assurées par M. Fontaine. Mme Dutour s'occupera uniquement des relations avec les clients.
+- Contrairement à la situation actuelle, le tour operator (TO) devra envoyer les billets dès réception de la commande faite par l’agence.
+- M. Fontaine effectuera la facturation des clients, dès réception des billets provenant du tour operator. La facture indiquera au client la date limite de paiement du solde du voyage (1 mois avant le départ)et accompagnera les billets. Lorsque le client paiera le solde du voyage, M. Fontaine lui enverra un reçu,  encaissera son chèque et paiera le TO.
+
+Le traitement des demandes d’annulation de voyage se complexifie :
+
+- Cas annulation valable :
+*	Le client annule dans les délais et renvoie les billets qu’il avait éventuellement reçu :
+**	Si le client avait payé le solde du voyage, on lui édite une lettre-chèque de remboursement. On édite aussi une lettre d’annulation auprès du TO en lui demandant de nous rembourser de même
+**	Si le client n’avait pas payé le solde du voyage, on édite une lettre-chèque de dédommagement  pour le TO.
+- Cas d’annulation non valable :
+*	le client annule trop tard (moins de 2 sem. avant le départ) OU le client annule mais sans rendre les billets qu’il a reçu et payé : on envoie une lettre de refus d’annulation
+*	le client a reçu les billets mais n’a pas payé le solde du voyage dans les délais : on expédie un courrier de mise en contentieux au service du contentieux
+
+[NOTE]
+====
+Dans tous les cas d’annulation, on met à jour le fichier des Commandes
+====
+
+== Travail à réaliser
+
+1. A partir des nouveaux besoins exprimés et du MOF actuel, réaliser le MOF futur
+2. Réaliser le MOT futur à partir du MOT actuel et du MOF futur.
+
+== Annexes
+
+=== Liste des acteurs
+
+Acteurs externes :
+
+-	Banque
+-	Client
+-	Tour Operator (T.O.)
+
+Acteurs internes :
+
+-	Mme Dutour
+-	Mr Marco
+-	Mr Fontaine
+
+=== MOF actuel
+
+image:voyageMOF-actuel.png[link="voyageMOF-actuel.png", width="100%"]
+
+=== MOT actuel
+
+image:voyageMOT-actuel.png[link="voyageMOT-actuel.png", width="100%"]
+
+//----------------------------------------------------- Correction -------------------------
+ifdef::correction[] 
+
+== Correction
+
+=== Nouveau MOF
+
+image::voyageMOF-nouveau.png[alt="MOF nouveau",width="100%"]
+
+=== Nouveau MOF
+
+image::voyageMOT-nouveau.png[alt="MOT nouveau",width="100%"]
+
+endif::correction[] 
+
+//----------------------------------------------------- fin Correction -------------------------

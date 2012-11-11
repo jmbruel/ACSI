@@ -108,7 +108,12 @@ Pour le package +Application+, on pourra créer des classes java standard.
 Prendre une feuille A4 en format paysage pour faire le DS!
 =====
 
+.DS avec BOUML
 image::{locimages}assurauto-ds.png[width="60%",alt="Exemple"]
+
+.DS avec PlantUML (version un peu différente)
+image::../images/AssurAutoSeq.svg[width="100%",alt="Exemple", link="../images/AssurAutoSeq.svg"]
+
 
 === Compléter le diagramme des classes participantes de cet UC
 
