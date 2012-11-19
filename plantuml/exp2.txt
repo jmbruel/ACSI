@@ -1,0 +1,18 @@
+@startuml
+
+class Produits {
+	idPro
+	designation
+	poids
+}
+class Fournisseurs {
+	idFour
+	raisonSociale
+	adresse
+}
+
+Produits "0..*" -- "0..*" Fournisseurs : Fournir
+hide class circle
+hide class methods
+
+@enduml

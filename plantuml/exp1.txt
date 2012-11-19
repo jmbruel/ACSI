@@ -1,0 +1,17 @@
+@startuml
+
+class Produits {
+	idPro
+	designation
+	poids
+}
+class Fournisseurs {
+	idFour
+	raisonSociale
+	adresse
+}
+
+hide class circle
+hide class methods
+
+@enduml

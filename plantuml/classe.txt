@@ -1,0 +1,12 @@
+@startuml
+
+class Clients {
+	nom
+	prenom
+	solde
+}
+
+hide Clients circle
+hide Clients methods
+
+@enduml

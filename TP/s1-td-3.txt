@@ -117,9 +117,13 @@ ifdef::correction[]
 
 image::voyageMOF-nouveau.png[alt="MOF nouveau",width="100%"]
 
-=== Nouveau MOF
+=== Nouveau MOT
 
+.Version 2011
 image::voyageMOT-nouveau.png[alt="MOT nouveau",width="100%"]
+
+.Version JMOT
+image::../images/AgenceVoyageMOTNew.jpeg[alt="MOT nouveau",width="100%"]
 
 endif::correction[] 
 

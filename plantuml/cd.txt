@@ -1,0 +1,12 @@
+@startuml
+
+class Clients {
+	char nom[TMAX]
+	char prenom[TMAX]
+	float solde
+}
+
+hide Clients circle
+hide Clients methods
+
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+
+class Clients 
+class Salaries
+class Etudiants
+class Fournisseurs
+
+hide class circle
+
+@enduml

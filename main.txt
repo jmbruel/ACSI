@@ -5,7 +5,7 @@
 :Author: Jean-Michel Bruel 
 :Author Initials: JMB
 :Email: jean-michel.bruel@univ-tlse2.fr
-:Revision: 1.2
+:Revision: 1.3
 :localdate: {sys: date +%d/%m/%Y}
 :Date: {localdate}
 :startdate: 29/07/2012
@@ -24,8 +24,8 @@
 // raccourcis sites
 :asciidoc: http://www.methods.co.nz/asciidoc[AsciiDoc]
 :eclipse: http://www.eclipse.org/[eclipse]
-:git: git
-:mercury: Mercury
+:git: http://git-scm.com/[git]
+:mercury: http://mercurial.selenic.com/[Mercurial]
 :models: http://www.modelsconference.org/[MODELS]
 :moodle: http://webetud.iut-blagnac.fr[Moodle]
 :omg: http://www.omg.org[OMG]
@@ -79,23 +79,63 @@
 //================================================================
 // chapitres 
 //================================================================
+<<<
 
 include::chap00AvantPropos.txt[]
+
+<<<
 
 = Partie 1 : Généralités
 
 include::Generalites.txt[]
 
+<<<
+
 = Partie 2 : Merise
 
 include::Merise.txt[]
+
+<<<
 
 = Partie 3 : SI
 
 include::SI.txt[]
 include::SIO.txt[]
 
-= Partie 4 : UML
+<<<
+
+= Partie 4 : Les données
+
+== Modéliser les données
+
+===  Données et variables
+
+- Commençons par un parallèle avec les données manipulées en programmation
+- Information vs. donnée
+
+[NOTE]
+====
+Une donnée (e.g., 37.2) est brute, elle n'a de signification que lorsqu'elle devient une information
+(e.g., "température en degré Celcius").
+====
+
+=== En Merise
+
+Merise permet de modéliser les données, mais ces modèles ont été remplacés dans la pratique
+par ceux proposés par {uml}.
+
+[align="center",cols="h,^2,^2,^2",options="header",width="20%"]
+|======================
+|					| {flux} 	| {traitements}	| [red  yellow-background]*{donnees}*
+| {conceptuel}		|			|  				| MCD
+| {organisationel}	|			|        		| 				
+| {logique} 		|			|        		| MLD				
+| {technique}		|			|        		| MTD				
+|======================
+
+include::UML.txt[]
+
+<<<
 
 = Partie 5 : Conception des IHM
 
@@ -133,9 +173,19 @@ Elle est proche du  <<SEP>>.
 //Cette partie est traitée <<SEP,ici>>.
 include::sep.txt[]
 
+<<<
+
 ifdef::backend-slidy2[<<<]
 
 = Partie 6 : Génie Logiciel
+
+///////
+[quote, Samuel Redwine Jr]
+____________________________________________________________________
+Software and cathedrals are much the same – first we build them, then we pray. ____________________________________________________________________
+//////
+
+<<<
 
 ifdef::backend-slidy2[<<<]
 
@@ -188,6 +238,8 @@ include::S3-4.txt[]
 //* Analyse
 
 
+<<<
+
 //================================================================
 // APPENDIX
 //================================================================
@@ -212,9 +264,13 @@ Ils sont issus des mots croisés donnés en révision lors des cours.
 
 - révisions sur les MCF/MOF/MCT/MOT : file:Puzzle2012-S1.pdf[PDF]
 
+<<<
+
 == A propos de ce document...
 
 include::about.txt[]
+
+<<<
 
 == FAQ
 
@@ -231,21 +287,23 @@ Oui, c'est toujours permis puisque les acteurs sont des *rôles* et non des pers
 La question qui se pose est : est-ce judicieux? Dans certains diagrammes on pourra restreindre 
 l'usage de telle ou telle partie de l'application à tel ou tel rôle. Donc dans l'exemple ça semble intéressant de différentier (l'acheteur pourrait être identifié avec un login et un num de carte bleue, la personne intéressée ne l'étant pas par exemple, etc.).
 
+<<<
 
-=== Exemple
+include::git.txt[]
 
 === Divers
 
 Quelques autres questions que je laisse à votre sagacité :
 
-- blabla
+- à compléter...
 
 [[Prog]]
 === A propos de la production de documents par programmation
 
-blabla ...
+- à compléter...
 
-[bibliography]
+<<<
+
 [[refs]]
 = Bibliographie
 Les références...
@@ -263,7 +321,11 @@ Les références...
 - [[[Muller]]] Modélisation objet avec UML. {pam} & Nathalie Gaetner, Eyrolles, 2003.
 - [[[RUP]]] http://fr.wikipedia.org/wiki/Unified_Process
 
+<<<
+
 include::glossary.txt[]
+
+<<<
 
 [index]
 = Index

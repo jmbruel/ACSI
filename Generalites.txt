@@ -221,6 +221,10 @@ Environnement::
 Versionnage::
 	Il est très important, surtout dans un travail collaboratif, de bien utiliser un outil de gestion de version. Que ce soit pour le code (facile), la documentation (moins évident) ou les modèles (très difficile). Pour le code, le nombre de systèmes disponibles vous empêche d'avoir une excuse ({git},{svn},{mercury}).
 
+[NOTE]
+====
+Pour plus d'information sur la gestion de version, cf. <<git>>.
+====
 
 ==== Modéliser
 

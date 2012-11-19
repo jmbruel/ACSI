@@ -1,3 +1,14 @@
+#-----------------------------------------------------
+MAIN=main
+ICONSDIR=../images/icons/
+#-----------------------------------------------------
+
+plant: plantuml/*.png
+	
+plantuml/%.png: plantuml/%.txt
+	@echo '==> Compiling plantUML files to generate PNG'
+	java -jar /Users/bruel/dev/asciidoc/plantuml.jar $<
+
 all: *.txt
 	@echo '==> Compiling asciidoc files to generate HTML'
 	asciidoc -a posix --unsafe make.txt

@@ -1,0 +1,366 @@
+:images: images
+:plantuml: plantuml
+
+== La notation UML
+
+=== Méthodologie de développement
+
+Nous allons aborder les points suivants :
+
+- Pourquoi l'orienté objet ?
+- Pourquoi UML?
+- Processus de développement
+- Conception logicielle
+
+
+==== Pourquoi l'orienté objet ?
+
+- Prendre en compte tout le système
+- Ce que fait le système + comment il est organisé pour le faire
+- Quelques concepts fondamentaux : 
+* les objets
+* les messages
+* les classes
+* l'héritage et le polymorphisme
+
+==== Pourquoi UML?
+
+- tout le cycle de vie :
+* visualisation
+* spécification
+* construction du système
+* documentation
+- synthèse des meilleurs aspects des méthodes courantes
+- standard mondial
+
+==== Processus de développement
+
+Activités de bases :
+
+- Expression des besoins
+- Identification de l'environnement et du contexte
+- Planification
+- Analyse
+- Conception
+- Implémentation
+- Test
+- Révision
+
+ifdef::backend-slidy2[<<<]
+
+Plusieurs approches :
+
+- Cycle en cascade ("_waterfall_")
+- En spiral (Boehm)
+- Itératif (RUP, openUP)
+* _Inception_ : évaluation initiale (risques, etc.)
+* _Elaboration_ : architecture, principaux éléments
+* _Construction_ : développement incrémentale
+* _Transition_ : déploiement, formation
+- eXtreme Programming
+* ensembles de "principes"
+
+==== Conception logicielle
+
+Qu'est-ce qu'une bonne conception?
+
+- elle est conforme aux besoins fonctionnels / non-fonctionnels
+- elle est modulable et extensible
+- elle est compréhensible et vérifiable
+- elle est aussi simple que possible
+
+Quelques éléments dans ce sens :
+
+- séparations des responsabilités (e.g., 3-tiers)
+- modularité
+- faible dépendance et forte cohésion
+- utilisation de standards (outils, langages et notations)
+
+ifdef::backend-slidy2[<<<]
+
+Notation pour la copnception
+
+- Cas d'utilisation
+- Diagrammes de classe
+- Diagrammes d'état (statechart)
+- Diagrammes d'interaction (scénarios)
+- Diagrammes de séquence
+- Diagrammes de communication (collaboration)
+- Spécification des opérations et méthodes
+- Diagrammes de flux d'écran
+- Tables de décision
+- CRC
+- ...
+
+=== UML en résumé
+
+- Diagrammes
+* 13 dans la version 2.0
+- Principes généraux
+- Mécanismes
+* paquetages
+* stéréotypes
+* étiquettes
+* notes
+* contraintes
+
+==== Diagrammes
+
+Plus tard
+
+==== Principes généraux
+
+Plus tard
+
+==== Mécanismes
+
+Plus tard
+
+=== Principaux diagrammes
+
+==== Diagramme des UC
+
+Plus tard
+
+==== Diagramme de séquence
+
+Plus tard
+
+==== Diagramme de classe
+
+Nous souhaitons représenter les données manipulées par le système, ainsi
+que les relations entre ces données.
+
+image:{images}/plantuml-cd.png[]
+
+[NOTE]
+====
+Nous parlons pour l'instant de _classe_, vous parlerez bientôt
+en C de _structure_. Pour l'instant considérons que les 2 sont 
+équivalents.
+====
+
+===== Concept de *Classe*
+
+Une *classe* est une représentation unique servant à caractériser
+un ensemble d’*objets* jouant un rôle identique et décrits par les mêmes *attributs*.
+
+image:{plantuml}/classe.png[]
+
+ifdef::backend-slidy2[<<<]
+
+[NOTE]
+====
+Nous utiliserons la convention d’écriture suivante : +
+
+- 1ère lettre en majuscule
+- mise au pluriel des noms
+====
+
+image:{plantuml}/pluriels.png[]
+
+===== Classes et objets
+
+En programmation on parle de +type+ et de +variable+. Même si c'est un raccourci très rapide
+nous pouvons pour l'instant faire le parallèle entre les notions de +classe+ et d'+objet+.
+
+On parlera toutefois d'*instance* pour désigner un objet issu d'une classe.
+
+image:{plantuml}/object.png[]
+
+
+===== Attributs
+
+Un *attribut* est une propriété représentative d’un objet 
+(nom d’une personne, couleur d’une voiture, moyenne d’un étudiant...). 
+
+Un attribut possède une valeur associée à chaque objet d’une classe.
+
+image:{plantuml}/attrib.png[]
+
+ifdef::backend-slidy2[<<<]
+
+[NOTE]
+====
+Nous utiliserons la convention d’écriture suivante : +
+
+- 1ère lettre en minuscule. 
+- pour les noms composés, on mettra en majuscule la première lettre de chaque mot, sauf pour le premier.
+====
+
+[TIP]
+====
+Les noms des attributs de type booléen seront précédés du préfixe +est+ (_is_ en anglais).
+
+Exemples : 
+
+- +estMajeur+ vaut +VRAI+ si une personne est majeure et +FAUX+ si elle est mineure
+- +estCadre+ vaut +VRAI+ si une personne est cadre et +FAUX+ sinon
+====
+
+=====  Identifiant
+
+Un *identifiant* est un attribut particulier d’une classe dont les valeurs représentent 
+sans ambiguïté chaque objet de la classe.
+
+[TIP]
+.Choix d’un identifiant
+====
+Il faut prendre un attribut non ambigu (le nom d’une personne ne convient pas) et court (le numéro de sécu est trop long). 
+====
+
+ifdef::backend-slidy2[<<<]
+
+image:{plantuml}/id.png[]
+
+[NOTE]
+====
+Convention : Les noms des identifiants commenceront par le préfixe +id+
+====
+
+=====  Association
+
+Une *association* est un ensemble de liens permanents existant entre les objets de deux ou plusieurs classes. 
+On dira qu’une association lie plusieurs classes ou que les classes *participent* à l’association.
+
+[NOTE]
+.Exemple
+====
+Dans l'exercice sur l'Agence de Voyage, une fiche +client+ est liée à une ou plusieurs +commandes+ en cours.
+====
+
+ifdef::backend-slidy2[<<<]
+
+Dimension d’une association :
+
+Nombre de classes mises en jeu par l’association +
+(binaire : 2, ternaire : 3, n-aire : n)
+
+ifdef::backend-slidy2[<<<]
+
+Exemple d’association binaire 
+
+Soient les classes +Fournisseurs+ et +Produits+. 
+On veut indiquer quels sont les produits susceptibles d’être fournis par chaque fournisseur et quels sont les fournisseurs susceptibles de fournir chaque produit.
+
+image:{images}/prod-fourn.png[width="40%"]
+
+ifdef::backend-slidy2[<<<]
+
+Nom d’une association : 
+
+Afin de clarifier les informations, il est important de nommer les associations. +
+Il existe trois façons de nommer une association :
+ 
+- un verbe à l’infinitif (e.g., +Fournir+)
+- un verbe conjugué avec un sens de lecture : +Fournit >+  ou  +< Est fourni par+
+- un rôle (placé à une extrémité de l’association)
+
+[NOTE]
+====
+Un nom d’association commencera par une majuscule comme les noms de classes.
+====
+
+ifdef::backend-slidy2[<<<]
+
+Cardinalité :
+
+Indique à combien d’objets minimum et maximum de la classe d’en face est lié tout objet de la classe de départ. Elle est représentée par un couple +(M..N)+. Elle représente le nombre minimum et maximum d'objets (de la classe de ce côté-ci
+de l'association) qui peuvent être en association avec un objet donné (de l'autre côté de l'association).
+
+[NOTE]
+====
+Attention, dans une cardinalité +M..N+, +M+ doit toujours être inférieur ou égal à +N+.  Exemple : +3..10+.
+====
+
+ifdef::backend-slidy2[<<<]
+
+Cardinalités classiques :
+
+- +*+ : signifie +[0..N]+ avec +N+ indéterminé. Très utilisé pour les associations multiples optionnelles.
+- +1..*+ : signifie +[1..N]+ avec +N+ indéterminé. Très utilisé pour les associations multiples obligatoires.
+- +1+ : signifie +[1..1]+
+
+=====  Représentation
+
+Représentation des classes
+
+Une classe est représentée par un rectangle divisé en plusieurs compartiments. Le compartiment supérieur contient le *nom* de la classe et le compartiment inférieur la liste des *attributs* (l’identifiant est placé en tête de liste).
+
+image:{plantuml}/exp1.png[]
+
+ifdef::backend-slidy2[<<<]
+
+Représentation des associations
+
+Une association binaire est représentée par un trait reliant deux classes. Le *nom* de l’association est placé à proximité du trait et les *cardinalités* sont placées de part et d’autre.
+
+image:{plantuml}/exp2.png[]
+
+=====  Classe association
+
+Certains attributs ne dépendent pas d'une seule classe, mais de plusieurs.
+Exemple : le prix d'un produit selon le fournisseur qui le propose.
+
+image:{images}/class-assoc.png[width="40%"]
+
+ifdef::backend-slidy2[<<<]
+
+Pour les représenter, ils seront placés dans une *classe-association* reliée au  trait de liaison par un trait en pointillés. Le nom de l'association sera alors placé dans la classe-association.
+
+image:{plantuml}/class-assoc.png[]
+
+=== Pour dessiner rapidement de l'UML
+
+Les schémas de cette section sont écrits en utilisant le langage http://plantuml.sourceforge.net/[PlantUML].
+
+Par exemple le schéma précédent a été réalisé à partir du code suivant :
+
+..............................................................
+@startuml
+
+class Produits {
+	idPro
+	designation
+	poids
+}
+class Fournisseurs {
+	idFour
+	raisonSociale
+	adresse
+}
+
+Produits "0..*" -- "0..*" Fournisseurs : Fournir
+
+@enduml
+..............................................................
+
+[NOTE]
+====
+Vous pouvez tester en ligne : http://www.plantuml.com/plantuml/
+====
+
+==== Exercices de révision
+
+- Réalisez le diagramme de classes suivant :
+
+1. Les étudiants possèdent un numéro d'étudiant (identifiant), un nom, un prénom, une date de naissance. Ils suivent des cours (titre, code du module).
+2. Les examens concernent un cours donné. Chaque examen a lien à une certaine date et possède un coefficient.
+3. Pour chaque examen un étudiant à une note.
+4. Les cours sont enseignés par un enseignant (nom, prénom)
+
+- Réalisez le diagramme de classes suivant :
+
+1. Un portable possède un clavier
+2. Un clavier peut-être de type "azerty" ou "querty"
+3. Un clavier possède des touches
+4. Un portable a un 0 ou 1 propriétaire qui a lui même un nom et un prénom
+5. Un portable a un prix d'achat et une valeur actuelle (souvent différente)
+
+==== Diagramme de classe avancé
+
+Plus tard
+
+- agrégation
+- composition
+- généralisation

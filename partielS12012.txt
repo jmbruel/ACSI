@@ -127,11 +127,14 @@ ifdef::correction[]
 Les corrections suivantes sont issues du sujet original (BTS) et n'incluent pas le personnel intérimaire.
 (et j'ai inversé les questions donc il me faut les refaire, mais en attendant...)
 
-.MOF (même si seulement MCF de demandé)
+.MOF (même si pas demandé)
 image:StrobeMOF.png[width="80%"]
 
+.MCT (version MERISE des années 70)
+image:StrobeMCT-old.png[width="80%"]
+
 .MOT
-image:StrobeMCT.png[width="80%"]
+image:StrobeMOT.png[width="80%"]
 
 Modifications (Q3) :
 

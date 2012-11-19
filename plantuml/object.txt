@@ -1,0 +1,6 @@
+@startuml
+object jmb
+jmb : nom = "Bruel"
+jmb : prenom = "JM"
+jmb : solde = "10.000.000"
+@enduml

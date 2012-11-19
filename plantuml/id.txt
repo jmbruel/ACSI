@@ -1,0 +1,15 @@
+@startuml
+
+class Clients {	
+	idClient
+	nom
+}
+
+class Etudiants {	
+	idEtudiant
+	nom
+	dateNaissance
+}
+hide class circle
+hide class methods
+@enduml

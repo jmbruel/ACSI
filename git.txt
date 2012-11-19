@@ -1,0 +1,632 @@
+:git: http://git-scm.com/[git]
+:git-version: 1.8
+:deckjs_theme: web-2.0 
+:deckjs_transition: horizontal-slide
+:github: https://github.com/[GitHub]
+
+[[git]]
+= Gestion de version (sv, git, ...)
+
+== Environnement
+
+Vous pouvez installer {git} depuis le site. Nous utilisons ici la version {git-version}
+en ligne de commande.
+
+[NOTE]
+====
+Pour essayer les commandes {git} en ligne, ne pas hésiter à utiliser le site http://try.github.com/levels/1/challenges/1[http://try.github.com].
+====
+
+== Principes généraux
+
+image::images/git-branching.png[width="70%"]
+
+== Avant de commencer
+
+On initialise certaine variables (une fois pour toute en général) :
+
+ifndef::backend-deckjs[]
+[source,shell]
+----------------------------------------------------------------------
+endif::backend-deckjs[]
+ifdef::backend-deckjs[]
+......................................................................
+endif::backend-deckjs[]
+$ git config --global user.name "JM Bruel"
+$ git config --global user.email jbruel@gmail.com
+ifdef::backend-deckjs[]
+......................................................................
+endif::backend-deckjs[]
+ifndef::backend-deckjs[]
+----------------------------------------------------------------------
+endif::backend-deckjs[]
+
+ifndef::backend-deckjs[]
+[source,shell]
+----------------------------------------------------------------------
+endif::backend-deckjs[]
+ifdef::backend-deckjs[]
+......................................................................
+endif::backend-deckjs[]
+$ git config --global alias.co checkout
+ifdef::backend-deckjs[]
+......................................................................
+endif::backend-deckjs[]
+ifndef::backend-deckjs[]
+----------------------------------------------------------------------
+endif::backend-deckjs[]
+
+[TIP]
+====
+Ces informations sont stockées dans `~/.gitcongif`
+====
+
+== Etape 1 : création du _repository_ local
+
+On démarre la gestion de version :
+
+ifndef::backend-deckjs[]
+[source,shell]
+----------------------------------------------------------------------
+endif::backend-deckjs[]
+ifdef::backend-deckjs[]
+......................................................................
+endif::backend-deckjs[]
+$ git init
+ifdef::backend-deckjs[]
+......................................................................
+endif::backend-deckjs[]
+ifndef::backend-deckjs[]
+----------------------------------------------------------------------
+endif::backend-deckjs[]
+
+
+[TIP]
+====
+Génération d'un répertoire `.git` dans le répertoire courant.
+====
+
+== Etape 2 : ajout des fichiers
+
+On ajoute les fichiers courants au dépôt :
+
+ifndef::backend-deckjs[]
+[source,shell]
+----------------------------------------------------------------------
+endif::backend-deckjs[]
+ifdef::backend-deckjs[]
+......................................................................
+endif::backend-deckjs[]
+$ git add .
+ifdef::backend-deckjs[]
+......................................................................
+endif::backend-deckjs[]
+ifndef::backend-deckjs[]
+----------------------------------------------------------------------
+endif::backend-deckjs[]
+
+[NOTE]
+====
+Ne pas forcément tout ajouter (`git add *.c` par exemple).
+====
+
+[TIP]
+====
+Pensez à créer un fichier `.gitignore` pour éviter d'ajouter les fichiers indésirables (comme les +log+).
+====
+
+== Etape 2 (suite) : vérification
+
+On peut visualiser les actions en vérifiant l'état courant du dépôt :
+
+ifndef::backend-deckjs[]
+[source,shell]
+----------------------------------------------------------------------
+endif::backend-deckjs[]
+ifdef::backend-deckjs[]
+......................................................................
+endif::backend-deckjs[]
+$ git status
+# On branch master
+# Your branch is ahead of 'origin/master' by 1 commit.
+#
+# Changes not staged for commit:
+#   (use "git add/rm <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   Generalites.txt
+#	deleted:    S3/128056_56.d
+...
+ifdef::backend-deckjs[]
+......................................................................
+endif::backend-deckjs[]
+ifndef::backend-deckjs[]
+----------------------------------------------------------------------
+endif::backend-deckjs[]
+
+== Etape 3 : Commit
+
+Pour entériner les changements :
+
+ifndef::backend-deckjs[]
+[source,shell]
+----------------------------------------------------------------------
+endif::backend-deckjs[]
+ifdef::backend-deckjs[]
+......................................................................
+endif::backend-deckjs[]
+$ git commit -m "First draft"
+[master (root-commit) 4f40f5d] First draft
+ 0 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 titi.txt
+ create mode 100644 toto.txt
+ifdef::backend-deckjs[]
+......................................................................
+endif::backend-deckjs[]
+ifndef::backend-deckjs[]
+----------------------------------------------------------------------
+endif::backend-deckjs[]
+
+[NOTE]
+====
+Retenez que le +commit+ est uniquement local! +
+Mais même en local, il est bien utile en cas de problème.
+====
+
+== Etape 3 (suite) : Gestion "locale"
+
+Exemple de scénario type (suppression exceptionnelle et "rattrapage") :
+
+ifndef::backend-deckjs[]
+[source,shell]
+----------------------------------------------------------------------
+endif::backend-deckjs[]
+ifdef::backend-deckjs[]
+......................................................................
+endif::backend-deckjs[]
+$ rm titi.txt 
+$ git status
+# On branch master
+# Changes not staged for commit:
+#   (use "git add/rm <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	deleted:    titi.txt
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+$ git checkout -f
+$ ls titi.txt 
+titi.txt
+
+ifdef::backend-deckjs[]
+......................................................................
+endif::backend-deckjs[]
+ifndef::backend-deckjs[]
+----------------------------------------------------------------------
+endif::backend-deckjs[]
+
+== Etape 4 : Trouver un hébergement distant
+
+Il existe de nombreux endroits disponibles pour héberger du code libre.
+Le plus connu est {GitHub}.
+
+image::images/github.png[width="70%"]
+
+== Etape 4 (suite) : déclarer le dépôt distant
+
+Après avoir créé un dépôt distant, il n'y a plus qu'à associer ce
+dépôt distant avec le notre.
+
+ifndef::backend-deckjs[]
+[source,shell]
+----------------------------------------------------------------------
+endif::backend-deckjs[]
+ifdef::backend-deckjs[]
+......................................................................
+endif::backend-deckjs[]
+$ git remote add origin git@github.com:jmbruel/first_app.git
+$ git push -u origin master
+Counting objects: 3, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 225 bytes, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To git@github.com:jmbruel/first_app.git
+ * [new branch]      master -> master
+Branch master set up to track remote branch master from origin.
+ifdef::backend-deckjs[]
+......................................................................
+endif::backend-deckjs[]
+ifndef::backend-deckjs[]
+----------------------------------------------------------------------
+endif::backend-deckjs[]
+
+
+
+== Etape 5 : branch, edit, commit, merge
+
+En cas d'édition et de commit locale :
+
+ifndef::backend-deckjs[]
+[source,shell]
+----------------------------------------------------------------------
+endif::backend-deckjs[]
+ifdef::backend-deckjs[]
+......................................................................
+endif::backend-deckjs[]
+$ git checkout
+Your branch is ahead of 'origin/master' by 1 commit.
+
+ifdef::backend-deckjs[]
+......................................................................
+endif::backend-deckjs[]
+ifndef::backend-deckjs[]
+----------------------------------------------------------------------
+endif::backend-deckjs[]
+
+== Etape 5 (suite) : branching
+
+{git} est très bon pour créer des branches :
+
+ifndef::backend-deckjs[]
+[source,shell]
+----------------------------------------------------------------------
+endif::backend-deckjs[]
+ifdef::backend-deckjs[]
+......................................................................
+endif::backend-deckjs[]
+$ git checkout -b testModifTiti
+Switched to a new branch 'testModifTiti'
+$ git branch
+  master
+* testModifTiti
+
+ifdef::backend-deckjs[]
+......................................................................
+endif::backend-deckjs[]
+ifndef::backend-deckjs[]
+----------------------------------------------------------------------
+endif::backend-deckjs[]
+
+== Etape 5 (suite) : edit
+
+Après modification :
+
+ifndef::backend-deckjs[]
+[source,shell]
+----------------------------------------------------------------------
+endif::backend-deckjs[]
+ifdef::backend-deckjs[]
+......................................................................
+endif::backend-deckjs[]
+$ git status
+# On branch testModifTiti
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   titi.txt
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+
+ifdef::backend-deckjs[]
+......................................................................
+endif::backend-deckjs[]
+ifndef::backend-deckjs[]
+----------------------------------------------------------------------
+endif::backend-deckjs[]
+
+== Etape 5 (suite) : commit
+
+On "sauvegarde" les changements :
+
+ifndef::backend-deckjs[]
+[source,shell]
+----------------------------------------------------------------------
+endif::backend-deckjs[]
+ifdef::backend-deckjs[]
+......................................................................
+endif::backend-deckjs[]
+$ git commit -am "modif de titi"
+[testModifTiti 4515b5d] modif de titi
+ 1 files changed, 7 insertions(+), 0 deletions(-)
+
+ifdef::backend-deckjs[]
+......................................................................
+endif::backend-deckjs[]
+ifndef::backend-deckjs[]
+----------------------------------------------------------------------
+endif::backend-deckjs[]
+
+[NOTE]
+====
+On ne "sauvegarde" qu'en local!
+====
+
+== Etape 5 (suite) : utilisation des branches
+
+On peut "zapper" d'une branche à l'autre à volonté :
+
+ifndef::backend-deckjs[]
+[source,shell]
+----------------------------------------------------------------------
+endif::backend-deckjs[]
+ifdef::backend-deckjs[]
+......................................................................
+endif::backend-deckjs[]
+$ ll titi*
+-rw-rw-r--    1 bruel  staff   331 12 nov 12:39 titi.txt
+
+$ git co master
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 1 commit.
+
+$ ll titi*
+-rw-rw-r--    1 bruel  staff     0 12 nov 12:40 titi.txt
+
+ifdef::backend-deckjs[]
+......................................................................
+endif::backend-deckjs[]
+ifndef::backend-deckjs[]
+----------------------------------------------------------------------
+endif::backend-deckjs[]
+
+== Etape 5 (suite) : merge
+
+Maintenant que la branche a été développée (testée, etc.) on peut
+l'intégrer à la branche principale :
+
+ifndef::backend-deckjs[]
+[source,shell]
+----------------------------------------------------------------------
+endif::backend-deckjs[]
+ifdef::backend-deckjs[]
+......................................................................
+endif::backend-deckjs[]
+
+$git co master
+Switched to branch 'master'
+
+$ git merge testModifTiti
+Merge made by recursive.
+ titi.txt |    7 +++++++
+ 1 files changed, 7 insertions(+), 0 deletions(-)
+
+ifdef::backend-deckjs[]
+......................................................................
+endif::backend-deckjs[]
+ifndef::backend-deckjs[]
+----------------------------------------------------------------------
+endif::backend-deckjs[]
+
+[NOTE]
+====
+On peut ensuite détruire la branche devenue inutile `git branch -d testModifTiti`
+====
+
+== Etape 6 : push
+
+Maintenant que notre dépôt est satisfaisant, on peut
+le synchroniser avec le dépôt distant :
+
+ifndef::backend-deckjs[]
+[source,shell]
+----------------------------------------------------------------------
+endif::backend-deckjs[]
+ifdef::backend-deckjs[]
+......................................................................
+endif::backend-deckjs[]
+$ git push
+Counting objects: 11, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (9/9), 977 bytes, done.
+Total 9 (delta 2), reused 0 (delta 0)
+To git@github.com:jmbruel/first_app.git
+   6103463..3aae48a  master -> master
+ifdef::backend-deckjs[]
+......................................................................
+endif::backend-deckjs[]
+ifndef::backend-deckjs[]
+----------------------------------------------------------------------
+endif::backend-deckjs[]
+
+== Dépôts existants
+
+Si vous devez partir d'un dépôt existant :
+
+ifndef::backend-deckjs[]
+[source,shell]
+----------------------------------------------------------------------
+endif::backend-deckjs[]
+ifdef::backend-deckjs[]
+......................................................................
+endif::backend-deckjs[]
+$ git clone git@github.com:jmbruel/first_app.git
+
+ifdef::backend-deckjs[]
+......................................................................
+endif::backend-deckjs[]
+ifndef::backend-deckjs[]
+----------------------------------------------------------------------
+endif::backend-deckjs[]
+
+[TIP]
+====
+Pour obtenir le nom du dépôt distant : +git remote -v+ +
+Vous avez aussi le nom du dépôt distant dans le fichier +.git/config+
+====
+
+== Illustration des branches
+
+Voici une illustration de l'utilisation des branches
+(tirée de http://git-scm.com/book[git-scm]).
+
+On part d'une situation type :
+
+image::images/branch1.png[width="40%",link="http://git-scm.com/book"]
+
+== Illustration des branches (suite)
+
+On crée une branche (appelée +iss53+ ici) :
+
+ifndef::backend-deckjs[]
+[source,shell]
+----------------------------------------------------------------------
+endif::backend-deckjs[]
+ifdef::backend-deckjs[]
+......................................................................
+endif::backend-deckjs[]
+$ git checkout -b iss53
+
+ifdef::backend-deckjs[]
+......................................................................
+endif::backend-deckjs[]
+ifndef::backend-deckjs[]
+----------------------------------------------------------------------
+endif::backend-deckjs[]
+
+image::images/branch2.png[width="40%",link="http://git-scm.com/book"]
+
+== Illustration des branches (suite)
+
+On modifie et on commit :
+
+ifndef::backend-deckjs[]
+[source,shell]
+----------------------------------------------------------------------
+endif::backend-deckjs[]
+ifdef::backend-deckjs[]
+......................................................................
+endif::backend-deckjs[]
+$ edit ...
+$ git commit -m " blabla iss53"
+
+ifdef::backend-deckjs[]
+......................................................................
+endif::backend-deckjs[]
+ifndef::backend-deckjs[]
+----------------------------------------------------------------------
+endif::backend-deckjs[]
+
+image::images/branch3.png[width="40%",link="http://git-scm.com/book"]
+
+== Illustration des branches (suite)
+
+On revient à la branche maître pour tester une autre solution :
+
+ifndef::backend-deckjs[]
+[source,shell]
+----------------------------------------------------------------------
+endif::backend-deckjs[]
+ifdef::backend-deckjs[]
+......................................................................
+endif::backend-deckjs[]
+$ git checkout master
+$ git checkout -b hotfix
+$ edit ...
+$ git commit -m " blabla hotfix"
+
+ifdef::backend-deckjs[]
+......................................................................
+endif::backend-deckjs[]
+ifndef::backend-deckjs[]
+----------------------------------------------------------------------
+endif::backend-deckjs[]
+
+image::images/branch4.png[width="40%",link="http://git-scm.com/book"]
+
+== Illustration des branches (suite)
+
+On intègre cette solution à la branche principale :
+
+ifndef::backend-deckjs[]
+[source,shell]
+----------------------------------------------------------------------
+endif::backend-deckjs[]
+ifdef::backend-deckjs[]
+......................................................................
+endif::backend-deckjs[]
+$ git checkout master
+$ git merge hotfix
+
+ifdef::backend-deckjs[]
+......................................................................
+endif::backend-deckjs[]
+ifndef::backend-deckjs[]
+----------------------------------------------------------------------
+endif::backend-deckjs[]
+
+image::images/branch5.png[width="40%",link="http://git-scm.com/book"]
+
+== Illustration des branches (suite)
+
+On continue à travailler sur la branche +iss53+ :
+
+ifndef::backend-deckjs[]
+[source,shell]
+----------------------------------------------------------------------
+endif::backend-deckjs[]
+ifdef::backend-deckjs[]
+......................................................................
+endif::backend-deckjs[]
+$ git branch -d hotfix
+$ git checkout iss53
+$ edit ...
+$ git commit -m " blabla iss53"
+
+ifdef::backend-deckjs[]
+......................................................................
+endif::backend-deckjs[]
+ifndef::backend-deckjs[]
+----------------------------------------------------------------------
+endif::backend-deckjs[]
+
+image::images/branch6.png[width="40%",link="http://git-scm.com/book"]
+
+== Illustration des branches (suite)
+
+On intègre cette branche :
+
+ifndef::backend-deckjs[]
+[source,shell]
+----------------------------------------------------------------------
+endif::backend-deckjs[]
+ifdef::backend-deckjs[]
+......................................................................
+endif::backend-deckjs[]
+$ git checkout master
+$ git merge iss53
+
+ifdef::backend-deckjs[]
+......................................................................
+endif::backend-deckjs[]
+ifndef::backend-deckjs[]
+----------------------------------------------------------------------
+endif::backend-deckjs[]
+
+image::images/branch7.png[width="40%",link="http://git-scm.com/book"]
+
+== Illustration des branches (suite)
+
+Situation finale :
+
+image::images/branch8.png[width="40%",link="http://git-scm.com/book"]
+
+== Bonne utilisation
+
+Revenons sur l'exemple type :
+
+image::images/git-branching.png[width="70%"]
+
+== Résumé des commandes
+
+Voici un schéma pour résumer la philosophie (tiré de http://osteele.com) :
+
+image::images/git-resume.png[width="40%",link="http://osteele.com"]
+
+== Liens utiles
+
+- http://git-scm.com/[Le site de référence]
+- https://github.com/[GitHub]
+- http://git-scm.com/book[Un excellent livre en ligne sur Git]

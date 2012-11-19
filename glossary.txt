@@ -32,6 +32,8 @@ OMG::
 	_**O**bject **M**anagement **G**roup_ : L'organisme international chargé des principales normes liés à l'objet (CORBA, UML, etc.).
 PPN::
 	**P**rogramme **P**édagogique **N**ational
+RUP::
+	**R**ational **U**nified **P**rocess
 SEF::
 	**S**chéma d'**E**nchaînement des **F**enêtres
 SEP::

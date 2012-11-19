@@ -1,4 +1,6 @@
 :locimages: ../TP/
+:plantuml: http://www.plantuml.com/plantuml/form[PlantUML]
+
 == Le projet "Assurance-Auto"
 
 ifdef::backend-slidy2[>>>]
@@ -111,9 +113,10 @@ Prendre une feuille A4 en format paysage pour faire le DS!
 .DS avec BOUML
 image::{locimages}assurauto-ds.png[width="60%",alt="Exemple"]
 
-.DS avec PlantUML (version un peu différente)
-image::../images/AssurAutoSeq.svg[width="100%",alt="Exemple", link="../images/AssurAutoSeq.svg"]
-
+//.DS avec PlantUML (version un peu différente)
+//image::../images/AssurAutoSeq.svg[width="100%",alt="Exemple", link="../images/AssurAutoSeq.svg"]
+Vous pouvez aussi regarder la version {plantuml} disponible
+http://www.plantuml.com:80/plantuml/img/ZPHHJuCm4CVVb-mxN7p2PDi783epPJ4c9ZveVE_WearA8MrH_FQsK5XRojZBmhZVNU_-zoyaLvM0OrbdbPImNjL4A9hJcd056VjwHew2CBYxWrFLy8A8FzZl9zXxThY8F2d1B9DNN8cAHH5zMeWCdMttJZif55WINk0hbGe_yPlc3KDvaB8HA9FRzSffNMVQsijfGnCwvp6Bu-lLOmPRjoZpgZb5Wfv3pkrHetRIAJSZGVvTqNR04jwKBsKvF_aCxGnyqxzCnvDlKlX2bQ4Yb6brj3ccYAz4qRDdgMnaEzbUmCr9CG5dj924IeecGb4SyfmMo9LPQ2wGABGM3SNftwR0yTTXhLSxs7ZM3XWXW_FwSMrA41jJBo4ILNIVOHTwAyQInxP6eMHGrVZM1pp7TWKwXutHCTcHn2U67iwhWHHUFSHVJ5V3M4vIqIC9jlKuZTjBZ5eGoMCZ1rlNZ3uezBBqdmsOXxVcPmExtIukxRMf2nrcLvPXLLK3Fu7I1U8YTiuM7oPkF16LSCe4VkZAcyygR-0UiDMRUx0aOSeDBqxcde9CudWP1kSUMuM2erSeYEdBq9IwaUkkX7SYB-nFpBHsUPDhQHMBV5WcQ6G3FuJfeB1eSliF[ici].
 
 === Compléter le diagramme des classes participantes de cet UC
 

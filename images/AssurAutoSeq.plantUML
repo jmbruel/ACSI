@@ -1,0 +1,51 @@
+actor EmpDoss 
+participant DlgGeneral << boundary >>
+participant DlgSDA << boundary >>
+participant CtrlSDA << control >>
+participant CtrlGen << control >>
+EmpDoss -> DlgGeneral: demandeListeVehiculesAssures()
+DlgGeneral -> CtrlGen: demandeListeVehiculesAssures()
+CtrlGen -> BD: demandeListeVehicule
+BD --> CtrlGen: listeVehicules
+CtrlGen --> DlgGeneral: listeVehicules
+DlgGeneral --> EmpDoss: listeVehicules
+EmpDoss -> DlgGeneral: choixVehicule(numImm)
+DlgGeneral -> CtrlGen: choixVehicule(numImm)
+CtrlGen -> "numImm:Vehicules": getDetails() 
+"numImm:Vehicules" --> CtrlGen: detailsVehicule
+CtrlGen--> DlgGeneral: detailsVehicule
+DlgGeneral --> EmpDoss: detailsVehicule
+EmpDoss -> DlgGeneral: saisieDossierAccident()
+create DlgSDA
+DlgGeneral -> DlgSDA: new()
+create CtrlSDA
+DlgSDA -> CtrlSDA: new()
+create DossierAccident
+CtrlSDA -> DossierAccident: new()
+CtrlSDA -> DossierAccident: setVehicule(numImm)
+DlgSDA -> CtrlSDA: getListExperts()
+CtrlSDA -> BD: getListExperts
+BD --> CtrlSDA: listeExperts
+CtrlSDA --> DlgSDA: listeExperts
+DlgSDA --> EmpDoss : ListeExperts
+EmpDoss -> DlgSDA: choisirExpert(exp)
+DlgSDA-> CtrlSDA: choisirExpert(exp)
+CtrlSDA -> DossierAccident: setExpert(exp)
+EmpDoss -> DlgSDA: detailsAccident(dateAcc, dateOuv, ...)
+DlgSDA -> CtrlSDA: detailsAccident(dateAcc, dateOuv, ...)
+CtrlSDA -> DossierAccident: setDetailsAccident(dateAcc, dateOuv, ...)
+loop nb tiers
+EmpDoss -> DlgSDA: saisirTiers(num)
+DlgSDA-> CtrlSDA: saisirTiers(num)
+CtrlSDA -> BD: tiers connu = exist?(num)
+alt tiers connu
+CtrlSDA -> DossierAccident: setTiers(num)
+else
+create VehiculeExterne
+CtrlSDA -> VehiculeExterne: num = new()
+CtrlSDA -> DossierAccident: setTiers(num)
+end
+end
+CtrlSDA --> DlgSDA: detailsDossierAccident
+DlgSDA--> EmpDoss: detailsDossierAccident
+EmpDoss -> DlgSDA: validerDossier()
